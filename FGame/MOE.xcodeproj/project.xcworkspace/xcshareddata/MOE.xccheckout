@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>BF02EF08-9377-4359-BF1A-F841D5F1AC09</string>
+	<string>CCF75BCF-2939-4E63-8AE2-A44AD21A80EC</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MOE</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -13,15 +13,11 @@
 		<key>26295321-C653-4B88-85F3-CC49D84291F3</key>
 		<string>https://github.com/landonepps/MOE.git</string>
 	</dict>
-	<key>IDESourceControlProjectPath</key>
-	<string>FGame/MOE.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>26295321-C653-4B88-85F3-CC49D84291F3</key>
-		<string>../../..</string>
+		<string>../../../../mac_test</string>
 	</dict>
-	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/landonepps/MOE.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

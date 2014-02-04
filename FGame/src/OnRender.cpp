@@ -20,6 +20,9 @@
 void FGame::OnRender()
 {
     /** Draw image etc. **/
-
+    
+    glClear(GL_COLOR_BUFFER_BIT);
+    
     /** Swap buffers. **/
+    SDL_GL_SwapWindow(screen);
 }

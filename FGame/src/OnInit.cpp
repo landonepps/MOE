@@ -41,6 +41,11 @@ bool FGame::OnInit()
     {
         cout << "ERROR: Failed to create screen." << endl;
         return false;
+    } else {
+        glContext = SDL_GL_CreateContext(screen);
+        // set swap to monitor refresh rate
+        SDL_GL_SetSwapInterval(1);
+        glClearColor(1, 1, 1, 1);
     }
 
     return true;

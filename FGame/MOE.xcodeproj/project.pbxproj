@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4423CE8518A077D600FE3118 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8318A077D600FE3118 /* InfoPlist.strings */; };
+		4423CE8B18A077D600FE3118 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8918A077D600FE3118 /* Credits.rtf */; };
+		4423CEBC18A0781600FE3118 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBB18A0781600FE3118 /* SDL2.framework */; };
+		4423CEBE18A0787500FE3118 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBD18A0787400FE3118 /* OpenGL.framework */; };
+		4423CEC018A07A5000FE3118 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBF18A07A5000FE3118 /* GLUT.framework */; };
+		4423CEE618A0813600FE3118 /* FGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEDF18A0813600FE3118 /* FGame.cpp */; };
+		4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE118A0813600FE3118 /* OnCleanup.cpp */; };
+		4423CEE818A0813600FE3118 /* OnEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE218A0813600FE3118 /* OnEvent.cpp */; };
+		4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE318A0813600FE3118 /* OnInit.cpp */; };
+		4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE418A0813600FE3118 /* OnLoop.cpp */; };
+		4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE518A0813600FE3118 /* OnRender.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4423CE9C18A077D600FE3118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4423CE6F18A077D600FE3118 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4423CE7618A077D600FE3118;
+			remoteInfo = MOE;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4423CE7718A077D600FE3118 /* MOE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4423CE8218A077D600FE3118 /* MOE-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOE-Info.plist"; sourceTree = "<group>"; };
+		4423CE8418A077D600FE3118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4423CE8818A077D600FE3118 /* MOE-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Prefix.pch"; sourceTree = "<group>"; };
+		4423CE8A18A077D600FE3118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4423CE9818A077D600FE3118 /* MOETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4423CEBB18A0781600FE3118 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		4423CEBD18A0787400FE3118 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		4423CEBF18A07A5000FE3118 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		4423CEDF18A0813600FE3118 /* FGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FGame.cpp; sourceTree = "<group>"; };
+		4423CEE018A0813600FE3118 /* FGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGame.h; sourceTree = "<group>"; };
+		4423CEE118A0813600FE3118 /* OnCleanup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnCleanup.cpp; sourceTree = "<group>"; };
+		4423CEE218A0813600FE3118 /* OnEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnEvent.cpp; sourceTree = "<group>"; };
+		4423CEE318A0813600FE3118 /* OnInit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnInit.cpp; sourceTree = "<group>"; };
+		4423CEE418A0813600FE3118 /* OnLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnLoop.cpp; sourceTree = "<group>"; };
+		4423CEE518A0813600FE3118 /* OnRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnRender.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4423CE7418A077D600FE3118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4423CEC018A07A5000FE3118 /* GLUT.framework in Frameworks */,
+				4423CEBE18A0787500FE3118 /* OpenGL.framework in Frameworks */,
+				4423CEBC18A0781600FE3118 /* SDL2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4423CE9518A077D600FE3118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4423CE6E18A077D600FE3118 = {
+			isa = PBXGroup;
+			children = (
+				4423CE8118A077D600FE3118 /* Supporting Files */,
+				4423CEDE18A0813600FE3118 /* src */,
+				4423CE7918A077D600FE3118 /* Frameworks */,
+				4423CE7818A077D600FE3118 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4423CE7818A077D600FE3118 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4423CE7718A077D600FE3118 /* MOE.app */,
+				4423CE9818A077D600FE3118 /* MOETests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4423CE7918A077D600FE3118 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4423CEBF18A07A5000FE3118 /* GLUT.framework */,
+				4423CEBD18A0787400FE3118 /* OpenGL.framework */,
+				4423CEBB18A0781600FE3118 /* SDL2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4423CE8118A077D600FE3118 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4423CE8218A077D600FE3118 /* MOE-Info.plist */,
+				4423CE8318A077D600FE3118 /* InfoPlist.strings */,
+				4423CE8818A077D600FE3118 /* MOE-Prefix.pch */,
+				4423CE8918A077D600FE3118 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			path = mac_files;
+			sourceTree = "<group>";
+		};
+		4423CEDE18A0813600FE3118 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4423CEDF18A0813600FE3118 /* FGame.cpp */,
+				4423CEE018A0813600FE3118 /* FGame.h */,
+				4423CEE118A0813600FE3118 /* OnCleanup.cpp */,
+				4423CEE218A0813600FE3118 /* OnEvent.cpp */,
+				4423CEE318A0813600FE3118 /* OnInit.cpp */,
+				4423CEE418A0813600FE3118 /* OnLoop.cpp */,
+				4423CEE518A0813600FE3118 /* OnRender.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4423CE7618A077D600FE3118 /* MOE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4423CEA818A077D600FE3118 /* Build configuration list for PBXNativeTarget "MOE" */;
+			buildPhases = (
+				4423CE7318A077D600FE3118 /* Sources */,
+				4423CE7418A077D600FE3118 /* Frameworks */,
+				4423CE7518A077D600FE3118 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MOE;
+			productName = MOE;
+			productReference = 4423CE7718A077D600FE3118 /* MOE.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4423CE9718A077D600FE3118 /* MOETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4423CEAB18A077D600FE3118 /* Build configuration list for PBXNativeTarget "MOETests" */;
+			buildPhases = (
+				4423CE9418A077D600FE3118 /* Sources */,
+				4423CE9518A077D600FE3118 /* Frameworks */,
+				4423CE9618A077D600FE3118 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4423CE9D18A077D600FE3118 /* PBXTargetDependency */,
+			);
+			name = MOETests;
+			productName = MOETests;
+			productReference = 4423CE9818A077D600FE3118 /* MOETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4423CE6F18A077D600FE3118 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Landon Epps";
+				TargetAttributes = {
+					4423CE9718A077D600FE3118 = {
+						TestTargetID = 4423CE7618A077D600FE3118;
+					};
+				};
+			};
+			buildConfigurationList = 4423CE7218A077D600FE3118 /* Build configuration list for PBXProject "MOE" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4423CE6E18A077D600FE3118;
+			productRefGroup = 4423CE7818A077D600FE3118 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4423CE7618A077D600FE3118 /* MOE */,
+				4423CE9718A077D600FE3118 /* MOETests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4423CE7518A077D600FE3118 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4423CE8518A077D600FE3118 /* InfoPlist.strings in Resources */,
+				4423CE8B18A077D600FE3118 /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4423CE9618A077D600FE3118 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4423CE7318A077D600FE3118 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */,
+				4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */,
+				4423CEE818A0813600FE3118 /* OnEvent.cpp in Sources */,
+				4423CEE618A0813600FE3118 /* FGame.cpp in Sources */,
+				4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */,
+				4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4423CE9418A077D600FE3118 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4423CE9D18A077D600FE3118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4423CE7618A077D600FE3118 /* MOE */;
+			targetProxy = 4423CE9C18A077D600FE3118 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4423CE8318A077D600FE3118 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4423CE8418A077D600FE3118 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4423CE8918A077D600FE3118 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4423CE8A18A077D600FE3118 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4423CEA618A077D600FE3118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4423CEA718A077D600FE3118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4423CEA918A077D600FE3118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOE/MOE-Prefix.pch";
+				INFOPLIST_FILE = "MOE/MOE-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4423CEAA18A077D600FE3118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOE/MOE-Prefix.pch";
+				INFOPLIST_FILE = "MOE/MOE-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4423CEAC18A077D600FE3118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MOE.app/Contents/MacOS/MOE";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOE/MOE-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MOETests/MOETests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4423CEAD18A077D600FE3118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MOE.app/Contents/MacOS/MOE";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOE/MOE-Prefix.pch";
+				INFOPLIST_FILE = "MOETests/MOETests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4423CE7218A077D600FE3118 /* Build configuration list for PBXProject "MOE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4423CEA618A077D600FE3118 /* Debug */,
+				4423CEA718A077D600FE3118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4423CEA818A077D600FE3118 /* Build configuration list for PBXNativeTarget "MOE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4423CEA918A077D600FE3118 /* Debug */,
+				4423CEAA18A077D600FE3118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4423CEAB18A077D600FE3118 /* Build configuration list for PBXNativeTarget "MOETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4423CEAC18A077D600FE3118 /* Debug */,
+				4423CEAD18A077D600FE3118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4423CE6F18A077D600FE3118 /* Project object */;
+}

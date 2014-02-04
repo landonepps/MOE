@@ -19,6 +19,7 @@
 ***********************************************************************/
 void FGame::OnCleanup()
 {
+    SDL_GL_DeleteContext(glContext);
     SDL_DestroyWindow(screen);
     SDL_Quit();
 }

@@ -15,6 +15,15 @@
 
 #include "SDL2/SDL.h"   /** Contains all necessary SDL functions (ver 2). **/
 
+// if Macintosh
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#else
+// if Windows/Linux
+// include equivalent header files
+#endif
+
 class FGame {
 
     private:
@@ -24,6 +33,7 @@ class FGame {
 
         /** The main window/screen the user sees. **/
         SDL_Window *screen;
+        SDL_GLContext glContext;
 
         /** Resolution of the main window. **/
         int width;

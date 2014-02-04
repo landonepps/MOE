@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4423CE8518A077D600FE3118 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8318A077D600FE3118 /* InfoPlist.strings */; };
-		4423CE8B18A077D600FE3118 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8918A077D600FE3118 /* Credits.rtf */; };
 		4423CEBC18A0781600FE3118 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBB18A0781600FE3118 /* SDL2.framework */; };
 		4423CEBE18A0787500FE3118 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBD18A0787400FE3118 /* OpenGL.framework */; };
 		4423CEC018A07A5000FE3118 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBF18A07A5000FE3118 /* GLUT.framework */; };
@@ -18,6 +16,8 @@
 		4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE318A0813600FE3118 /* OnInit.cpp */; };
 		4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE418A0813600FE3118 /* OnLoop.cpp */; };
 		4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE518A0813600FE3118 /* OnRender.cpp */; };
+		44EDA67818A088160095AB29 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8918A077D600FE3118 /* Credits.rtf */; };
+		44EDA67918A088190095AB29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8318A077D600FE3118 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		4423CE8818A077D600FE3118 /* MOE-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Prefix.pch"; sourceTree = "<group>"; };
 		4423CE8A18A077D600FE3118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		4423CE9818A077D600FE3118 /* MOETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4423CEBB18A0781600FE3118 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		4423CEBB18A0781600FE3118 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = /Library/Frameworks/SDL2.framework; sourceTree = "<absolute>"; };
 		4423CEBD18A0787400FE3118 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		4423CEBF18A07A5000FE3118 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		4423CEDF18A0813600FE3118 /* FGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FGame.cpp; sourceTree = "<group>"; };
@@ -201,8 +201,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4423CE8518A077D600FE3118 /* InfoPlist.strings in Resources */,
-				4423CE8B18A077D600FE3118 /* Credits.rtf in Resources */,
+				44EDA67918A088190095AB29 /* InfoPlist.strings in Resources */,
+				44EDA67818A088160095AB29 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,8 +344,8 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MOE/MOE-Prefix.pch";
-				INFOPLIST_FILE = "MOE/MOE-Info.plist";
+				GCC_PREFIX_HEADER = "mac_files/MOE-Prefix.pch";
+				INFOPLIST_FILE = "mac_files/MOE-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -361,8 +361,8 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MOE/MOE-Prefix.pch";
-				INFOPLIST_FILE = "MOE/MOE-Info.plist";
+				GCC_PREFIX_HEADER = "mac_files/MOE-Prefix.pch";
+				INFOPLIST_FILE = "mac_files/MOE-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

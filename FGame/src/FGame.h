@@ -42,6 +42,8 @@ class FGame : public Events
         int width;
         int height;
 
+        SDL_Joystick *joystick1;
+
     public:
 
         /***********************************************************************
@@ -82,6 +84,18 @@ class FGame : public Events
          * returns:   void.
         ***********************************************************************/
         void OnExit();
+
+        /***********************************************************************
+         * OnJoyButtonDown: Close application if a joystick button is pressed
+         *                  (test).
+         *
+         * which:     The index of the joystick that reported the event.
+         *
+         * button:    The index of the button that changed.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        virtual void OnJoyButtonDown(Uint8 which, Uint8 button);
 
         /***********************************************************************
          * OnLoop:    Handles basic calculations (such as animation). Currently

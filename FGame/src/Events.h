@@ -13,7 +13,7 @@
 #ifndef EVENTS_H_
 #define EVENTS_H_
 
-#include "SDL2/SDL.h"   /** Contains all necessary SDL functions (ver 2). **/
+#include <SDL2/SDL.h>   /** Contains all necessary SDL functions (ver 2). **/
 
 class Events
 {

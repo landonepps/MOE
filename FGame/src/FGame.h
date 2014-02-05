@@ -22,7 +22,6 @@
 #include <OpenGL/glu.h>
 #else
 // if Windows/Linux
-// include equivalent header files
 #include <GL/glut.h>
 #endif
 

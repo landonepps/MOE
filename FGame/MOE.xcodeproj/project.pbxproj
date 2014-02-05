@@ -17,19 +17,10 @@
 		4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE418A0813600FE3118 /* OnLoop.cpp */; };
 		4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE518A0813600FE3118 /* OnRender.cpp */; };
 		444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C8C5518A1EDF8000101F8 /* SDL2_image.framework */; };
+		444C8C5C18A21169000101F8 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444C8C5A18A21169000101F8 /* Events.cpp */; };
 		44EDA67818A088160095AB29 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8918A077D600FE3118 /* Credits.rtf */; };
 		44EDA67918A088190095AB29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8318A077D600FE3118 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4423CE9C18A077D600FE3118 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4423CE6F18A077D600FE3118 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4423CE7618A077D600FE3118;
-			remoteInfo = MOE;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4423CE7718A077D600FE3118 /* MOE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,7 +28,6 @@
 		4423CE8418A077D600FE3118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4423CE8818A077D600FE3118 /* MOE-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Prefix.pch"; sourceTree = "<group>"; };
 		4423CE8A18A077D600FE3118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		4423CE9818A077D600FE3118 /* MOETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4423CEBB18A0781600FE3118 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = /Library/Frameworks/SDL2.framework; sourceTree = "<absolute>"; };
 		4423CEBD18A0787400FE3118 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		4423CEBF18A07A5000FE3118 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -49,6 +39,8 @@
 		4423CEE418A0813600FE3118 /* OnLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnLoop.cpp; sourceTree = "<group>"; };
 		4423CEE518A0813600FE3118 /* OnRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnRender.cpp; sourceTree = "<group>"; };
 		444C8C5518A1EDF8000101F8 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		444C8C5A18A21169000101F8 /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
+		444C8C5B18A21169000101F8 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +52,6 @@
 				4423CEC018A07A5000FE3118 /* GLUT.framework in Frameworks */,
 				4423CEBE18A0787500FE3118 /* OpenGL.framework in Frameworks */,
 				4423CEBC18A0781600FE3118 /* SDL2.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4423CE9518A077D600FE3118 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				4423CE7718A077D600FE3118 /* MOE.app */,
-				4423CE9818A077D600FE3118 /* MOETests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +102,8 @@
 		4423CEDE18A0813600FE3118 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				444C8C5A18A21169000101F8 /* Events.cpp */,
+				444C8C5B18A21169000101F8 /* Events.h */,
 				4423CEDF18A0813600FE3118 /* FGame.cpp */,
 				4423CEE018A0813600FE3118 /* FGame.h */,
 				4423CEE118A0813600FE3118 /* OnCleanup.cpp */,
@@ -149,24 +135,6 @@
 			productReference = 4423CE7718A077D600FE3118 /* MOE.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4423CE9718A077D600FE3118 /* MOETests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4423CEAB18A077D600FE3118 /* Build configuration list for PBXNativeTarget "MOETests" */;
-			buildPhases = (
-				4423CE9418A077D600FE3118 /* Sources */,
-				4423CE9518A077D600FE3118 /* Frameworks */,
-				4423CE9618A077D600FE3118 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4423CE9D18A077D600FE3118 /* PBXTargetDependency */,
-			);
-			name = MOETests;
-			productName = MOETests;
-			productReference = 4423CE9818A077D600FE3118 /* MOETests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,11 +143,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Landon Epps";
-				TargetAttributes = {
-					4423CE9718A077D600FE3118 = {
-						TestTargetID = 4423CE7618A077D600FE3118;
-					};
-				};
 			};
 			buildConfigurationList = 4423CE7218A077D600FE3118 /* Build configuration list for PBXProject "MOE" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -195,7 +158,6 @@
 			projectRoot = "";
 			targets = (
 				4423CE7618A077D600FE3118 /* MOE */,
-				4423CE9718A077D600FE3118 /* MOETests */,
 			);
 		};
 /* End PBXProject section */
@@ -210,13 +172,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4423CE9618A077D600FE3118 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -226,6 +181,7 @@
 			files = (
 				4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */,
 				4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */,
+				444C8C5C18A21169000101F8 /* Events.cpp in Sources */,
 				4423CEE818A0813600FE3118 /* OnEvent.cpp in Sources */,
 				4423CEE618A0813600FE3118 /* FGame.cpp in Sources */,
 				4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */,
@@ -233,22 +189,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4423CE9418A077D600FE3118 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4423CE9D18A077D600FE3118 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4423CE7618A077D600FE3118 /* MOE */;
-			targetProxy = 4423CE9C18A077D600FE3118 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4423CE8318A077D600FE3118 /* InfoPlist.strings */ = {
@@ -372,46 +313,6 @@
 			};
 			name = Release;
 		};
-		4423CEAC18A077D600FE3118 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MOE.app/Contents/MacOS/MOE";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MOE/MOE-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MOETests/MOETests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		4423CEAD18A077D600FE3118 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MOE.app/Contents/MacOS/MOE";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MOE/MOE-Prefix.pch";
-				INFOPLIST_FILE = "MOETests/MOETests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -429,15 +330,6 @@
 			buildConfigurations = (
 				4423CEA918A077D600FE3118 /* Debug */,
 				4423CEAA18A077D600FE3118 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4423CEAB18A077D600FE3118 /* Build configuration list for PBXNativeTarget "MOETests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4423CEAC18A077D600FE3118 /* Debug */,
-				4423CEAD18A077D600FE3118 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -14,8 +14,6 @@
 #include <stdio.h>     /** Needed to print errors. **/
 #include "FGame.h"      /** Contains OnInit prototype. **/
 
-using namespace std;
-
 /***********************************************************************
  * OnInit:    Initializes timer, audio, video, cdrom, and joystick.
  *            Also, creates the main window centered and allows opengl.

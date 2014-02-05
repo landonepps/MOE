@@ -33,3 +33,18 @@ void FGame::OnExit()
 {
     running = false;
 }
+
+/***********************************************************************
+ * OnJoyButtonDown: Close application if a joystick button is pressed
+ *                  (test).
+ *
+ * which:     The index of the joystick that reported the event.
+ *
+ * button:    The index of the button that changed.
+ *
+ * returns:   void.
+***********************************************************************/
+void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
+{
+    running = false;
+}

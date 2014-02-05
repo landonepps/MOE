@@ -19,6 +19,11 @@
 ***********************************************************************/
 void FGame::OnCleanup()
 {
+    if(SDL_JoystickGetAttached(joystick1))
+    {
+        SDL_JoystickClose(joystick1);
+    }
+
     SDL_GL_DeleteContext(glContext);
     SDL_DestroyWindow(screen);
     SDL_Quit();

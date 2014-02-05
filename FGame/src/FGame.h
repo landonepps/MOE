@@ -9,11 +9,11 @@
  *
  * Starts the game and contains main game loop.
 *******************************************************************************/
-
+// GIT TEST
 #ifndef FGAME_H_
 #define FGAME_H_
 
-#include "SDL2/SDL.h"   /** Contains all necessary SDL functions (ver 2). **/
+#include <SDL2/SDL.h>   /** Contains all necessary SDL functions (ver 2). **/
 #include "Events.h"
 
 // if Macintosh
@@ -40,6 +40,8 @@ class FGame : public Events
         /** Resolution of the main window. **/
         int width;
         int height;
+
+        SDL_Joystick *joystick1;
 
     public:
 
@@ -81,6 +83,18 @@ class FGame : public Events
          * returns:   void.
         ***********************************************************************/
         void OnExit();
+
+        /***********************************************************************
+         * OnJoyButtonDown: Close application if a joystick button is pressed
+         *                  (test).
+         *
+         * which:     The index of the joystick that reported the event.
+         *
+         * button:    The index of the button that changed.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        virtual void OnJoyButtonDown(Uint8 which, Uint8 button);
 
         /***********************************************************************
          * OnLoop:    Handles basic calculations (such as animation). Currently

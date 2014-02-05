@@ -13,7 +13,7 @@
 #ifndef EVENTS_H_
 #define EVENTS_H_
 
-#include "SDL2/SDL.h"   /** Contains all necessary SDL functions (ver 2). **/
+#include <SDL2/SDL.h>   /** Contains all necessary SDL functions (ver 2). **/
 
 class Events
 {
@@ -213,6 +213,46 @@ class Events
          * returns:   void.
         ***********************************************************************/
         virtual void OnMButtonUp(int x, int y);
+
+
+
+
+        /***********************************************************************
+         * OnConAxis: Called when the controller axis is moved (does nothing).
+         *
+         * which:     The joystick instance id.
+         *
+         * axis:      The controller axis.
+         *
+         * value:     The axis value (range: -32768 to 32767).
+         *
+         * returns:   void.
+        ***********************************************************************/
+        virtual void OnConAxis(Uint8 which, Uint8 axis, Sint16 value);
+
+        /***********************************************************************
+         * OnConButtonDown: Called when the controller button is pressed (does
+         *            nothing).
+         *
+         * which:     The joystick instance id.
+         *
+         * button:    The controller button.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        virtual void OnConButtonDown(SDL_JoystickID which, Uint8 button);
+
+        /***********************************************************************
+         * OnConButtonDown: Called when the controller button is released (does
+         *            nothing).
+         *
+         * which:     The joystick instance id.
+         *
+         * button:    The controller button.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        virtual void OnConButtonUp(SDL_JoystickID which, Uint8 button);
 
 
 

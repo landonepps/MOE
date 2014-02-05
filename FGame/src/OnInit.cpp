@@ -29,6 +29,9 @@ bool FGame::OnInit()
         return false;
     }
 
+
+
+
     /** Creates the main window centered and allows opengl. Not sure if
      *  double buffer is already enabled. **/
     if((screen = SDL_CreateWindow("FGame",
@@ -40,11 +43,50 @@ bool FGame::OnInit()
     {
         fprintf(stderr, "ERROR: Failed to create screen: %s\n", SDL_GetError());
         return false;
-    } else {
-        glContext = SDL_GL_CreateContext(screen);
+    }
+    else
+    {
+        /** Create gl context so we can use opengl. **/
+        if((glContext = SDL_GL_CreateContext(screen)) == NULL)
+        {
+            fprintf(stderr, "ERROR: Failed to glContext: %s\n", SDL_GetError());
+            return false;
+        }
+
         // set swap to monitor refresh rate
-        SDL_GL_SetSwapInterval(1);
+        if(SDL_GL_SetSwapInterval(1) == -1)
+        {
+            fprintf(stderr, "ERROR: Failed to set swap interval: %s\n",
+                    SDL_GetError());
+            return false;
+        }
         glClearColor(1, 1, 1, 1);
+    }
+
+
+
+
+    /** Initialize the joysticks. **/
+    int numJoysticks = SDL_NumJoysticks();
+    if(numJoysticks < 0)
+    {
+        fprintf(stderr, "ERROR: NumJoysticks failed: %s\n", SDL_GetError());
+        return false;
+    }
+    else if(numJoysticks > 0)
+    {
+        /** Open joystick1. **/
+        joystick1 = SDL_JoystickOpen(0);
+        if(!joystick1)
+        {
+            fprintf(stderr, "ERROR: Couldn't open joystick1: %s\n",
+                    SDL_GetError());
+            return false;
+        }
+    }
+    else
+    {
+        /** Do nothing. **/
     }
 
     return true;

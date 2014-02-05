@@ -10,25 +10,27 @@
  * Handles any events caused by user (only Quit at the moment).
 *******************************************************************************/
 
-#include "FGame.h"      /** Contains prototype for OnEvent.  **/
+#include "FGame.h"      /** Contains event prototypes.  **/
 
 /***********************************************************************
- * OnEvent:   Handles any events caused by user (only Quit at the
- *            moment).
+ * OnEvent:   Handles any events caused by user.
  *
- * param1:    The event caused by user (ex. button press, mouse etc.).
+ * event:     The event caused by user (ex. button press, mouse etc.).
  *
  * returns:   void.
 ***********************************************************************/
 void FGame::OnEvent(SDL_Event* event)
 {
-    /** If user clicks the exit button on the window, then set running
-     *  to false. **/
-    if(event->type == SDL_QUIT)
-    {
-        running = false;
-    }
-
-
-    /** Handle mouse, keyboard, gamepad etc. **/
+    Events::OnEvent(event);
 }
+
+/***********************************************************************
+ * OnExit:    Sets the application's running status to false.
+ *
+ * returns:   void.
+***********************************************************************/
+void FGame::OnExit()
+{
+    running = false;
+}
+

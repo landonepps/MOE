@@ -11,7 +11,7 @@
  * window centered and allows opengl.
 *******************************************************************************/
 
-#include <iostream>     /** Needed to print errors. **/
+#include <stdio.h>     /** Needed to print errors. **/
 #include "FGame.h"      /** Contains OnInit prototype. **/
 
 using namespace std;
@@ -27,7 +27,7 @@ bool FGame::OnInit()
     /** Initializes timer, audio, video, cdrom, and joystick. **/
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
     {
-        cout << "ERROR: SDL_Init failed." << endl;
+        fprintf(stderr, "ERROR: SDL_Init failed: %s\n", SDL_GetError());
         return false;
     }
 
@@ -37,9 +37,10 @@ bool FGame::OnInit()
                                   SDL_WINDOWPOS_CENTERED,
                                   SDL_WINDOWPOS_CENTERED,
                                   width, height,
-                                  SDL_WINDOW_OPENGL)) == NULL)
+                                  SDL_WINDOW_OPENGL |
+                                  SDL_WINDOW_RESIZABLE)) == NULL)
     {
-        cout << "ERROR: Failed to create screen." << endl;
+        fprintf(stderr, "ERROR: Failed to create screen: %s\n", SDL_GetError());
         return false;
     } else {
         glContext = SDL_GL_CreateContext(screen);

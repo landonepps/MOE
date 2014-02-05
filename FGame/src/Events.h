@@ -218,6 +218,46 @@ class Events
 
 
         /***********************************************************************
+         * OnConAxis: Called when the controller axis is moved (does nothing).
+         *
+         * which:     The joystick instance id.
+         *
+         * axis:      The controller axis.
+         *
+         * value:     The axis value (range: -32768 to 32767).
+         *
+         * returns:   void.
+        ***********************************************************************/
+        virtual void OnConAxis(Uint8 which, Uint8 axis, Sint16 value);
+
+        /***********************************************************************
+         * OnConButtonDown: Called when the controller button is pressed (does
+         *            nothing).
+         *
+         * which:     The joystick instance id.
+         *
+         * button:    The controller button.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        virtual void OnConButtonDown(SDL_JoystickID which, Uint8 button);
+
+        /***********************************************************************
+         * OnConButtonDown: Called when the controller button is released (does
+         *            nothing).
+         *
+         * which:     The joystick instance id.
+         *
+         * button:    The controller button.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        virtual void OnConButtonUp(SDL_JoystickID which, Uint8 button);
+
+
+
+
+        /***********************************************************************
          * OnJoyAxis: Called when the joystick axis is moved (does nothing).
          *
          * which:     The index of the joystick that reported the event.

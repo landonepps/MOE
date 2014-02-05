@@ -185,6 +185,25 @@ void Events::OnEvent(SDL_Event *event)
             OnMouseWheel(event->wheel.x, event->wheel.y);
             break;
         }
+        /** Controller axis is moved. **/
+        case SDL_CONTROLLERAXISMOTION:
+        {
+            OnConAxis(event->caxis.which, event->caxis.axis,
+                      event->caxis.value);
+            break;
+        }
+        /** Controller button is pressed. **/
+        case SDL_CONTROLLERBUTTONDOWN:
+        {
+            OnConButtonDown(event->cbutton.which, event->cbutton.button);
+            break;
+        }
+        /** Controller button is released. **/
+        case SDL_CONTROLLERBUTTONUP:
+        {
+            OnConButtonUp(event->cbutton.which, event->cbutton.button);
+            break;
+        }
         /** Joystick axis is moved. **/
         case SDL_JOYAXISMOTION:
         {
@@ -445,6 +464,55 @@ void Events::OnMButtonDown(int x, int y)
  * returns:   void.
 ***********************************************************************/
 void Events::OnMButtonUp(int x, int y)
+{
+    /** Do Nothing (pure virtual). **/
+}
+
+
+
+
+/***********************************************************************
+ * OnConAxis: Called when the controller axis is moved (does nothing).
+ *
+ * which:     The joystick instance id.
+ *
+ * axis:      The controller axis.
+ *
+ * value:     The axis value (range: -32768 to 32767).
+ *
+ * returns:   void.
+***********************************************************************/
+void Events::OnConAxis(Uint8 which, Uint8 axis, Sint16 value)
+{
+    /** Do Nothing (pure virtual). **/
+}
+
+/***********************************************************************
+ * OnConButtonDown: Called when the controller button is pressed (does
+ *            nothing).
+ *
+ * which:     The joystick instance id.
+ *
+ * button:    The controller button.
+ *
+ * returns:   void.
+***********************************************************************/
+void Events::OnConButtonDown(SDL_JoystickID which, Uint8 button)
+{
+    /** Do Nothing (pure virtual). **/
+}
+
+/***********************************************************************
+ * OnConButtonDown: Called when the controller button is released (does
+ *            nothing).
+ *
+ * which:     The joystick instance id.
+ *
+ * button:    The controller button.
+ *
+ * returns:   void.
+***********************************************************************/
+void Events::OnConButtonUp(SDL_JoystickID which, Uint8 button)
 {
     /** Do Nothing (pure virtual). **/
 }

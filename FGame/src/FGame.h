@@ -14,6 +14,7 @@
 #define FGAME_H_
 
 #include "SDL2/SDL.h"   /** Contains all necessary SDL functions (ver 2). **/
+#include "Events.h"
 
 // if Macintosh
 #ifdef __APPLE__
@@ -25,7 +26,8 @@
 #include <GL/glut.h>
 #endif
 
-class FGame {
+class FGame : public Events
+{
 
     private:
         /** While true, the game should be running. When set to false the game
@@ -57,7 +59,6 @@ class FGame {
 
 
 
-
         /***********************************************************************
          * OnInit:    Initializes timer, audio, video, cdrom, and joystick.
          *            Also, creates the main window centered and allows opengl.
@@ -67,14 +68,20 @@ class FGame {
         bool OnInit();
 
         /***********************************************************************
-         * OnEvent:   Handles any events caused by user (only Quit at the
-         *            moment).
+         * OnEvent:   Translates SDL events to functions.
          *
          * param1:    The event caused by user (ex. button press, mouse etc.).
          *
          * returns:   void.
         ***********************************************************************/
         void OnEvent(SDL_Event* event);
+
+        /***********************************************************************
+         * OnExit:    Sets the application's running status to false.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        void OnExit();
 
         /***********************************************************************
          * OnLoop:    Handles basic calculations (such as animation). Currently

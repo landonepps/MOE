@@ -18,11 +18,13 @@
 ***********************************************************************/
 FGame::FGame()
 {
-    running = true;
+    running   = true;
 
-    screen  = NULL;
-    width   = 640;
-    height  = 480;
+    screen    = NULL;
+    glContext = NULL;
+
+    width     = 640;
+    height    = 480;
 }
 
 /***********************************************************************
@@ -65,9 +67,9 @@ int FGame::OnExecute()
 /***********************************************************************
  * main:      Starts the game and contains main game loop.
  *
- * param1:    The number of arguments.
+ * argc:      The number of arguments.
  *
- * param2:    A multidimensional array containing each argument.
+ * argv:      A multidimensional array containing each argument.
  *
  * returns:   Zero on success and anything less than zero on failure.
 ***********************************************************************/

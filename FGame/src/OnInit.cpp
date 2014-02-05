@@ -3,7 +3,6 @@
  *             Landon Epps
  *             Andrew Kliphon
  *             Jeremy Stark
- *             test
  * Assignment: MOE (Most Optimistic Engine)
  * Class:      4342, Spring 2014
  * Date:       1/30/2014

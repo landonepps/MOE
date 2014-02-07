@@ -160,6 +160,7 @@ void Clock::singleStep()
 {
     if(isPaused == true)
     {
+        /** 1 / 30 represents seconds / frames. **/
         Uint64 dtScaledCycles = secondsToCycles((1 / 30) * timeScale);
         timeCycles += dtScaledCycles;
     }

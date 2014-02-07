@@ -17,7 +17,7 @@
 
 class Clock
 {
-    private:
+    public:
         /** How many cycles have occurred. **/
         Uint64 timeCycles;
 

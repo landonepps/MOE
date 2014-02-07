@@ -91,5 +91,8 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
 
+    /** Initialize the clock for the main game loop. **/
+    mainClock.init();
+
     return true;
 }

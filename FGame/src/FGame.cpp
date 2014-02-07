@@ -50,6 +50,9 @@ int FGame::OnExecute()
      *  window). **/
     while(running)
     {
+        /** Get start time of loop. **/
+        Uint64 tBegin = SDL_GetTicks();
+
         /** Listen for event (mouse, keyboard, etc.). **/
         while(SDL_PollEvent(&event))
         {
@@ -59,6 +62,15 @@ int FGame::OnExecute()
         /** Draw to screen. **/
         OnLoop();
         OnRender();
+
+        /** Get end time of loop. **/
+        Uint64 tEnd = SDL_GetTicks();
+
+        /** Update our clock with the real frame time (in seconds). **/
+        mainClock.update((tEnd - tBegin) / 1000);
+
+        /** Might want to call mainClock.singleStep() here, not sure. It is only
+         * supposed to update when game is paused. **/
     }
 
     /** Free any used resources and exit. **/

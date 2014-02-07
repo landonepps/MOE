@@ -143,6 +143,8 @@
     <ClCompile Include="src\OnRender.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HUD.h" />
+    <ClInclude Include="HUDelement.h" />
     <ClInclude Include="src\Events.h" />
     <ClInclude Include="src\FGame.h" />
   </ItemGroup>

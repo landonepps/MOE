@@ -11,8 +11,6 @@
 *******************************************************************************/
 
 #include "FGame.h"  /** Contains prototypes for FGame.cpp. **/
-#include <iostream>
-using namespace std;
 
 /***********************************************************************
  * FGame:     Sets the game as running and defines the window size.

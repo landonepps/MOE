@@ -89,7 +89,7 @@ bool FGame::OnInit()
     scene.loadImage("scene.jpg", renderer);
 
     SDL_Color color = {255, 255, 255};
-    timer.setup(color, "font.ttf");
+    timer.setup("font.ttf", color);
     /** Initialize the clock for the main game loop. **/
     mainClock.init();
     

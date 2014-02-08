@@ -18,9 +18,10 @@ Timer::Timer() : HUDelement(){}
 
 Timer::Timer(int id) : HUDelement(id){}
 
-void Timer::setup(SDL_Color cl, const string &fontFile,int fontSize, 
-            int xPos, int yPos, int sec, int id)
+void Timer::setup(const string &fontFile, SDL_Color cl,int fontSize, 
+            int precision, int xPos, int yPos, int sec, int id)
 {
+    this->precision = precision;
     xPosition = xPos;
     yPosition = yPos;
     seconds = sec;
@@ -44,7 +45,7 @@ void Timer::setTime(float gameTime){
 void Timer::draw(SDL_Renderer* renderer){
     float currentTime = seconds - time;
     stringstream message;
-    message << fixed << setprecision(0) << currentTime;
+    message << fixed << setprecision(precision) << currentTime;
 
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);
     if (surf == nullptr){

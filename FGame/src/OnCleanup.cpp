@@ -24,7 +24,6 @@ void FGame::OnCleanup()
         SDL_JoystickClose(joystick1);
     }
 
-    SDL_GL_DeleteContext(glContext);
     SDL_DestroyWindow(screen);
     SDL_Quit();
 }

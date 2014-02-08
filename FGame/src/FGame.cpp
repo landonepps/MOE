@@ -21,7 +21,7 @@ FGame::FGame()
     running   = true;
 
     screen    = NULL;
-    glContext = NULL;
+    renderer  = NULL;
 
     width     = 640;
     height    = 480;

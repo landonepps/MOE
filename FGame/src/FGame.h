@@ -15,6 +15,7 @@
 
 #include <SDL2/SDL.h>   /** Contains all necessary SDL functions (ver 2). **/
 #include "Events.h"
+#include "Image.h"
 
 // if Macintosh
 #ifdef __APPLE__
@@ -35,7 +36,12 @@ class FGame : public Events
 
         /** The main window/screen the user sees. **/
         SDL_Window *screen;
-        SDL_GLContext glContext;
+        SDL_Renderer *renderer;
+    
+#warning remove later
+        // test elements
+        Image character;
+        Image scene;
 
         /** Resolution of the main window. **/
         int width;
@@ -56,8 +62,6 @@ class FGame : public Events
          * returns:   Zero on success and anything less than zero on failure.
         ***********************************************************************/
         int OnExecute();
-
-
 
 
         /***********************************************************************

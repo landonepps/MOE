@@ -13,6 +13,7 @@
 
 #include <stdio.h>     /** Needed to print errors. **/
 #include "FGame.h"      /** Contains OnInit prototype. **/
+#include "Image.h"      // test image loading
 
 /***********************************************************************
  * OnInit:    Initializes timer, audio, video, cdrom, and joystick.
@@ -30,8 +31,6 @@ bool FGame::OnInit()
     }
 
 
-
-
     /** Creates the main window centered and allows opengl. Not sure if
      *  double buffer is already enabled. **/
     if((screen = SDL_CreateWindow("FGame",
@@ -44,24 +43,25 @@ bool FGame::OnInit()
         fprintf(stderr, "ERROR: Failed to create screen: %s\n", SDL_GetError());
         return false;
     }
-    else
-    {
-        /** Create gl context so we can use opengl. **/
-        if((glContext = SDL_GL_CreateContext(screen)) == NULL)
-        {
-            fprintf(stderr, "ERROR: Failed to glContext: %s\n", SDL_GetError());
-            return false;
-        }
-
-        // set swap to monitor refresh rate
-        if(SDL_GL_SetSwapInterval(1) == -1)
-        {
-            fprintf(stderr, "ERROR: Failed to set swap interval: %s\n",
-                    SDL_GetError());
-            return false;
-        }
-        glClearColor(1, 1, 1, 1);
+    
+    if((renderer = SDL_CreateRenderer(screen,
+                                      -1,
+                                      SDL_RENDERER_ACCELERATED |
+                                      SDL_RENDERER_PRESENTVSYNC)) == NULL) {
+        fprintf(stderr, "ERORR: Failed to create renderer: %s\n",
+                SDL_GetError());
+        return false;
     }
+
+    // set swap to monitor refresh rate
+    if(SDL_GL_SetSwapInterval(1) == -1)
+    {
+        fprintf(stderr, "ERROR: Failed to set swap interval: %s\n",
+                SDL_GetError());
+        return false;
+    }
+    glClearColor(1, 1, 1, 1);
+
 
 
 
@@ -88,6 +88,10 @@ bool FGame::OnInit()
     {
         /** Do nothing. **/
     }
+    
+    // load images for testing
+    character.loadImage("character.png", renderer);
+    scene.loadImage("scene.jpg", renderer);
 
     return true;
 }

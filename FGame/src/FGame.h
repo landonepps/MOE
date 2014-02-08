@@ -42,6 +42,7 @@ class FGame : public Events
         // test elements
         Image character;
         Image scene;
+        Timer timer;
 
         /** Resolution of the main window. **/
         int width;

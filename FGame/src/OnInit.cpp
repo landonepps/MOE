@@ -52,13 +52,15 @@ bool FGame::OnInit()
         return false;
     }
 
+    TTF_Init();
+
     // set swap to monitor refresh rate
-    if(SDL_GL_SetSwapInterval(1) == -1)
+    /*if(SDL_GL_SetSwapInterval(1) == -1)
     {
         fprintf(stderr, "ERROR: Failed to set swap interval: %s\n",
                 SDL_GetError());
         return false;
-    }
+    }*/
 
     /** Initialize the joysticks. **/
     int numJoysticks = SDL_NumJoysticks();
@@ -82,13 +84,14 @@ bool FGame::OnInit()
     {
         /** Do nothing. **/
     }
-    
     // load images for testing
     character.loadImage("character.png", renderer);
     scene.loadImage("scene.jpg", renderer);
 
+    SDL_Color color = {255, 255, 255};
+    timer.setup(color, "font.ttf");
     /** Initialize the clock for the main game loop. **/
     mainClock.init();
-
+    
     return true;
 }

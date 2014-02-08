@@ -24,6 +24,7 @@ class HUDelement{
         int id;
 
     public:
+        HUDelement(){};
         HUDelement(int id){this->id = id;};
         // virtual ~HUDelement() = 0;
         virtual void draw(SDL_Renderer*) = 0;

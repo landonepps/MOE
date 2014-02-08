@@ -33,24 +33,15 @@ class Timer : public HUDelement{
         int yPosition;
         int seconds;
         SDL_Texture* texture;
-        TTF_Font *font;
+        TTF_Font* font;
         SDL_Color color;
         Clock clock;
     public:
-        Timer(SDL_Color cl, const string &fontName = NULL,int fontSize = 36, int xPos = 0, int yPos = 0, int sec = 0,
-            int id = NULL) : HUDelement(id)
-        {
-            xPosition = xPos;
-            yPosition = yPos;
-            seconds = sec;
-            color = cl;
-            font = TTF_OpenFont(fontName.c_str(), fontSize);
-            if (font == NULL) {
-                cerr << "failed to load font";
-            }
-            texture = NULL;
-        }
+        Timer();
+        Timer(int);
         ~Timer();
+        void setup(SDL_Color cl, const string &fontFile = NULL,int fontSize = 36, 
+            int xPos = 0, int yPos = 0, int sec = 0, int id = NULL);
         void draw(SDL_Renderer*);
 };
 

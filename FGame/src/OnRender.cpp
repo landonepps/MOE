@@ -22,13 +22,10 @@ void FGame::OnRender()
     /** Draw image etc. **/
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
     SDL_RenderClear(renderer);
-    
-    // scene.draw(0, 0, renderer);
+
+    scene.draw(0, 0, renderer);
     character.draw(0, 0, renderer);
-    SDL_Color color = {0, 255, 255};
-    Timer timer(color, "font.ttf");
     timer.draw(renderer);
-    
     SDL_RenderPresent(renderer);
     
     /** Swap buffers. **/

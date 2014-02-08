@@ -16,21 +16,7 @@
 #include <SDL2/SDL.h>   /** Contains all necessary SDL functions (ver 2). **/
 #include "Events.h"
 #include "Clock.h"
-
-// if Macintosh
-#ifdef __APPLE__
-#include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
-#else
-// if Windows/Linux
-// include equivalent header files
-#ifdef _WIN32
-#include <windows.h>
-#endif
-
-#include <GL/gl.h>
-#include <GL/glu.h>
-#endif
+#include "Image.h"
 
 class FGame : public Events
 {
@@ -45,7 +31,12 @@ class FGame : public Events
 
         /** The main window/screen the user sees. **/
         SDL_Window *screen;
-        SDL_GLContext glContext;
+        SDL_Renderer *renderer;
+    
+        // TODO: Remove later
+        // test elements
+        Image character;
+        Image scene;
 
         /** Resolution of the main window. **/
         int width;
@@ -66,8 +57,6 @@ class FGame : public Events
          * returns:   Zero on success and anything less than zero on failure.
         ***********************************************************************/
         int OnExecute();
-
-
 
 
         /***********************************************************************

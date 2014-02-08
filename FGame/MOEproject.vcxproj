@@ -101,7 +101,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>SDL2main.lib;SDL2.lib;OpenGL32.lib;SDL_tff.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;OpenGL32.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -137,6 +137,7 @@
     <ClCompile Include="src\Clock.cpp" />
     <ClCompile Include="src\Events.cpp" />
     <ClCompile Include="src\FGame.cpp" />
+    <ClCompile Include="src\Image.cpp" />
     <ClCompile Include="src\OnCleanup.cpp" />
     <ClCompile Include="src\OnEvent.cpp" />
     <ClCompile Include="src\OnInit.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="src\FGame.h" />
     <ClInclude Include="src\HUD.h" />
     <ClInclude Include="src\HUDelement.h" />
+    <ClInclude Include="src\Image.h" />
     <ClInclude Include="src\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

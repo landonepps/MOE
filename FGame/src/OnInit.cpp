@@ -13,7 +13,6 @@
 
 #include <stdio.h>     /** Needed to print errors. **/
 #include "FGame.h"      /** Contains OnInit prototype. **/
-#include "Image.h"      // test image loading
 
 /***********************************************************************
  * OnInit:    Initializes timer, audio, video, cdrom, and joystick.

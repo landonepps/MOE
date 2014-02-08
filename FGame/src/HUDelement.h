@@ -13,7 +13,11 @@
 #ifndef HUDELEMENTS_H_
 #define HUDELEMENTS_H_
 
-#include <SDL2\SDL.h>
+#ifdef _MSC_VER
+#include <SDL.h>
+#else
+#include <SDL2/SDL.h>
+#endif
 
 using namespace std;
 
@@ -23,7 +27,7 @@ class HUDelement{
 
     public:
         HUDelement(int id){this->id = id;};
-        virtual ~HUDelement();
+        //virtual ~HUDelement();
         virtual void draw(SDL_Renderer*);
 };
 

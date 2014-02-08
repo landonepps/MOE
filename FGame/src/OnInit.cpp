@@ -29,6 +29,8 @@ bool FGame::OnInit()
         return false;
     }
 
+    /** Initialize the clock for the main game loop. **/
+    mainClock.init();
 
     /** Creates the main window centered and allows opengl. Not sure if
      *  double buffer is already enabled. **/
@@ -85,13 +87,11 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
     // load images for testing
-    character.loadImage("character.png", renderer);
-    scene.loadImage("scene.jpg", renderer);
+    character.loadImage(".\\assets\\character.png", renderer);
+    scene.loadImage(".\\assets\\scene.jpg", renderer);
 
     SDL_Color color = {255, 255, 255};
-    timer.setup(color, "font.ttf");
-    /** Initialize the clock for the main game loop. **/
-    mainClock.init();
-    
+    timer.setup(color, ".\\assets\\font.ttf");
+
     return true;
 }

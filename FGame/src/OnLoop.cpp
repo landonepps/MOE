@@ -21,4 +21,5 @@
 void FGame::OnLoop()
 {
     /** Updating animations etc. go here. **/
+    timer.setTime(mainClock.getElapsedTime());
 }

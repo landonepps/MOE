@@ -90,6 +90,8 @@ bool FGame::OnInit()
 
     SDL_Color color = {255, 255, 255};
     timer.setup("font.ttf", color);
+
+    hp.setup(30,0,0,50,200);
     /** Initialize the clock for the main game loop. **/
     mainClock.init();
     

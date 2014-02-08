@@ -22,6 +22,7 @@
 #include "Clock.h"
 #include "Image.h"
 #include "Timer.h"
+#include "Healthbar.h"
 
 class FGame : public Events
 {
@@ -43,6 +44,7 @@ class FGame : public Events
         Image character;
         Image scene;
         Timer timer;
+        Healthbar hp;
 
         /** Resolution of the main window. **/
         int width;

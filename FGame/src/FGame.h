@@ -15,16 +15,8 @@
 
 #include <SDL2/SDL.h>   /** Contains all necessary SDL functions (ver 2). **/
 #include "Events.h"
+#include "Clock.h"
 #include "Image.h"
-
-// if Macintosh
-#ifdef __APPLE__
-#include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
-#else
-// if Windows/Linux
-#include <GL/glut.h>
-#endif
 
 class FGame : public Events
 {
@@ -41,7 +33,7 @@ class FGame : public Events
         SDL_Window *screen;
         SDL_Renderer *renderer;
     
-#warning remove later
+        // TODO: Remove later
         // test elements
         Image character;
         Image scene;

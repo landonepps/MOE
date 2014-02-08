@@ -21,6 +21,7 @@
 		44A3107418A59E4700427013 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107218A59E4700427013 /* Image.cpp */; };
 		44A3107C18A5A11B00427013 /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A3107B18A5A11B00427013 /* character.png */; };
 		44A3107E18A5B41A00427013 /* scene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44A3107D18A5B41A00427013 /* scene.jpg */; };
+		44A3108218A5B73C00427013 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107F18A5B73C00427013 /* Clock.cpp */; };
 		44EDA67818A088160095AB29 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8918A077D600FE3118 /* Credits.rtf */; };
 		44EDA67918A088190095AB29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8318A077D600FE3118 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,9 @@
 		44A3107318A59E4700427013 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		44A3107B18A5A11B00427013 /* character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character.png; sourceTree = "<group>"; };
 		44A3107D18A5B41A00427013 /* scene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scene.jpg; sourceTree = "<group>"; };
+		44A3107F18A5B73C00427013 /* Clock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Clock.cpp; sourceTree = "<group>"; };
+		44A3108018A5B73C00427013 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clock.h; sourceTree = "<group>"; };
+		44A3108118A5B73C00427013 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,9 @@
 		4423CEDE18A0813600FE3118 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				44A3107F18A5B73C00427013 /* Clock.cpp */,
+				44A3108018A5B73C00427013 /* Clock.h */,
+				44A3108118A5B73C00427013 /* Constants.h */,
 				444C8C5A18A21169000101F8 /* Events.cpp */,
 				444C8C5B18A21169000101F8 /* Events.h */,
 				4423CEDF18A0813600FE3118 /* FGame.cpp */,
@@ -207,6 +214,7 @@
 				4423CEE618A0813600FE3118 /* FGame.cpp in Sources */,
 				44A3107418A59E4700427013 /* Image.cpp in Sources */,
 				4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */,
+				44A3108218A5B73C00427013 /* Clock.cpp in Sources */,
 				4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

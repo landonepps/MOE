@@ -60,11 +60,6 @@ bool FGame::OnInit()
                 SDL_GetError());
         return false;
     }
-    glClearColor(1, 1, 1, 1);
-
-
-
-
 
     /** Initialize the joysticks. **/
     int numJoysticks = SDL_NumJoysticks();

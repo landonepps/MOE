@@ -33,7 +33,6 @@ class Timer : public HUDelement{
         int yPosition;
         int seconds;
         int precision;
-        SDL_Texture* texture;
         TTF_Font* font;
         SDL_Color color;
         float time;

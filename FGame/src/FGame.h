@@ -9,7 +9,7 @@
  *
  * Starts the game and contains main game loop.
 *******************************************************************************/
-// GIT TEST
+
 #ifndef FGAME_H_
 #define FGAME_H_
 
@@ -41,7 +41,8 @@ class FGame : public Events
         // TODO: Remove later
         // test elements
         Image character;
-        Image scene;
+        Image foreground;
+        Image background;
         Timer timer;
 
         /** Resolution of the main window. **/

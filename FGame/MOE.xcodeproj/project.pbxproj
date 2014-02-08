@@ -18,6 +18,9 @@
 		4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE518A0813600FE3118 /* OnRender.cpp */; };
 		444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C8C5518A1EDF8000101F8 /* SDL2_image.framework */; };
 		444C8C5C18A21169000101F8 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444C8C5A18A21169000101F8 /* Events.cpp */; };
+		4452D26B18A6E6F800F584EC /* stage1fg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4452D26A18A6E6F800F584EC /* stage1fg.png */; };
+		4452D26F18A6E78E00F584EC /* stage1bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4452D26E18A6E78E00F584EC /* stage1bg.png */; };
+		449C6C5018A5F28700A324C8 /* font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A3108A18A5C03D00427013 /* font.ttf */; };
 		44A3107418A59E4700427013 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107218A59E4700427013 /* Image.cpp */; };
 		44A3107C18A5A11B00427013 /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A3107B18A5A11B00427013 /* character.png */; };
 		44A3107E18A5B41A00427013 /* scene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44A3107D18A5B41A00427013 /* scene.jpg */; };
@@ -47,6 +50,8 @@
 		444C8C5518A1EDF8000101F8 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		444C8C5A18A21169000101F8 /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
 		444C8C5B18A21169000101F8 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
+		4452D26A18A6E6F800F584EC /* stage1fg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1fg.png; sourceTree = "<group>"; };
+		4452D26E18A6E78E00F584EC /* stage1bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1bg.png; sourceTree = "<group>"; };
 		44A3107218A59E4700427013 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
 		44A3107318A59E4700427013 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		44A3107B18A5A11B00427013 /* character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character.png; sourceTree = "<group>"; };
@@ -149,6 +154,8 @@
 		44A3107818A5A10400427013 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				4452D26E18A6E78E00F584EC /* stage1bg.png */,
+				4452D26A18A6E6F800F584EC /* stage1fg.png */,
 				44A3108A18A5C03D00427013 /* font.ttf */,
 				44A3107D18A5B41A00427013 /* scene.jpg */,
 				44A3107B18A5A11B00427013 /* character.png */,
@@ -184,6 +191,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Landon Epps";
+				TargetAttributes = {
+					4423CE7618A077D600FE3118 = {
+						DevelopmentTeam = 6R9933TQJB;
+					};
+				};
 			};
 			buildConfigurationList = 4423CE7218A077D600FE3118 /* Build configuration list for PBXProject "MOE" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -208,9 +220,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4452D26F18A6E78E00F584EC /* stage1bg.png in Resources */,
+				449C6C5018A5F28700A324C8 /* font.ttf in Resources */,
 				44A3107C18A5A11B00427013 /* character.png in Resources */,
 				44EDA67918A088190095AB29 /* InfoPlist.strings in Resources */,
 				44A3107E18A5B41A00427013 /* scene.jpg in Resources */,
+				4452D26B18A6E6F800F584EC /* stage1fg.png in Resources */,
 				44EDA67818A088160095AB29 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

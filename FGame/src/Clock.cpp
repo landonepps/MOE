@@ -161,7 +161,17 @@ void Clock::singleStep()
     if(isPaused == true)
     {
         /** 1 / 30 represents seconds / frames. **/
-        Uint64 dtScaledCycles = secondsToCycles((1 / 30) * timeScale);
+        Uint64 dtScaledCycles = secondsToCycles((1.0f / 30.0f) * timeScale);
         timeCycles += dtScaledCycles;
     }
+}
+
+/***********************************************************************
+ * getElapsedTime: Returns the elapsed time (affected by timeScale).
+ *
+ * returns:   Elapsed time.
+***********************************************************************/
+float Clock::getElapsedTime()
+{
+    return timeCycles / cyclesPerSecond;
 }

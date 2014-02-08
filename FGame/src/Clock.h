@@ -21,7 +21,7 @@
 
 class Clock
 {
-    public:
+    private:
         /** How many cycles have occurred. **/
         Uint64 timeCycles;
 
@@ -138,6 +138,13 @@ class Clock
          * returns:   void.
         ***********************************************************************/
         void singleStep();
+
+        /***********************************************************************
+         * getElapsedTime: Returns the elapsed time (affected by timeScale).
+         *
+         * returns:   Elapsed time.
+        ***********************************************************************/
+        float getElapsedTime();
 };
 
 #endif /* CLOCK_H_ */

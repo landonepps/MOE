@@ -16,12 +16,12 @@ Healthbar::Healthbar() : HUDelement(){
     color[0] = 0;
     color[1] = 255;
     color[2] = 0;
-    color[4] = 255;
+    color[3] = 255;
 
     ocolor[0] = 255;
     ocolor[1] = 255;
     ocolor[2] = 255;
-    ocolor[4] = 255;
+    ocolor[3] = 255;
 }
 
 Healthbar::Healthbar(int id) : HUDelement(id){}
@@ -41,7 +41,7 @@ Healthbar::~Healthbar(){
 
 void Healthbar::draw(SDL_Renderer* renderer)
 {
-    float currentHealth = (width * health) / 100;
+    int currentHealth = (width * health) / 100;
 
     SDL_Rect fillRect = { xPosition, yPosition, width, height };
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);

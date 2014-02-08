@@ -15,6 +15,7 @@
 
 #include <SDL2/SDL.h>   /** Contains all necessary SDL functions (ver 2). **/
 #include "Events.h"
+#include "Clock.h"
 
 // if Macintosh
 #ifdef __APPLE__
@@ -38,6 +39,9 @@ class FGame : public Events
         /** While true, the game should be running. When set to false the game
          *  will exit gracefully. **/
         bool running;
+
+        /** Used to represent main game loop time. **/
+        Clock mainClock;
 
         /** The main window/screen the user sees. **/
         SDL_Window *screen;

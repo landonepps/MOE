@@ -34,6 +34,9 @@ class FGame : public Events
          *  will exit gracefully. **/
         bool running;
 
+        /** Used to represent main game loop time. **/
+        Clock mainClock;
+
         /** The main window/screen the user sees. **/
         SDL_Window *screen;
         SDL_Renderer *renderer;

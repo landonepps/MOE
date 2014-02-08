@@ -165,3 +165,13 @@ void Clock::singleStep()
         timeCycles += dtScaledCycles;
     }
 }
+
+/***********************************************************************
+ * getElapsedTime: Returns the elapsed time (affected by timeScale).
+ *
+ * returns:   Elapsed time.
+***********************************************************************/
+float Clock::getElapsedTime()
+{
+    return timeCycles / cyclesPerSecond;
+}

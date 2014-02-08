@@ -134,6 +134,13 @@ class Clock
          * returns:   void.
         ***********************************************************************/
         void singleStep();
+
+        /***********************************************************************
+         * getElapsedTime: Returns the elapsed time (affected by timeScale).
+         *
+         * returns:   Elapsed time.
+        ***********************************************************************/
+        float getElapsedTime();
 };
 
 #endif /* CLOCK_H_ */

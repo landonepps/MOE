@@ -22,8 +22,6 @@
 #include <vector>
 #include "HUDelement.h"
 
-using namespace std;
-
 class HUD{
     private:
         vector<HUDelement> HUDelements;
@@ -31,7 +29,7 @@ class HUD{
     public:
         HUD();
         ~HUD();
-        void drawElements(SDL_Surface*);
+        void drawElements(SDL_Renderer *);
 };
 
 #endif

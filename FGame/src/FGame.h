@@ -21,6 +21,7 @@
 #include "Events.h"
 #include "Clock.h"
 #include "Image.h"
+#include "Timer.h"
 
 class FGame : public Events
 {

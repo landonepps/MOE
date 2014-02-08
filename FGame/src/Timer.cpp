@@ -11,6 +11,7 @@
 *******************************************************************************/
 
 #include "Timer.h"
+#include <iostream>
 
 Timer::~Timer(){
     SDL_DestroyTexture(texture);
@@ -19,7 +20,7 @@ Timer::~Timer(){
 void Timer::draw(SDL_Renderer* renderer){
     int currentTime = seconds - clock.cyclesToSeconds(clock.getTimeCycles());
     stringstream message;
-    message << currentTime;
+    message << "I loke p[ee"; // << currentTime;
 
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);
     if (surf == nullptr){
@@ -28,6 +29,10 @@ void Timer::draw(SDL_Renderer* renderer){
 	}
 
     texture = SDL_CreateTextureFromSurface(renderer, surf);
+    
+    if (texture == NULL) {
+        cerr << "error creating texture" << endl;
+    }
 
     SDL_Rect rect;
     rect.x = xPosition;

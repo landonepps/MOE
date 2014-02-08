@@ -22,6 +22,8 @@
 		44A3107C18A5A11B00427013 /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A3107B18A5A11B00427013 /* character.png */; };
 		44A3107E18A5B41A00427013 /* scene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44A3107D18A5B41A00427013 /* scene.jpg */; };
 		44A3108218A5B73C00427013 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107F18A5B73C00427013 /* Clock.cpp */; };
+		44A3108718A5BDEE00427013 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3108518A5BDEE00427013 /* Timer.cpp */; };
+		44A3108918A5BE3D00427013 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3108818A5BE3D00427013 /* SDL2_ttf.framework */; };
 		44EDA67818A088160095AB29 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8918A077D600FE3118 /* Credits.rtf */; };
 		44EDA67918A088190095AB29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8318A077D600FE3118 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,12 @@
 		44A3107F18A5B73C00427013 /* Clock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Clock.cpp; sourceTree = "<group>"; };
 		44A3108018A5B73C00427013 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clock.h; sourceTree = "<group>"; };
 		44A3108118A5B73C00427013 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		44A3108318A5BDEE00427013 /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
+		44A3108418A5BDEE00427013 /* HUDelement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDelement.h; sourceTree = "<group>"; };
+		44A3108518A5BDEE00427013 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		44A3108618A5BDEE00427013 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		44A3108818A5BE3D00427013 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		44A3108A18A5C03D00427013 /* font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A3108918A5BE3D00427013 /* SDL2_ttf.framework in Frameworks */,
 				444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */,
 				4423CEC018A07A5000FE3118 /* GLUT.framework in Frameworks */,
 				4423CEBE18A0787500FE3118 /* OpenGL.framework in Frameworks */,
@@ -91,6 +100,7 @@
 		4423CE7918A077D600FE3118 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44A3108818A5BE3D00427013 /* SDL2_ttf.framework */,
 				444C8C5518A1EDF8000101F8 /* SDL2_image.framework */,
 				4423CEBF18A07A5000FE3118 /* GLUT.framework */,
 				4423CEBD18A0787400FE3118 /* OpenGL.framework */,
@@ -114,6 +124,10 @@
 		4423CEDE18A0813600FE3118 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				44A3108318A5BDEE00427013 /* HUD.h */,
+				44A3108418A5BDEE00427013 /* HUDelement.h */,
+				44A3108518A5BDEE00427013 /* Timer.cpp */,
+				44A3108618A5BDEE00427013 /* Timer.h */,
 				44A3107F18A5B73C00427013 /* Clock.cpp */,
 				44A3108018A5B73C00427013 /* Clock.h */,
 				44A3108118A5B73C00427013 /* Constants.h */,
@@ -135,6 +149,7 @@
 		44A3107818A5A10400427013 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				44A3108A18A5C03D00427013 /* font.ttf */,
 				44A3107D18A5B41A00427013 /* scene.jpg */,
 				44A3107B18A5A11B00427013 /* character.png */,
 			);
@@ -210,6 +225,7 @@
 				4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */,
 				4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */,
 				444C8C5C18A21169000101F8 /* Events.cpp in Sources */,
+				44A3108718A5BDEE00427013 /* Timer.cpp in Sources */,
 				4423CEE818A0813600FE3118 /* OnEvent.cpp in Sources */,
 				4423CEE618A0813600FE3118 /* FGame.cpp in Sources */,
 				44A3107418A59E4700427013 /* Image.cpp in Sources */,

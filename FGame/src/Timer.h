@@ -15,9 +15,15 @@
 
 #include <string>
 #include <sstream>
-#include "SDL_ttf.h"
+#ifdef _MSC_VER
+#include <SDL_ttf.h>
+#else
+#include <SDL2_ttf/SDL_ttf.h>
+#endif
+
 #include "HUDelement.h"
 #include "Clock.h"
+#include <iostream>
 
 using namespace std;
 
@@ -31,7 +37,7 @@ class Timer : public HUDelement{
         SDL_Color color;
         Clock clock;
     public:
-        Timer(SDL_Color cl, const string &fontName = NULL,int fontSize = 12, int xPos = 0, int yPos = 0, int sec = 0, 
+        Timer(SDL_Color cl, const string &fontName = NULL,int fontSize = 36, int xPos = 0, int yPos = 0, int sec = 0,
             int id = NULL) : HUDelement(id)
         {
             xPosition = xPos;
@@ -39,6 +45,10 @@ class Timer : public HUDelement{
             seconds = sec;
             color = cl;
             font = TTF_OpenFont(fontName.c_str(), fontSize);
+            if (font == NULL) {
+                cerr << "failed to load font";
+            }
+            texture = NULL;
         }
         ~Timer();
         void draw(SDL_Renderer*);

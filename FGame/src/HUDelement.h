@@ -19,16 +19,14 @@
 #include <SDL2/SDL.h>
 #endif
 
-using namespace std;
-
 class HUDelement{
     private:
         int id;
 
     public:
         HUDelement(int id){this->id = id;};
-        //virtual ~HUDelement();
-        virtual void draw(SDL_Renderer*);
+        // virtual ~HUDelement() = 0;
+        virtual void draw(SDL_Renderer*) = 0;
 };
 
 #endif

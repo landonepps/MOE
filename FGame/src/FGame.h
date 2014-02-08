@@ -13,7 +13,11 @@
 #ifndef FGAME_H_
 #define FGAME_H_
 
-#include <SDL2/SDL.h>   /** Contains all necessary SDL functions (ver 2). **/
+#ifdef _MSC_VER
+#include <SDL.h>
+#else
+#include <SDL2/SDL.h>
+#endif
 #include "Events.h"
 #include "Clock.h"
 #include "Image.h"

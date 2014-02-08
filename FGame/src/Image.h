@@ -9,8 +9,13 @@
 #ifndef __MOE__Image__
 #define __MOE__Image__
 
+#ifdef _MSC_VER
+#include <SDL.h>
+#include <SDL_image.h>
+#else
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
+#endif
 
 class Image {
 private:

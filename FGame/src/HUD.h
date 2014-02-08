@@ -13,7 +13,11 @@
 #ifndef HUD_H_
 #define HUD_H_
 
-#include <SDL2\SDL.h>
+#ifdef _MSC_VER
+#include <SDL.h>
+#else
+#include <SDL2/SDL.h>
+#endif
 #include <string>
 #include <vector>
 #include "HUDelement.h"

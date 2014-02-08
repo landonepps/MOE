@@ -12,6 +12,7 @@
 
 #include "Timer.h"
 #include <iostream>
+#include <iomanip>
 
 Timer::Timer() : HUDelement(){}
 
@@ -20,7 +21,6 @@ Timer::Timer(int id) : HUDelement(id){}
 void Timer::setup(SDL_Color cl, const string &fontFile,int fontSize, 
             int xPos, int yPos, int sec, int id)
 {
-    clock.init();
     xPosition = xPos;
     yPosition = yPos;
     seconds = sec;
@@ -37,11 +37,14 @@ Timer::~Timer(){
     TTF_CloseFont(font);
 }
 
+void Timer::setTime(float gameTime){
+    time = gameTime;
+}
+
 void Timer::draw(SDL_Renderer* renderer){
-       
-    int currentTime = seconds - clock.cyclesToSeconds(clock.getTimeCycles());
+    float currentTime = seconds - time;
     stringstream message;
-    message << currentTime;
+    message << fixed << setprecision(0) << currentTime;
 
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);
     if (surf == nullptr){

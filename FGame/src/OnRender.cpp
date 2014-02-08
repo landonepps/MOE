@@ -25,6 +25,7 @@ void FGame::OnRender()
 
     scene.draw(0, 0, renderer);
     character.draw(0, 0, renderer);
+    timer.setTime(mainClock.getElapsedTime());
     timer.draw(renderer);
     SDL_RenderPresent(renderer);
     

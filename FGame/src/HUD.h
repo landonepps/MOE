@@ -22,6 +22,8 @@
 #include <vector>
 #include "HUDelement.h"
 
+using namespace std;
+
 class HUD{
     private:
         vector<HUDelement> HUDelements;

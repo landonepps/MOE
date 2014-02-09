@@ -23,6 +23,7 @@ void FGame::OnLoop()
     /** Updating animations etc. go here. **/
     
     if (!mainClock.getIsPaused()) {
-        
+        timer.setTime(mainClock.getElapsedTime());
+        poorAnim.OnAnimate(&mainClock);
     }
 }

@@ -27,10 +27,11 @@ void FGame::OnRender()
     background.draw(0, 0);
     character.draw(70, 170);
     foreground.draw(0, 0);
-    timer.setTime(mainClock.getElapsedTime());
     hp.draw(renderer);
     timer.draw(renderer);
     
+    poorImg.draw(250, 250, 0, poorAnim.getCurrentFrame() * 200, 140, 200);
+
     /** Swap buffers. **/
     SDL_RenderPresent(renderer);
 }

@@ -51,6 +51,8 @@ class FGame : public Events
         int width;
         int height;
 
+        float roundLength;
+
         SDL_Joystick *joystick1;
 
     public:

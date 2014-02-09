@@ -77,23 +77,36 @@ bool FGame::OnInit()
     {
         /** Do nothing. **/
     }
+    
+    SDL_Color timerColor {255, 255, 255};
+    
     // load images for testing
-    //character.loadImage("character1.png", renderer);
-    //background.loadImage("stage1bg.png", renderer);
-    //foreground.loadImage("stage1fg.png", renderer);
+#ifdef _WIN32
     character.loadImage(".\\assets\\character1.png", renderer);
     background.loadImage(".\\assets\\stage1bg.png", renderer);
     foreground.loadImage(".\\assets\\stage1fg.png", renderer);
-
-    poorImg.loadImage(".\\assets\\Poor.png", renderer);
+    
+    poorImg.loadImage(".\\assets\\poor.png", renderer);
+    
+    timer.setup(".\\assets\\font.ttf", timerColor);
+#else
+    character.loadImage("./assets/character1.png", renderer);
+    background.loadImage("./assets/stage1bg.png", renderer);
+    foreground.loadImage("./assets/stage1fg.png", renderer);
+    
+    poorImg.loadImage("./assets/poor.png", renderer);
+    
+    timer.setup("./assets/font.ttf", timerColor);
+    
+    bgm.loadMusic("./assets/bgm.wav");
+    bgm.playMusic();
+    
+#endif
+    
     /** Set frame rate to every 150 milliseconds. **/
     poorAnim.setFrameRate(150);
 
-    SDL_Color color = {255, 255, 255};
-    //timer.setup("font.ttf", color);
-    timer.setup(".\\assets\\font.ttf", color);
-
-    hp.setup(30,0,0,50,200);
+    hp.setup(30,70,5,30,200);
     /** Initialize the clock for the main game loop. **/
     mainClock.init();
     

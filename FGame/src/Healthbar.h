@@ -28,7 +28,7 @@ public:
     Healthbar();
     Healthbar(int);
     ~Healthbar();
-    void setup(float hp = 100, int xPos = 0, int yPos = 0, int h = 20, int w = 100);
+    void setup(float hp = 100, int xPos = 0, int yPos = 0, int h = 15, int w = 100);
     void draw(SDL_Renderer*);
 };
 

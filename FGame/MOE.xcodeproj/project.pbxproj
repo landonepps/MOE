@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4423CEBC18A0781600FE3118 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBB18A0781600FE3118 /* SDL2.framework */; };
-		4423CEBE18A0787500FE3118 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBD18A0787400FE3118 /* OpenGL.framework */; };
-		4423CEC018A07A5000FE3118 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBF18A07A5000FE3118 /* GLUT.framework */; };
 		4423CEE618A0813600FE3118 /* FGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEDF18A0813600FE3118 /* FGame.cpp */; };
 		4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE118A0813600FE3118 /* OnCleanup.cpp */; };
 		4423CEE818A0813600FE3118 /* OnEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE218A0813600FE3118 /* OnEvent.cpp */; };
@@ -18,19 +16,17 @@
 		4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE518A0813600FE3118 /* OnRender.cpp */; };
 		444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C8C5518A1EDF8000101F8 /* SDL2_image.framework */; };
 		444C8C5C18A21169000101F8 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444C8C5A18A21169000101F8 /* Events.cpp */; };
-		449C6C5018A5F28700A324C8 /* font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A3108A18A5C03D00427013 /* font.ttf */; };
 		44A3107418A59E4700427013 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107218A59E4700427013 /* Image.cpp */; };
 		44A3108218A5B73C00427013 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107F18A5B73C00427013 /* Clock.cpp */; };
 		44A3108718A5BDEE00427013 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3108518A5BDEE00427013 /* Timer.cpp */; };
 		44A3108918A5BE3D00427013 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3108818A5BE3D00427013 /* SDL2_ttf.framework */; };
-		44B8E3E518A70FAA00587902 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44B8E3E318A70FAA00587902 /* Audio.cpp */; };
-		44D066E018A6F0B00036F9DF /* stage1bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D066DE18A6F0B00036F9DF /* stage1bg.png */; };
-		44D066E118A6F0B00036F9DF /* stage1fg.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D066DF18A6F0B00036F9DF /* stage1fg.png */; };
-		44D066E318A6F4660036F9DF /* character1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D066E218A6F4660036F9DF /* character1.png */; };
+		44B8E3E518A70FAA00587902 /* Music.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44B8E3E318A70FAA00587902 /* Music.cpp */; };
 		44D2A63D18A6F5AA0043F695 /* Healthbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44D2A63B18A6F5AA0043F695 /* Healthbar.cpp */; };
 		44EDA67818A088160095AB29 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8918A077D600FE3118 /* Credits.rtf */; };
 		44EDA67918A088190095AB29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8318A077D600FE3118 /* InfoPlist.strings */; };
 		44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44F45FD918A7EFC80052DDA9 /* Animation.cpp */; };
+		44F45FDD18A7F0680052DDA9 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 44F45FDC18A7F0680052DDA9 /* assets */; };
+		44F45FDF18A7F4A40052DDA9 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +36,6 @@
 		4423CE8818A077D600FE3118 /* MOE-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Prefix.pch"; sourceTree = "<group>"; };
 		4423CE8A18A077D600FE3118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		4423CEBB18A0781600FE3118 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = /Library/Frameworks/SDL2.framework; sourceTree = "<absolute>"; };
-		4423CEBD18A0787400FE3118 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		4423CEBF18A07A5000FE3118 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		4423CEDF18A0813600FE3118 /* FGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FGame.cpp; sourceTree = "<group>"; };
 		4423CEE018A0813600FE3118 /* FGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGame.h; sourceTree = "<group>"; };
 		4423CEE118A0813600FE3118 /* OnCleanup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnCleanup.cpp; sourceTree = "<group>"; };
@@ -62,16 +56,14 @@
 		44A3108518A5BDEE00427013 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		44A3108618A5BDEE00427013 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		44A3108818A5BE3D00427013 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
-		44A3108A18A5C03D00427013 /* font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font.ttf; sourceTree = "<group>"; };
-		44B8E3E318A70FAA00587902 /* Audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Audio.cpp; sourceTree = "<group>"; };
-		44B8E3E418A70FAA00587902 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
-		44D066DE18A6F0B00036F9DF /* stage1bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1bg.png; sourceTree = "<group>"; };
-		44D066DF18A6F0B00036F9DF /* stage1fg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1fg.png; sourceTree = "<group>"; };
-		44D066E218A6F4660036F9DF /* character1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character1.png; sourceTree = "<group>"; };
+		44B8E3E318A70FAA00587902 /* Music.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Music.cpp; sourceTree = "<group>"; };
+		44B8E3E418A70FAA00587902 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
 		44D2A63B18A6F5AA0043F695 /* Healthbar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Healthbar.cpp; sourceTree = "<group>"; };
 		44D2A63C18A6F5AA0043F695 /* Healthbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Healthbar.h; sourceTree = "<group>"; };
 		44F45FD918A7EFC80052DDA9 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		44F45FDA18A7EFC80052DDA9 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
+		44F45FDC18A7F0680052DDA9 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../../../Library/Frameworks/SDL2_mixer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F45FDF18A7F4A40052DDA9 /* SDL2_mixer.framework in Frameworks */,
 				44A3108918A5BE3D00427013 /* SDL2_ttf.framework in Frameworks */,
 				444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */,
-				4423CEC018A07A5000FE3118 /* GLUT.framework in Frameworks */,
-				4423CEBE18A0787500FE3118 /* OpenGL.framework in Frameworks */,
 				4423CEBC18A0781600FE3118 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,7 +84,7 @@
 		4423CE6E18A077D600FE3118 = {
 			isa = PBXGroup;
 			children = (
-				44A3107818A5A10400427013 /* assets */,
+				44F45FDC18A7F0680052DDA9 /* assets */,
 				4423CE8118A077D600FE3118 /* Supporting Files */,
 				4423CEDE18A0813600FE3118 /* src */,
 				4423CE7918A077D600FE3118 /* Frameworks */,
@@ -112,10 +103,9 @@
 		4423CE7918A077D600FE3118 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */,
 				44A3108818A5BE3D00427013 /* SDL2_ttf.framework */,
 				444C8C5518A1EDF8000101F8 /* SDL2_image.framework */,
-				4423CEBF18A07A5000FE3118 /* GLUT.framework */,
-				4423CEBD18A0787400FE3118 /* OpenGL.framework */,
 				4423CEBB18A0781600FE3118 /* SDL2.framework */,
 			);
 			name = Frameworks;
@@ -158,21 +148,10 @@
 				4423CEE518A0813600FE3118 /* OnRender.cpp */,
 				44A3107218A59E4700427013 /* Image.cpp */,
 				44A3107318A59E4700427013 /* Image.h */,
-				44B8E3E318A70FAA00587902 /* Audio.cpp */,
-				44B8E3E418A70FAA00587902 /* Audio.h */,
+				44B8E3E318A70FAA00587902 /* Music.cpp */,
+				44B8E3E418A70FAA00587902 /* Music.h */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		44A3107818A5A10400427013 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-				44D066DE18A6F0B00036F9DF /* stage1bg.png */,
-				44D066DF18A6F0B00036F9DF /* stage1fg.png */,
-				44D066E218A6F4660036F9DF /* character1.png */,
-				44A3108A18A5C03D00427013 /* font.ttf */,
-			);
-			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,11 +211,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44D066E318A6F4660036F9DF /* character1.png in Resources */,
-				449C6C5018A5F28700A324C8 /* font.ttf in Resources */,
+				44F45FDD18A7F0680052DDA9 /* assets in Resources */,
 				44EDA67918A088190095AB29 /* InfoPlist.strings in Resources */,
-				44D066E018A6F0B00036F9DF /* stage1bg.png in Resources */,
-				44D066E118A6F0B00036F9DF /* stage1fg.png in Resources */,
 				44EDA67818A088160095AB29 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,7 +232,7 @@
 				4423CEE618A0813600FE3118 /* FGame.cpp in Sources */,
 				44D2A63D18A6F5AA0043F695 /* Healthbar.cpp in Sources */,
 				44A3107418A59E4700427013 /* Image.cpp in Sources */,
-				44B8E3E518A70FAA00587902 /* Audio.cpp in Sources */,
+				44B8E3E518A70FAA00587902 /* Music.cpp in Sources */,
 				44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */,
 				4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */,
 				44A3108218A5B73C00427013 /* Clock.cpp in Sources */,

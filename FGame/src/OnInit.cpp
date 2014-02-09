@@ -36,8 +36,7 @@ bool FGame::OnInit()
                                   SDL_WINDOWPOS_CENTERED,
                                   SDL_WINDOWPOS_CENTERED,
                                   width, height,
-                                  SDL_WINDOW_OPENGL |
-                                  SDL_WINDOW_RESIZABLE)) == NULL)
+                                  0 )) == NULL)
     {
         fprintf(stderr, "ERROR: Failed to create screen: %s\n", SDL_GetError());
         return false;

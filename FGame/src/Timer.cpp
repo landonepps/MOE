@@ -36,20 +36,15 @@ Timer::~Timer(){
     TTF_CloseFont(font);
 }
 
-void Timer::setTime(float gameTime){
-    time = gameTime;
+void Timer::setTime(float timeLeft){
+    seconds = timeLeft;
 }
 
 void Timer::draw(SDL_Renderer* renderer){
-    float currentTime = seconds - time;
+
     stringstream message;
-    if (currentTime > 0){
-        message << fixed << setprecision(precision) << currentTime;
-    }
-    else if (currentTime <= 0) {
-        currentTime = 0;
-        message << fixed << setprecision(precision) << currentTime;
-    }
+    message << fixed << setprecision(precision) << seconds;
+    
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);
     if (surf == nullptr){
 		TTF_CloseFont(font);

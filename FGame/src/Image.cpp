@@ -72,10 +72,10 @@ void Image::draw(int x, int y) {
  *
  * x: the x-coordinate for the image to be drawn to
  * y: the y-coordinate for the image to be drawn to
- * srcX: the x-coordinate to start copying from the texture
- * srcY: the y-coordinate to start copying from the texture
- * w: the width of the image to copy from the texture
- * h: the height of the image to copy from the texture
+ * srcX: the x-coordinate to start copying to the renderer
+ * srcY: the y-coordinate to start copying to the renderer
+ * w: the width of the image to copy to the renderer
+ * h: the height of the image to copy to the renderer
  ******************************************************************************/
 void Image::draw(int x, int y, int srcX, int srcY, int w, int h) {
     SDL_Rect dst { .x = x, .y = y, .w = w, .h = h };

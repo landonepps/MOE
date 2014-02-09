@@ -85,6 +85,10 @@ bool FGame::OnInit()
     background.loadImage(".\\assets\\stage1bg.png", renderer);
     foreground.loadImage(".\\assets\\stage1fg.png", renderer);
 
+    poorImg.loadImage(".\\assets\\Poor.png", renderer);
+    /** Set frame rate to every 150 milliseconds. **/
+    poorAnim.setFrameRate(150);
+
     SDL_Color color = {255, 255, 255};
     //timer.setup("font.ttf", color);
     timer.setup(".\\assets\\font.ttf", color);

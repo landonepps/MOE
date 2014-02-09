@@ -25,6 +25,9 @@ FGame::FGame()
     width     = 640;
     height    = 480;
 
+
+    poorAnim.maxFrames = 5;
+
     joystick1 = NULL;
 }
 

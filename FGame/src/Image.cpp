@@ -78,9 +78,9 @@ void Image::draw(int x, int y) {
  * h: the height of the image to copy from the texture
  ******************************************************************************/
 void Image::draw(int x, int y, int srcX, int srcY, int w, int h) {
-    SDL_Rect dst { .x = x, .y = y, .w = w, .h = h };
+    const SDL_Rect dst { .x = x, .y = y, .w = w, .h = h };
     
-    SDL_Rect src { .x = srcX, .y = srcY, .w = w, .h = h };
+    const SDL_Rect src { .x = srcX, .y = srcY, .w = w, .h = h };
     
     SDL_RenderCopy(renderer, texture, &src, &dst);
 }

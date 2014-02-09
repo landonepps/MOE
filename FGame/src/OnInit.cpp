@@ -36,13 +36,13 @@ bool FGame::OnInit()
                                   SDL_WINDOWPOS_CENTERED,
                                   SDL_WINDOWPOS_CENTERED,
                                   width, height,
-                                  SDL_WINDOW_OPENGL |
-                                  SDL_WINDOW_RESIZABLE)) == NULL)
+                                  0 )) == NULL)
     {
         fprintf(stderr, "ERROR: Failed to create screen: %s\n", SDL_GetError());
         return false;
     }
     
+    /** Creates main renderer using GPU accelerating and VSYNC **/
     if((renderer = SDL_CreateRenderer(screen,
                                       -1,
                                       SDL_RENDERER_ACCELERATED |
@@ -52,15 +52,8 @@ bool FGame::OnInit()
         return false;
     }
 
+    /** Enable TTF loading (fonts) **/
     TTF_Init();
-
-    // set swap to monitor refresh rate
-    /*if(SDL_GL_SetSwapInterval(1) == -1)
-    {
-        fprintf(stderr, "ERROR: Failed to set swap interval: %s\n",
-                SDL_GetError());
-        return false;
-    }*/
 
     /** Initialize the joysticks. **/
     int numJoysticks = SDL_NumJoysticks();
@@ -85,8 +78,9 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
     // load images for testing
-    character.loadImage("character.png", renderer);
-    scene.loadImage("scene.jpg", renderer);
+    character.loadImage("character1.png", renderer);
+    background.loadImage("stage1bg.png", renderer);
+    foreground.loadImage("stage1fg.png", renderer);
 
     SDL_Color color = {255, 255, 255};
     timer.setup("font.ttf", color);

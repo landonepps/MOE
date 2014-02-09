@@ -15,8 +15,6 @@
 
 #include "HUDelement.h"
 
-using namespace std;
-
 class Healthbar : public HUDelement{
 private:
     int xPosition;

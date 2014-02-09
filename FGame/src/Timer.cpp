@@ -46,7 +46,8 @@ void Timer::draw(SDL_Renderer* renderer){
     message << fixed << setprecision(precision) << seconds;
     
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);
-    if (surf == nullptr){
+    //if (surf == nullptr){
+    if (surf == NULL){
 		TTF_CloseFont(font);
 		return;
 	}

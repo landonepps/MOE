@@ -18,8 +18,11 @@
 #ifdef _MSC_VER
 #include <SDL_ttf.h>
 #else
+#ifdef __APPLE__
+#include <SDL2_ttf/SDL_ttf.h>
+#else
 #include <SDL2/SDL_ttf.h>
-//#include <SDL2_ttf/SDL_ttf.h>
+#endif
 #endif
 
 #include "HUDelement.h"

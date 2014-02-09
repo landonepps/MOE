@@ -23,6 +23,7 @@
 		44A3108218A5B73C00427013 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107F18A5B73C00427013 /* Clock.cpp */; };
 		44A3108718A5BDEE00427013 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3108518A5BDEE00427013 /* Timer.cpp */; };
 		44A3108918A5BE3D00427013 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3108818A5BE3D00427013 /* SDL2_ttf.framework */; };
+		44B8E3E518A70FAA00587902 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44B8E3E318A70FAA00587902 /* Audio.cpp */; };
 		44D066E018A6F0B00036F9DF /* stage1bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D066DE18A6F0B00036F9DF /* stage1bg.png */; };
 		44D066E118A6F0B00036F9DF /* stage1fg.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D066DF18A6F0B00036F9DF /* stage1fg.png */; };
 		44D066E318A6F4660036F9DF /* character1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D066E218A6F4660036F9DF /* character1.png */; };
@@ -61,6 +62,8 @@
 		44A3108618A5BDEE00427013 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		44A3108818A5BE3D00427013 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
 		44A3108A18A5C03D00427013 /* font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font.ttf; sourceTree = "<group>"; };
+		44B8E3E318A70FAA00587902 /* Audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Audio.cpp; sourceTree = "<group>"; };
+		44B8E3E418A70FAA00587902 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		44D066DE18A6F0B00036F9DF /* stage1bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1bg.png; sourceTree = "<group>"; };
 		44D066DF18A6F0B00036F9DF /* stage1fg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1fg.png; sourceTree = "<group>"; };
 		44D066E218A6F4660036F9DF /* character1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character1.png; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				4423CEE518A0813600FE3118 /* OnRender.cpp */,
 				44A3107218A59E4700427013 /* Image.cpp */,
 				44A3107318A59E4700427013 /* Image.h */,
+				44B8E3E318A70FAA00587902 /* Audio.cpp */,
+				44B8E3E418A70FAA00587902 /* Audio.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				4423CEE618A0813600FE3118 /* FGame.cpp in Sources */,
 				44D2A63D18A6F5AA0043F695 /* Healthbar.cpp in Sources */,
 				44A3107418A59E4700427013 /* Image.cpp in Sources */,
+				44B8E3E518A70FAA00587902 /* Audio.cpp in Sources */,
 				4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */,
 				44A3108218A5B73C00427013 /* Clock.cpp in Sources */,
 				4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */,

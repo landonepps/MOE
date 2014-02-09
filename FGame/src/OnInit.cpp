@@ -82,7 +82,6 @@ bool FGame::OnInit()
     
     // load images for testing
 #ifdef _WIN32
-    character.loadImage(".\\assets\\character1.png", renderer);
     background.loadImage(".\\assets\\stage1bg.png", renderer);
     foreground.loadImage(".\\assets\\stage1fg.png", renderer);
     
@@ -90,7 +89,6 @@ bool FGame::OnInit()
     
     timer.setup(".\\assets\\font.ttf", timerColor);
 #else
-    character.loadImage("./assets/character1.png", renderer);
     background.loadImage("./assets/stage1bg.png", renderer);
     foreground.loadImage("./assets/stage1fg.png", renderer);
     

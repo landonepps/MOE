@@ -44,7 +44,8 @@ void Image::loadImage(const char *filename, SDL_Renderer *destination) {
     tempSurface = IMG_Load(filename);
     
     if (tempSurface == NULL) {
-        cerr << "Error loading image file " << filename << endl;
+        cerr << "Error loading image file " << filename << ": "
+             << IMG_GetError() << endl;
     } else {
         renderer = destination;
         texture = SDL_CreateTextureFromSurface(renderer, tempSurface);

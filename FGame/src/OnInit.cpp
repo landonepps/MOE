@@ -14,8 +14,6 @@
 #include <stdio.h>     /** Needed to print errors. **/
 #include "FGame.h"      /** Contains OnInit prototype. **/
 
-using namespace std;
-
 /***********************************************************************
  * OnInit:    Initializes timer, audio, video, cdrom, and joystick.
  *            Also, creates the main window centered and allows opengl.
@@ -32,41 +30,30 @@ bool FGame::OnInit()
     }
 
 
-
-
     /** Creates the main window centered and allows opengl. Not sure if
      *  double buffer is already enabled. **/
     if((screen = SDL_CreateWindow("FGame",
                                   SDL_WINDOWPOS_CENTERED,
                                   SDL_WINDOWPOS_CENTERED,
                                   width, height,
-                                  SDL_WINDOW_OPENGL |
-                                  SDL_WINDOW_RESIZABLE)) == NULL)
+                                  0 )) == NULL)
     {
         fprintf(stderr, "ERROR: Failed to create screen: %s\n", SDL_GetError());
         return false;
     }
-    else
-    {
-        /** Create gl context so we can use opengl. **/
-        if((glContext = SDL_GL_CreateContext(screen)) == NULL)
-        {
-            fprintf(stderr, "ERROR: Failed to glContext: %s\n", SDL_GetError());
-            return false;
-        }
-
-        // set swap to monitor refresh rate
-        if(SDL_GL_SetSwapInterval(1) == -1)
-        {
-            fprintf(stderr, "ERROR: Failed to set swap interval: %s\n",
-                    SDL_GetError());
-            return false;
-        }
-        glClearColor(1, 1, 1, 1);
+    
+    /** Creates main renderer using GPU accelerating and VSYNC **/
+    if((renderer = SDL_CreateRenderer(screen,
+                                      -1,
+                                      SDL_RENDERER_ACCELERATED |
+                                      SDL_RENDERER_PRESENTVSYNC)) == NULL) {
+        fprintf(stderr, "ERORR: Failed to create renderer: %s\n",
+                SDL_GetError());
+        return false;
     }
 
-
-
+    /** Enable TTF loading (fonts) **/
+    TTF_Init();
 
     /** Initialize the joysticks. **/
     int numJoysticks = SDL_NumJoysticks();
@@ -90,6 +77,17 @@ bool FGame::OnInit()
     {
         /** Do nothing. **/
     }
+    // load images for testing
+    character.loadImage("character1.png", renderer);
+    background.loadImage("stage1bg.png", renderer);
+    foreground.loadImage("stage1fg.png", renderer);
 
+    SDL_Color color = {255, 255, 255};
+    timer.setup("font.ttf", color);
+
+    hp.setup(30,0,0,50,200);
+    /** Initialize the clock for the main game loop. **/
+    mainClock.init();
+    
     return true;
 }

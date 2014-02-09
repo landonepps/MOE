@@ -23,6 +23,8 @@
 #include "Image.h"
 #include "Timer.h"
 #include "Healthbar.h"
+#include "Animation.h"
+#include "Music.h"
 
 class FGame : public Events
 {
@@ -44,8 +46,14 @@ class FGame : public Events
         Image character;
         Image foreground;
         Image background;
+    
+        Music bgm;
+    
         Timer timer;
         Healthbar hp;
+
+        Animation poorAnim;
+        Image poorImg;
 
         /** Resolution of the main window. **/
         int width;

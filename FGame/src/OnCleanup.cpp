@@ -24,6 +24,9 @@ void FGame::OnCleanup()
         SDL_JoystickClose(joystick1);
     }
 
+    IMG_Quit();
+    Mix_Quit();
+    
     SDL_DestroyWindow(screen);
     SDL_Quit();
 }

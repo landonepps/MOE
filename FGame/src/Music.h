@@ -13,7 +13,12 @@
 #ifndef __MOE__Audio__
 #define __MOE__Audio__
 
+
+#ifdef __APPLE__
 #include <SDL2_mixer/SDL_mixer.h>
+#else
+#include <SDL2/SDL_mixer.h>
+#endif
 
 class Music {
     Mix_Music *music;

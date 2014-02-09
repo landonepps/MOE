@@ -88,6 +88,9 @@ bool FGame::OnInit()
     poorImg.loadImage(".\\assets\\poor.png", renderer);
     
     timer.setup(".\\assets\\font.ttf", timerColor);
+
+    bgm.loadMusic(".\\assets\\bgm.wav");
+    bgm.playMusic();
 #else
     background.loadImage("./assets/stage1bg.png", renderer);
     foreground.loadImage("./assets/stage1fg.png", renderer);

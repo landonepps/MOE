@@ -23,11 +23,14 @@ void FGame::OnRender()
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
     SDL_RenderClear(renderer);
 
-    scene.draw(0, 0, renderer);
-    character.draw(0, 0, renderer);
-
+    //TODO: Remove later
+    background.draw(0, 0);
+    character.draw(70, 170);
+    foreground.draw(0, 0);
+    timer.setTime(mainClock.getElapsedTime());
+    hp.draw(renderer);
     timer.draw(renderer);
-    SDL_RenderPresent(renderer);
     
     /** Swap buffers. **/
+    SDL_RenderPresent(renderer);
 }

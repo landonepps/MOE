@@ -9,7 +9,7 @@
  *
  * Starts the game and contains main game loop.
 *******************************************************************************/
-// GIT TEST
+
 #ifndef FGAME_H_
 #define FGAME_H_
 
@@ -22,6 +22,7 @@
 #include "Clock.h"
 #include "Image.h"
 #include "Timer.h"
+#include "Healthbar.h"
 
 class FGame : public Events
 {
@@ -41,8 +42,10 @@ class FGame : public Events
         // TODO: Remove later
         // test elements
         Image character;
-        Image scene;
+        Image foreground;
+        Image background;
         Timer timer;
+        Healthbar hp;
 
         /** Resolution of the main window. **/
         int width;

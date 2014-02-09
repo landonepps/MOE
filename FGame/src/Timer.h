@@ -18,7 +18,7 @@
 #ifdef _MSC_VER
 #include <SDL_ttf.h>
 #else
-#include <SDL2/SDL_ttf.h>
+#include <SDL2_ttf/SDL_ttf.h>
 #endif
 
 #include "HUDelement.h"
@@ -31,19 +31,18 @@ class Timer : public HUDelement{
     private:
         int xPosition;
         int yPosition;
-        int seconds;
-        SDL_Texture* texture;
+        float seconds;
+        int precision;
         TTF_Font* font;
         SDL_Color color;
-        float time;
     public:
         Timer();
         Timer(int);
         ~Timer();
-        void setup(SDL_Color cl, const string &fontFile = NULL,int fontSize = 36, 
-            int xPos = 0, int yPos = 0, int sec = 60, int id = NULL);
+        void setup(const string &fontFile, SDL_Color cl, int fontSize = 36, 
+            int precision = 0, int xPos = 0, int yPos = 0, int sec = 60, int id = NULL);
         void draw(SDL_Renderer*);
-        void setTime(float);
+        void setTime(float timeLeft);
 };
 
 #endif

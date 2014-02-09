@@ -18,9 +18,10 @@ Timer::Timer() : HUDelement(){}
 
 Timer::Timer(int id) : HUDelement(id){}
 
-void Timer::setup(SDL_Color cl, const string &fontFile,int fontSize, 
-            int xPos, int yPos, int sec, int id)
+void Timer::setup(const string &fontFile, SDL_Color cl,int fontSize, 
+            int precision, int xPos, int yPos, int sec, int id)
 {
+    this->precision = precision;
     xPosition = xPos;
     yPosition = yPos;
     seconds = sec;
@@ -29,30 +30,28 @@ void Timer::setup(SDL_Color cl, const string &fontFile,int fontSize,
         cerr << "failed to load font";
     }
     color = cl;
-    texture = NULL;
 }
 
 Timer::~Timer(){
-    SDL_DestroyTexture(texture);
     TTF_CloseFont(font);
 }
 
-void Timer::setTime(float gameTime){
-    time = gameTime;
+void Timer::setTime(float timeLeft){
+    seconds = timeLeft;
 }
 
 void Timer::draw(SDL_Renderer* renderer){
-    float currentTime = seconds - time;
-    stringstream message;
-    message << fixed << setprecision(0) << currentTime;
 
+    stringstream message;
+    message << fixed << setprecision(precision) << seconds;
+    
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);
-    if (surf == NULL){
+    if (surf == nullptr){
 		TTF_CloseFont(font);
 		return;
 	}
 
-    texture = SDL_CreateTextureFromSurface(renderer, surf);
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surf);
     
     if (texture == NULL) {
         cerr << "error creating texture" << endl;
@@ -67,4 +66,6 @@ void Timer::draw(SDL_Renderer* renderer){
     SDL_RenderCopy(renderer, texture, NULL, &rect);
 
     SDL_FreeSurface(surf);
+
+    SDL_DestroyTexture(texture);
 }

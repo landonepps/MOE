@@ -78,12 +78,16 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
     // load images for testing
-    character.loadImage("character1.png", renderer);
-    background.loadImage("stage1bg.png", renderer);
-    foreground.loadImage("stage1fg.png", renderer);
+    //character.loadImage("character1.png", renderer);
+    //background.loadImage("stage1bg.png", renderer);
+    //foreground.loadImage("stage1fg.png", renderer);
+    character.loadImage(".\\assets\\character1.png", renderer);
+    background.loadImage(".\\assets\\stage1bg.png", renderer);
+    foreground.loadImage(".\\assets\\stage1fg.png", renderer);
 
     SDL_Color color = {255, 255, 255};
-    timer.setup("font.ttf", color);
+    //timer.setup("font.ttf", color);
+    timer.setup(".\\assets\\font.ttf", color);
 
     hp.setup(30,0,0,50,200);
     /** Initialize the clock for the main game loop. **/

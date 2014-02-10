@@ -23,6 +23,9 @@
 #include "Image.h"
 #include "Timer.h"
 #include "Healthbar.h"
+#include "Animation.h"
+#include "Music.h"
+#include "Player.h"
 
 class FGame : public Events
 {
@@ -44,12 +47,24 @@ class FGame : public Events
         Image character;
         Image foreground;
         Image background;
+    
+        Music bgm;
+    
         Timer timer;
         Healthbar hp;
+
+        Animation poorAnim;
+        Image poorImg;
+
+		Player p1;
+		Player p2;
+
 
         /** Resolution of the main window. **/
         int width;
         int height;
+
+        float roundLength;
 
         SDL_Joystick *joystick1;
 

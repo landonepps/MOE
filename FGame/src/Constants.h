@@ -13,7 +13,11 @@
 #ifndef CONSTANTS_H_
 #define CONSTANTS_H_
 
+#ifdef _MSC_VER
+#include <SDL.h>
+#else
 #include <SDL2/SDL.h>
+#endif
 
 /** Global constants will go here. **/
 const Uint8 UP_DPAD          = 0;

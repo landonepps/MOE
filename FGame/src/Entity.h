@@ -17,6 +17,7 @@
 
 #include "Animation.h"
 #include "SpeedControl.h"
+#include "Clock.h"
 
 /** Values for entity typing **/
 enum {
@@ -92,26 +93,30 @@ class Entity {
  
     public:
         Entity();
+
+		Entity(Animation ani);
  
         virtual ~Entity();
 
         virtual bool OnLoad(char* File, int Width, int Height, int MaxFrames);
  
-        virtual void OnLoop();
+        virtual void OnLoop(Clock* clock);
  
         virtual void OnRender(SDL_Surface* Surf_Display);
  
         virtual void OnCleanup();
  
-        virtual void OnAnimate();
+        virtual void OnAnimate(Clock* clock);
  
         virtual void OnCollision(Entity* Entity);
 
-        void    OnMove(float MoveX, float MoveY);
+        void OnMove(float MoveX, float MoveY);
  
-        void    stop();
+        void stop();
 
-        bool    collides(int oX, int oY, int oW, int oH);
+        bool collides(int oX, int oY, int oW, int oH);
+
+		void setAnimation(Animation ani);
  
     private:
 

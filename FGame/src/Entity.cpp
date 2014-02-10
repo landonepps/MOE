@@ -89,6 +89,8 @@ Entity::Entity(Animation ani) {
 	aniControl = ani;
 }
 
+Entity::~Entity(){}
+
 void Entity::OnLoop(Clock* clock) {
     //We're not Moving
     if(moveLeft == false && moveRight == false) {

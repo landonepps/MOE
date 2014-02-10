@@ -26,7 +26,8 @@ void Timer::setup(const string &fontFile, SDL_Color cl, int fontSize,
     yPosition = yPos;
     font = TTF_OpenFont(fontFile.c_str(), fontSize);
     if (font == NULL) {
-        cerr << "failed to load font";
+		string error = TTF_GetError();
+        cerr << "failed to load font: " << fontFile << " " << TTF_GetError() << endl;
     }
     color = cl;
 }

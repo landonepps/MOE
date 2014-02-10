@@ -39,10 +39,6 @@ Attack::Attack(int str = 5) {
 	strength = str;
 }
  
-bool Attack::OnLoad(char* File, int Width, int Height, int MaxFrames) {
-    return Entity::OnLoad(File, Width, Height, MaxFrames);
-}
- 
 void Attack::OnLoop(Clock* clock) {
     Entity::OnLoop(clock);
 }
@@ -50,11 +46,7 @@ void Attack::OnLoop(Clock* clock) {
 void Attack::OnRender(SDL_Surface* surfDisplay) {
     Entity::OnRender(surfDisplay);
 }
- 
-void Attack::OnCleanup() {
-    Entity::OnCleanup();
-}
- 
+
 void Attack::OnAnimate(Clock* clock) {
     Entity::OnAnimate(clock);
 }

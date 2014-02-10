@@ -60,9 +60,6 @@ class FGame : public Events
         Image poorImg;
         bool punch;
 
-        Animation poorAnim;
-        Image poorImg;
-
 		Player p1;
 		Player p2;
 

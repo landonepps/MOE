@@ -78,7 +78,7 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
     
-    SDL_Color timerColor {255, 255, 255};
+    SDL_Color timerColor = {255, 255, 255};
     // load images for testing
 #ifdef _WIN32
     background.loadImage(".\\assets\\stage1bg.png", renderer);

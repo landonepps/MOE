@@ -7,13 +7,10 @@ class Attack : public Entity {
     public:
         Attack(int str);
  
-        bool OnLoad(char* File, int Width, int Height, int MaxFrames);
  
         void OnLoop(Clock* clock);
  
         void OnRender(SDL_Surface* Surf_Display);
- 
-        void OnCleanup();
  
         void OnAnimate(Clock *clock);
  

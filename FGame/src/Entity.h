@@ -97,14 +97,10 @@ class Entity {
 		Entity(Animation ani);
  
         virtual ~Entity();
-
-        virtual bool OnLoad(char* File, int Width, int Height, int MaxFrames);
  
         virtual void OnLoop(Clock* clock);
  
         virtual void OnRender(SDL_Surface* Surf_Display);
- 
-        virtual void OnCleanup();
  
         virtual void OnAnimate(Clock* clock);
  

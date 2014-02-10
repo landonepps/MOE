@@ -78,20 +78,12 @@ Player::Player(int health) {
 	maxHealth = health;
 }
  
-bool Player::OnLoad(char* File, int Width, int Height, int MaxFrames) {
-    return Entity::OnLoad(File, Width, Height, MaxFrames);
-}
- 
 void Player::OnLoop(Clock* clock) {
     Entity::OnLoop(clock);
 }
  
 void Player::OnRender(SDL_Surface* surfDisplay) {
     Entity::OnRender(surfDisplay);
-}
- 
-void Player::OnCleanup() {
-    Entity::OnCleanup();
 }
  
 void Player::OnAnimate(Clock *clock) {

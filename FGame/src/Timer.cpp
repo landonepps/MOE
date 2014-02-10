@@ -18,13 +18,12 @@ Timer::Timer() : HUDelement(){}
 
 Timer::Timer(int id) : HUDelement(id){}
 
-void Timer::setup(const string &fontFile, SDL_Color cl,int fontSize, 
-            int precision, int xPos, int yPos, int sec, int id)
+void Timer::setup(const string &fontFile, SDL_Color cl, int fontSize, 
+            int precision, int xPos, int yPos, int id)
 {
     this->precision = precision;
     xPosition = xPos;
     yPosition = yPos;
-    seconds = sec;
     font = TTF_OpenFont(fontFile.c_str(), fontSize);
     if (font == NULL) {
         cerr << "failed to load font";

@@ -39,6 +39,10 @@ Healthbar::~Healthbar(){
 
 }
 
+void Healthbar::setHealth(float hp){
+    health = hp;
+}
+
 void Healthbar::draw(SDL_Renderer* renderer)
 {
     int currentHealth = (width * health) / 100;

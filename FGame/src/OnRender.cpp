@@ -27,10 +27,7 @@ void FGame::OnRender()
     background.draw(0, 0);
     poorImg.draw(70, 200, 0, poorAnim.getCurrentFrame() * 200, 140, 200);
     foreground.draw(0, 0);
-    hp.draw(renderer);
-    timer.draw(renderer);
-    
-    
+    theHUD.drawElements(renderer);    
 
     /** Swap buffers. **/
     SDL_RenderPresent(renderer);

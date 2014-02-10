@@ -79,7 +79,6 @@ bool FGame::OnInit()
     }
     
     SDL_Color timerColor {255, 255, 255};
-    
     // load images for testing
 #ifdef _WIN32
     background.loadImage(".\\assets\\stage1bg.png", renderer);
@@ -88,6 +87,9 @@ bool FGame::OnInit()
     poorImg.loadImage(".\\assets\\poor.png", renderer);
     
     timer.setup(".\\assets\\font.ttf", timerColor);
+
+    bgm.loadMusic(".\\assets\\bgm.wav");
+    bgm.playMusic();
 #else
     background.loadImage("./assets/stage1bg.png", renderer);
     foreground.loadImage("./assets/stage1fg.png", renderer);
@@ -100,11 +102,14 @@ bool FGame::OnInit()
     bgm.playMusic();
     
 #endif
-    
+    theHUD.addHUDElement(&timer);
     /** Set frame rate to every 150 milliseconds. **/
     poorAnim.setFrameRate(150);
 
     hp.setup(30,70,5,30,200);
+
+    theHUD.addHUDElement(&hp);
+
     /** Initialize the clock for the main game loop. **/
     mainClock.init();
     

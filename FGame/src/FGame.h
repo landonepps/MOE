@@ -25,6 +25,11 @@
 #include "Healthbar.h"
 #include "Animation.h"
 #include "Music.h"
+<<<<<<< HEAD
+#include "Constants.h"
+=======
+#include "HUD.h"
+>>>>>>> origin/JesseMOE
 
 class FGame : public Events
 {
@@ -49,15 +54,19 @@ class FGame : public Events
     
         Music bgm;
     
-        Timer timer;
+        HUD theHUD;
         Healthbar hp;
+        Timer timer;
 
         Animation poorAnim;
         Image poorImg;
+        bool punch;
 
         /** Resolution of the main window. **/
         int width;
         int height;
+
+        float roundLength;
 
         SDL_Joystick *joystick1;
 

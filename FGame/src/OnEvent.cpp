@@ -11,6 +11,8 @@
 *******************************************************************************/
 
 #include "FGame.h"      /** Contains event prototypes.  **/
+#include <iostream>
+using namespace std;
 
 /***********************************************************************
  * OnEvent:   Handles any events caused by user.
@@ -46,5 +48,21 @@ void FGame::OnExit()
 ***********************************************************************/
 void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
 {
-    mainClock.setTimeScale(mainClock.getTimeScale() + 0.25);
+    /** Make character punch. **/
+    if(button == A_BUTTON)
+    {
+        punch = true;
+    }
+
+    /** Speed up time. **/
+    if(button == X_BUTTON)
+    {
+        mainClock.setTimeScale(mainClock.getTimeScale() * 2);
+    }
+
+    /** Slow down time. **/
+    if(button == Y_BUTTON)
+    {
+        mainClock.setTimeScale(mainClock.getTimeScale() / 2);
+    }
 }

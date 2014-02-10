@@ -24,8 +24,9 @@ FGame::FGame() {
     width     = 640;
     height    = 480;
 
-
+	/** Control character animation. **/
     poorAnim.maxFrames = 5;
+	punch = false;
 
 	p1 = Player(100);
 	p2 = Player(100);

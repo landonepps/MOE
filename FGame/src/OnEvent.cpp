@@ -51,7 +51,18 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
     /** Make character punch. **/
     if(button == A_BUTTON)
     {
-        punch = true;
+        punch1 = true;
+    }
+    
+    if(button == B_BUTTON)
+    {
+        punch2 = true;
+    }
+    
+    /** Make character move **/
+    if(button == B_BUTTON )
+    {
+        p1.moveLeft = true;
     }
 
     /** Speed up time. **/

@@ -25,7 +25,9 @@ void FGame::OnRender()
 
     //TODO: Remove later
     background.draw(0, 0);
-    poorImg.draw(70, 200, 0, poorAnim.getCurrentFrame() * 200, 140, 200);
+    poorImg.draw(p1.xLoc+70, p1.yLoc+200, 0, p1.aniControl.getCurrentFrame() * 200,140,200);
+    poorImg2.draw(p2.xLoc+270, p2.yLoc+200, 0, p2.aniControl.getCurrentFrame() * 200,140,200);
+    //poorAnim.getCurrentFrame() * 200, 140, 200);
     foreground.draw(0, 0);
     theHUD.drawElements(renderer);    
 

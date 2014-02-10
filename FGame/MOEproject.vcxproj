@@ -31,7 +31,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -135,7 +135,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Animation.cpp" />
+    <ClCompile Include="src\Attack.cpp" />
     <ClCompile Include="src\Clock.cpp" />
+    <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="src\EntityCollision.cpp" />
     <ClCompile Include="src\Events.cpp" />
     <ClCompile Include="src\FGame.cpp" />
     <ClCompile Include="src\Healthbar.cpp" />
@@ -147,12 +150,17 @@
     <ClCompile Include="src\OnInit.cpp" />
     <ClCompile Include="src\OnLoop.cpp" />
     <ClCompile Include="src\OnRender.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\SpeedControl.cpp" />
     <ClCompile Include="src\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Animation.h" />
+    <ClInclude Include="src\Attack.h" />
     <ClInclude Include="src\Clock.h" />
     <ClInclude Include="src\Constants.h" />
+    <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="src\EntityCollision.h" />
     <ClInclude Include="src\Events.h" />
     <ClInclude Include="src\FGame.h" />
     <ClInclude Include="src\Healthbar.h" />
@@ -160,6 +168,8 @@
     <ClInclude Include="src\HUDelement.h" />
     <ClInclude Include="src\Image.h" />
     <ClInclude Include="src\Music.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\SpeedControl.h" />
     <ClInclude Include="src\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

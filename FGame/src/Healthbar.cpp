@@ -47,11 +47,11 @@ void Healthbar::draw(SDL_Renderer* renderer)
 {
     int currentHealth = (width * health) / 100;
 
-    SDL_Rect fillRect = { xPosition, yPosition, width, height };
+    SDL_Rect maxRect = { xPosition, yPosition, width, height };
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
-    SDL_RenderFillRect(renderer, &fillRect);
+    SDL_RenderFillRect(renderer, &maxRect);
 
-    fillRect = { xPosition, yPosition, currentHealth, height };
+    SDL_Rect fillRect = { xPosition, yPosition, currentHealth, height };
     SDL_SetRenderDrawColor(renderer, color[0], color[1], color[2], color[3]);
     SDL_RenderFillRect(renderer, &fillRect);
 

@@ -80,9 +80,9 @@ void Image::draw(int x, int y) {
  * h: the height of the image to copy to the renderer
  ******************************************************************************/
 void Image::draw(int x, int y, int srcX, int srcY, int w, int h) {
-    const SDL_Rect dst { x, y, w, h };
+    const SDL_Rect dst  = { x, y, w, h };
     
-    const SDL_Rect src {srcX, srcY, w, h };
+    const SDL_Rect src  = { srcX, srcY, w, h };
     
     SDL_RenderCopy(renderer, texture, &src, &dst);
 }

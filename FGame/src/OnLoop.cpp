@@ -22,18 +22,37 @@ void FGame::OnLoop()
 {
     /** Updating animations etc. go here. **/
     float timeRemaining = roundLength - mainClock.getElapsedTime();
+    
+    p1.OnLoop(&mainClock);
+    p2.OnLoop(&mainClock);
+    
     if (!mainClock.getIsPaused()){
         timer.setTime(timeRemaining);
 
         /** Bad code, want to change later. **/
-        if(punch){
-            punch = false;
-            poorAnim.maxFrames = 6;
-            poorAnim.setCurrentFrame(5);
+        if(punch1){
+            punch1 = false;
+            p1.aniControl.maxFrames = 6;
+            //poorAnim.maxFrames = 6;
+            p1.aniControl.setCurrentFrame(5);
+            //poorAnim.setCurrentFrame(5);
         }
         else {
-            poorAnim.maxFrames = 5;
-            poorAnim.OnAnimate(&mainClock);
+            p1.aniControl.maxFrames = 5;
+            p1.OnAnimate(&mainClock);
+            //poorAnim.OnAnimate(&mainClock);
+        }
+        if(punch2){
+            punch2 = false;
+            p2.aniControl.maxFrames = 6;
+            //poorAnim.maxFrames = 6;
+            p2.aniControl.setCurrentFrame(5);
+            //poorAnim.setCurrentFrame(5);
+        }
+        else {
+            p2.aniControl.maxFrames = 5;
+            p2.OnAnimate(&mainClock);
+            //poorAnim.OnAnimate(&mainClock);
         }
     }
     if(timeRemaining <= 0.0){

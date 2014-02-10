@@ -25,6 +25,7 @@
 #include "Healthbar.h"
 #include "Animation.h"
 #include "Music.h"
+#include "Player.h"
 #include "Constants.h"
 #include "HUD.h"
 
@@ -57,7 +58,14 @@ class FGame : public Events
 
         Animation poorAnim;
         Image poorImg;
-        bool punch;
+        Image poorImg2;
+    
+        bool punch1;
+        bool punch2;
+
+		Player p1;
+		Player p2;
+
 
         /** Resolution of the main window. **/
         int width;

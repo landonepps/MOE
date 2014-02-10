@@ -26,6 +26,8 @@
 #include "Animation.h"
 #include "Music.h"
 #include "Player.h"
+#include "Constants.h"
+#include "HUD.h"
 
 class FGame : public Events
 {
@@ -50,8 +52,13 @@ class FGame : public Events
     
         Music bgm;
     
-        Timer timer;
+        HUD theHUD;
         Healthbar hp;
+        Timer timer;
+
+        Animation poorAnim;
+        Image poorImg;
+        bool punch;
 
         Animation poorAnim;
         Image poorImg;

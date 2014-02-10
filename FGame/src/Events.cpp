@@ -233,7 +233,7 @@ void Events::OnEvent(SDL_Event *event)
         /** Joystick is released. **/
         case SDL_JOYBUTTONUP:
         {
-            OnJoyButtonDown(event->jbutton.which, event->jbutton.button);
+            OnJoyButtonUp(event->jbutton.which, event->jbutton.button);
             break;
         }
         /** Application should quit. **/

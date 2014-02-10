@@ -78,64 +78,40 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
     
-    SDL_Color timerColor = {255, 255, 255};
-    
+    SDL_Color timerColor {255, 255, 255};
     // load images for testing
 #ifdef _WIN32
     background.loadImage(".\\assets\\stage1bg.png", renderer);
     foreground.loadImage(".\\assets\\stage1fg.png", renderer);
     
     poorImg.loadImage(".\\assets\\poor.png", renderer);
-	poorImg.loadImage(".\\assets\\poor2.png", renderer);
     
     timer.setup(".\\assets\\font.ttf", timerColor);
 
     bgm.loadMusic(".\\assets\\bgm.wav");
     bgm.playMusic();
-    
-	if(p1.OnLoad(".\\assets\\poor.png", 140, 200, 5) == false) {
-        return false;
-    }
- 
-    if(p2.OnLoad(".\\assets\\poor2.png", 140, 200, 5) == false) {
-        return false;
-    }
-
 #else
     background.loadImage("./assets/stage1bg.png", renderer);
     foreground.loadImage("./assets/stage1fg.png", renderer);
     
     poorImg.loadImage("./assets/poor.png", renderer);
-	poorImg.loadImage("./assets/poor2.png", renderer);
     
     timer.setup("./assets/font.ttf", timerColor);
     
     bgm.loadMusic("./assets/bgm.wav");
     bgm.playMusic();
-
-	if(p1.OnLoad("./assets/poor.png", 64, 64, 5) == false) {
-        return false;
-    }
- 
-    if(p2.OnLoad("./assets/poor2.png", 64, 64, 5) == false) {
-        return false;
-    }
     
 #endif
-    
+    theHUD.addHUDElement(&timer);
     /** Set frame rate to every 150 milliseconds. **/
     poorAnim.setFrameRate(150);
 
     hp.setup(30,70,5,30,200);
+
+    theHUD.addHUDElement(&hp);
+
     /** Initialize the clock for the main game loop. **/
     mainClock.init();
     
-
- 
-    p2.xLoc = 100;
- 
-    Entity::entities.push_back(&p1);
-    Entity::entities.push_back(&p2);
-
     return true;
 }

@@ -13,7 +13,11 @@
 #ifndef ANIMATION_H_
 #define ANIMATION_H_
 
+#ifdef _MSC_VER
+#include <SDL.h>
+#else
 #include <SDL2/SDL.h>
+#endif
 #include "Clock.h"
 
 class Animation

@@ -24,9 +24,9 @@ FGame::FGame() {
     width     = 640;
     height    = 480;
 
-	/** Control character animation. **/
-    poorAnim.maxFrames = 5;
-	punch = false;
+    /** Control character animation. **/
+    poorAnim.maxFrames = 6;
+    punch = false;
 
 	p1 = Player(100);
 	p2 = Player(100);
@@ -36,7 +36,7 @@ FGame::FGame() {
 
     joystick1 = NULL;
 
-    roundLength = 5;
+    roundLength = 30;
 }
 
 /***********************************************************************

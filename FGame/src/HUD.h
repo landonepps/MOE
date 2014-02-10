@@ -26,12 +26,13 @@ using namespace std;
 
 class HUD{
     private:
-        vector<HUDelement> HUDelements;
+        vector<HUDelement*> HUDelements;
 
     public:
         HUD();
         ~HUD();
-        void drawElements(SDL_Renderer *);
+        void drawElements(SDL_Renderer*);
+        void addHUDElement(HUDelement*);
 };
 
 #endif

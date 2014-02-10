@@ -25,11 +25,8 @@
 #include "Healthbar.h"
 #include "Animation.h"
 #include "Music.h"
-<<<<<<< HEAD
 #include "Constants.h"
-=======
 #include "HUD.h"
->>>>>>> origin/JesseMOE
 
 class FGame : public Events
 {

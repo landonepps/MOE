@@ -38,6 +38,7 @@ void FGame::OnLoop()
     }
     if(timeRemaining <= 0.0){
         timer.setTime(0);
+        bgm.stopMusic();
         mainClock.setPaused(true);
     }
 }

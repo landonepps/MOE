@@ -5,17 +5,19 @@
  
 class Player : public Entity {
     public:
+		Player();
+
         Player(int health);
  
         bool OnLoad(char* File, int Width, int Height, int MaxFrames);
  
-        void OnLoop();
+        void OnLoop(Clock* clock);
  
         void OnRender(SDL_Surface* Surf_Display);
  
         void OnCleanup();
  
-        void OnAnimate();
+        void OnAnimate(Clock* clock);
  
         void OnCollision(Entity* Entity);
 

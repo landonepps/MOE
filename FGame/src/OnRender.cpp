@@ -25,12 +25,13 @@ void FGame::OnRender()
 
     //TODO: Remove later
     background.draw(0, 0);
-    character.draw(70, 170);
+    poorImg.draw(70, 200, 0, poorAnim.getCurrentFrame() * 200, 140, 200);
     foreground.draw(0, 0);
-    timer.setTime(mainClock.getElapsedTime());
     hp.draw(renderer);
     timer.draw(renderer);
     
+    
+
     /** Swap buffers. **/
     SDL_RenderPresent(renderer);
 }

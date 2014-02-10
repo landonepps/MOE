@@ -19,12 +19,11 @@ Timer::Timer() : HUDelement(){}
 Timer::Timer(int id) : HUDelement(id){}
 
 void Timer::setup(const string &fontFile, SDL_Color cl,int fontSize, 
-            int precision, int xPos, int yPos, int sec, int id)
+            int precision, int xPos, int yPos, int id)
 {
     this->precision = precision;
     xPosition = xPos;
     yPosition = yPos;
-    seconds = sec;
     font = TTF_OpenFont(fontFile.c_str(), fontSize);
     if (font == NULL) {
         cerr << "failed to load font";
@@ -46,7 +45,8 @@ void Timer::draw(SDL_Renderer* renderer){
     message << fixed << setprecision(precision) << seconds;
     
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);
-    if (surf == nullptr){
+    //if (surf == nullptr){
+    if (surf == NULL){
 		TTF_CloseFont(font);
 		return;
 	}

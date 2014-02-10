@@ -46,5 +46,5 @@ void FGame::OnExit()
 ***********************************************************************/
 void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
 {
-    running = false;
+    mainClock.setTimeScale(mainClock.getTimeScale() + 0.25);
 }

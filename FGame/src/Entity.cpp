@@ -51,7 +51,45 @@ Entity::Entity() {
     colHeight = 0;
 }
 
-void Entity::OnLoop() {
+Entity::Entity(Animation ani) {
+    surfEntity = NULL;
+ 
+    xLoc = 0;
+    yLoc = 0;
+ 
+    width  = 0;
+    height = 0;
+ 
+    moveLeft  = false;
+    moveRight = false;
+
+    entType = ENTITY_TYPE_GENERIC;
+ 
+    isDead = false;
+    flags = ENTITY_FLAG_GRAVITY;
+ 
+    xSpd = 0;
+    ySpd= 0;
+ 
+    xAccel = 0;
+    yAccel = 0;
+ 
+    xSpdMax = 5;
+    ySpdMax = 5;
+ 
+    frameCol = 0;
+    frameRow = 0;
+ 
+    xCollision = 0;
+    yCollision = 0;
+ 
+    colWidth  = 0;
+    colHeight = 0;
+
+	aniControl = ani;
+}
+
+void Entity::OnLoop(Clock* clock) {
     //We're not Moving
     if(moveLeft == false && moveRight == false) {
         stop();
@@ -84,7 +122,7 @@ void Entity::OnLoop() {
 		ySpd = -ySpdMax;
 	}
  
-    OnAnimate();
+    OnAnimate(clock);
     OnMove(xSpd, ySpd);
 }
 	
@@ -92,7 +130,7 @@ void Entity::OnRender(SDL_Surface* surfDisplay) {
     /**?*/
 }
 
-void Entity::OnAnimate() {
+void Entity::OnAnimate(Clock* clock) {
     /*Depending on if we want characters to turn
 	
 	if(moveLeft) {
@@ -104,7 +142,7 @@ void Entity::OnAnimate() {
 	
 	*/
  
-    aniControl.OnAnimate();
+    aniControl.OnAnimate(clock);
 }
 
 void Entity::OnCollision(Entity* entity) {
@@ -315,4 +353,8 @@ bool Entity::validEntity(Entity* entity, int newX, int newY) {
     }
  
     return true;
+}
+
+void Entity::setAnimation(Animation ani) {
+	aniControl = ani;
 }

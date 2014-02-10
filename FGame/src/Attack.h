@@ -5,7 +5,7 @@
  
 class Attack : public Entity {
     public:
-        Attack(int str);
+        Attack(int str = 5);
  
  
         void OnLoop(Clock* clock);

@@ -310,8 +310,8 @@ bool Entity::validPosition(int newX, int newY) {
     bool retVal = true;
  
 	//Eventually must account for TILE_SIZE
-    int startX     = (newX + xCollision);
-    int startY     = (newY + yCollision);
+    int startX   = (newX + xCollision);
+    int startY   = (newY + yCollision);
  
     int destX    = ((newX + xCollision) + width - colWidth - 1);
     int destY    = ((newY + yCollision) + height - colHeight - 1);

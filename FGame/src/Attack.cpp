@@ -1,7 +1,7 @@
 #include "Attack.h"
 #include "Player.h"
 
-Attack::Attack(int str = 5) {
+Attack::Attack(int str) {
     surfEntity = NULL;
  
     xLoc = 0;

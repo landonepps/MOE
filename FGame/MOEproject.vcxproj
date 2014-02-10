@@ -61,13 +61,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\SDL2_image-2.0.0\include;C:\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2_image-2.0.0\lib\x86;C:\SDL2-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\SDL2_ttf-2.0.12\include;C:\SDL2_mixer-2.0.0\include;C:\SDL2_image-2.0.0\include;C:\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2_mixer-2.0.0\lib\x64;C:\SDL2_image-2.0.0\lib\x64;C:\SDL2_ttf-2.0.12\lib\x64;C:\SDL2-2.0.1\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\SDL2_ttf-2.0.12\include;C:\SDL2_image-2.0.0\include;C:\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2_ttf-2.0.12\lib\x64;C:\SDL2_image-2.0.0\lib\x64;C:\SDL2-2.0.1\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\SDL2_mixer-2.0.0\include;C:\SDL2_ttf-2.0.12\include;C:\SDL2_image-2.0.0\include;C:\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2_mixer-2.0.0\lib\x64;C:\SDL2_ttf-2.0.12\lib\x64;C:\SDL2_image-2.0.0\lib\x64;C:\SDL2-2.0.1\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -87,7 +87,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>SDL2main.lib;SDL2.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;OpenGL32.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -101,7 +101,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>SDL2main.lib;SDL2.lib;OpenGL32.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;OpenGL32.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -134,11 +134,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Animation.cpp" />
     <ClCompile Include="src\Clock.cpp" />
     <ClCompile Include="src\Events.cpp" />
     <ClCompile Include="src\FGame.cpp" />
     <ClCompile Include="src\Healthbar.cpp" />
     <ClCompile Include="src\Image.cpp" />
+    <ClCompile Include="src\Music.cpp" />
     <ClCompile Include="src\OnCleanup.cpp" />
     <ClCompile Include="src\OnEvent.cpp" />
     <ClCompile Include="src\OnInit.cpp" />
@@ -147,6 +149,7 @@
     <ClCompile Include="src\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Animation.h" />
     <ClInclude Include="src\Clock.h" />
     <ClInclude Include="src\Constants.h" />
     <ClInclude Include="src\Events.h" />
@@ -155,6 +158,7 @@
     <ClInclude Include="src\HUD.h" />
     <ClInclude Include="src\HUDelement.h" />
     <ClInclude Include="src\Image.h" />
+    <ClInclude Include="src\Music.h" />
     <ClInclude Include="src\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

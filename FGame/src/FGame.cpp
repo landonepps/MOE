@@ -15,8 +15,7 @@
 /***********************************************************************
  * FGame:     Sets the game as running and defines the window size.
 ***********************************************************************/
-FGame::FGame()
-{
+FGame::FGame() {
     running   = true;
 
     screen    = NULL;
@@ -25,7 +24,18 @@ FGame::FGame()
     width     = 640;
     height    = 480;
 
+
+    poorAnim.maxFrames = 5;
+
+	p1 = Player(100);
+	p2 = Player(100);
+
+	p1.setAnimation(poorAnim);
+	p2.setAnimation(poorAnim);
+
     joystick1 = NULL;
+
+    roundLength = 5;
 }
 
 /***********************************************************************

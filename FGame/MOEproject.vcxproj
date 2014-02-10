@@ -139,6 +139,7 @@
     <ClCompile Include="src\Events.cpp" />
     <ClCompile Include="src\FGame.cpp" />
     <ClCompile Include="src\Healthbar.cpp" />
+    <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\Image.cpp" />
     <ClCompile Include="src\Music.cpp" />
     <ClCompile Include="src\OnCleanup.cpp" />

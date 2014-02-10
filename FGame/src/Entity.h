@@ -65,6 +65,9 @@ class Entity {
 		/** Max possible speed **/
         float  xSpdMax;
         float  ySpdMax;
+    
+        /** The entity's animation. **/
+        Animation aniControl;
  
     protected:
 		/** Current speed **/
@@ -85,8 +88,7 @@ class Entity {
         int    frameCol;
         int    frameRow;
 
-	    /** The entity's animation. **/
-        Animation aniControl;
+	   
  
 		/** The entity's surface **/
         SDL_Surface* surfEntity;

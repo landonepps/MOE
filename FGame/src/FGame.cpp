@@ -26,7 +26,8 @@ FGame::FGame() {
 
     /** Control character animation. **/
     poorAnim.maxFrames = 6;
-    punch = false;
+    punch1 = false;
+    punch2 = false;
 
 	p1 = Player(100);
 	p2 = Player(100);

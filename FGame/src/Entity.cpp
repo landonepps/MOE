@@ -124,7 +124,7 @@ void Entity::OnLoop(Clock* clock) {
 		ySpd = -ySpdMax;
 	}
  
-    OnAnimate(clock);
+    //OnAnimate(clock);
     OnMove(xSpd, ySpd);
 }
 	
@@ -133,17 +133,6 @@ void Entity::OnRender(SDL_Surface* surfDisplay) {
 }
 
 void Entity::OnAnimate(Clock* clock) {
-    /*Depending on if we want characters to turn
-	
-	if(moveLeft) {
-        frameCol = 0;
-    }
-	else if(moveRight) {
-        frameCol = 1;
-    }
-	
-	*/
- 
     aniControl.OnAnimate(clock);
 }
 

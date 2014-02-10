@@ -33,26 +33,20 @@ void FGame::OnLoop()
         if(punch1){
             punch1 = false;
             p1.aniControl.maxFrames = 6;
-            //poorAnim.maxFrames = 6;
             p1.aniControl.setCurrentFrame(5);
-            //poorAnim.setCurrentFrame(5);
         }
         else {
             p1.aniControl.maxFrames = 5;
             p1.OnAnimate(&mainClock);
-            //poorAnim.OnAnimate(&mainClock);
         }
         if(punch2){
             punch2 = false;
             p2.aniControl.maxFrames = 6;
-            //poorAnim.maxFrames = 6;
             p2.aniControl.setCurrentFrame(5);
-            //poorAnim.setCurrentFrame(5);
         }
         else {
             p2.aniControl.maxFrames = 5;
             p2.OnAnimate(&mainClock);
-            //poorAnim.OnAnimate(&mainClock);
         }
     }
     if(timeRemaining <= 0.0){

@@ -98,18 +98,20 @@ void Entity::OnLoop(Clock* clock) {
     }
  
     if(moveLeft) {
-        xAccel = -0.5;
+        xAccel = -0.5 * clock->getTimeScale();
     }
 	else if(moveRight) {
-        xAccel = 0.5;
+        xAccel = 0.5 * clock->getTimeScale();
     }
  
     if(flags & ENTITY_FLAG_GRAVITY) {
-        yAccel = 0.75f;
+        yAccel = 0.75f * clock->getTimeScale();
     }
  
-    xSpd += xAccel * SpeedControl::FPSCorrection.getFactor();
-    ySpd += yAccel * SpeedControl::FPSCorrection.getFactor();
+    xSpd += xAccel;
+    //* SpeedControl::FPSCorrection.getFactor();
+    ySpd += yAccel;
+    //* SpeedControl::FPSCorrection.getFactor();
  
     if(xSpd > xSpdMax) {
 		xSpd =  xSpdMax;
@@ -125,7 +127,7 @@ void Entity::OnLoop(Clock* clock) {
 	}
  
     //OnAnimate(clock);
-    OnMove(xSpd, ySpd);
+    OnMove(xSpd, ySpd, clock);
 }
 	
 void Entity::OnRender(SDL_Surface* surfDisplay) {
@@ -140,7 +142,7 @@ void Entity::OnCollision(Entity* entity) {
     /** Do Nothing (pure virtual). **/
 }
 
-void Entity::OnMove(float moveX, float moveY) {
+void Entity::OnMove(float moveX, float moveY, Clock* clock) {
     if(moveX == 0 && moveY == 0) {
 		return;
 	}

@@ -6,7 +6,7 @@
  * Class:       4342, Sprnt 2014
  * Date:        2/8/2014
  *
- *
+ * This class handles in-game music
  *
  ******************************************************************************/
 
@@ -15,6 +15,9 @@
 
 using namespace std;
 
+/*
+ * Constructor for Music
+ */
 Music::Music() {
     music = NULL;
     
@@ -23,10 +26,22 @@ Music::Music() {
     }
 }
 
+/*
+ * Destructor for Music
+ */
 Music::~Music() {
-    Mix_FreeMusic(music);
+    if (music) {
+        Mix_FreeMusic(music);
+    }
 }
 
+/*
+ * loadMusic:  loads an mp3 or wav file for in game music
+ *
+ * filename:  path to mp3/wav file
+ *
+ * returns: void
+ */
 void Music::loadMusic(const char *filename) {
     music = Mix_LoadMUS(filename);
     if (music == NULL) {
@@ -35,10 +50,16 @@ void Music::loadMusic(const char *filename) {
     }
 }
 
+/*
+ * play: plays and automatically loops the loaded music
+ */
 void Music::play() {
     Mix_PlayMusic(music, -1);
 }
 
+/*
+ * stop: stops the loaded music
+ */
 void Music::stop() {
     Mix_HaltMusic();
 }

@@ -100,7 +100,7 @@ bool FGame::OnInit()
     // poorImg.loadImage("./assets/poor.png", renderer);
     // poorImg2.loadImage("./assets/poor2.png", renderer);
     
-    timer.setup("./assets/font.ttf", timerColor);
+    timer.setup("./assets/font.ttf", timerColor, 290, 5);
     
     bgm.loadMusic("./assets/bgm.wav");
     bgm.play();
@@ -116,9 +116,11 @@ bool FGame::OnInit()
     // p2.aniControl.setFrameRate(150);
     // poorAnim.setFrameRate(150);
 
-    hp.setup(30,70,5,30,200);
+    hp1.setup(100, 50, 5, 30, 200);
+    hp2.setup(100, 370, 5, 30, 200);
 
-    theHUD.addHUDElement(&hp);
+    theHUD.addHUDElement(&hp1);
+    theHUD.addHUDElement(&hp2);
 
     /** Initialize the clock for the main game loop. **/
     mainClock.init();

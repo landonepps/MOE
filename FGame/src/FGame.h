@@ -52,15 +52,13 @@ class FGame : public Events
         Image background;
     
         Music bgm;
-        // SFX punchSFX;
     
         HUD theHUD;
-        Healthbar hp;
+        Healthbar hp1;
+        Healthbar hp2;
         Timer timer;
 
         Animation poorAnim;
-        // Image poorImg;
-        // Image poorImg2;
     
         bool punch1;
         bool punch2;
@@ -118,7 +116,7 @@ class FGame : public Events
         void OnExit();
 
         /***********************************************************************
-         * OnJoyButtonDown: Handle joystick input
+         * OnJoyButtonDown: Handle joystick button down
          *
          * which:     The index of the joystick that reported the event.
          *
@@ -128,9 +126,16 @@ class FGame : public Events
         ***********************************************************************/
         void OnJoyButtonDown(Uint8 which, Uint8 button);
     
+        /***********************************************************************
+         * OnJoyButtonDown: Handle joystick button up
+         *
+         * which:     The index of the joystick that reported the event.
+         *
+         * button:    The index of the button that changed.
+         *
+         * returns:   void.
+         ***********************************************************************/
         void OnJoyButtonUp(Uint8 which, Uint8 button);
-        //virtual void OnKeyDown(SDL_Keycode sym, Uint16 mod,
-         //                  SDL_Scancode scancode);
 
         /***********************************************************************
          * OnLoop:    Handles basic calculations (such as animation). Currently

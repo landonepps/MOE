@@ -60,9 +60,15 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
     }
     
     /** Make character move **/
-    if(button == B_BUTTON)
+    if(button == START_BUTTON)
     {
-        // p1.moveLeft = true;
+        p2.moveLeft();
+    }
+    
+    /** Make character move **/
+    if(button == SELECT_BUTTON)
+    {
+        p2.moveRight();
     }
 
     /** Speed up time. **/
@@ -91,5 +97,8 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
 void FGame::OnJoyButtonUp(Uint8 which, Uint8 button) {
     if ((button == LEFT_DPAD || button == RIGHT_DPAD) && !mainClock.getIsPaused()) {
         p1.halt();
+    }
+    if ((button == START_BUTTON || button == SELECT_BUTTON) && !mainClock.getIsPaused()) {
+        p2.halt();
     }
 }

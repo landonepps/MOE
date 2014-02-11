@@ -38,7 +38,6 @@ class Timer : public HUDelement{
         int precision;
         TTF_Font* font;
         SDL_Color color;
-        Clock* theClock;
     public:
         Timer();
         Timer(int);

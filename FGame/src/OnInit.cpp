@@ -85,7 +85,7 @@ bool FGame::OnInit()
     foreground.loadImage(".\\assets\\stage1fg.png", renderer);
     winmsg.loadImage(".\\assets\\win.png", renderer);
     
-    timer.setup(".\\assets\\font.ttf", timerColor);
+    timer.setup(".\\assets\\font.ttf", timerColor, 290, 5);
 
     bgm.loadMusic(".\\assets\\bgm.wav");
     bgm.play();

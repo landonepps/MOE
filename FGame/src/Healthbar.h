@@ -7,7 +7,7 @@
 * Class:      4342, Spring 2014
 * Date:      8-Feb-2014
 *
-* Healthbar class
+* Healthbar HUD class
 *******************************************************************************/
 
 #ifndef HEALTHBAR_H_

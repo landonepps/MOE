@@ -24,12 +24,20 @@ void FGame::OnRender()
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
     SDL_RenderClear(renderer);
     
+    // Draw background
     background.draw(0, 0);
+
+    // Draw players
     p1.draw();
     p2.draw();
+
+    // Draw foreground
     foreground.draw(0, 0);
+
+    // Draw HUD
     theHUD.drawElements(renderer);
     
+    // When win condition met display win message
     if(mainClock.getIsPaused()) {
         winmsg.draw(150, 45);
     }

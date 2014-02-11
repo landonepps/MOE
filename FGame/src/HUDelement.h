@@ -21,12 +21,15 @@
 
 class HUDelement{
     private:
+        // id ideally used for debugging or specific HUD manipulation.
         int id;
 
     public:
         HUDelement(){};
         HUDelement(int id){this->id = id;};
-        // virtual ~HUDelement() = 0;
+
+        // Virtual function to ensure child classes have a way to draw themselves.
+        // It also envokes that draw function when called
         virtual void draw(SDL_Renderer*) = 0;
 };
 

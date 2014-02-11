@@ -30,13 +30,46 @@ class Animation
 
     public:
         int  firstFrame;
-        int lastFrame;
+        int  lastFrame;
         bool oscillates;
 
+        /***********************************************************************
+         * Animation: Constructor (Default: frameInc = 1, oscillates = false).
+        ***********************************************************************/
         Animation();
+
+        /***********************************************************************
+         * OnAnimate: Updates animation frame according to compute speed.
+         *
+         * clock:     Clock that handles games time.
+         *
+         * returns:   void.
+        ***********************************************************************/
         void OnAnimate(Clock *clock);
+
+        /***********************************************************************
+         * setFrameRate: Sets the animation's frame rate.
+         *
+         * rate:      The frame rate in milliseconds.
+         *
+         * returns:   void.
+        ***********************************************************************/
         void setFrameRate(int rate);
+
+        /***********************************************************************
+         * setCurrentFrame: Sets the animation's current frame.
+         *
+         * frame:     A frame in the image's animation.
+         *
+         * returns:   void.
+        ***********************************************************************/
         void setCurrentFrame(int frame);
+
+        /***********************************************************************
+         * getCurrentFrame: Returns the animation's current frame.
+         *
+         * returns:   The animation's current frame.
+        ***********************************************************************/
         int getCurrentFrame();
 };
 

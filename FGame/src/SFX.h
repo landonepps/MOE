@@ -10,8 +10,9 @@
  *
  ******************************************************************************/
 
-#ifndef __MOE__Audio__
-#define __MOE__Audio__
+
+#ifndef __MOE__SFX__
+#define __MOE__SFX__
 
 #ifdef _MSC_VER
 #include <SDL_mixer.h>
@@ -23,17 +24,19 @@
 #endif
 #endif
 
-class Music {
-    Mix_Music *music;
+class SFX {
+    Mix_Chunk *sample;
+    static int currentChannel;
     
+    static void channelFinished(int channel);
 public:
-    Music();
-    ~Music();
+    SFX();
+    ~SFX();
     
-    void loadMusic(const char *filename);
+    void loadSFX(const char *filename);
     
     void play();
     void stop();
 };
 
-#endif /* defined(__MOE__Audio__) */
+#endif /* defined(__MOE__SFX__) */

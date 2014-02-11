@@ -34,6 +34,10 @@
 		44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44F45FD918A7EFC80052DDA9 /* Animation.cpp */; };
 		44F45FDD18A7F0680052DDA9 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 44F45FDC18A7F0680052DDA9 /* assets */; };
 		44F45FDF18A7F4A40052DDA9 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */; };
+		F36B21EB18A961560063D298 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36B21EA18A961560063D298 /* SDL2_ttf.framework */; };
+		F36B21ED18A9616A0063D298 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36B21EC18A9616A0063D298 /* SDL2_image.framework */; };
+		F36B21EF18A961800063D298 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36B21EE18A961800063D298 /* SDL2_mixer.framework */; };
+		F36B21F118A9618E0063D298 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36B21F018A9618E0063D298 /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +88,10 @@
 		44F45FDA18A7EFC80052DDA9 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		44F45FDC18A7F0680052DDA9 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../../../Library/Frameworks/SDL2_mixer.framework; sourceTree = "<group>"; };
+		F36B21EA18A961560063D298 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Volumes/SDL2_ttf/SDL2_ttf.framework; sourceTree = "<group>"; };
+		F36B21EC18A9616A0063D298 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Volumes/SDL2_image/SDL2_image.framework; sourceTree = "<group>"; };
+		F36B21EE18A961800063D298 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../../Volumes/SDL2_mixer/SDL2_mixer.framework; sourceTree = "<group>"; };
+		F36B21F018A9618E0063D298 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Volumes/SDL2/SDL2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36B21F118A9618E0063D298 /* SDL2.framework in Frameworks */,
+				F36B21EF18A961800063D298 /* SDL2_mixer.framework in Frameworks */,
+				F36B21ED18A9616A0063D298 /* SDL2_image.framework in Frameworks */,
+				F36B21EB18A961560063D298 /* SDL2_ttf.framework in Frameworks */,
 				44F45FDF18A7F4A40052DDA9 /* SDL2_mixer.framework in Frameworks */,
 				44A3108918A5BE3D00427013 /* SDL2_ttf.framework in Frameworks */,
 				444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */,
@@ -123,6 +135,10 @@
 		4423CE7918A077D600FE3118 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F36B21F018A9618E0063D298 /* SDL2.framework */,
+				F36B21EE18A961800063D298 /* SDL2_mixer.framework */,
+				F36B21EC18A9616A0063D298 /* SDL2_image.framework */,
+				F36B21EA18A961560063D298 /* SDL2_ttf.framework */,
 				44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */,
 				44A3108818A5BE3D00427013 /* SDL2_ttf.framework */,
 				444C8C5518A1EDF8000101F8 /* SDL2_image.framework */,
@@ -394,11 +410,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					$Desktop,
+					/Volumes/SDL2_ttf,
+					/Volumes/SDL2_image,
+					/Volumes/SDL2_mixer,
+					/Volumes/SDL2,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mac_files/MOE-Prefix.pch";
 				INFOPLIST_FILE = "mac_files/MOE-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -411,11 +433,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					$Desktop,
+					/Volumes/SDL2_ttf,
+					/Volumes/SDL2_image,
+					/Volumes/SDL2_mixer,
+					/Volumes/SDL2,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mac_files/MOE-Prefix.pch";
 				INFOPLIST_FILE = "mac_files/MOE-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

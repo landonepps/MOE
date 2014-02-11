@@ -18,24 +18,7 @@
 #include "Animation.h"
 #include "SpeedControl.h"
 #include "Clock.h"
-
-/** Values for entity typing **/
-enum {
-    ENTITY_TYPE_GENERIC = 0,
- 
-    ENTITY_TYPE_PLAYER,
-
-	ENTITY_TYPE_ATTACK
-};
- 
-/** Values for collision typing **/
-enum {
-    ENTITY_FLAG_NONE = 0,
- 
-    ENTITY_FLAG_GRAVITY    = 0x00000001,
-    ENTITY_FLAG_THRU_WALL  = 0x00000002,
-    ENTITY_FLAG_NO_COLLIDE = 0x00000004
-};
+#include "Constants.h"
  
 class Entity {
     public:
@@ -108,7 +91,7 @@ class Entity {
  
         virtual void OnCollision(Entity* Entity);
 
-        void OnMove(float MoveX, float MoveY);
+        void OnMove(float MoveX, float MoveY, Clock* clock);
  
         void stop();
 

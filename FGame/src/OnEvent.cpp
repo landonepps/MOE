@@ -52,12 +52,10 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
     if(button == A_BUTTON)
     {
         punch1 = true;
-        // p1.punch();
     }
     
     if(button == B_BUTTON)
     {
-        // p2.punch();
         punch2 = true;
     }
     

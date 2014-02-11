@@ -27,12 +27,6 @@ FGame::FGame() {
     /** Control character animation. **/
     punch1 = false;
     punch2 = false;
-    
-	// p1 = Player(100);
-	// p2 = Player(100);
-
-	// p1.setAnimation(poorAnim);
-	// p2.setAnimation(poorAnim);
 
     joystick1 = NULL;
 

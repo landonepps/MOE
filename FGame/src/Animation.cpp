@@ -71,6 +71,7 @@ void Animation::setFrameRate(int rate)
 
 void Animation::setCurrentFrame(int frame)
 {
+    
     if(frame < firstFrame || frame > lastFrame)
     {
         return;

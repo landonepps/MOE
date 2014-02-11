@@ -33,8 +33,8 @@ public:
     ~Player();
     void loadPlayer(const char *image, const char *attack, SDL_Renderer *renderer, int x, int y);
     void update(Clock *clock);
-    void punch();
-    void walk();
+    void punch(Clock *clock);
+    void walk(Clock *clock);
     void moveLeft();
     void moveRight();
     void halt();

@@ -31,18 +31,18 @@ void FGame::OnLoop()
         
         /** Bad code, want to change later. **/
         if(punch1){
-            p1.punch();
+            p1.punch(&mainClock);
             punch1 = false;
         }
         else {
-            p1.walk();
+            p1.walk(&mainClock);
         }
         if(punch2){
-            p2.punch();
+            p2.punch(&mainClock);
             punch2 = false;
         }
         else {
-            p2.walk();
+            p2.walk(&mainClock);
         }
         
         p1.checkCollision(&p2);

@@ -16,7 +16,7 @@ Player::Player() {
     x = 70;
     y = 200;
     h = 200;
-    w = 140;
+    w = 130;
     xVel = 0;
     yVel = 0;
     renderer = NULL;
@@ -49,7 +49,7 @@ void Player::update(Clock *clock) {
     y += yVel * clock->getTimeScale();
 }
 
-void Player::punch() {
+void Player::punch(Clock *clock) {
     walking = false;
     punchSound.play();
     ani.firstFrame = 5;
@@ -57,7 +57,7 @@ void Player::punch() {
     ani.setCurrentFrame(5);
 }
 
-void Player::walk() {
+void Player::walk(Clock *clock) {
     if (!walking) {
         ani.firstFrame = 0;
         ani.lastFrame = 4;
@@ -84,11 +84,11 @@ void Player::draw() {
 
 bool Player::checkCollision(const Player *other) {
     bool result = false;
-    if () {
+    if (x < (other->x + other->w) && (x + w) > other->x) {
         result = true;
         x -= xVel;
         halt();
-    } else if () {
+    } else if (x + w < (other->x) && x > (other->x + other->w)) {
         result = true;
         x -= xVel;
         halt();

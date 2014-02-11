@@ -23,41 +23,43 @@ void FGame::OnLoop()
     /** Updating animations etc. go here. **/
     float timeRemaining = roundLength - mainClock.getElapsedTime();
     
-    p1.OnLoop(&mainClock);
-    p2.OnLoop(&mainClock);
+    p2.update(&mainClock);
+    p1.update(&mainClock);
+    
+    hp1.setHealth(p1.getHealth());
+    hp2.setHealth(p2.getHealth());
     
     if (!mainClock.getIsPaused()){
         timer.setTime(timeRemaining);
-
+        
         /** Bad code, want to change later. **/
         if(punch1){
+            p1.punch(&mainClock);
+            p1.checkPunch(&p2);
             punch1 = false;
-            p1.aniControl.maxFrames = 6;
-            //poorAnim.maxFrames = 6;
-            p1.aniControl.setCurrentFrame(5);
-            //poorAnim.setCurrentFrame(5);
         }
         else {
-            p1.aniControl.maxFrames = 5;
-            p1.OnAnimate(&mainClock);
-            //poorAnim.OnAnimate(&mainClock);
+            p1.walk(&mainClock);
         }
         if(punch2){
+            p2.punch(&mainClock);
+            p2.checkPunch(&p1);
             punch2 = false;
-            p2.aniControl.maxFrames = 6;
-            //poorAnim.maxFrames = 6;
-            p2.aniControl.setCurrentFrame(5);
-            //poorAnim.setCurrentFrame(5);
         }
         else {
-            p2.aniControl.maxFrames = 5;
-            p2.OnAnimate(&mainClock);
-            //poorAnim.OnAnimate(&mainClock);
+            p2.walk(&mainClock);
         }
+        
+        p1.checkPlayerCollision(&p2);
+        p2.checkPlayerCollision(&p1);
+        p1.checkWallCollision();
+        p2.checkWallCollision();
     }
-    if(timeRemaining <= 0.0){
+    if(timeRemaining <= 0.0 || (p1.getHealth() <= 0 || p2.getHealth() <= 0)){
         timer.setTime(0);
-        bgm.stopMusic();
+        p1.halt();
+        p2.halt();
+        bgm.stop();
         mainClock.setPaused(true);
     }
 }

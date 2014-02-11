@@ -14,20 +14,17 @@
 		4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE318A0813600FE3118 /* OnInit.cpp */; };
 		4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE418A0813600FE3118 /* OnLoop.cpp */; };
 		4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE518A0813600FE3118 /* OnRender.cpp */; };
-		4440CBAF18A8992D00C362FF /* Attack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4440CBAC18A8992D00C362FF /* Attack.cpp */; };
-		4440CBB018A8992D00C362FF /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4440CBAE18A8992D00C362FF /* Entity.cpp */; };
-		4440CBB818A8993E00C362FF /* EntityCollision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4440CBB218A8993E00C362FF /* EntityCollision.cpp */; };
-		4440CBB918A8993E00C362FF /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4440CBB418A8993E00C362FF /* Player.cpp */; };
-		4440CBBA18A8993E00C362FF /* SpeedControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4440CBB618A8993E00C362FF /* SpeedControl.cpp */; };
 		444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C8C5518A1EDF8000101F8 /* SDL2_image.framework */; };
 		444C8C5C18A21169000101F8 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444C8C5A18A21169000101F8 /* Events.cpp */; };
 		4457056018A8721B00DCB73E /* HUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4457055F18A8721B00DCB73E /* HUD.cpp */; };
+		449E7BD818A9B061005DDE7D /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449E7BD618A9B061005DDE7D /* Player.cpp */; };
 		44A3107418A59E4700427013 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107218A59E4700427013 /* Image.cpp */; };
 		44A3108218A5B73C00427013 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107F18A5B73C00427013 /* Clock.cpp */; };
 		44A3108718A5BDEE00427013 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3108518A5BDEE00427013 /* Timer.cpp */; };
 		44A3108918A5BE3D00427013 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3108818A5BE3D00427013 /* SDL2_ttf.framework */; };
 		44B8E3E518A70FAA00587902 /* Music.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44B8E3E318A70FAA00587902 /* Music.cpp */; };
 		44D2A63D18A6F5AA0043F695 /* Healthbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44D2A63B18A6F5AA0043F695 /* Healthbar.cpp */; };
+		44DA951A18A984980062F44D /* SFX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44DA951818A984980062F44D /* SFX.cpp */; };
 		44EDA67818A088160095AB29 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8918A077D600FE3118 /* Credits.rtf */; };
 		44EDA67918A088190095AB29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8318A077D600FE3118 /* InfoPlist.strings */; };
 		44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44F45FD918A7EFC80052DDA9 /* Animation.cpp */; };
@@ -49,20 +46,12 @@
 		4423CEE318A0813600FE3118 /* OnInit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnInit.cpp; sourceTree = "<group>"; };
 		4423CEE418A0813600FE3118 /* OnLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnLoop.cpp; sourceTree = "<group>"; };
 		4423CEE518A0813600FE3118 /* OnRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnRender.cpp; sourceTree = "<group>"; };
-		4440CBAC18A8992D00C362FF /* Attack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Attack.cpp; sourceTree = "<group>"; };
-		4440CBAD18A8992D00C362FF /* Attack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attack.h; sourceTree = "<group>"; };
-		4440CBAE18A8992D00C362FF /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
-		4440CBB118A8993E00C362FF /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
-		4440CBB218A8993E00C362FF /* EntityCollision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityCollision.cpp; sourceTree = "<group>"; };
-		4440CBB318A8993E00C362FF /* EntityCollision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityCollision.h; sourceTree = "<group>"; };
-		4440CBB418A8993E00C362FF /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
-		4440CBB518A8993E00C362FF /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		4440CBB618A8993E00C362FF /* SpeedControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpeedControl.cpp; sourceTree = "<group>"; };
-		4440CBB718A8993E00C362FF /* SpeedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedControl.h; sourceTree = "<group>"; };
 		444C8C5518A1EDF8000101F8 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		444C8C5A18A21169000101F8 /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
 		444C8C5B18A21169000101F8 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 		4457055F18A8721B00DCB73E /* HUD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HUD.cpp; sourceTree = "<group>"; };
+		449E7BD618A9B061005DDE7D /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		449E7BD718A9B061005DDE7D /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		44A3107218A59E4700427013 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
 		44A3107318A59E4700427013 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		44A3107F18A5B73C00427013 /* Clock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Clock.cpp; sourceTree = "<group>"; };
@@ -77,6 +66,8 @@
 		44B8E3E418A70FAA00587902 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
 		44D2A63B18A6F5AA0043F695 /* Healthbar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Healthbar.cpp; sourceTree = "<group>"; };
 		44D2A63C18A6F5AA0043F695 /* Healthbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Healthbar.h; sourceTree = "<group>"; };
+		44DA951818A984980062F44D /* SFX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SFX.cpp; sourceTree = "<group>"; };
+		44DA951918A984980062F44D /* SFX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFX.h; sourceTree = "<group>"; };
 		44F45FD918A7EFC80052DDA9 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		44F45FDA18A7EFC80052DDA9 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		44F45FDC18A7F0680052DDA9 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
@@ -102,8 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				44F45FDC18A7F0680052DDA9 /* assets */,
-				4423CE8118A077D600FE3118 /* Supporting Files */,
 				4423CEDE18A0813600FE3118 /* src */,
+				4423CE8118A077D600FE3118 /* Supporting Files */,
 				4423CE7918A077D600FE3118 /* Frameworks */,
 				4423CE7818A077D600FE3118 /* Products */,
 			);
@@ -143,25 +134,10 @@
 		4423CEDE18A0813600FE3118 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4440CBB118A8993E00C362FF /* Entity.h */,
-				4440CBB218A8993E00C362FF /* EntityCollision.cpp */,
-				4440CBB318A8993E00C362FF /* EntityCollision.h */,
-				4440CBB418A8993E00C362FF /* Player.cpp */,
-				4440CBB518A8993E00C362FF /* Player.h */,
-				4440CBB618A8993E00C362FF /* SpeedControl.cpp */,
-				4440CBB718A8993E00C362FF /* SpeedControl.h */,
-				4440CBAC18A8992D00C362FF /* Attack.cpp */,
-				4440CBAD18A8992D00C362FF /* Attack.h */,
-				4440CBAE18A8992D00C362FF /* Entity.cpp */,
-				4457055F18A8721B00DCB73E /* HUD.cpp */,
+				44DA951418A983AB0062F44D /* A/V */,
+				443B320018A9338500EDB56F /* HUD */,
 				44F45FD918A7EFC80052DDA9 /* Animation.cpp */,
 				44F45FDA18A7EFC80052DDA9 /* Animation.h */,
-				44D2A63B18A6F5AA0043F695 /* Healthbar.cpp */,
-				44D2A63C18A6F5AA0043F695 /* Healthbar.h */,
-				44A3108318A5BDEE00427013 /* HUD.h */,
-				44A3108418A5BDEE00427013 /* HUDelement.h */,
-				44A3108518A5BDEE00427013 /* Timer.cpp */,
-				44A3108618A5BDEE00427013 /* Timer.h */,
 				44A3107F18A5B73C00427013 /* Clock.cpp */,
 				44A3108018A5B73C00427013 /* Clock.h */,
 				44A3108118A5B73C00427013 /* Constants.h */,
@@ -174,12 +150,37 @@
 				4423CEE318A0813600FE3118 /* OnInit.cpp */,
 				4423CEE418A0813600FE3118 /* OnLoop.cpp */,
 				4423CEE518A0813600FE3118 /* OnRender.cpp */,
+				449E7BD618A9B061005DDE7D /* Player.cpp */,
+				449E7BD718A9B061005DDE7D /* Player.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		443B320018A9338500EDB56F /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				4457055F18A8721B00DCB73E /* HUD.cpp */,
+				44A3108318A5BDEE00427013 /* HUD.h */,
+				44A3108418A5BDEE00427013 /* HUDelement.h */,
+				44D2A63B18A6F5AA0043F695 /* Healthbar.cpp */,
+				44D2A63C18A6F5AA0043F695 /* Healthbar.h */,
+				44A3108518A5BDEE00427013 /* Timer.cpp */,
+				44A3108618A5BDEE00427013 /* Timer.h */,
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
+		44DA951418A983AB0062F44D /* A/V */ = {
+			isa = PBXGroup;
+			children = (
 				44A3107218A59E4700427013 /* Image.cpp */,
 				44A3107318A59E4700427013 /* Image.h */,
 				44B8E3E318A70FAA00587902 /* Music.cpp */,
 				44B8E3E418A70FAA00587902 /* Music.h */,
+				44DA951818A984980062F44D /* SFX.cpp */,
+				44DA951918A984980062F44D /* SFX.h */,
 			);
-			path = src;
+			name = A/V;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,23 +255,20 @@
 			files = (
 				4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */,
 				4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */,
-				4440CBB918A8993E00C362FF /* Player.cpp in Sources */,
 				444C8C5C18A21169000101F8 /* Events.cpp in Sources */,
-				4440CBB818A8993E00C362FF /* EntityCollision.cpp in Sources */,
+				44DA951A18A984980062F44D /* SFX.cpp in Sources */,
 				4457056018A8721B00DCB73E /* HUD.cpp in Sources */,
 				44A3108718A5BDEE00427013 /* Timer.cpp in Sources */,
 				4423CEE818A0813600FE3118 /* OnEvent.cpp in Sources */,
 				4423CEE618A0813600FE3118 /* FGame.cpp in Sources */,
+				449E7BD818A9B061005DDE7D /* Player.cpp in Sources */,
 				44D2A63D18A6F5AA0043F695 /* Healthbar.cpp in Sources */,
-				4440CBB018A8992D00C362FF /* Entity.cpp in Sources */,
 				44A3107418A59E4700427013 /* Image.cpp in Sources */,
 				44B8E3E518A70FAA00587902 /* Music.cpp in Sources */,
 				44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */,
-				4440CBAF18A8992D00C362FF /* Attack.cpp in Sources */,
 				4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */,
 				44A3108218A5B73C00427013 /* Clock.cpp in Sources */,
 				4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */,
-				4440CBBA18A8993E00C362FF /* SpeedControl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

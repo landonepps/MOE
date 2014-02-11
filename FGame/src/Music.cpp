@@ -35,10 +35,10 @@ void Music::loadMusic(const char *filename) {
     }
 }
 
-void Music::playMusic() {
+void Music::play() {
     Mix_PlayMusic(music, -1);
 }
 
-void Music::stopMusic() {
+void Music::stop() {
     Mix_HaltMusic();
 }

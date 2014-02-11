@@ -28,6 +28,7 @@
 #include "Player.h"
 #include "Constants.h"
 #include "HUD.h"
+#include "SFX.h"
 
 class FGame : public Events
 {
@@ -49,22 +50,23 @@ class FGame : public Events
         Image character;
         Image foreground;
         Image background;
+        Image winmsg;
     
         Music bgm;
     
         HUD theHUD;
-        Healthbar hp;
+        Healthbar hp1;
+        Healthbar hp2;
         Timer timer;
 
         Animation poorAnim;
-        Image poorImg;
-        Image poorImg2;
     
         bool punch1;
         bool punch2;
 
-		Player p1;
-		Player p2;
+    
+        Player p1;
+        Player p2;
 
 
         /** Resolution of the main window. **/
@@ -115,8 +117,7 @@ class FGame : public Events
         void OnExit();
 
         /***********************************************************************
-         * OnJoyButtonDown: Close application if a joystick button is pressed
-         *                  (test).
+         * OnJoyButtonDown: Handle joystick button down
          *
          * which:     The index of the joystick that reported the event.
          *
@@ -124,7 +125,68 @@ class FGame : public Events
          *
          * returns:   void.
         ***********************************************************************/
-        virtual void OnJoyButtonDown(Uint8 which, Uint8 button);
+        void OnJoyButtonDown(Uint8 which, Uint8 button);
+    
+        /***********************************************************************
+         * OnJoyButtonDown: Handle joystick button up
+         *
+         * which:     The index of the joystick that reported the event.
+         *
+         * button:    The index of the button that changed.
+         *
+         * returns:   void.
+         ***********************************************************************/
+        void OnJoyButtonUp(Uint8 which, Uint8 button);
+
+        /***********************************************************************
+         * OnKeyDown: Handle keyboard key down
+         *
+         * sym:       The SDL virtual key representation.
+         *
+         * mod:       The SDL physical key representation.
+         *
+         * scancode:  Current key modifiers.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        void OnKeyDown(SDL_Keycode sym, Uint16 mod,
+                               SDL_Scancode scancode);
+
+        /***********************************************************************
+         * OnKeyUp:   Handle keyboard key up
+         *
+         * sym:       The SDL virtual key representation.
+         *
+         * mod:       The SDL physical key representation.
+         *
+         * scancode:  Current key modifiers.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        void OnKeyUp(SDL_Keycode sym, Uint16 mod,
+                             SDL_Scancode scancode);
+
+        /***********************************************************************
+         * OnLButtonDown: Speed up time.
+         *
+         * x:         X coordinate, relative to window.
+         *
+         * y:         Y coordinate, relative to window.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        void OnLButtonDown(int x, int y);
+
+        /***********************************************************************
+         * OnRButtonDown: Slow down time.
+         *
+         * x:         X coordinate, relative to window.
+         *
+         * y:         Y coordinate, relative to window.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        void OnRButtonDown(int x, int y);
 
         /***********************************************************************
          * OnLoop:    Handles basic calculations (such as animation). Currently

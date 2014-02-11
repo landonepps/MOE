@@ -18,8 +18,8 @@ Timer::Timer() : HUDelement(){}
 
 Timer::Timer(int id) : HUDelement(id){}
 
-void Timer::setup(const string &fontFile, SDL_Color cl, int fontSize, 
-            int precision, int xPos, int yPos, int id)
+void Timer::setup(const string &fontFile, SDL_Color cl,int xPos, int yPos,
+                  int fontSize, int precision,  int id)
 {
     this->precision = precision;
     xPosition = xPos;

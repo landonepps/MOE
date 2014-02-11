@@ -21,19 +21,12 @@ FGame::FGame() {
     screen    = NULL;
     renderer  = NULL;
 
-    width     = 640;
-    height    = 480;
+    width     = WIN_WIDTH;
+    height    = WIN_HEIGHT;
 
     /** Control character animation. **/
-    poorAnim.maxFrames = 6;
     punch1 = false;
     punch2 = false;
-
-	p1 = Player(100);
-	p2 = Player(100);
-
-	p1.setAnimation(poorAnim);
-	p2.setAnimation(poorAnim);
 
     joystick1 = NULL;
 

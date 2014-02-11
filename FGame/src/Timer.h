@@ -43,8 +43,8 @@ class Timer : public HUDelement{
         Timer();
         Timer(int);
         ~Timer();
-        void setup(const string &fontFile, SDL_Color cl, int fontSize = 36,
-            int precision = 0, int xPos = 0, int yPos = 0, int id = NULL);
+        void setup(const string &fontFile, SDL_Color cl,int xPos = 0, int yPos = 0,
+                   int fontSize = 36, int precision = 0,  int id = NULL);
         void draw(SDL_Renderer*);
         void setTime(float timeLeft);
 };

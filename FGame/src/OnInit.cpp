@@ -97,8 +97,8 @@ bool FGame::OnInit()
     background.loadImage("./assets/stage1bg.png", renderer);
     foreground.loadImage("./assets/stage1fg.png", renderer);
     
-    poorImg.loadImage("./assets/poor.png", renderer);
-    poorImg2.loadImage("./assets/poor2.png", renderer);
+    // poorImg.loadImage("./assets/poor.png", renderer);
+    // poorImg2.loadImage("./assets/poor2.png", renderer);
     
     timer.setup("./assets/font.ttf", timerColor);
     
@@ -106,12 +106,14 @@ bool FGame::OnInit()
     bgm.play();
     
     punchSFX.loadSFX("./assets/punch.wav");
+    
+    p1.loadPlayer("./assets/poor.png", renderer);
 #endif
     theHUD.addHUDElement(&timer);
     /** Set frame rate to every 150 milliseconds. **/
-    p1.aniControl.setFrameRate(150);
-    p2.aniControl.setFrameRate(150);
-    //poorAnim.setFrameRate(150);
+    // p1.aniControl.setFrameRate(150);
+    // p2.aniControl.setFrameRate(150);
+    // poorAnim.setFrameRate(150);
 
     hp.setup(30,70,5,30,200);
 

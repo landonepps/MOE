@@ -59,14 +59,15 @@ class FGame : public Events
         Timer timer;
 
         Animation poorAnim;
-        Image poorImg;
-        Image poorImg2;
+        // Image poorImg;
+        // Image poorImg2;
     
         bool punch1;
         bool punch2;
 
-		Player p1;
-		Player p2;
+    
+        Player p1;
+        // Player p2;
 
 
         /** Resolution of the main window. **/

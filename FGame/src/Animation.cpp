@@ -16,7 +16,8 @@ using namespace std;
 Animation::Animation()
 {
     currentFrame = 0;
-    maxFrames = 0;
+    firstFrame = 0;
+    lastFrame = 0;
     frameInc = 1;
 
     /** Milliseconds. **/

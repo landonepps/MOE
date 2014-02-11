@@ -24,31 +24,23 @@ void FGame::OnLoop()
     float timeRemaining = roundLength - mainClock.getElapsedTime();
     // SpeedControl::FPSCorrection.OnLoop();
     
-    p1.OnLoop(&mainClock);
-    p2.OnLoop(&mainClock);
+    // p1.OnLoop(&mainClock);
+    // p2.OnLoop(&mainClock);
+    
+    p1.update(&mainClock);
     
     if (!mainClock.getIsPaused()){
         timer.setTime(timeRemaining);
+        
         /** Bad code, want to change later. **/
         if(punch1){
+            p1.punch();
             punch1 = false;
             punchSFX.play();
-            p1.aniControl.maxFrames = 6;
-            p1.aniControl.setCurrentFrame(5);
         }
         else {
-            p1.aniControl.maxFrames = 5;
-            p1.OnAnimate(&mainClock);
-        }
-        if(punch2){
-            punch2 = false;
-            punchSFX.play();
-            p2.aniControl.maxFrames = 6;
-            p2.aniControl.setCurrentFrame(5);
-        }
-        else {
-            p2.aniControl.maxFrames = 5;
-            p2.OnAnimate(&mainClock);
+            // p1.aniControl.maxFrames = 5;
+            // p1.OnAnimate(&mainClock);
         }
     }
     if(timeRemaining <= 0.0){

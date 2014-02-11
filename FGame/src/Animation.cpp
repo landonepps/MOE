@@ -11,8 +11,10 @@
 *******************************************************************************/
 
 #include "Animation.h"
-#include <iostream>
-using namespace std;
+
+/***********************************************************************
+ * Animation: Constructor (Default: frameInc = 1, oscillates = false).
+***********************************************************************/
 Animation::Animation()
 {
     currentFrame = 0;
@@ -27,6 +29,13 @@ Animation::Animation()
     oscillates = false;
 }
 
+/***********************************************************************
+ * OnAnimate: Updates animation frame according to compute speed.
+ *
+ * clock:     Clock that handles games time.
+ *
+ * returns:   void.
+***********************************************************************/
 void Animation::OnAnimate(Clock *clock)
 {
 
@@ -64,11 +73,25 @@ void Animation::OnAnimate(Clock *clock)
     }
 }
 
+/***********************************************************************
+ * setFrameRate: Sets the animation's frame rate.
+ *
+ * rate:      The frame rate in milliseconds.
+ *
+ * returns:   void.
+***********************************************************************/
 void Animation::setFrameRate(int rate)
 {
     frameRate = rate;
 }
 
+/***********************************************************************
+ * setCurrentFrame: Sets the animation's current frame.
+ *
+ * frame:     A frame in the image's animation.
+ *
+ * returns:   void.
+***********************************************************************/
 void Animation::setCurrentFrame(int frame)
 {
     
@@ -80,6 +103,11 @@ void Animation::setCurrentFrame(int frame)
     currentFrame = frame;
 }
 
+/***********************************************************************
+ * getCurrentFrame: Returns the animation's current frame.
+ *
+ * returns:   The animation's current frame.
+***********************************************************************/
 int Animation::getCurrentFrame()
 {
     return currentFrame;

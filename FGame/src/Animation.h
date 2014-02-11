@@ -29,7 +29,8 @@ class Animation
         int    frameRate;
 
     public:
-        int  maxFrames;
+        int  firstFrame;
+        int lastFrame;
         bool oscillates;
 
         Animation();

@@ -15,6 +15,7 @@
 
 #include "Image.h"
 #include "Animation.h"
+#include "SFX.h"
 
 class Player {
     int x, y, h, w;
@@ -22,14 +23,24 @@ class Player {
     Image img;
     Animation ani;
     SDL_Renderer *renderer;
+    SFX punchSound;
+    
+    /* will remove later */
+    bool walking;
     
 public:
     Player();
     ~Player();
-    void loadPlayer(const char *filename, SDL_Renderer *renderer);
+    void loadPlayer(const char *image, const char *attack, SDL_Renderer *renderer, int x, int y);
     void update(Clock *clock);
     void punch();
+    void walk();
+    void moveLeft();
+    void moveRight();
+    void halt();
     void draw();
+    bool checkCollision(const Player *other);
+    bool checkPunch(const Player *other);
 };
 
 #endif /* defined(__MOE__Player__) */

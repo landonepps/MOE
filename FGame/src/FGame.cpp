@@ -25,7 +25,6 @@ FGame::FGame() {
     height    = 480;
 
     /** Control character animation. **/
-    poorAnim.maxFrames = 6;
     punch1 = false;
     punch2 = false;
     

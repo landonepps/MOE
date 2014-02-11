@@ -52,7 +52,7 @@ class FGame : public Events
         Image background;
     
         Music bgm;
-        SFX punchSFX;
+        // SFX punchSFX;
     
         HUD theHUD;
         Healthbar hp;
@@ -67,7 +67,7 @@ class FGame : public Events
 
     
         Player p1;
-        // Player p2;
+        Player p2;
 
 
         /** Resolution of the main window. **/
@@ -118,8 +118,7 @@ class FGame : public Events
         void OnExit();
 
         /***********************************************************************
-         * OnJoyButtonDown: Close application if a joystick button is pressed
-         *                  (test).
+         * OnJoyButtonDown: Handle joystick input
          *
          * which:     The index of the joystick that reported the event.
          *
@@ -127,7 +126,11 @@ class FGame : public Events
          *
          * returns:   void.
         ***********************************************************************/
-        virtual void OnJoyButtonDown(Uint8 which, Uint8 button);
+        void OnJoyButtonDown(Uint8 which, Uint8 button);
+    
+        void OnJoyButtonUp(Uint8 which, Uint8 button);
+        //virtual void OnKeyDown(SDL_Keycode sym, Uint16 mod,
+         //                  SDL_Scancode scancode);
 
         /***********************************************************************
          * OnLoop:    Handles basic calculations (such as animation). Currently

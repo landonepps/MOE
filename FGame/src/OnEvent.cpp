@@ -52,10 +52,12 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
     if(button == A_BUTTON)
     {
         punch1 = true;
+        // p1.punch();
     }
     
     if(button == B_BUTTON)
     {
+        // p2.punch();
         punch2 = true;
     }
     
@@ -75,5 +77,21 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
     if(button == Y_BUTTON)
     {
         mainClock.setTimeScale(mainClock.getTimeScale() / 2);
+    }
+    
+    /** move left **/
+    if (button == LEFT_DPAD && !mainClock.getIsPaused()) {
+        p1.moveLeft();
+    }
+    
+    /** move right **/
+    if (button == RIGHT_DPAD && !mainClock.getIsPaused()) {
+        p1.moveRight();
+    }
+}
+
+void FGame::OnJoyButtonUp(Uint8 which, Uint8 button) {
+    if ((button == LEFT_DPAD || button == RIGHT_DPAD) && !mainClock.getIsPaused()) {
+        p1.halt();
     }
 }

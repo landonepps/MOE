@@ -21,7 +21,7 @@ Animation::Animation()
     frameInc = 1;
 
     /** Milliseconds. **/
-    frameRate = 100;
+    frameRate = 200;
     oldTime = 0;
 
     oscillates = false;
@@ -29,6 +29,7 @@ Animation::Animation()
 
 void Animation::OnAnimate(Clock *clock)
 {
+
     if(oldTime + frameRate > (clock->getElapsedTime() * 1000))
     {
         return;
@@ -41,13 +42,13 @@ void Animation::OnAnimate(Clock *clock)
     {
         if(frameInc > 0)
         {
-            if(currentFrame >= maxFrames)
+            if(currentFrame > lastFrame)
             {
-                frameInc = -maxFrames;
+                frameInc = -(lastFrame - firstFrame);
             }
             else
             {
-                if(currentFrame <= 0)
+                if(currentFrame <= firstFrame)
                 {
                     frameInc = -frameInc;
                 }
@@ -56,9 +57,9 @@ void Animation::OnAnimate(Clock *clock)
     }
     else
     {
-        if(currentFrame >= maxFrames)
+        if(currentFrame > lastFrame)
         {
-            currentFrame = 0;
+            currentFrame = firstFrame;
         }
     }
 }
@@ -70,7 +71,7 @@ void Animation::setFrameRate(int rate)
 
 void Animation::setCurrentFrame(int frame)
 {
-    if(frame < 0 || frame >= maxFrames)
+    if(frame < firstFrame || frame > lastFrame)
     {
         return;
     }

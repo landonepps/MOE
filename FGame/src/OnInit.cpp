@@ -92,7 +92,7 @@ bool FGame::OnInit()
     bgm.loadMusic(".\\assets\\bgm.wav");
     bgm.playMusic();
     
-    punchSFX.loadSFX(".\\assets\\punch.wav");
+    // punchSFX.loadSFX(".\\assets\\punch.wav");
 #else
     background.loadImage("./assets/stage1bg.png", renderer);
     foreground.loadImage("./assets/stage1fg.png", renderer);
@@ -105,9 +105,10 @@ bool FGame::OnInit()
     bgm.loadMusic("./assets/bgm.wav");
     bgm.play();
     
-    punchSFX.loadSFX("./assets/punch.wav");
+    // punchSFX.loadSFX("./assets/punch.wav");
     
-    p1.loadPlayer("./assets/poor.png", renderer);
+    p1.loadPlayer("./assets/poor.png", "./assets/punch.wav", renderer, 70, 200);
+    p2.loadPlayer("./assets/poor2.png", "./assets/punch.wav", renderer, 370, 200);
 #endif
     theHUD.addHUDElement(&timer);
     /** Set frame rate to every 150 milliseconds. **/

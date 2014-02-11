@@ -24,15 +24,15 @@ void FGame::OnRender()
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
     SDL_RenderClear(renderer);
     
-    //TODO: Remove later
     background.draw(0, 0);
-    // poorImg.draw(p1.xLoc+70, p1.yLoc+200, 0, p1.aniControl.getCurrentFrame() * 200,140,200);
-    // poorImg2.draw(p2.xLoc+270, p2.yLoc+200, 0, p2.aniControl.getCurrentFrame() * 200,140,200);
-    //poorAnim.getCurrentFrame() * 200, 140, 200);
     p1.draw();
     p2.draw();
     foreground.draw(0, 0);
-    theHUD.drawElements(renderer);    
+    theHUD.drawElements(renderer);
+    
+    if(mainClock.getIsPaused()) {
+        winmsg.draw(150, 45);
+    }
 
     /** Swap buffers. **/
     SDL_RenderPresent(renderer);

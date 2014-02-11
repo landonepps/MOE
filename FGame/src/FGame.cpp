@@ -21,8 +21,8 @@ FGame::FGame() {
     screen    = NULL;
     renderer  = NULL;
 
-    width     = 640;
-    height    = 480;
+    width     = WIN_WIDTH;
+    height    = WIN_HEIGHT;
 
     /** Control character animation. **/
     punch1 = false;

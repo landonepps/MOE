@@ -11,6 +11,7 @@
  ******************************************************************************/
 
 #include "Player.h"
+#include "Constants.h"
 
 Player::Player() {
     x = 70;
@@ -22,8 +23,7 @@ Player::Player() {
     renderer = NULL;
     ani.firstFrame = 0;
     ani.lastFrame = 4;
-    
-    // bool moveRight = false;
+    health = 100;
     
     walking = true;
 }
@@ -82,13 +82,17 @@ void Player::draw() {
     img.draw(x, y, 0, ani.getCurrentFrame() * h, w, h);
 }
 
-bool Player::checkCollision(const Player *other) {
+float Player::getHealth() {
+    return health;
+}
+
+bool Player::checkPlayerCollision(const Player *other) {
     bool result = false;
-    if (x < (other->x + other->w) && (x + w) > other->x) {
+    if (x < (other->x + other->w - PUNCH_REACH) && (x + w - PUNCH_REACH) > other->x) {
         result = true;
         x -= xVel;
         halt();
-    } else if (x + w < (other->x) && x > (other->x + other->w)) {
+    } else if (x + w - PUNCH_REACH < (other->x) && x > (other->x + other->w - PUNCH_REACH)) {
         result = true;
         x -= xVel;
         halt();
@@ -97,6 +101,36 @@ bool Player::checkCollision(const Player *other) {
     return result;
 }
 
-bool Player::checkPunch(const Player *other) {
-    return false;
+bool Player::checkPunch(Player *other) {
+    
+    bool result = false;
+    if (x < (other->x + other->w + PUNCH_REACH) && (x + w + PUNCH_REACH) > other->x) {
+        result = true;
+    } else if (x + w + PUNCH_REACH < (other->x) && x > (other->x + other->w + PUNCH_REACH)) {
+        result = true;
+    }
+    
+    if (result) {
+        if (other->health - PUNCH_DMG < 0) {
+            other->health = 0;
+        } else {
+            other->health -= PUNCH_DMG;
+        }
+    }
+    
+    return result;
+}
+
+bool Player::checkWallCollision() {
+    bool result = false;
+    if (x + w > WIN_WIDTH) {
+        result = true;
+        x -= xVel;
+        halt();
+    } else if (x < 0) {
+        result = true;
+        x -= xVel;
+        halt();
+    }
+    return result;
 }

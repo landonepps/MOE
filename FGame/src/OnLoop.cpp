@@ -26,12 +26,16 @@ void FGame::OnLoop()
     p2.update(&mainClock);
     p1.update(&mainClock);
     
+    hp1.setHealth(p1.getHealth());
+    hp2.setHealth(p2.getHealth());
+    
     if (!mainClock.getIsPaused()){
         timer.setTime(timeRemaining);
         
         /** Bad code, want to change later. **/
         if(punch1){
             p1.punch(&mainClock);
+            p1.checkPunch(&p2);
             punch1 = false;
         }
         else {
@@ -39,16 +43,19 @@ void FGame::OnLoop()
         }
         if(punch2){
             p2.punch(&mainClock);
+            p2.checkPunch(&p1);
             punch2 = false;
         }
         else {
             p2.walk(&mainClock);
         }
         
-        p1.checkCollision(&p2);
-        p2.checkCollision(&p1);
+        p1.checkPlayerCollision(&p2);
+        p2.checkPlayerCollision(&p1);
+        p1.checkWallCollision();
+        p2.checkWallCollision();
     }
-    if(timeRemaining <= 0.0){
+    if(timeRemaining <= 0.0 || (p1.getHealth() <= 0 || p2.getHealth() <= 0)){
         timer.setTime(0);
         p1.halt();
         p2.halt();

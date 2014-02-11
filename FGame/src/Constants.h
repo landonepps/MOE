@@ -37,6 +37,11 @@ const Uint8 Y_BUTTON         = 13;
 const Uint8 HOME_BUTTON      = 14;
 
 const int NUM_AUDIO_CHANNELS = 16;
+const int PUNCH_DMG          = 5;
+const int PUNCH_REACH        = 25;
+
+const int WIN_WIDTH          = 640;
+const int WIN_HEIGHT         = 480;
 
 /** Values for entity typing **/
 enum {

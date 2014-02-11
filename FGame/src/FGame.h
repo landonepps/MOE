@@ -50,6 +50,7 @@ class FGame : public Events
         Image character;
         Image foreground;
         Image background;
+        Image winmsg;
     
         Music bgm;
     

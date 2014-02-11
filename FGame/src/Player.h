@@ -24,6 +24,7 @@ class Player {
     Animation ani;
     SDL_Renderer *renderer;
     SFX punchSound;
+    float health;
     
     /* will remove later */
     bool walking;
@@ -39,8 +40,10 @@ public:
     void moveRight();
     void halt();
     void draw();
-    bool checkCollision(const Player *other);
-    bool checkPunch(const Player *other);
+    float getHealth();
+    bool checkPlayerCollision(const Player *other);
+    bool checkPunch(Player *other);
+    bool checkWallCollision();
 };
 
 #endif /* defined(__MOE__Player__) */

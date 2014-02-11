@@ -67,11 +67,11 @@ void Player::walk(Clock *clock) {
 }
 
 void Player::moveLeft() {
-    xVel = 3.0;
+    xVel = -3.0;
 }
 
 void Player::moveRight() {
-    xVel = -3.0;
+    xVel = 3.0;
 }
 
 void Player::halt() {

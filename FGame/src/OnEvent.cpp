@@ -54,35 +54,6 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
         punch1 = true;
     }
     
-    if(button == B_BUTTON)
-    {
-        punch2 = true;
-    }
-    
-    /** Make character move **/
-    if(button == START_BUTTON)
-    {
-        p2.moveLeft();
-    }
-    
-    /** Make character move **/
-    if(button == SELECT_BUTTON)
-    {
-        p2.moveRight();
-    }
-
-    /** Speed up time. **/
-    if(button == X_BUTTON)
-    {
-        mainClock.setTimeScale(mainClock.getTimeScale() * 2);
-    }
-
-    /** Slow down time. **/
-    if(button == Y_BUTTON)
-    {
-        mainClock.setTimeScale(mainClock.getTimeScale() / 2);
-    }
-    
     /** move left **/
     if (button == LEFT_DPAD && !mainClock.getIsPaused()) {
         p1.moveLeft();
@@ -98,7 +69,79 @@ void FGame::OnJoyButtonUp(Uint8 which, Uint8 button) {
     if ((button == LEFT_DPAD || button == RIGHT_DPAD) && !mainClock.getIsPaused()) {
         p1.halt();
     }
-    if ((button == START_BUTTON || button == SELECT_BUTTON) && !mainClock.getIsPaused()) {
+}
+
+/***********************************************************************
+ * OnKeyDown: Handle keyboard key down
+ *
+ * sym:       The SDL virtual key representation.
+ *
+ * mod:       The SDL physical key representation.
+ *
+ * scancode:  Current key modifiers.
+ *
+ * returns:   void.
+***********************************************************************/
+void FGame::OnKeyDown(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode) {
+    if(sym == SDLK_s)
+    {
+        punch2 = true;
+    }
+
+    /** Make character move **/
+    if(sym == SDLK_a && !mainClock.getIsPaused())
+    {
+        p2.moveLeft();
+    }
+
+    /** Make character move **/
+    if(sym == SDLK_d && !mainClock.getIsPaused())
+    {
+        p2.moveRight();
+    }
+}
+
+/***********************************************************************
+ * OnKeyUp:   Handle keyboard key up
+ *
+ * sym:       The SDL virtual key representation.
+ *
+ * mod:       The SDL physical key representation.
+ *
+ * scancode:  Current key modifiers.
+ *
+ * returns:   void.
+***********************************************************************/
+void FGame::OnKeyUp(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode) {
+    if ((sym == SDLK_a || sym == SDLK_d) && !mainClock.getIsPaused()) {
         p2.halt();
     }
+}
+
+/***********************************************************************
+ * OnLButtonDown: Speed up time.
+ *
+ * x:         X coordinate, relative to window.
+ *
+ * y:         Y coordinate, relative to window.
+ *
+ * returns:   void.
+***********************************************************************/
+void FGame::OnLButtonDown(int x, int y) {
+    /** Speed up time. **/
+    mainClock.setTimeScale(mainClock.getTimeScale() * 2);
+}
+
+/***********************************************************************
+ * OnRButtonDown: Slow down time.
+ *
+ * x:         X coordinate, relative to window.
+ *
+ * y:         Y coordinate, relative to window.
+ *
+ * returns:   void.
+***********************************************************************/
+void FGame::OnRButtonDown(int x, int y) {
+    /** Speed up time. **/
+    mainClock.setTimeScale(mainClock.getTimeScale() / 2);
 }

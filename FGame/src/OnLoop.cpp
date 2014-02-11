@@ -23,6 +23,7 @@ void FGame::OnLoop()
     /** Updating animations etc. go here. **/
     float timeRemaining = roundLength - mainClock.getElapsedTime();
     // SpeedControl::FPSCorrection.OnLoop();
+    
     p1.OnLoop(&mainClock);
     p2.OnLoop(&mainClock);
     

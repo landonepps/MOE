@@ -139,6 +139,56 @@ class FGame : public Events
         void OnJoyButtonUp(Uint8 which, Uint8 button);
 
         /***********************************************************************
+         * OnKeyDown: Handle keyboard key down
+         *
+         * sym:       The SDL virtual key representation.
+         *
+         * mod:       The SDL physical key representation.
+         *
+         * scancode:  Current key modifiers.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        void OnKeyDown(SDL_Keycode sym, Uint16 mod,
+                               SDL_Scancode scancode);
+
+        /***********************************************************************
+         * OnKeyUp:   Handle keyboard key up
+         *
+         * sym:       The SDL virtual key representation.
+         *
+         * mod:       The SDL physical key representation.
+         *
+         * scancode:  Current key modifiers.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        void OnKeyUp(SDL_Keycode sym, Uint16 mod,
+                             SDL_Scancode scancode);
+
+        /***********************************************************************
+         * OnLButtonDown: Speed up time.
+         *
+         * x:         X coordinate, relative to window.
+         *
+         * y:         Y coordinate, relative to window.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        void OnLButtonDown(int x, int y);
+
+        /***********************************************************************
+         * OnRButtonDown: Slow down time.
+         *
+         * x:         X coordinate, relative to window.
+         *
+         * y:         Y coordinate, relative to window.
+         *
+         * returns:   void.
+        ***********************************************************************/
+        void OnRButtonDown(int x, int y);
+
+        /***********************************************************************
          * OnLoop:    Handles basic calculations (such as animation). Currently
          *            does nothing.
          *

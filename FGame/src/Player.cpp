@@ -99,14 +99,14 @@ void Player::walk() {
  * moveLeft: sets x velocity for moving left
  */
 void Player::moveLeft() {
-    xVel = 3.0;
+    xVel = -3.0;
 }
 
 /*
  * moveRight: sets x velocity for moving right
  */
 void Player::moveRight() {
-    xVel = -3.0;
+    xVel = 3.0;
 }
 
 /*

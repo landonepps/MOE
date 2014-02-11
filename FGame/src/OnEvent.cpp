@@ -60,7 +60,7 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
     }
     
     /** Make character move **/
-    if(button == B_BUTTON )
+    if(button == B_BUTTON)
     {
         p1.moveLeft = true;
     }

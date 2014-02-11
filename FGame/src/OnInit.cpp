@@ -91,6 +91,8 @@ bool FGame::OnInit()
 
     bgm.loadMusic(".\\assets\\bgm.wav");
     bgm.playMusic();
+    
+    punchSFX.loadSFX(".\\assets\\punch.wav");
 #else
     background.loadImage("./assets/stage1bg.png", renderer);
     foreground.loadImage("./assets/stage1fg.png", renderer);
@@ -101,8 +103,9 @@ bool FGame::OnInit()
     timer.setup("./assets/font.ttf", timerColor);
     
     bgm.loadMusic("./assets/bgm.wav");
-    bgm.playMusic();
+    bgm.play();
     
+    punchSFX.loadSFX("./assets/punch.wav");
 #endif
     theHUD.addHUDElement(&timer);
     /** Set frame rate to every 150 milliseconds. **/

@@ -36,4 +36,6 @@ const Uint8 X_BUTTON         = 12;
 const Uint8 Y_BUTTON         = 13;
 const Uint8 HOME_BUTTON      = 14;
 
+const int NUM_AUDIO_CHANNELS = 16;
+
 #endif /* CONSTANTS_H_ */

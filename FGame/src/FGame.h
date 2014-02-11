@@ -28,6 +28,7 @@
 #include "Player.h"
 #include "Constants.h"
 #include "HUD.h"
+#include "SFX.h"
 
 class FGame : public Events
 {
@@ -51,6 +52,7 @@ class FGame : public Events
         Image background;
     
         Music bgm;
+        SFX punchSFX;
     
         HUD theHUD;
         Healthbar hp;

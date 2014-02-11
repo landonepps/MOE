@@ -28,6 +28,7 @@
 		44A3108918A5BE3D00427013 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3108818A5BE3D00427013 /* SDL2_ttf.framework */; };
 		44B8E3E518A70FAA00587902 /* Music.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44B8E3E318A70FAA00587902 /* Music.cpp */; };
 		44D2A63D18A6F5AA0043F695 /* Healthbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44D2A63B18A6F5AA0043F695 /* Healthbar.cpp */; };
+		44DA951A18A984980062F44D /* SFX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44DA951818A984980062F44D /* SFX.cpp */; };
 		44EDA67818A088160095AB29 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8918A077D600FE3118 /* Credits.rtf */; };
 		44EDA67918A088190095AB29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8318A077D600FE3118 /* InfoPlist.strings */; };
 		44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44F45FD918A7EFC80052DDA9 /* Animation.cpp */; };
@@ -77,6 +78,8 @@
 		44B8E3E418A70FAA00587902 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
 		44D2A63B18A6F5AA0043F695 /* Healthbar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Healthbar.cpp; sourceTree = "<group>"; };
 		44D2A63C18A6F5AA0043F695 /* Healthbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Healthbar.h; sourceTree = "<group>"; };
+		44DA951818A984980062F44D /* SFX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SFX.cpp; sourceTree = "<group>"; };
+		44DA951918A984980062F44D /* SFX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFX.h; sourceTree = "<group>"; };
 		44F45FD918A7EFC80052DDA9 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		44F45FDA18A7EFC80052DDA9 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		44F45FDC18A7F0680052DDA9 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
@@ -143,7 +146,10 @@
 		4423CEDE18A0813600FE3118 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				44DA951418A983AB0062F44D /* Audio */,
+				443B320018A9338500EDB56F /* HUD */,
 				4440CBB118A8993E00C362FF /* Entity.h */,
+				4440CBAE18A8992D00C362FF /* Entity.cpp */,
 				4440CBB218A8993E00C362FF /* EntityCollision.cpp */,
 				4440CBB318A8993E00C362FF /* EntityCollision.h */,
 				4440CBB418A8993E00C362FF /* Player.cpp */,
@@ -152,16 +158,8 @@
 				4440CBB718A8993E00C362FF /* SpeedControl.h */,
 				4440CBAC18A8992D00C362FF /* Attack.cpp */,
 				4440CBAD18A8992D00C362FF /* Attack.h */,
-				4440CBAE18A8992D00C362FF /* Entity.cpp */,
-				4457055F18A8721B00DCB73E /* HUD.cpp */,
 				44F45FD918A7EFC80052DDA9 /* Animation.cpp */,
 				44F45FDA18A7EFC80052DDA9 /* Animation.h */,
-				44D2A63B18A6F5AA0043F695 /* Healthbar.cpp */,
-				44D2A63C18A6F5AA0043F695 /* Healthbar.h */,
-				44A3108318A5BDEE00427013 /* HUD.h */,
-				44A3108418A5BDEE00427013 /* HUDelement.h */,
-				44A3108518A5BDEE00427013 /* Timer.cpp */,
-				44A3108618A5BDEE00427013 /* Timer.h */,
 				44A3107F18A5B73C00427013 /* Clock.cpp */,
 				44A3108018A5B73C00427013 /* Clock.h */,
 				44A3108118A5B73C00427013 /* Constants.h */,
@@ -176,10 +174,33 @@
 				4423CEE518A0813600FE3118 /* OnRender.cpp */,
 				44A3107218A59E4700427013 /* Image.cpp */,
 				44A3107318A59E4700427013 /* Image.h */,
-				44B8E3E318A70FAA00587902 /* Music.cpp */,
-				44B8E3E418A70FAA00587902 /* Music.h */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		443B320018A9338500EDB56F /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				4457055F18A8721B00DCB73E /* HUD.cpp */,
+				44A3108318A5BDEE00427013 /* HUD.h */,
+				44A3108418A5BDEE00427013 /* HUDelement.h */,
+				44D2A63B18A6F5AA0043F695 /* Healthbar.cpp */,
+				44D2A63C18A6F5AA0043F695 /* Healthbar.h */,
+				44A3108518A5BDEE00427013 /* Timer.cpp */,
+				44A3108618A5BDEE00427013 /* Timer.h */,
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
+		44DA951418A983AB0062F44D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				44B8E3E318A70FAA00587902 /* Music.cpp */,
+				44B8E3E418A70FAA00587902 /* Music.h */,
+				44DA951818A984980062F44D /* SFX.cpp */,
+				44DA951918A984980062F44D /* SFX.h */,
+			);
+			name = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +278,7 @@
 				4440CBB918A8993E00C362FF /* Player.cpp in Sources */,
 				444C8C5C18A21169000101F8 /* Events.cpp in Sources */,
 				4440CBB818A8993E00C362FF /* EntityCollision.cpp in Sources */,
+				44DA951A18A984980062F44D /* SFX.cpp in Sources */,
 				4457056018A8721B00DCB73E /* HUD.cpp in Sources */,
 				44A3108718A5BDEE00427013 /* Timer.cpp in Sources */,
 				4423CEE818A0813600FE3118 /* OnEvent.cpp in Sources */,

@@ -30,7 +30,7 @@ Entity::Entity() {
     entType = ENTITY_TYPE_GENERIC;
  
     isDead = false;
-    flags = ENTITY_FLAG_GRAVITY;
+    flags = 0; //ENTITY_FLAG_GRAVITY;
  
     xSpd = 0;
     ySpd= 0;

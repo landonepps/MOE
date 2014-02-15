@@ -80,14 +80,14 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
     
-    SDL_Color timerColor = {255, 255, 255};
-    // load images for testing
-#ifdef _WIN32
-    bgm.loadMusic(".\\assets\\bgm.wav");
-    bgm.play();
-#else
-    bgm.loadMusic("./assets/bgm.wav");
-    bgm.play();
-#endif
+    // load audio for testing
+    #ifdef _WIN32
+        bgm.loadMusic(".\\assets\\bgm.wav");
+        bgm.play();
+    #else
+        bgm.loadMusic("./assets/bgm.wav");
+        bgm.play();
+    #endif
+
     return true;
 }

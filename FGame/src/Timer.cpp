@@ -14,9 +14,23 @@
 #include <iostream>
 #include <iomanip>
 
-Timer::Timer() : HUDelement(){}
+Timer::Timer() : HUDelement()
+{
+    xPosition = 0;
+    yPosition = 0;
+    seconds   = 0.0f;
+    precision = 0;
+    font      = NULL;
+}
 
-Timer::Timer(int id) : HUDelement(id){}
+Timer::Timer(int id) : HUDelement(id)
+{
+    xPosition = 0;
+    yPosition = 0;
+    seconds   = 0.0f;
+    precision = 0;
+    font      = NULL;
+}
 
 /***********************************************************************
 * setup:   Sets up the timer HUD type using developer specified variables

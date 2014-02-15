@@ -25,8 +25,9 @@ class HUDelement{
         int id;
 
     public:
-        HUDelement(){};
+        HUDelement(){id = 0;};
         HUDelement(int id){this->id = id;};
+        virtual ~HUDelement(){};
 
         // Virtual function to ensure child classes have a way to draw themselves.
         // It also envokes that draw function when called

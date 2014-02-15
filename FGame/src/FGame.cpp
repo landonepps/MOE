@@ -24,13 +24,7 @@ FGame::FGame() {
     width     = WIN_WIDTH;
     height    = WIN_HEIGHT;
 
-    /** Control character animation. **/
-    punch1 = false;
-    punch2 = false;
-
     joystick1 = NULL;
-
-    roundLength = 30;
 }
 
 /***********************************************************************

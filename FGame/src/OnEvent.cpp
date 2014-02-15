@@ -37,8 +37,7 @@ void FGame::OnExit()
 }
 
 /***********************************************************************
- * OnJoyButtonDown: Close application if a joystick button is pressed
- *                  (test).
+ * OnJoyButtonDown: Currently does nothing.
  *
  * which:     The index of the joystick that reported the event.
  *
@@ -48,27 +47,21 @@ void FGame::OnExit()
 ***********************************************************************/
 void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
 {
-    /** Make character punch. **/
-    if(button == A_BUTTON)
-    {
-        punch1 = true;
-    }
-    
-    /** move left **/
-    if (button == LEFT_DPAD && !mainClock.getIsPaused()) {
-        p1.moveLeft();
-    }
-    
-    /** move right **/
-    if (button == RIGHT_DPAD && !mainClock.getIsPaused()) {
-        p1.moveRight();
-    }
+    /** Do Nothing **/
 }
 
-void FGame::OnJoyButtonUp(Uint8 which, Uint8 button) {
-    if ((button == LEFT_DPAD || button == RIGHT_DPAD) && !mainClock.getIsPaused()) {
-        p1.halt();
-    }
+/***********************************************************************
+ * OnJoyButtonUp: Currently does nothing.
+ *
+ * which:     The index of the joystick that reported the event.
+ *
+ * button:    The index of the button that changed.
+ *
+ * returns:   void.
+***********************************************************************/
+void FGame::OnJoyButtonUp(Uint8 which, Uint8 button)
+{
+    /** Do Nothing **/
 }
 
 /***********************************************************************
@@ -82,23 +75,9 @@ void FGame::OnJoyButtonUp(Uint8 which, Uint8 button) {
  *
  * returns:   void.
 ***********************************************************************/
-void FGame::OnKeyDown(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode) {
-    if(sym == SDLK_s)
-    {
-        punch2 = true;
-    }
-
-    /** Make character move **/
-    if(sym == SDLK_a && !mainClock.getIsPaused())
-    {
-        p2.moveLeft();
-    }
-
-    /** Make character move **/
-    if(sym == SDLK_d && !mainClock.getIsPaused())
-    {
-        p2.moveRight();
-    }
+void FGame::OnKeyDown(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode)
+{
+    /** Do Nothing **/
 }
 
 /***********************************************************************
@@ -112,10 +91,9 @@ void FGame::OnKeyDown(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode) {
  *
  * returns:   void.
 ***********************************************************************/
-void FGame::OnKeyUp(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode) {
-    if ((sym == SDLK_a || sym == SDLK_d) && !mainClock.getIsPaused()) {
-        p2.halt();
-    }
+void FGame::OnKeyUp(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode)
+{
+    /** Do Nothing **/
 }
 
 /***********************************************************************
@@ -127,7 +105,8 @@ void FGame::OnKeyUp(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode) {
  *
  * returns:   void.
 ***********************************************************************/
-void FGame::OnLButtonDown(int x, int y) {
+void FGame::OnLButtonDown(int x, int y)
+{
     /** Speed up time. **/
     mainClock.setTimeScale(mainClock.getTimeScale() * 2);
 }
@@ -141,7 +120,8 @@ void FGame::OnLButtonDown(int x, int y) {
  *
  * returns:   void.
 ***********************************************************************/
-void FGame::OnRButtonDown(int x, int y) {
+void FGame::OnRButtonDown(int x, int y)
+{
     /** Speed up time. **/
     mainClock.setTimeScale(mainClock.getTimeScale() / 2);
 }

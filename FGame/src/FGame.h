@@ -45,35 +45,11 @@ class FGame : public Events
         SDL_Window *screen;
         SDL_Renderer *renderer;
     
-        // TODO: Remove later
-        // test elements
-        Image character;
-        Image foreground;
-        Image background;
-        Image winmsg;
-    
         Music bgm;
-    
-        HUD theHUD;
-        Healthbar hp1;
-        Healthbar hp2;
-        Timer timer;
-
-        Animation poorAnim;
-    
-        bool punch1;
-        bool punch2;
-
-    
-        Player p1;
-        Player p2;
-
 
         /** Resolution of the main window. **/
         int width;
         int height;
-
-        float roundLength;
 
         SDL_Joystick *joystick1;
 
@@ -117,7 +93,7 @@ class FGame : public Events
         void OnExit();
 
         /***********************************************************************
-         * OnJoyButtonDown: Handle joystick button down
+         * OnJoyButtonDown: Currently does nothing.
          *
          * which:     The index of the joystick that reported the event.
          *
@@ -128,14 +104,14 @@ class FGame : public Events
         void OnJoyButtonDown(Uint8 which, Uint8 button);
     
         /***********************************************************************
-         * OnJoyButtonDown: Handle joystick button up
+         * OnJoyButtonUp: Currently does nothing.
          *
          * which:     The index of the joystick that reported the event.
          *
          * button:    The index of the button that changed.
          *
          * returns:   void.
-         ***********************************************************************/
+        ***********************************************************************/
         void OnJoyButtonUp(Uint8 which, Uint8 button);
 
         /***********************************************************************

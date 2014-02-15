@@ -29,6 +29,8 @@ bool FGame::OnInit()
         return false;
     }
 
+    /** Initialize the clock for the main game loop. **/
+    mainClock.init();
 
     /** Creates the main window centered and allows opengl. Not sure if
      *  double buffer is already enabled. **/
@@ -81,41 +83,11 @@ bool FGame::OnInit()
     SDL_Color timerColor = {255, 255, 255};
     // load images for testing
 #ifdef _WIN32
-    background.loadImage(".\\assets\\stage1bg.png", renderer);
-    foreground.loadImage(".\\assets\\stage1fg.png", renderer);
-    winmsg.loadImage(".\\assets\\win.png", renderer);
-    
-    timer.setup(".\\assets\\font.ttf", timerColor, 290, 5);
-
     bgm.loadMusic(".\\assets\\bgm.wav");
     bgm.play();
-    
-    p1.loadPlayer(".\\assets\\poor.png", ".\\assets\\punch.wav", renderer, 70, 200);
-    p2.loadPlayer(".\\assets\\poor2.png", ".\\assets\\punch.wav", renderer, 370, 200);
-    
 #else
-    background.loadImage("./assets/stage1bg.png", renderer);
-    foreground.loadImage("./assets/stage1fg.png", renderer);
-    winmsg.loadImage("./assets/win.png", renderer);
-    
-    timer.setup("./assets/font.ttf", timerColor, 290, 5);
-    
     bgm.loadMusic("./assets/bgm.wav");
     bgm.play();
-    
-    p1.loadPlayer("./assets/poor.png", "./assets/punch.wav", renderer, 70, 200);
-    p2.loadPlayer("./assets/poor2.png", "./assets/punch.wav", renderer, 370, 200);
 #endif
-    theHUD.addHUDElement(&timer);
-
-    hp1.setup(100, 50, 5, 30, 200);
-    hp2.setup(100, 370, 5, 30, 200);
-
-    theHUD.addHUDElement(&hp1);
-    theHUD.addHUDElement(&hp2);
-
-    /** Initialize the clock for the main game loop. **/
-    mainClock.init();
-    
     return true;
 }

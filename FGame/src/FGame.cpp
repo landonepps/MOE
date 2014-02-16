@@ -18,8 +18,9 @@
 FGame::FGame() {
     running   = true;
 
-    screen    = NULL;
+    window    = NULL;
     renderer  = NULL;
+    context   = NULL;
 
     width     = WIN_WIDTH;
     height    = WIN_HEIGHT;

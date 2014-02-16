@@ -32,20 +32,34 @@ bool FGame::OnInit()
     /** Initialize the clock for the main game loop. **/
     mainClock.init();
 
+    /** Set opengl attributes, enable double buffering. **/
+    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 5);
+    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 5);
+    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 5);
+    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
+    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+
     /** Creates the main window centered and allows opengl. Not sure if
      *  double buffer is already enabled. **/
-    if((screen = SDL_CreateWindow("FGame",
+    if((window = SDL_CreateWindow("FGame",
                                   SDL_WINDOWPOS_CENTERED,
                                   SDL_WINDOWPOS_CENTERED,
                                   width, height,
-                                  0 )) == NULL)
+                                  SDL_WINDOW_OPENGL )) == NULL)
     {
         fprintf(stderr, "ERROR: Failed to create screen: %s\n", SDL_GetError());
         return false;
     }
     
+    /** Creates the gl context with our given attributes. **/
+    if((context = SDL_GL_CreateContext(window)) == NULL)
+    {
+        fprintf(stderr, "ERROR: Failed to create context: %s\n", SDL_GetError());
+        return false;
+    }
+
     /** Creates main renderer using GPU accelerating and VSYNC **/
-    if((renderer = SDL_CreateRenderer(screen,
+    if((renderer = SDL_CreateRenderer(window,
                                       -1,
                                       SDL_RENDERER_ACCELERATED |
                                       SDL_RENDERER_PRESENTVSYNC)) == NULL) {

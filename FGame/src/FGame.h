@@ -15,20 +15,20 @@
 
 #ifdef _MSC_VER
 #include <SDL.h>
+#include <GL.h>
+#include <GLU.h>
 #else
 #include <SDL2/SDL.h>
+#include <GL/GL.h>
+#include <GL/GLU.h>
 #endif
 #include "Events.h"
 #include "Clock.h"
 #include "Image.h"
 #include "Timer.h"
 #include "Healthbar.h"
-#include "Animation.h"
 #include "Music.h"
-#include "Player.h"
 #include "Constants.h"
-#include "HUD.h"
-#include "SFX.h"
 
 class FGame : public Events
 {
@@ -42,9 +42,11 @@ class FGame : public Events
         Clock mainClock;
 
         /** The main window/screen the user sees. **/
-        SDL_Window *screen;
+        SDL_Window   *window;
         SDL_Renderer *renderer;
+        SDL_GLContext context;
     
+        /** Background music. **/
         Music bgm;
 
         /** Resolution of the main window. **/

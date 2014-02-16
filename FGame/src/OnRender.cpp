@@ -24,6 +24,16 @@ void FGame::OnRender()
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
     SDL_RenderClear(renderer);
     
+    /** Clear color and depth buffer. **/
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    /** Test, draw triangle to the screen. **/
+    glBegin(GL_TRIANGLES);
+        glVertex3f(0.0f, 1.0f, 0.0f);
+        glVertex3f(-1.0f, -1.0f, 0.0f);
+        glVertex3f(1.0f, -1.0f, 0.0f);
+    glEnd();
+
     /** Swap buffers. **/
-    SDL_RenderPresent(renderer);
+    SDL_GL_SwapWindow(window);
 }

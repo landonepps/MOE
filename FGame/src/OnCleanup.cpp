@@ -27,6 +27,6 @@ void FGame::OnCleanup()
     IMG_Quit();
     Mix_Quit();
     
-    SDL_DestroyWindow(screen);
+    SDL_DestroyWindow(window);
     SDL_Quit();
 }

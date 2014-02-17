@@ -7,45 +7,45 @@
  * Class:      4342, Spring 2014
  * Date:      7-Feb-2014
  *
- * Timer class
+ * Counter class
 *******************************************************************************/
 
-#include "Timer.h"
+#include "Counter.h"
 #include <iostream>
 #include <iomanip>
 
-Timer::Timer() : HUDelement()
+Counter::Counter() : HUDelement()
 {
     xPosition = 0;
     yPosition = 0;
-    seconds   = 0.0f;
+    value   = 0.0f;
     precision = 0;
     font      = NULL;
 }
 
-Timer::Timer(int id) : HUDelement(id)
+Counter::Counter(int id) : HUDelement(id)
 {
     xPosition = 0;
     yPosition = 0;
-    seconds   = 0.0f;
+    value   = 0.0f;
     precision = 0;
     font      = NULL;
 }
 
 /***********************************************************************
-* setup:   Sets up the timer HUD type using developer specified variables
+* setup:   Sets up the Counter HUD type using developer specified variables
 *
 * fontfile: the name of the .ttf file
 * cl: font color 
-* xPos: x coordinate of where to place the timer
-* yPos: y coordinate of where to place the timer
+* xPos: x coordinate of where to place the Counter
+* yPos: y coordinate of where to place the Counter
 * fontSize: size of the font
-* precision: precision of timer desired by user.
+* precision: precision of Counter desired by user.
 * id: an id for this HUD type if desired.
 *
 * returns:   void.
 ***********************************************************************/
-void Timer::setup(const string &fontFile, SDL_Color cl, int xPos, int yPos,
+void Counter::setup(const string &fontFile, SDL_Color cl, int xPos, int yPos,
                   int fontSize, int precision,  int id)
 {
     this->precision = precision;
@@ -59,7 +59,7 @@ void Timer::setup(const string &fontFile, SDL_Color cl, int xPos, int yPos,
     color = cl;
 }
 
-Timer::~Timer(){
+Counter::~Counter(){
     TTF_CloseFont(font);
 }
 /***********************************************************************
@@ -69,21 +69,21 @@ Timer::~Timer(){
 *
 * returns:   void.
 ***********************************************************************/
-void Timer::setTime(float timeLeft){
-    seconds = timeLeft;
+void Counter::setValue(float val){
+    value = val;
 }
 
 /***********************************************************************
- * draw:   Simply draws the Timer to the screen
+ * draw:   Simply draws the Counter to the screen
  *
  * renderer: The SDL renderer to be rendered to.
  *
  * returns:   void.
 ***********************************************************************/
-void Timer::draw(SDL_Renderer* renderer){
+void Counter::draw(SDL_Renderer* renderer){
 
     stringstream message;
-    message << fixed << setprecision(precision) << seconds;
+    message << fixed << setprecision(precision) << value;
     
     // Create the surface to copy to the renderer
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);

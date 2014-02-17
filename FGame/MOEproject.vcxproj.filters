@@ -39,13 +39,7 @@
     <ClCompile Include="src\Clock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Image.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Healthbar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Music.cpp">
@@ -61,6 +55,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\SFX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Counter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gauge.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,13 +83,7 @@
     <ClInclude Include="src\HUDelement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Healthbar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Animation.h">
@@ -102,6 +96,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SFX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Counter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gauge.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

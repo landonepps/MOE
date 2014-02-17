@@ -7,11 +7,11 @@
  * Class:      4342, Spring 2014
  * Date:      7-Feb-2014
  *
- * Timer class
+ * Counter class
 *******************************************************************************/
 
-#ifndef TIMER_H_
-#define TIMER_H_
+#ifndef Counter_H_
+#define Counter_H_
 
 #include <string>
 #include <sstream>
@@ -30,22 +30,22 @@
 
 using namespace std;
 
-class Timer : public HUDelement{
+class Counter : public HUDelement{
     private:
         int xPosition;
         int yPosition;
-        float seconds;
+        float value;
         int precision;
         TTF_Font* font;
         SDL_Color color;
     public:
-        Timer();
-        Timer(int);
-        ~Timer();
+        Counter();
+        Counter(int);
+        ~Counter();
         void setup(const string &fontFile, SDL_Color cl,int xPos = 0, int yPos = 0,
                    int fontSize = 36, int precision = 0,  int id = NULL);
         void draw(SDL_Renderer*);
-        void setTime(float timeLeft);
+        void setValue(float timeLeft);
 };
 
 #endif

@@ -25,8 +25,8 @@
 #include "Events.h"
 #include "Clock.h"
 #include "Image.h"
-#include "Timer.h"
-#include "Healthbar.h"
+#include "Counter.h"
+#include "Gauge.h"
 #include "Music.h"
 #include "Constants.h"
 
@@ -71,7 +71,7 @@ class FGame : public Events
 
 
         /***********************************************************************
-         * OnInit:    Initializes timer, audio, video, cdrom, and joystick.
+         * OnInit:    Initializes Counter, audio, video, cdrom, and joystick.
          *            Also, creates the main window centered and allows opengl.
          *
          * returns:   True on success and false on failure.

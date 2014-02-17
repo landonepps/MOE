@@ -7,16 +7,16 @@
 * Class:      4342, Spring 2014
 * Date:      8-Feb-2014
 *
-* Healthbar implementation file
+* Gauge implementation file
 *******************************************************************************/
 
-#include "Healthbar.h"
+#include "Gauge.h"
 /***********************************************************************
-* Healthbar: sets the default outline to white and health to green
+* Gauge: sets the default outline to white and value to green
 *
 * returns:   void.
 ***********************************************************************/
-Healthbar::Healthbar() : HUDelement(){
+Gauge::Gauge() : HUDelement(){
     color[0] = 0;
     color[1] = 255;
     color[2] = 0;
@@ -28,53 +28,53 @@ Healthbar::Healthbar() : HUDelement(){
     ocolor[3] = 255;
 }
 
-Healthbar::Healthbar(int id) : HUDelement(id){}
+Gauge::Gauge(int id) : HUDelement(id){}
 
 /***********************************************************************
-* setup:   Sets up the Healthbar HUD type using developer specified variables
+* setup:   Sets up the Gauge HUD type using developer specified variables
 *
-* hp: current player health
-* xPos: x coordinate of where to place the healthbar
-* yPos: y coordinate of where to place the healthbar
-* h: height of the healthbar dimension
-* w: width of the healthbar dimension
+* hp: current player value
+* xPos: x coordinate of where to place the Gauge
+* yPos: y coordinate of where to place the Gauge
+* h: height of the Gauge dimension
+* w: width of the Gauge dimension
 *
 * returns:   void.
 ***********************************************************************/
-void Healthbar::setup(float hp, int xPos, int yPos, int h, int w)
+void Gauge::setup(float val, int xPos, int yPos, int h, int w)
 {
-    health = hp;
+    value = val;
     xPosition = xPos;
     yPosition = yPos;
     height = h;
     width = w;
 }
 
-Healthbar::~Healthbar(){
+Gauge::~Gauge(){
 
 }
 /***********************************************************************
-* setHealth: Sets the current health
+* setvalue: Sets the current value
 * 
-* hp: current player health
+* hp: current player value
 *
 * returns:   void.
 ***********************************************************************/
-void Healthbar::setHealth(float hp){
-    health = hp;
+void Gauge::setValue(float val){
+    value = val;
 }
 
 /***********************************************************************
-* draw: draws the healthbar to the screen by taking a precentage of the
-*           health remaining and scaling the green healthbar down
+* draw: draws the Gauge to the screen by taking a precentage of the
+*           value remaining and scaling the green Gauge down
 *
 * renderer: SDL_renderer pointer
 *
 * returns:   void.
 ***********************************************************************/
-void Healthbar::draw(SDL_Renderer* renderer)
+void Gauge::draw(SDL_Renderer* renderer)
 {
-    int currentHealth = (width * health) / 100;
+    int currentValue = (width * value) / 100;
 
     // draws a red background behind the green bar
     SDL_Rect maxRect = { xPosition, yPosition, width, height };
@@ -82,7 +82,7 @@ void Healthbar::draw(SDL_Renderer* renderer)
     SDL_RenderFillRect(renderer, &maxRect);
 
     // green bar
-    SDL_Rect fillRect = { xPosition, yPosition, currentHealth, height };
+    SDL_Rect fillRect = { xPosition, yPosition, currentValue, height };
     SDL_SetRenderDrawColor(renderer, color[0], color[1], color[2], color[3]);
     SDL_RenderFillRect(renderer, &fillRect);
 

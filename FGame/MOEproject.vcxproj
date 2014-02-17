@@ -138,7 +138,7 @@
     <ClCompile Include="src\Clock.cpp" />
     <ClCompile Include="src\Events.cpp" />
     <ClCompile Include="src\FGame.cpp" />
-    <ClCompile Include="src\Healthbar.cpp" />
+    <ClCompile Include="src\Gauge.cpp" />
     <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\Image.cpp" />
     <ClCompile Include="src\Music.cpp" />
@@ -149,7 +149,7 @@
     <ClCompile Include="src\OnRender.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\SFX.cpp" />
-    <ClCompile Include="src\Timer.cpp" />
+    <ClCompile Include="src\Counter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Animation.h" />
@@ -157,14 +157,14 @@
     <ClInclude Include="src\Constants.h" />
     <ClInclude Include="src\Events.h" />
     <ClInclude Include="src\FGame.h" />
-    <ClInclude Include="src\Healthbar.h" />
+    <ClInclude Include="src\Gauge.h" />
     <ClInclude Include="src\HUD.h" />
     <ClInclude Include="src\HUDelement.h" />
     <ClInclude Include="src\Image.h" />
     <ClInclude Include="src\Music.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\SFX.h" />
-    <ClInclude Include="src\Timer.h" />
+    <ClInclude Include="src\Counter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

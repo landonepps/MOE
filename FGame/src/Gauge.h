@@ -7,15 +7,15 @@
 * Class:      4342, Spring 2014
 * Date:      8-Feb-2014
 *
-* Healthbar HUD class
+* Gauge HUD class
 *******************************************************************************/
 
-#ifndef HEALTHBAR_H_
-#define HEALTHBAR_H_
+#ifndef Gauge_H_
+#define Gauge_H_
 
 #include "HUDelement.h"
 
-class Healthbar : public HUDelement{
+class Gauge : public HUDelement{
 private:
     int xPosition;
     int yPosition;
@@ -23,13 +23,13 @@ private:
     int width;
     int color[4];
     int ocolor[4];
-    float health;
+    float value;
 public:
-    Healthbar();
-    Healthbar(int);
-    ~Healthbar();
-    void setup(float hp = 100, int xPos = 0, int yPos = 0, int h = 15, int w = 100);
-    void setHealth(float);
+    Gauge();
+    Gauge(int);
+    ~Gauge();
+    void setup(float val = 100, int xPos = 0, int yPos = 0, int h = 15, int w = 100);
+    void setValue(float);
     void draw(SDL_Renderer*);
 };
 

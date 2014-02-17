@@ -7,7 +7,7 @@
  * Class:      4342, Spring 2014
  * Date:       1/30/2014
  *
- * Initializes timer, audio, video, cdrom, and joystick. Also, creates the main
+ * Initializes Counter, audio, video, cdrom, and joystick. Also, creates the main
  * window centered and allows opengl.
 *******************************************************************************/
 
@@ -15,14 +15,14 @@
 #include "FGame.h"      /** Contains OnInit prototype. **/
 
 /***********************************************************************
- * OnInit:    Initializes timer, audio, video, cdrom, and joystick.
+ * OnInit:    Initializes Counter, audio, video, cdrom, and joystick.
  *            Also, creates the main window centered and allows opengl.
  *
  * returns:   True on success and false on failure.
 ***********************************************************************/
 bool FGame::OnInit()
 {
-    /** Initializes timer, audio, video, cdrom, and joystick. **/
+    /** Initializes Counter, audio, video, cdrom, and joystick. **/
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
     {
         fprintf(stderr, "ERROR: SDL_Init failed: %s\n", SDL_GetError());

@@ -28,8 +28,8 @@ using namespace std;
 
 //-----------------------------------------------------------------------------
 Mesh::Mesh( char const *filename ) {
-  vertices = NULL;
-  faces    = NULL;
+  vertices = 0;
+  faces    = 0;
 
   //Append mesh and fead from the file.
   ifstream input( ( string( filename ) ).c_str(), ios::binary );

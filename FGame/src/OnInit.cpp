@@ -94,14 +94,19 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
     
-    // load audio for testing
+    // load audio for testing and load mesh.
     #ifdef _WIN32
         bgm.loadMusic(".\\assets\\bgm.wav");
         bgm.play();
+        testMesh = new Mesh("C:\\Users\\Andrew\\Documents\\GitHub\\MOE\\FGame\\Debug\\assets\\test.ply");
     #else
         bgm.loadMusic("./assets/bgm.wav");
         bgm.play();
+        testMesh = new Mesh("test.ply");
     #endif
+
+    glEnable( GL_CULL_FACE );
+    glCullFace( GL_BACK );
 
     return true;
 }

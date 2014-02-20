@@ -28,6 +28,7 @@
 #include "Counter.h"
 #include "Gauge.h"
 #include "Music.h"
+#include "Mesh.h"
 #include "Constants.h"
 
 class FGame : public Events
@@ -48,6 +49,9 @@ class FGame : public Events
     
         /** Background music. **/
         Music bgm;
+
+        /** Test mesh. **/
+        Mesh *testMesh;
 
         /** Resolution of the main window. **/
         int width;

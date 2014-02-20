@@ -98,7 +98,7 @@ bool FGame::OnInit()
     #ifdef _WIN32
         bgm.loadMusic(".\\assets\\bgm.wav");
         bgm.play();
-        testMesh = new Mesh("C:\\Users\\Andrew\\Documents\\GitHub\\MOE\\FGame\\Debug\\assets\\test.ply");
+        testMesh = new Mesh((path + "\\assets\\test.ply").c_str());
     #else
         bgm.loadMusic("./assets/bgm.wav");
         bgm.play();

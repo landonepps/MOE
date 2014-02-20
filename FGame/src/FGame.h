@@ -30,6 +30,7 @@
 #include "Music.h"
 #include "Mesh.h"
 #include "Constants.h"
+#include <string>
 
 class FGame : public Events
 {
@@ -60,6 +61,9 @@ class FGame : public Events
         SDL_Joystick *joystick1;
 
     public:
+
+        /** Will store the path of the executable. **/
+        string path;
 
         /***********************************************************************
          * FGame:     Sets the game as running and defines the window size.

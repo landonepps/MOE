@@ -28,6 +28,7 @@ FGame::FGame() {
     joystick1 = NULL;
 
     testMesh = NULL;
+    path = "";
 }
 
 /***********************************************************************
@@ -92,5 +93,10 @@ int main(int argc, char* argv[])
 {
     /** Create and execute the game. **/
     FGame theGame;
+
+    /** Get the current path. **/
+    theGame.path = string(argv[0]);
+    theGame.path = theGame.path.substr(0, theGame.path.rfind('\\'));
+
     return theGame.OnExecute();
 }

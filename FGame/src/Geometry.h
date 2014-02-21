@@ -17,6 +17,9 @@
 #include <SDL.h>
 #include <GL.h>
 #include <GLU.h>
+#elif __APPLE__
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
 #else
 #include <SDL2/SDL.h>
 #include <GL/GL.h>

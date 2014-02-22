@@ -13,12 +13,12 @@
 #ifndef __MESH_H__
 #define __MESH_H__
 
-#include "Geometry.h"
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include "glm\glm.hpp"
 using namespace std;
+// using namespace glm;
 
 //-----------------------------------------------------------------------------
 class Mesh {
@@ -29,7 +29,7 @@ class Mesh {
     // Destroy this mesh.
     virtual ~Mesh();
 
-    //Draw all the polygon faces in this mesh.
+    // Draw all the polygon faces in this mesh.
     void draw();
 
  private:
@@ -38,8 +38,8 @@ class Mesh {
     unsigned int faces;
     unsigned int texCoords;
 
-    Vector *vList;
-    Vector *nList;
+    glm::vec4 *vList;
+    glm::vec3 *nList;
     vector<unsigned int> *fList;
     pair<float, float> *tList;
 };

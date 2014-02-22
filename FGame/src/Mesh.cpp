@@ -88,8 +88,8 @@ Mesh::Mesh( char const *filename ) {
   }
 
   //Read in vertices and normals.
-  vList = new Vector[vertices];
-  nList = new Vector[normals];
+  vList = new glm::vec4[vertices];
+  nList = new glm::vec3[normals];
   tList = new pair<float, float>[texCoords];
   for(unsigned int vertex = 0; vertex < vertices; vertex++) {
 
@@ -149,9 +149,11 @@ void Mesh::draw() {
   for(unsigned int face = 0; face < faces; face++) {
     glBegin(GL_POLYGON);
     for(unsigned int vertex = 0; vertex < fList[face].size(); vertex++) {
-      nList[fList[face][vertex]].glNormal();
+        glm::vec3 norm= nList[fList[face][vertex]];
+        glNormal3d(norm.x, norm.y, norm.z);
       glTexCoord2f(tList[vertex].first, tList[vertex].second);
-      vList[fList[face][vertex]].glVertex();
+        glm::vec4 vtx = vList[fList[face][vertex]];
+        glVertex4d(vtx.x, vtx.y, vtx.z, vtx.w);
     }
     glEnd();
   }

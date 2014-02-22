@@ -86,3 +86,39 @@ void Image::draw(int x, int y, int srcX, int srcY, int w, int h) {
     
     SDL_RenderCopy(renderer, texture, &src, &dst);
 }
+
+/***************************************************************************
+ * initTexture: initializes a texture to be used with opengl
+ *
+ * theTexture; a pointer to where the texture will be stored.
+ **************************************************************************/
+void Image::initTexture(const char *filename) {
+    SDL_Surface *tempSurface = NULL;
+
+    tempSurface = IMG_Load(filename);
+
+    if (tempSurface == NULL) {
+        cerr << "Error loading image file " << filename << ": "
+             << IMG_GetError() << endl;
+    } else {
+        glGenTextures(1, &openglTex);
+        glBindTexture(GL_TEXTURE_2D, openglTex);
+
+        /** Determine what mode the texture is in. **/
+        int mode = GL_RGB;
+        if(tempSurface->format->BytesPerPixel == 4) {
+            mode = GL_RGBA;
+        }
+
+        glTexImage2D(GL_TEXTURE_2D,
+                     0,
+                     mode,
+                     tempSurface->w, tempSurface->h,
+                     0,
+                     GL_RGB, /** Should use mode here as well **/
+                     GL_UNSIGNED_BYTE,
+                     tempSurface->pixels);
+
+        SDL_FreeSurface(tempSurface);
+    }
+}

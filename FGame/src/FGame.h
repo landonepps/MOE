@@ -61,6 +61,7 @@ class FGame : public Events
 
         /** Test mesh. **/
         Mesh *testMesh;
+        Image testTex;
 
         /** The HUD objects**/
         HUD theHUD;

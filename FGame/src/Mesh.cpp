@@ -60,6 +60,7 @@ Mesh::Mesh( char const *filename ) {
   //Get the number of vertices.
   input >> vertices;
   normals = vertices;
+  texCoords = vertices;
 
   //Find element face in header.
   while(str != "face") {
@@ -89,16 +90,27 @@ Mesh::Mesh( char const *filename ) {
   //Read in vertices and normals.
   vList = new Vector[vertices];
   nList = new Vector[normals];
+  tList = new pair<float, float>[texCoords];
   for(unsigned int vertex = 0; vertex < vertices; vertex++) {
+
+    /** Read in vertices. **/
     input >> vList[vertex].x;
     input >> vList[vertex].y;
     input >> vList[vertex].z;
     vList[vertex].w = 1;
 
+    /** Read in normals. **/
     input >> nList[vertex].x;
     input >> nList[vertex].y;
     input >> nList[vertex].z;
     vList[vertex].w = 1;
+
+    /** Read in texture coordinates. **/
+    input >> tList[vertex].first;
+    input >> tList[vertex].second;
+
+    //tList[vertex].first = (tList[vertex].first + 1) / 2;
+    //tList[vertex].first = (tList[vertex].second + 1) / 2;
   }
 
   //Read in faces.
@@ -126,6 +138,7 @@ Mesh::~Mesh() {
   delete [] vList;
   delete [] nList;
   delete [] fList;
+  delete [] tList;
 }
 //-----------------------------------------------------------------------------
 
@@ -137,6 +150,7 @@ void Mesh::draw() {
     glBegin(GL_POLYGON);
     for(unsigned int vertex = 0; vertex < fList[face].size(); vertex++) {
       nList[fList[face][vertex]].glNormal();
+      glTexCoord2f(tList[vertex].first, tList[vertex].second);
       vList[fList[face][vertex]].glVertex();
     }
     glEnd();

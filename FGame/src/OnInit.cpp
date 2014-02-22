@@ -106,7 +106,7 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
     
-    treasure1.setup((path + "\\assets\\test.ply").c_str());
+    treasure1.setup((path + "\\assets\\Poor.ply").c_str());
     treasure1.setLocation(320, 240, 2);
     treasure1.setRotate(true, true);
     treasure1.setBob(true,0.5);
@@ -116,15 +116,20 @@ bool FGame::OnInit()
     #ifdef _WIN32
         bgm.loadMusic(".\\assets\\bgm.wav");
         bgm.play();
-        testMesh = new Mesh((path + "\\assets\\test.ply").c_str());
+        testTex.initTexture(".\\assets\\NewPoor.png");
+        testMesh = new Mesh((path + "\\assets\\Poor.ply").c_str());
     #else
         bgm.loadMusic("./assets/bgm.wav");
         bgm.play();
-        testMesh = new Mesh("test.ply");
+        testTex.initTexture("NewPoor.png");
+        testMesh = new Mesh("Poor.ply");
     #endif
 
     glEnable( GL_CULL_FACE );
     glCullFace( GL_BACK );
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
     return true;
 }

@@ -36,12 +36,13 @@ class Mesh {
     unsigned int vertices;
     unsigned int normals;
     unsigned int faces;
+    unsigned int texCoords;
 
     Vector *vList;
     Vector *nList;
     vector<unsigned int> *fList;
+    pair<float, float> *tList;
 };
 //-----------------------------------------------------------------------------
 
 #endif
-

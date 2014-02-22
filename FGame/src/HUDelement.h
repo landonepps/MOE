@@ -10,8 +10,8 @@
  * Parent class for hud elements
 *******************************************************************************/
 
-#ifndef HUDELEMENTS_H_
-#define HUDELEMENTS_H_
+#ifndef HUDELEMENT_H_
+#define HUDELEMENT_H_
 
 #ifdef _MSC_VER
 #include <SDL.h>

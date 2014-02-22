@@ -144,6 +144,7 @@
     <ClCompile Include="src\Image.cpp" />
     <ClCompile Include="src\Mesh.cpp" />
     <ClCompile Include="src\Music.cpp" />
+    <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\OnCleanup.cpp" />
     <ClCompile Include="src\OnEvent.cpp" />
     <ClCompile Include="src\OnInit.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\SFX.cpp" />
     <ClCompile Include="src\Counter.cpp" />
+    <ClCompile Include="src\Treasure.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Animation.h" />
@@ -166,9 +168,12 @@
     <ClInclude Include="src\Image.h" />
     <ClInclude Include="src\Mesh.h" />
     <ClInclude Include="src\Music.h" />
+    <ClInclude Include="src\Object.h" />
+    <ClInclude Include="src\objectElement.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\SFX.h" />
     <ClInclude Include="src\Counter.h" />
+    <ClInclude Include="src\Treasure.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

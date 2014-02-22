@@ -10,8 +10,8 @@
 * Gauge HUD class
 *******************************************************************************/
 
-#ifndef Gauge_H_
-#define Gauge_H_
+#ifndef GAUGE_H_
+#define GAUGE_H_
 
 #include "HUDelement.h"
 

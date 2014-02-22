@@ -10,8 +10,8 @@
  * Counter class
 *******************************************************************************/
 
-#ifndef Counter_H_
-#define Counter_H_
+#ifndef COUNTER_H_
+#define COUNTER_H_
 
 #include <string>
 #include <sstream>

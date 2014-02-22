@@ -20,11 +20,13 @@
 #include <SDL_image.h>
 #else
 #include <SDL2/SDL.h>
-#include <GL/GL.h>
-#include <GL/GLU.h>
 #ifdef __APPLE__
+#include <OpenGL/GL.h>
+#include <OpenGL/GLU.h>
 #include <SDL2_image/SDL_image.h>
 #else
+#include <GL/GL.h>
+#include <GL/GLU.h>
 #include <SDL2/SDL_image.h>
 #endif
 #endif

@@ -75,11 +75,21 @@ bool FGame::OnInit()
 
     theHUD.addHUDElement(&hBar);
 
-    #ifdef _WIN32
-        timer.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
-    #else
-        bgm.loadMusic("./assets/font.ttf");
-    #endif
+#ifdef _WIN32
+    bgm.loadMusic(".\\assets\\bgm.wav");
+    bgm.play();
+    testTex.initTexture(".\\assets\\NewPoor.png");
+    testMesh = new Mesh((path + "\\assets\\Poor.ply").c_str());
+    treasure1.setup((path + "\\assets\\Poor.ply").c_str());
+    timer.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
+#else
+    bgm.loadMusic("./assets/bgm.wav");
+    bgm.play();
+    testTex.initTexture("./assets/NewPoor.png");
+    testMesh = new Mesh("./assets/Poor.ply");
+    treasure1.setup("./assets/Poor.ply");
+    timer.setup("./assets/font.ttf",255,0,0,50,50,25);
+#endif
 
     theHUD.addHUDElement(&timer);
 
@@ -106,25 +116,14 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
     
-    treasure1.setup((path + "\\assets\\Poor.ply").c_str());
+    // load audio for testing and load mesh.
+
+    
     treasure1.setLocation(320, 240, 2);
     treasure1.setScale(25, 25, 25);
     treasure1.setRotate(true, true);
     treasure1.setBob(true,0.5);
     collectables.addObjectElement(&treasure1);
-
-    // load audio for testing and load mesh.
-    #ifdef _WIN32
-        bgm.loadMusic(".\\assets\\bgm.wav");
-        bgm.play();
-        testTex.initTexture(".\\assets\\NewPoor.png");
-        testMesh = new Mesh((path + "\\assets\\Poor.ply").c_str());
-    #else
-        bgm.loadMusic("./assets/bgm.wav");
-        bgm.play();
-        testTex.initTexture("NewPoor.png");
-        testMesh = new Mesh("Poor.ply");
-    #endif
 
     glEnable( GL_CULL_FACE );
     glCullFace( GL_BACK );

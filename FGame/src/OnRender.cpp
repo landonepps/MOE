@@ -25,13 +25,13 @@ void FGame::OnRender()
     SDL_RenderClear(renderer);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0.0f, 600, 480, 0.0f, 0.0f, 1.0f);
+    glOrtho(0.0f, 600, 480, 0.0f, 0.0f, 600.0f);
     /** Clear color and depth buffer. **/
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     /**Draw the test mesh **/
     testMesh->draw();
-
+    collectables.drawElements();
     theHUD.drawElements();
 
     /** Swap buffers. **/

@@ -26,6 +26,7 @@ Treasure::Treasure() : objectElement()
     bobSpeed = 1;
     bobMax = 20;
     bobMin = 20;
+    reached = false;
 }
 
 Treasure::Treasure(int id) : objectElement(id)
@@ -42,6 +43,7 @@ Treasure::Treasure(int id) : objectElement(id)
     bobSpeed = 1;
     bobMax = 20;
     bobMin = 20;
+    reached = false;
 }
 
 /***********************************************************************
@@ -72,7 +74,7 @@ Treasure::~Treasure(){
 *
 * returns:   void.
 ***********************************************************************/
-void Treasure::setLocation(float x, float y, float z){
+void Treasure::setLocation(GLfloat x, GLfloat y, GLfloat z){
     this->x = x;
     this->y = y;
     this->z = z;
@@ -87,6 +89,23 @@ void Treasure::setLocation(float x, float y, float z){
 ***********************************************************************/
 void Treasure::draw(){
     glPushMatrix();
+    if (bob){
+        if (y >= bobMax){
+            reached = true;
+        }
+        if (y <= bobMin){
+            reached = false;
+        }
+
+        if (!reached){
+            y += bobSpeed;
+        }
+        else if (reached){
+            y -= bobSpeed;
+        }
+    }
+    glTranslatef(x, y, z);
+    glScalef(25, 25, 25);
     if (rotate){
         if (clockwise){
             rotateAngle += rotateSpeed;
@@ -96,26 +115,17 @@ void Treasure::draw(){
         }
         glRotatef(rotateAngle, 0, 1, 0);
     }
-    if (bob){
-        if (y >= bobMax){
-            y -= bobSpeed;
-        }
-        if (y <= bobMin){
-            y += bobSpeed;
-        }
-    }
-    glTranslatef(x, y, z);
     theMesh->draw();
     glPopMatrix();
 }
 
-void Treasure::setRotate(bool rotateSet, bool clockwiseSet, int speed){
+void Treasure::setRotate(bool rotateSet, bool clockwiseSet, GLfloat speed){
     rotate = rotateSet;
     clockwise = clockwiseSet;
     rotateSpeed = speed;
 }
 
-void Treasure::setBob(bool bobSet, int speed, int bobMax, int bobMin){
+void Treasure::setBob(bool bobSet, GLfloat speed, GLfloat bobMax, GLfloat bobMin){
     bob = bobSet;
     bobSpeed = speed;
     this->bobMax = y + bobMax;

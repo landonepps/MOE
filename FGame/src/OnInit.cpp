@@ -106,6 +106,12 @@ bool FGame::OnInit()
         /** Do nothing. **/
     }
     
+    treasure1.setup((path + "\\assets\\test.ply").c_str());
+    treasure1.setLocation(320, 240, 2);
+    treasure1.setRotate(true, true);
+    treasure1.setBob(true,0.5);
+    collectables.addObjectElement(&treasure1);
+
     // load audio for testing and load mesh.
     #ifdef _WIN32
         bgm.loadMusic(".\\assets\\bgm.wav");

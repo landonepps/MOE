@@ -36,6 +36,8 @@
 #include "Music.h"
 #include "Mesh.h"
 #include "Constants.h"
+#include "Object.h"
+#include "Treasure.h"
 #include <string>
 
 class FGame : public Events
@@ -60,10 +62,14 @@ class FGame : public Events
         /** Test mesh. **/
         Mesh *testMesh;
 
-        /** The HUD object**/
+        /** The HUD objects**/
         HUD theHUD;
         Counter timer;
         Gauge hBar;
+
+        /** The game objects **/
+        Object collectables;
+        Treasure treasure1;
 
         /** Resolution of the main window. **/
         int width;

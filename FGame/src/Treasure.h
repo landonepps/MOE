@@ -31,17 +31,18 @@
 class Treasure : public objectElement{
 private:
     Mesh *theMesh;
-    float x, y, z;
-    bool rotate, clockwise, bob;
-    int rotateSpeed, rotateAngle, bobSpeed, bobMax, bobMin;
+    GLfloat x, y, z;
+    bool rotate, clockwise, bob, reached;
+    GLfloat bobSpeed, bobMax, bobMin;
+    GLfloat rotateAngle, rotateSpeed;
 public:
     Treasure();
     Treasure(int);
     ~Treasure();
     void setup(char const* filename);
-    void setLocation(float x, float y, float z);
-    void setRotate(bool, bool, int speed = 1);
-    void setBob(bool, int speed = 1, int bobMax = 20, int bobMin = 20);
+    void setLocation(GLfloat x, GLfloat y, GLfloat z);
+    void setRotate(bool rotateSet, bool clockwise, GLfloat speed = 1);
+    void setBob(bool bobSet, GLfloat speed = 1, GLfloat bobMax = 20, GLfloat bobMin = 20);
     void toggleBob();
     void toggleClockwise();
     void draw();

@@ -27,11 +27,13 @@
 
 #include "objectElement.h"
 #include "Mesh.h"
+#include "glm/glm.hpp"
 
 class Treasure : public objectElement{
 private:
     Mesh *theMesh;
-    GLfloat x, y, z;
+    glm::vec3 position;
+    glm::vec3 scale;
     bool rotate, clockwise, bob, reached;
     GLfloat bobSpeed, bobMax, bobMin;
     GLfloat rotateAngle, rotateSpeed;
@@ -41,11 +43,13 @@ public:
     ~Treasure();
     void setup(char const* filename);
     void setLocation(GLfloat x, GLfloat y, GLfloat z);
+    void setScale(GLfloat sX, GLfloat sY, GLfloat sZ);
     void setRotate(bool rotateSet, bool clockwise, GLfloat speed = 1);
     void setBob(bool bobSet, GLfloat speed = 1, GLfloat bobMax = 20, GLfloat bobMin = 20);
     void toggleBob();
     void toggleClockwise();
     void draw();
+    glm::vec3 getPosition();
 };
 
 #endif

@@ -97,6 +97,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Users\Jesse Clary\Documents\GitHub\MOE\FGame\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -139,7 +140,6 @@
     <ClCompile Include="src\Events.cpp" />
     <ClCompile Include="src\FGame.cpp" />
     <ClCompile Include="src\Gauge.cpp" />
-    <ClCompile Include="src\Geometry.cpp" />
     <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\Image.cpp" />
     <ClCompile Include="src\Mesh.cpp" />
@@ -159,10 +159,10 @@
     <ClInclude Include="src\Animation.h" />
     <ClInclude Include="src\Clock.h" />
     <ClInclude Include="src\Constants.h" />
+    <ClInclude Include="src\Counter.h" />
     <ClInclude Include="src\Events.h" />
     <ClInclude Include="src\FGame.h" />
     <ClInclude Include="src\Gauge.h" />
-    <ClInclude Include="src\Geometry.h" />
     <ClInclude Include="src\HUD.h" />
     <ClInclude Include="src\HUDelement.h" />
     <ClInclude Include="src\Image.h" />
@@ -172,7 +172,6 @@
     <ClInclude Include="src\objectElement.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\SFX.h" />
-    <ClInclude Include="src\Counter.h" />
     <ClInclude Include="src\Treasure.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

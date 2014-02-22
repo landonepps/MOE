@@ -108,6 +108,7 @@ bool FGame::OnInit()
     
     treasure1.setup((path + "\\assets\\test.ply").c_str());
     treasure1.setLocation(320, 240, 2);
+    treasure1.setScale(25, 25, 25);
     treasure1.setRotate(true, true);
     treasure1.setBob(true,0.5);
     collectables.addObjectElement(&treasure1);

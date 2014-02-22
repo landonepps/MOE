@@ -14,9 +14,8 @@
 
 Treasure::Treasure() : objectElement()
 {
-    x = 0;
-    y = 0;
-    z = 0;
+    position = glm::vec3(0, 0, 0);
+    scale = glm::vec3(1, 1, 1);
     theMesh = NULL;
     rotate = false;
     clockwise = false;
@@ -31,9 +30,8 @@ Treasure::Treasure() : objectElement()
 
 Treasure::Treasure(int id) : objectElement(id)
 {
-    x = 0;
-    y = 0;
-    z = 0;
+    position = glm::vec3(0, 0, 0);
+    scale = glm::vec3(1, 1, 1);
     theMesh = NULL;
     rotate = false;
     clockwise = false;
@@ -67,6 +65,7 @@ void Treasure::setup(char const* filename)
 Treasure::~Treasure(){
 
 }
+
 /***********************************************************************
 * setTime:   Sets the time remaining to be displayed
 *
@@ -75,9 +74,18 @@ Treasure::~Treasure(){
 * returns:   void.
 ***********************************************************************/
 void Treasure::setLocation(GLfloat x, GLfloat y, GLfloat z){
-    this->x = x;
-    this->y = y;
-    this->z = z;
+    position = glm::vec3(x, y, z);
+}
+
+/***********************************************************************
+* setTime:   Sets the time remaining to be displayed
+*
+* timeLeft:  the time remaining in the round
+*
+* returns:   void.
+***********************************************************************/
+void Treasure::setScale(GLfloat x, GLfloat y, GLfloat z){
+    scale = glm::vec3(x, y, z);
 }
 
 /***********************************************************************
@@ -90,22 +98,22 @@ void Treasure::setLocation(GLfloat x, GLfloat y, GLfloat z){
 void Treasure::draw(){
     glPushMatrix();
     if (bob){
-        if (y >= bobMax){
+        if (position.y >= bobMax){
             reached = true;
         }
-        if (y <= bobMin){
+        if (position.y <= bobMin){
             reached = false;
         }
 
         if (!reached){
-            y += bobSpeed;
+            position.y += bobSpeed;
         }
         else if (reached){
-            y -= bobSpeed;
+            position.y -= bobSpeed;
         }
     }
-    glTranslatef(x, y, z);
-    glScalef(25, 25, 25);
+    glTranslatef(position.x, position.y, position.z);
+    glScalef(scale.x, scale.y, scale.z);
     if (rotate){
         if (clockwise){
             rotateAngle += rotateSpeed;
@@ -128,8 +136,8 @@ void Treasure::setRotate(bool rotateSet, bool clockwiseSet, GLfloat speed){
 void Treasure::setBob(bool bobSet, GLfloat speed, GLfloat bobMax, GLfloat bobMin){
     bob = bobSet;
     bobSpeed = speed;
-    this->bobMax = y + bobMax;
-    this->bobMin = y - bobMin;
+    this->bobMax = position.y + bobMax;
+    this->bobMin = position.y - bobMin;
 }
 
 void Treasure::toggleClockwise(){
@@ -139,4 +147,9 @@ void Treasure::toggleClockwise(){
 void Treasure::toggleBob(){
     bob = !bob;
 }
+
+glm::vec3 Treasure::getPosition(){
+    return position;
+}
+
 

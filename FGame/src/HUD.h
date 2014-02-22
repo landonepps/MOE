@@ -31,7 +31,7 @@ class HUD{
     public:
         HUD();
         ~HUD();
-        void drawElements(SDL_Renderer*);
+        void drawElements();
         void addHUDElement(HUDelement*);
 };
 

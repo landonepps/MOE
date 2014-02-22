@@ -15,8 +15,16 @@
 
 #ifdef _MSC_VER
 #include <SDL.h>
+#include <Windows.h>
+#include <GL/gl.h>
+#include <GL/GLU.h>
+#elif __APPLE__
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
 #else
 #include <SDL2/SDL.h>
+#include <GL/GL.h>
+#include <GL/GLU.h>
 #endif
 
 class HUDelement{
@@ -31,7 +39,7 @@ class HUDelement{
 
         // Virtual function to ensure child classes have a way to draw themselves.
         // It also envokes that draw function when called
-        virtual void draw(SDL_Renderer*) = 0;
+        virtual void draw() = 0;
 };
 
 #endif

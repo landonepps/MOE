@@ -30,7 +30,7 @@ public:
     ~Gauge();
     void setup(float val = 100, int xPos = 0, int yPos = 0, int h = 15, int w = 100);
     void setValue(float);
-    void draw(SDL_Renderer*);
+    void draw();
 };
 
 #endif

@@ -17,9 +17,9 @@ HUD::HUD(){}
 
 HUD::~HUD(){}
 
-void HUD::drawElements(SDL_Renderer* renderer){
+void HUD::drawElements(){
     for (unsigned int i = 0; i < HUDelements.size(); i++){
-        HUDelements[i]->draw(renderer);
+        HUDelements[i]->draw();
     }
 }
 

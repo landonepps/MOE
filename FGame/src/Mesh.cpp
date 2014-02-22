@@ -13,8 +13,9 @@
 #include "Mesh.h"
 #ifdef _MSC_VER
 #include <SDL.h>
-#include <GL.h>
-#include <GLU.h>
+#include <Windows.h>
+#include <GL/gl.h>
+#include <GL/GLU.h>
 #elif __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>

@@ -30,6 +30,8 @@ void FGame::OnRender()
     /**Draw the test mesh **/
     testMesh->draw();
 
+    theHUD.drawElements();
+
     /** Swap buffers. **/
     SDL_GL_SwapWindow(window);
 }

@@ -15,8 +15,9 @@
 
 #ifdef _MSC_VER
 #include <SDL.h>
-#include <GL.h>
-#include <GLU.h>
+#include <Windows.h>
+#include <GL/gl.h>
+#include <GL/GLU.h>
 #elif __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
@@ -29,6 +30,7 @@
 #include "Events.h"
 #include "Clock.h"
 #include "Image.h"
+#include "HUD.h"
 #include "Counter.h"
 #include "Gauge.h"
 #include "Music.h"
@@ -57,6 +59,11 @@ class FGame : public Events
 
         /** Test mesh. **/
         Mesh *testMesh;
+
+        /** The HUD object**/
+        HUD theHUD;
+        Counter timer;
+        Gauge hBar;
 
         /** Resolution of the main window. **/
         int width;

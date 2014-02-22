@@ -45,8 +45,8 @@ Counter::Counter(int id) : HUDelement(id)
 *
 * returns:   void.
 ***********************************************************************/
-void Counter::setup(const string &fontFile, SDL_Color cl, int xPos, int yPos,
-                  int fontSize, int precision,  int id)
+void Counter::setup(const string &fontFile, const GLubyte& R, const GLubyte& G, const GLubyte& B,
+    const double& xPos, const double& yPos, int fontSize, int precision, int id)
 {
     this->precision = precision;
     xPosition = xPos;
@@ -56,11 +56,13 @@ void Counter::setup(const string &fontFile, SDL_Color cl, int xPos, int yPos,
 		string error = TTF_GetError();
         cerr << "failed to load font: " << fontFile << " " << TTF_GetError() << endl;
     }
-    color = cl;
+    color.r = R;
+    color.g = G;
+    color.b = B;
 }
 
 Counter::~Counter(){
-    TTF_CloseFont(font);
+   // TTF_CloseFont(font);
 }
 /***********************************************************************
 * setTime:   Sets the time remaining to be displayed
@@ -80,7 +82,7 @@ void Counter::setValue(float val){
  *
  * returns:   void.
 ***********************************************************************/
-void Counter::draw(SDL_Renderer* renderer){
+void Counter::draw(){
 
     stringstream message;
     message << fixed << setprecision(precision) << value;
@@ -92,24 +94,25 @@ void Counter::draw(SDL_Renderer* renderer){
 		return;
 	}
 
-    // Create the texture from the surface
-    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surf);
-    
-    if (texture == NULL) {
-        cerr << "error creating texture" << endl;
-    }
+    unsigned Texture = 0;
 
-    SDL_Rect rect;
-    rect.x = xPosition;
-    rect.y = yPosition;
+    glGenTextures(1, &Texture);
+    glBindTexture(GL_TEXTURE_2D, Texture);
 
-    // Set texture dimensions and copy to the renderer
-    SDL_QueryTexture(texture, NULL, NULL, &rect.w, &rect.h);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    SDL_RenderCopy(renderer, texture, NULL, &rect);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA,
+                    GL_UNSIGNED_BYTE, surf->pixels);
 
+    glBegin(GL_QUADS);
+        glTexCoord2d(0, 0); glVertex3d(xPosition, yPosition, 1);
+        glTexCoord2d(1, 0); glVertex3d(xPosition + surf->w, yPosition, 1);
+        glTexCoord2d(1, 1); glVertex3d(xPosition + surf->w, yPosition + surf->h, 1);
+        glTexCoord2d(0, 1); glVertex3d(xPosition, yPosition + surf->h, 1);
+    glEnd();
+
+    glDeleteTextures(1, &Texture);
     // Cleans up the surface and texture
     SDL_FreeSurface(surf);
-
-    SDL_DestroyTexture(texture);
 }

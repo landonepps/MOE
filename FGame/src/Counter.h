@@ -26,14 +26,13 @@
 #endif
 
 #include "HUDelement.h"
-#include "Clock.h"
 
 using namespace std;
 
 class Counter : public HUDelement{
     private:
-        int xPosition;
-        int yPosition;
+        double xPosition;
+        double yPosition;
         float value;
         int precision;
         TTF_Font* font;
@@ -42,10 +41,10 @@ class Counter : public HUDelement{
         Counter();
         Counter(int);
         ~Counter();
-        void setup(const string &fontFile, SDL_Color cl,int xPos = 0, int yPos = 0,
-                   int fontSize = 36, int precision = 0,  int id = NULL);
-        void draw(SDL_Renderer*);
-        void setValue(float timeLeft);
+        void setup(const string &fontFile, const GLubyte& R = 0, const GLubyte& G = 0, const GLubyte& B = 0,
+            const double& xPos = 0, const double& yPos = 0, int fontSize = 36, int precision = 0, int id = NULL);
+        void draw();
+        void setValue(float value);
 };
 
 #endif

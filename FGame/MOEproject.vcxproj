@@ -139,8 +139,10 @@
     <ClCompile Include="src\Events.cpp" />
     <ClCompile Include="src\FGame.cpp" />
     <ClCompile Include="src\Gauge.cpp" />
+    <ClCompile Include="src\Geometry.cpp" />
     <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\Image.cpp" />
+    <ClCompile Include="src\Mesh.cpp" />
     <ClCompile Include="src\Music.cpp" />
     <ClCompile Include="src\OnCleanup.cpp" />
     <ClCompile Include="src\OnEvent.cpp" />
@@ -158,9 +160,11 @@
     <ClInclude Include="src\Events.h" />
     <ClInclude Include="src\FGame.h" />
     <ClInclude Include="src\Gauge.h" />
+    <ClInclude Include="src\Geometry.h" />
     <ClInclude Include="src\HUD.h" />
     <ClInclude Include="src\HUDelement.h" />
     <ClInclude Include="src\Image.h" />
+    <ClInclude Include="src\Mesh.h" />
     <ClInclude Include="src\Music.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\SFX.h" />

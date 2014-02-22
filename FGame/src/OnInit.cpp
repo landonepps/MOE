@@ -29,15 +29,17 @@ bool FGame::OnInit()
         return false;
     }
 
-    /** Initialize the clock for the main game loop. **/
-    mainClock.init();
-
     /** Set opengl attributes, enable double buffering. **/
     SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 5);
     SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 5);
     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 5);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+
+    glEnable(GL_TEXTURE_2D);
+    glEnable(GL_BLEND);
+
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     /** Creates the main window centered and allows opengl. Not sure if
      *  double buffer is already enabled. **/
@@ -68,8 +70,19 @@ bool FGame::OnInit()
         return false;
     }
 
-    /** Enable TTF loading (fonts) **/
+    /** Initialize text **/
     TTF_Init();
+
+    /** Initialize the clock for the main game loop. **/
+    mainClock.init();
+
+    timer.setup("font.ttf");
+
+    theHUD.addHUDElement(&timer);
+
+    hBar.setup();
+
+    theHUD.addHUDElement(&hBar);
 
     /** Initialize the joysticks. **/
     int numJoysticks = SDL_NumJoysticks();

@@ -72,22 +72,34 @@ void Gauge::setValue(float val){
 *
 * returns:   void.
 ***********************************************************************/
-void Gauge::draw(SDL_Renderer* renderer)
+void Gauge::draw()
 {
     int currentValue = (width * value) / 100;
 
+    glColor3f(255, 0, 0);
     // draws a red background behind the green bar
-    SDL_Rect maxRect = { xPosition, yPosition, width, height };
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
-    SDL_RenderFillRect(renderer, &maxRect);
+    glBegin(GL_QUADS);
+    glVertex2f(xPosition, yPosition);
+    glVertex2f(xPosition + width, yPosition);
+    glVertex2f(xPosition + width, yPosition + height);
+    glVertex2f(xPosition, yPosition + height);
+    glEnd();
 
+    glColor3f(0, 255, 0);
     // green bar
-    SDL_Rect fillRect = { xPosition, yPosition, currentValue, height };
-    SDL_SetRenderDrawColor(renderer, color[0], color[1], color[2], color[3]);
-    SDL_RenderFillRect(renderer, &fillRect);
+    glBegin(GL_QUADS);
+    glVertex2f(xPosition, yPosition);
+    glVertex2f(xPosition + currentValue, yPosition);
+    glVertex2f(xPosition + currentValue, yPosition + height);
+    glVertex2f(xPosition, yPosition + height);
+    glEnd();
 
+    glColor3f(255, 255, 255);
     // outline
-    SDL_Rect outlineRect = { xPosition, yPosition, width, height };
-    SDL_SetRenderDrawColor(renderer, ocolor[0], ocolor[1], ocolor[2], ocolor[3]);
-    SDL_RenderDrawRect(renderer, &outlineRect);
+    glBegin(GL_LINE_LOOP);
+    glVertex2f(xPosition, yPosition);
+    glVertex2f(xPosition + width, yPosition);
+    glVertex2f(xPosition + width, yPosition + height);
+    glVertex2f(xPosition, yPosition + height);
+    glEnd();
 }

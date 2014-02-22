@@ -15,8 +15,9 @@
 
 #ifdef _MSC_VER
 #include <SDL.h>
-#include <GL.h>
-#include <GLU.h>
+#include <Windows.h>
+#include <GL/gl.h>
+#include <GL/GLU.h>
 #include <SDL_image.h>
 #else
 #include <SDL2/SDL.h>

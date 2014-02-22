@@ -14,6 +14,10 @@
 #include <iostream>
 #include <iomanip>
 
+#define GL_CLAMP_TO_EDGE 0x812F
+
+#define GL_BGRA 0x80E1
+
 Counter::Counter() : HUDelement()
 {
     xPosition = 0;
@@ -94,24 +98,38 @@ void Counter::draw(){
 		return;
 	}
 
-    unsigned Texture = 0;
+    GLuint Texture = 0;
 
+    // Create the texture
     glGenTextures(1, &Texture);
     glBindTexture(GL_TEXTURE_2D, Texture);
 
+    // Enable texture parameters
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA,
+    // Render the text to 2D by referencing its pixel data
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_BGRA,
                     GL_UNSIGNED_BYTE, surf->pixels);
 
+    // Enable 2D Texture and alpha blend
+    glEnable(GL_TEXTURE_2D);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
+    // Draw the text
     glBegin(GL_QUADS);
-        glTexCoord2d(0, 0); glVertex3d(xPosition, yPosition, 1);
-        glTexCoord2d(1, 0); glVertex3d(xPosition + surf->w, yPosition, 1);
-        glTexCoord2d(1, 1); glVertex3d(xPosition + surf->w, yPosition + surf->h, 1);
-        glTexCoord2d(0, 1); glVertex3d(xPosition, yPosition + surf->h, 1);
+        glTexCoord2d(0, 1); glVertex3d(xPosition, yPosition + surf->h, 0);
+        glTexCoord2d(1, 1); glVertex3d(xPosition + surf->w, yPosition + surf->h, 0);
+        glTexCoord2d(1, 0); glVertex3d(xPosition + surf->w, yPosition, 0);
+        glTexCoord2d(0, 0); glVertex3d(xPosition, yPosition, 0);        
     glEnd();
 
+    // Clean up
+    glDisable(GL_BLEND);
+    glDisable(GL_TEXTURE_2D);
     glDeleteTextures(1, &Texture);
     // Cleans up the surface and texture
     SDL_FreeSurface(surf);

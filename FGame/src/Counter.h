@@ -42,7 +42,7 @@ class Counter : public HUDelement{
         Counter(int);
         ~Counter();
         void setup(const string &fontFile, const GLubyte& R = 0, const GLubyte& G = 0, const GLubyte& B = 0,
-            const double& xPos = 0, const double& yPos = 0, int fontSize = 36, int precision = 0, int id = NULL);
+            const double& xPos = 0, const double& yPos = 0, int fontSize = 5, int precision = 0, int id = NULL);
         void draw();
         void setValue(float value);
 };

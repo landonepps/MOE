@@ -20,6 +20,6 @@
 ***********************************************************************/
 void FGame::OnLoop()
 {
-    hBar.setValue(80);
+    hBar.setValue(50);
     timer.setValue(mainClock.getElapsedTime());
 }

@@ -36,11 +36,6 @@ bool FGame::OnInit()
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
-    glEnable(GL_TEXTURE_2D);
-    glEnable(GL_BLEND);
-
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
     /** Creates the main window centered and allows opengl. Not sure if
      *  double buffer is already enabled. **/
     if((window = SDL_CreateWindow("FGame",
@@ -76,13 +71,17 @@ bool FGame::OnInit()
     /** Initialize the clock for the main game loop. **/
     mainClock.init();
 
-    timer.setup("font.ttf");
-
-    theHUD.addHUDElement(&timer);
-
     hBar.setup();
 
     theHUD.addHUDElement(&hBar);
+
+    #ifdef _WIN32
+        timer.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
+    #else
+        bgm.loadMusic("./assets/font.ttf");
+    #endif
+
+    theHUD.addHUDElement(&timer);
 
     /** Initialize the joysticks. **/
     int numJoysticks = SDL_NumJoysticks();

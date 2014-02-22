@@ -76,27 +76,27 @@ void Gauge::draw()
 {
     int currentValue = (width * value) / 100;
 
-    glColor3f(255, 0, 0);
     // draws a red background behind the green bar
-    glBegin(GL_QUADS);
-    glVertex2f(xPosition, yPosition);
-    glVertex2f(xPosition + width, yPosition);
+    glBegin(GL_POLYGON);
+    glColor3f(255, 0, 0);
+    glVertex2f(xPosition, yPosition + height);
     glVertex2f(xPosition + width, yPosition + height);
-    glVertex2f(xPosition, yPosition + height);
-    glEnd();
-
-    glColor3f(0, 255, 0);
-    // green bar
-    glBegin(GL_QUADS);
+    glVertex2f(xPosition + width, yPosition);
     glVertex2f(xPosition, yPosition);
-    glVertex2f(xPosition + currentValue, yPosition);
-    glVertex2f(xPosition + currentValue, yPosition + height);
-    glVertex2f(xPosition, yPosition + height);
     glEnd();
 
-    glColor3f(255, 255, 255);
+    // green bar
+    glBegin(GL_POLYGON);
+    glColor3f(0, 255, 0);
+    glVertex2f(xPosition, yPosition + height);
+    glVertex2f(xPosition + currentValue, yPosition + height);
+    glVertex2f(xPosition + currentValue, yPosition);
+    glVertex2f(xPosition, yPosition);
+    glEnd();
+
     // outline
     glBegin(GL_LINE_LOOP);
+    glColor3f(255, 255, 255);
     glVertex2f(xPosition, yPosition);
     glVertex2f(xPosition + width, yPosition);
     glVertex2f(xPosition + width, yPosition + height);

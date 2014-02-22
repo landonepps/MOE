@@ -23,7 +23,9 @@ void FGame::OnRender()
     /** Draw image etc. **/
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
     SDL_RenderClear(renderer);
-    
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glOrtho(0.0f, 600, 480, 0.0f, 0.0f, 1.0f);
     /** Clear color and depth buffer. **/
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 

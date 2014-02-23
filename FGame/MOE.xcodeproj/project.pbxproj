@@ -27,6 +27,7 @@
 		44A3108918A5BE3D00427013 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3108818A5BE3D00427013 /* SDL2_ttf.framework */; };
 		44A7BC0C18B9668A00ABDB9F /* Treasure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A7BC0A18B9668A00ABDB9F /* Treasure.cpp */; };
 		44A7BC0F18B9669700ABDB9F /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A7BC0D18B9669700ABDB9F /* Object.cpp */; };
+		44A7BC1318B96C4200ABDB9F /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A7BC1118B96C4200ABDB9F /* Camera.cpp */; };
 		44B8E3E518A70FAA00587902 /* Music.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44B8E3E318A70FAA00587902 /* Music.cpp */; };
 		44DA951A18A984980062F44D /* SFX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44DA951818A984980062F44D /* SFX.cpp */; };
 		44EDA67818A088160095AB29 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4423CE8918A077D600FE3118 /* Credits.rtf */; };
@@ -76,6 +77,8 @@
 		44A7BC0B18B9668A00ABDB9F /* Treasure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Treasure.h; sourceTree = "<group>"; };
 		44A7BC0D18B9669700ABDB9F /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
 		44A7BC0E18B9669700ABDB9F /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		44A7BC1118B96C4200ABDB9F /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		44A7BC1218B96C4200ABDB9F /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		44B8E3E318A70FAA00587902 /* Music.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Music.cpp; sourceTree = "<group>"; };
 		44B8E3E418A70FAA00587902 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
 		44DA951818A984980062F44D /* SFX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SFX.cpp; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 				4435F80018B815090052FBB1 /* Mesh.cpp */,
 				44DA951418A983AB0062F44D /* A/V */,
 				443B320018A9338500EDB56F /* HUD */,
+				44A7BC1018B968FB00ABDB9F /* Main Loop */,
 				44F45FD918A7EFC80052DDA9 /* Animation.cpp */,
 				44F45FDA18A7EFC80052DDA9 /* Animation.h */,
 				44A3107F18A5B73C00427013 /* Clock.cpp */,
@@ -164,15 +168,10 @@
 				44A3108118A5B73C00427013 /* Constants.h */,
 				444C8C5A18A21169000101F8 /* Events.cpp */,
 				444C8C5B18A21169000101F8 /* Events.h */,
-				4423CEDF18A0813600FE3118 /* FGame.cpp */,
-				4423CEE018A0813600FE3118 /* FGame.h */,
-				4423CEE118A0813600FE3118 /* OnCleanup.cpp */,
-				4423CEE218A0813600FE3118 /* OnEvent.cpp */,
-				4423CEE318A0813600FE3118 /* OnInit.cpp */,
-				4423CEE418A0813600FE3118 /* OnLoop.cpp */,
-				4423CEE518A0813600FE3118 /* OnRender.cpp */,
 				449E7BD618A9B061005DDE7D /* Player.cpp */,
 				449E7BD718A9B061005DDE7D /* Player.h */,
+				44A7BC1118B96C4200ABDB9F /* Camera.cpp */,
+				44A7BC1218B96C4200ABDB9F /* Camera.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -189,6 +188,20 @@
 				44A3108418A5BDEE00427013 /* HUDelement.h */,
 			);
 			name = HUD;
+			sourceTree = "<group>";
+		};
+		44A7BC1018B968FB00ABDB9F /* Main Loop */ = {
+			isa = PBXGroup;
+			children = (
+				4423CEDF18A0813600FE3118 /* FGame.cpp */,
+				4423CEE018A0813600FE3118 /* FGame.h */,
+				4423CEE118A0813600FE3118 /* OnCleanup.cpp */,
+				4423CEE218A0813600FE3118 /* OnEvent.cpp */,
+				4423CEE318A0813600FE3118 /* OnInit.cpp */,
+				4423CEE418A0813600FE3118 /* OnLoop.cpp */,
+				4423CEE518A0813600FE3118 /* OnRender.cpp */,
+			);
+			name = "Main Loop";
 			sourceTree = "<group>";
 		};
 		44DA951418A983AB0062F44D /* A/V */ = {
@@ -286,6 +299,7 @@
 				4435F7FE18B815010052FBB1 /* Counter.cpp in Sources */,
 				4435F80118B815090052FBB1 /* Mesh.cpp in Sources */,
 				44A3107418A59E4700427013 /* Image.cpp in Sources */,
+				44A7BC1318B96C4200ABDB9F /* Camera.cpp in Sources */,
 				44A7BC0F18B9669700ABDB9F /* Object.cpp in Sources */,
 				44B8E3E518A70FAA00587902 /* Music.cpp in Sources */,
 				44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */,
@@ -349,9 +363,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
@@ -381,8 +395,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};

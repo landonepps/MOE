@@ -25,7 +25,10 @@ void FGame::OnRender()
     SDL_RenderClear(renderer);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0.0f, 600, 480, 0.0f, 0.0f, 600.0f);
+    
+    /** Load camera matrix **/
+    cam->multMatrix();
+
     /** Clear color and depth buffer. **/
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -36,7 +39,14 @@ void FGame::OnRender()
 
     collectables.drawElements();
     glDisable( GL_TEXTURE_2D );
+    
+    glPushMatrix();
+    glLoadIdentity();
+    glDisable(GL_DEPTH_TEST);
+    gluOrtho2D(0, 640, 480, 0);
     theHUD.drawElements();
+    glEnable(GL_DEPTH_TEST);
+    glPopMatrix();
 
     /** Swap buffers. **/
     SDL_GL_SwapWindow(window);

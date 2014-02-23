@@ -23,22 +23,22 @@ using namespace std;
 
 //-----------------------------------------------------------------------------
 class Mesh {
- public:
+public:
     //Make a new mesh, with mesh data populated from the given file.
     Mesh(char const *filename);
-
+    
     // Destroy this mesh.
     virtual ~Mesh();
-
+    
     // Draw all the polygon faces in this mesh.
     void draw();
-
- private:
+    
+private:
     unsigned int vertices;
     unsigned int normals;
     unsigned int faces;
     unsigned int texCoords;
-
+    
     glm::vec4 *vList;
     glm::vec3 *nList;
     vector<unsigned int> *fList;

@@ -43,7 +43,7 @@ void FGame::OnRender()
     glPushMatrix();
     glLoadIdentity();
     glDisable(GL_DEPTH_TEST);
-    gluOrtho2D(0, 640, 480, 0);
+    glOrtho(0, 640, 480, 0, -1, 1);
     theHUD.drawElements();
     glEnable(GL_DEPTH_TEST);
     glPopMatrix();

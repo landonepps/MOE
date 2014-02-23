@@ -16,6 +16,7 @@
 #include <Windows.h>
 #include <GL/gl.h>
 #include <GL/GLU.h>
+#include <SDL_image.h>
 #elif __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
@@ -27,6 +28,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+
 
 using namespace std;
 

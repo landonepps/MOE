@@ -17,6 +17,7 @@
 #include <string>
 #include <vector>
 #include "glm/glm.hpp"
+#include "Image.h"
 using namespace std;
 // using namespace glm;
 
@@ -41,7 +42,11 @@ private:
     glm::vec4 *vList;
     glm::vec3 *nList;
     vector<unsigned int> *fList;
-    pair<float, float> *tList;
+    glm::vec2 *tList;
+
+    GLuint texture;
+
+    int height, width;
 };
 //-----------------------------------------------------------------------------
 

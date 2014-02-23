@@ -12,6 +12,10 @@
 
 #include "Physics.h"
 
+#define XACCELRATE  1
+#define YACCELRATE  2
+#define ZACCELRATE  1
+
 Physics::Physics() {
     /* Velocity values */
     xVel = 0;

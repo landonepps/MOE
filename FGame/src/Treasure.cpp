@@ -51,9 +51,9 @@ Treasure::Treasure(int id) : PropElement(id)
 *
 * returns:   void.
 ***********************************************************************/
-void Treasure::setup(char const* filename)
+void Treasure::setup(char const* filename, char const* texname)
 {
-    theMesh = new Mesh(filename);
+    theMesh = new Mesh(filename, texname);
 }
 
 Treasure::~Treasure(){

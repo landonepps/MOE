@@ -30,11 +30,6 @@ class Physics {
     /* Needs fine tuning */
     const static int GRAVITY = 1;
     
-    /* Rates of acceleration for movement */
-    const int XACCELRATE = 1;
-    const int YACCELRATE = 2;
-    const int ZACCELRATE = 1;
-    
     /* Velocity values */
     int xVel;
     int yVel;

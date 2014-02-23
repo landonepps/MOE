@@ -41,7 +41,7 @@ public:
     Treasure();
     Treasure(int);
     ~Treasure();
-    void setup(char const* filename);
+    void setup(char const* filename, char const* texname);
     void setLocation(GLfloat x, GLfloat y, GLfloat z);
     void setScale(GLfloat sX, GLfloat sY, GLfloat sZ);
     void setRotate(bool rotateSet, bool clockwise, GLfloat speed = 1);

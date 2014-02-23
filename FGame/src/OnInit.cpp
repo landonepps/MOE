@@ -84,7 +84,7 @@ bool FGame::OnInit()
     bgm.loadMusic("./assets/bgm.wav");
     bgm.play();
     // testTex.initTexture("./assets/NewPoor.png");
-    treasure1.setup("./assets/coffin.ply", "./assets/darkwood.jpg");
+    treasure1.setup("./assets/tavolo1.ply", "./assets/tavolo1.png");
     timer.setup("./assets/font.ttf",255,0,0,50,50,25);
 #endif
 

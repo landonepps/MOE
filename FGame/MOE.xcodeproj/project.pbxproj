@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441528A018B9E69400FB5A47 /* Prop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4415289D18B9E69400FB5A47 /* Prop.cpp */; };
 		4423CEBC18A0781600FE3118 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBB18A0781600FE3118 /* SDL2.framework */; };
 		4423CEE618A0813600FE3118 /* FGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEDF18A0813600FE3118 /* FGame.cpp */; };
 		4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE118A0813600FE3118 /* OnCleanup.cpp */; };
@@ -38,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4415289D18B9E69400FB5A47 /* Prop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Prop.cpp; sourceTree = "<group>"; };
+		4415289E18B9E69400FB5A47 /* Prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prop.h; sourceTree = "<group>"; };
+		4415289F18B9E69400FB5A47 /* PropElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropElement.h; sourceTree = "<group>"; };
 		4423CE7718A077D600FE3118 /* MOE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4423CE8218A077D600FE3118 /* MOE-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOE-Info.plist"; sourceTree = "<group>"; };
 		4423CE8418A077D600FE3118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -150,6 +154,9 @@
 		4423CEDE18A0813600FE3118 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4415289D18B9E69400FB5A47 /* Prop.cpp */,
+				4415289E18B9E69400FB5A47 /* Prop.h */,
+				4415289F18B9E69400FB5A47 /* PropElement.h */,
 				44A7BC0A18B9668A00ABDB9F /* Treasure.cpp */,
 				44A7BC0B18B9668A00ABDB9F /* Treasure.h */,
 				4435F80618B8151A0052FBB1 /* Mesh.h */,
@@ -303,6 +310,7 @@
 				44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */,
 				4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */,
 				44A3108218A5B73C00427013 /* Clock.cpp in Sources */,
+				441528A018B9E69400FB5A47 /* Prop.cpp in Sources */,
 				4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */,
 				4435F7FF18B815010052FBB1 /* Gauge.cpp in Sources */,
 			);

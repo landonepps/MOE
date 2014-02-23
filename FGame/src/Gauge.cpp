@@ -17,23 +17,49 @@
 * returns:   void.
 ***********************************************************************/
 Gauge::Gauge() : HUDelement(){
-    color[0] = 0;
-    color[1] = 255;
-    color[2] = 0;
-    color[3] = 255;
+    colorTop.x = 0;
+    colorTop.y = 255;
+    colorTop.z = 0;
 
-    ocolor[0] = 255;
-    ocolor[1] = 255;
-    ocolor[2] = 255;
-    ocolor[3] = 255;
+    colorBot.x = 255;
+    colorBot.y = 0;
+    colorBot.z = 0;
+
+    colorOut.x = 255;
+    colorOut.y = 255;
+    colorOut.z = 255;
+
+    value = 100;
+    xPosition = 0;
+    yPosition = 0;
+    height = 15;
+    width = 100;
 }
 
-Gauge::Gauge(int id) : HUDelement(id){}
+Gauge::Gauge(int id) : HUDelement(id){
+    colorTop.x = 0;
+    colorTop.y = 255;
+    colorTop.z = 0;
+
+    colorBot.x = 255;
+    colorBot.y = 0;
+    colorBot.z = 0;
+
+    colorOut.x = 255;
+    colorOut.y = 255;
+    colorOut.z = 255;
+
+    value = 100;
+    xPosition = 0;
+    yPosition = 0;
+    height = 15;
+    width = 100;
+}
 
 /***********************************************************************
 * setup:   Sets up the Gauge HUD type using developer specified variables
 *
-* hp: current player value
+* value: current player value
 * xPos: x coordinate of where to place the Gauge
 * yPos: y coordinate of where to place the Gauge
 * h: height of the Gauge dimension
@@ -41,13 +67,16 @@ Gauge::Gauge(int id) : HUDelement(id){}
 *
 * returns:   void.
 ***********************************************************************/
-void Gauge::setup(float val, int xPos, int yPos, int h, int w)
+void Gauge::setup(glm::vec3 tcolor, glm::vec3 bcolor, glm::vec3 ocolor, float val, GLfloat xPos, GLfloat yPos, GLfloat h, GLfloat w)
 {
     value = val;
     xPosition = xPos;
     yPosition = yPos;
     height = h;
     width = w;
+    colorTop = tcolor;
+    colorBot = bcolor;
+    colorOut = ocolor;
 }
 
 Gauge::~Gauge(){
@@ -56,7 +85,7 @@ Gauge::~Gauge(){
 /***********************************************************************
 * setvalue: Sets the current value
 * 
-* hp: current player value
+* val: current player value
 *
 * returns:   void.
 ***********************************************************************/
@@ -68,26 +97,24 @@ void Gauge::setValue(float val){
 * draw: draws the Gauge to the screen by taking a precentage of the
 *           value remaining and scaling the green Gauge down
 *
-* renderer: SDL_renderer pointer
-*
 * returns:   void.
 ***********************************************************************/
 void Gauge::draw()
 {
-    int currentValue = (width * value) / 100;
+    GLfloat currentValue = (width * value) / 100;
 
-    // draws a red background behind the green bar
+    // draws a colorBot background behind the colorTop bar
     glBegin(GL_POLYGON);
-    glColor3f(255, 0, 0);
+    glColor3f(colorBot.x, colorBot.y, colorBot.z);
     glVertex2f(xPosition, yPosition + height);
     glVertex2f(xPosition + width, yPosition + height);
     glVertex2f(xPosition + width, yPosition);
     glVertex2f(xPosition, yPosition);
     glEnd();
 
-    // green bar
+    // colorTop bar
     glBegin(GL_POLYGON);
-    glColor3f(0, 255, 0);
+    glColor3f(colorTop.x, colorTop.y, colorTop.z);
     glVertex2f(xPosition, yPosition + height);
     glVertex2f(xPosition + currentValue, yPosition + height);
     glVertex2f(xPosition + currentValue, yPosition);
@@ -96,7 +123,7 @@ void Gauge::draw()
 
     // outline
     glBegin(GL_LINE_LOOP);
-    glColor3f(255, 255, 255);
+    glColor3f(colorOut.x, colorOut.y, colorOut.z);
     glVertex2f(xPosition, yPosition);
     glVertex2f(xPosition + width, yPosition);
     glVertex2f(xPosition + width, yPosition + height);

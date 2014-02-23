@@ -12,7 +12,7 @@
 
 #include "Treasure.h"
 
-Treasure::Treasure() : objectElement()
+Treasure::Treasure() : PropElement()
 {
     position = glm::vec3(0, 0, 0);
     scale = glm::vec3(1, 1, 1);
@@ -28,7 +28,7 @@ Treasure::Treasure() : objectElement()
     reached = false;
 }
 
-Treasure::Treasure(int id) : objectElement(id)
+Treasure::Treasure(int id) : PropElement(id)
 {
     position = glm::vec3(0, 0, 0);
     scale = glm::vec3(1, 1, 1);
@@ -45,15 +45,9 @@ Treasure::Treasure(int id) : objectElement(id)
 }
 
 /***********************************************************************
-* setup:   Sets up the Treasure HUD type using developer specified variables
+* setup:   Sets up the Treasure prop type using developer specified meshes
 *
-* fontfile: the name of the .ttf file
-* cl: font color
-* xPos: x coordinate of where to place the Treasure
-* yPos: y coordinate of where to place the Treasure
-* fontSize: size of the font
-* precision: precision of Treasure desired by user.
-* id: an id for this HUD type if desired.
+* filename: name of the mesh file
 *
 * returns:   void.
 ***********************************************************************/
@@ -67,9 +61,11 @@ Treasure::~Treasure(){
 }
 
 /***********************************************************************
-* setTime:   Sets the time remaining to be displayed
+* setTime:   Sets the location of the object
 *
-* timeLeft:  the time remaining in the round
+* x: x position
+* y: y position
+* z: z position
 *
 * returns:   void.
 ***********************************************************************/
@@ -78,9 +74,11 @@ void Treasure::setLocation(GLfloat x, GLfloat y, GLfloat z){
 }
 
 /***********************************************************************
-* setTime:   Sets the time remaining to be displayed
+* setScale:   Sets the scale of the object
 *
-* timeLeft:  the time remaining in the round
+* x: x scale
+* y: y scale
+* z: z scale
 *
 * returns:   void.
 ***********************************************************************/
@@ -89,9 +87,8 @@ void Treasure::setScale(GLfloat x, GLfloat y, GLfloat z){
 }
 
 /***********************************************************************
-* draw:   Simply draws the Treasure to the screen
-*
-* renderer: The SDL renderer to be rendered to.
+* draw:   Simply draws the Treasure to the screen with specified flags
+*           to enable bobbing or rotating.
 *
 * returns:   void.
 ***********************************************************************/
@@ -127,12 +124,31 @@ void Treasure::draw(){
     glPopMatrix();
 }
 
+/***********************************************************************
+* setRotate: Sets the rotate flag, cockwise flag, and the speed of the rotation
+*
+* rotateSet: true for rotation, false for no rotation
+* clockwiseSet: true to rotate clockwise, false to rotate counterclockwise
+* speed: speed of rotate by how many degrees are added each frame
+*
+* returns:   void.
+***********************************************************************/
 void Treasure::setRotate(bool rotateSet, bool clockwiseSet, GLfloat speed){
     rotate = rotateSet;
     clockwise = clockwiseSet;
     rotateSpeed = speed;
 }
 
+/***********************************************************************
+* setBob: Sets the bob flag, speed, bobMax, bobMin
+*
+* bobSet: true for bobbing, false for no bobbing
+* speed: set the speed of how many pixels the object will bob each frame
+* bobMax: The maximum height of the bob
+* bobMin: The minimum height of the bob
+*
+* returns:   void.
+***********************************************************************/
 void Treasure::setBob(bool bobSet, GLfloat speed, GLfloat bobMax, GLfloat bobMin){
     bob = bobSet;
     bobSpeed = speed;
@@ -140,14 +156,29 @@ void Treasure::setBob(bool bobSet, GLfloat speed, GLfloat bobMax, GLfloat bobMin
     this->bobMin = position.y - bobMin;
 }
 
+/***********************************************************************
+* toggleClockwise: flips the clockwise flag
+*
+* returns:   void.
+***********************************************************************/
 void Treasure::toggleClockwise(){
     clockwise = !clockwise;
 }
 
+/***********************************************************************
+* toggleBob: flips the bob flag
+*
+* returns:   void.
+***********************************************************************/
 void Treasure::toggleBob(){
     bob = !bob;
 }
 
+/***********************************************************************
+* getPosition: returns a vec3 of the position of the object
+*
+* returns:   vec3
+***********************************************************************/
 glm::vec3 Treasure::getPosition(){
     return position;
 }

@@ -68,6 +68,7 @@ bool FGame::OnInit()
 
     /** Initialize text **/
     TTF_Init();
+    IMG_Init(IMG_INIT_PNG);
 
     /** Initialize the clock for the main game loop. **/
     mainClock.init();

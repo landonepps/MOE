@@ -127,9 +127,6 @@ Mesh::Mesh( char const *filename, char const *texname ) {
         /** Read in texture coordinates. **/
         input >> tList[vertex].x;
         input >> tList[vertex].y;
-        
-        //tList[vertex].first = (tList[vertex].first + 1) / 2;
-        //tList[vertex].first = (tList[vertex].second + 1) / 2;
     }
     
     //Read in faces.

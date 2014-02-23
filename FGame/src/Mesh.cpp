@@ -16,6 +16,7 @@
 #include <Windows.h>
 #include <GL/gl.h>
 #include <GL/GLU.h>
+#include <SDL_image.h>
 #elif __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
@@ -28,10 +29,28 @@
 #include <string>
 #include <iostream>
 
+
 using namespace std;
 
 //-----------------------------------------------------------------------------
-Mesh::Mesh( char const *filename ) {
+Mesh::Mesh( char const *filename, char const *texname ) {
+    SDL_Surface* surface = IMG_Load(texname);
+
+    texture = 0;
+
+    glGenTextures(1, &texture);
+
+    glBindTexture(GL_TEXTURE_2D, texture);
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surface->w, surface->h, 0, GL_RGB, GL_UNSIGNED_BYTE, surface->pixels);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    SDL_FreeSurface(surface);
+  
+    height = surface->h;
+    width = surface->w;
   vertices = 0;
   faces    = 0;
 
@@ -90,7 +109,7 @@ Mesh::Mesh( char const *filename ) {
   //Read in vertices and normals.
   vList = new glm::vec4[vertices];
   nList = new glm::vec3[normals];
-  tList = new pair<float, float>[texCoords];
+  tList = new glm::vec2[texCoords];
   for(unsigned int vertex = 0; vertex < vertices; vertex++) {
 
     /** Read in vertices. **/
@@ -106,8 +125,8 @@ Mesh::Mesh( char const *filename ) {
     vList[vertex].w = 1;
 
     /** Read in texture coordinates. **/
-    input >> tList[vertex].first;
-    input >> tList[vertex].second;
+    input >> tList[vertex].x;
+    input >> tList[vertex].y;
 
     //tList[vertex].first = (tList[vertex].first + 1) / 2;
     //tList[vertex].first = (tList[vertex].second + 1) / 2;
@@ -139,6 +158,7 @@ Mesh::~Mesh() {
   delete [] nList;
   delete [] fList;
   delete [] tList;
+  glDeleteTextures(1, &texture);
 }
 //-----------------------------------------------------------------------------
 
@@ -146,16 +166,20 @@ Mesh::~Mesh() {
 
 //-----------------------------------------------------------------------------
 void Mesh::draw() {
-  for(unsigned int face = 0; face < faces; face++) {
-    glBegin(GL_POLYGON);
-    for(unsigned int vertex = 0; vertex < fList[face].size(); vertex++) {
-        glm::vec3 norm= nList[fList[face][vertex]];
-        glNormal3d(norm.x, norm.y, norm.z);
-      glTexCoord2f(tList[vertex].first, tList[vertex].second);
-        glm::vec4 vtx = vList[fList[face][vertex]];
-        glVertex4d(vtx.x, vtx.y, vtx.z, vtx.w);
+
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    for (unsigned int face = 0; face < faces; face++) {
+        glBegin(GL_POLYGON);
+        for (unsigned int vertex = 0; vertex < fList[face].size(); vertex++) {
+            glm::vec3 norm = nList[fList[face][vertex]];
+            glNormal3d(norm.x, norm.y, norm.z);
+            glTexCoord2f(tList[fList[face][vertex]].x, tList[fList[face][vertex]].y);
+            glm::vec4 vtx = vList[fList[face][vertex]];
+            glVertex4d(vtx.x, vtx.y, vtx.z, vtx.w);
+        }
+        glEnd();
     }
-    glEnd();
-  }
+    glDisable(GL_TEXTURE_2D);
 }
 //-----------------------------------------------------------------------------

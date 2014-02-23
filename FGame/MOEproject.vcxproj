@@ -145,6 +145,7 @@
     <ClCompile Include="src\Image.cpp" />
     <ClCompile Include="src\Mesh.cpp" />
     <ClCompile Include="src\Music.cpp" />
+    <ClCompile Include="src\Physics.cpp" />
     <ClCompile Include="src\Prop.cpp" />
     <ClCompile Include="src\OnCleanup.cpp" />
     <ClCompile Include="src\OnEvent.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="src\Image.h" />
     <ClInclude Include="src\Mesh.h" />
     <ClInclude Include="src\Music.h" />
+    <ClInclude Include="src\Physics.h" />
     <ClInclude Include="src\Prop.h" />
     <ClInclude Include="src\PropElement.h" />
     <ClInclude Include="src\Player.h" />

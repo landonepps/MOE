@@ -29,7 +29,6 @@ FGame::FGame() {
     
     cam = NULL;
 
-    testMesh = NULL;
     path = "";
 }
 

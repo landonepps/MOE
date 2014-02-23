@@ -78,15 +78,12 @@ bool FGame::OnInit()
 #ifdef _WIN32
     bgm.loadMusic(".\\assets\\bgm.wav");
     bgm.play();
-    testTex.initTexture(".\\assets\\NewPoor.png");
-    testMesh = new Mesh(".\\assets\\Poor.ply");
-    treasure1.setup(".\\assets\\Poor.ply");
+    treasure1.setup(".\\assets\\coffin.ply", ".\\assets\\darkwood.jpg");
     timer.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
 #else
     bgm.loadMusic("./assets/bgm.wav");
     bgm.play();
     testTex.initTexture("./assets/NewPoor.png");
-    testMesh = new Mesh("./assets/Poor.ply");
     treasure1.setup("./assets/Poor.ply");
     timer.setup("./assets/font.ttf",255,0,0,50,50,25);
 #endif

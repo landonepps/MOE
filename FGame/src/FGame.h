@@ -61,7 +61,6 @@ class FGame : public Events
         Music bgm;
 
         /** Test mesh. **/
-        Mesh *testMesh;
         Image testTex;
 
         /** The HUD Props**/

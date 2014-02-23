@@ -32,11 +32,6 @@ void FGame::OnRender()
     /** Clear color and depth buffer. **/
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    /**Draw the test mesh **/
-    glEnable( GL_TEXTURE_2D );
-    glBindTexture(GL_TEXTURE_2D, testTex.openglTex);
-    testMesh->draw();
-
     collectables.drawElements();
     glDisable( GL_TEXTURE_2D );
     

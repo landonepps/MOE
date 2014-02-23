@@ -38,7 +38,6 @@ private:
     SDL_Renderer *renderer;
     
 public:
-    GLuint openglTex;
 
     /***************************************************************************
      * Image: Constructor for Image
@@ -79,13 +78,6 @@ public:
      * h: the height of the image to copy to the renderer
      **************************************************************************/
     void draw(int x, int y, int srcX, int srcY, int h, int w);
-
-    /***************************************************************************
-     * initTexture: initializes a texture to be used with opengl
-     *
-     * filename: the files name and location
-     **************************************************************************/
-    void initTexture(const char *filename);
 };
 
 #endif /* defined(__MOE__Image__) */

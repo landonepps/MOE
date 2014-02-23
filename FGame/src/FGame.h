@@ -74,6 +74,14 @@ private:
     /** The Camera **/
     Camera *cam;
     
+    /** The game Props **/
+    Prop collectables;
+    Treasure treasure1;
+    
+    /** Resolution of the main window. **/
+    int width;
+    int height;
+    
     SDL_Joystick *joystick1;
     
 public:

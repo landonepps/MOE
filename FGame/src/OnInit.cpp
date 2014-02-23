@@ -86,9 +86,6 @@ bool FGame::OnInit()
     // testTex.initTexture("./assets/NewPoor.png");
     treasure1.setup("./assets/coffin.ply", "./assets/darkwood.jpg");
     timer.setup("./assets/font.ttf",255,0,0,50,50,25);
-    
-    // load terrain
-    terrain.loadTerrain("./assets/heightmap.pbm");
 #endif
 
     theHUD.addHUDElement(&timer);

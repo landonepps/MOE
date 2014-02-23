@@ -32,7 +32,7 @@ void FGame::OnRender()
     /** Load camera matrix **/
     cam->multMatrix();
     
-    /** draw terrain **/
+    /** draw terrain **
     // draw terrain
     glBegin(GL_QUADS);
     // loop over vertices for each quad
@@ -97,7 +97,7 @@ void FGame::OnRender()
         }
     }
     glEnd();
-
+*/
     /** Clear color and depth buffer. **/
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 

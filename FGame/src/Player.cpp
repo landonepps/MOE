@@ -68,8 +68,7 @@ void Player::loadPlayer(const char *image,
  */
 void Player::update(Clock *clock) {
     ani.OnAnimate(clock);
-    x += xVel * clock->getTimeScale();
-    y += yVel * clock->getTimeScale();
+    playerPhysics.update(clock);
 }
 
 /*
@@ -99,21 +98,39 @@ void Player::walk() {
  * moveLeft: sets x velocity for moving left
  */
 void Player::moveLeft() {
-    xVel = -3.0;
+    playerPhysics.moveLeft();
 }
 
 /*
  * moveRight: sets x velocity for moving right
  */
 void Player::moveRight() {
-    xVel = 3.0;
+    playerPhysics.moveRight();
 }
+
+void Player::moveForward() {
+    playerPhysics.moveForward();
+}
+
+void Player::moveBack() {
+    playerPhysics.moveBack();
+}
+
+void Player::moveUp() {
+    playerPhysics.moveBack();
+}
+
+void Player::moveDown() {
+    playerPhysics.moveDown();
+}
+
+
 
 /*
  * halt: sets all velocity to 0
  */
 void Player::halt() {
-    xVel = yVel = 0;
+    playerPhysics.halt();
 }
 
 /*

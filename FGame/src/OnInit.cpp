@@ -78,7 +78,7 @@ bool FGame::OnInit()
 #ifdef _WIN32
     bgm.loadMusic(".\\assets\\bgm.wav");
     bgm.play();
-    treasure1.setup(".\\assets\\coffin.ply", ".\\assets\\darkwood.jpg");
+    treasure1.setup(".\\assets\\tavolo1.ply", ".\\assets\\tavolo1.png");
     timer.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
 #else
     bgm.loadMusic("./assets/bgm.wav");

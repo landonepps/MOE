@@ -174,7 +174,8 @@ void Mesh::draw() {
         for (unsigned int vertex = 0; vertex < fList[face].size(); vertex++) {
             glm::vec3 norm = nList[fList[face][vertex]];
             glNormal3d(norm.x, norm.y, norm.z);
-            glTexCoord2f(tList[fList[face][vertex]].x, tList[fList[face][vertex]].y);
+            glm::vec2 tex = tList[fList[face][vertex]];
+            glTexCoord2f(tex.x, -tex.y);
             glm::vec4 vtx = vList[fList[face][vertex]];
             glVertex4d(vtx.x, vtx.y, vtx.z, vtx.w);
         }

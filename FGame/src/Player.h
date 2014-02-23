@@ -19,7 +19,6 @@
 #include "Camera.h"
 
 class Player {
-    Mesh *mesh;
     Camera *cam;
     Physics2 physics;
     

@@ -17,7 +17,6 @@
  * Player: Constructor for Player
  */
 Player::Player() {
-    mesh = NULL;
     cam = new Camera();
 }
 

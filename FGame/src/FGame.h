@@ -63,7 +63,6 @@ private:
     Music bgm;
     
     /** Test mesh. **/
-    Mesh *testMesh;
     Image testTex;
     
     /** The HUD Props**/
@@ -74,17 +73,6 @@ private:
     //#warning remove later
     /** The Camera **/
     Camera *cam;
-    
-    /** The Terrain **/
-    Terrain terrain;
-    
-    /** The game Props **/
-    Prop collectables;
-    Treasure treasure1;
-    
-    /** Resolution of the main window. **/
-    int width;
-    int height;
     
     SDL_Joystick *joystick1;
     

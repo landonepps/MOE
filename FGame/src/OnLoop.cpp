@@ -21,5 +21,6 @@
 void FGame::OnLoop()
 {
     hBar.setValue(50);
-    timer.setValue(mainClock.getElapsedTime());
+    timer.setValue(mainClock->getElapsedTime());
+    player.update();
 }

@@ -73,7 +73,7 @@ bool FGame::OnInit()
     IMG_Init(IMG_INIT_PNG);
 
     /** Initialize the clock for the main game loop. **/
-    mainClock.init();
+    mainClock->init();
 
     hBar.setup();
 
@@ -89,6 +89,7 @@ bool FGame::OnInit()
     bgm.play();
     treasure1.setup("./assets/tavolo1.ply", "./assets/tavolo1.png");
     timer.setup("./assets/font.ttf",255,0,0,50,50,25);
+    terrain.loadTerrain("./assets/field1.pgm");
 #endif
 
     theHUD.addHUDElement(&timer);
@@ -131,9 +132,6 @@ bool FGame::OnInit()
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    
-    // Create Camera
-    cam = new Camera();
 
     return true;
 }

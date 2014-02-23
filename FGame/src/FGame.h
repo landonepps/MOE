@@ -40,6 +40,7 @@
 #include "Treasure.h"
 #include "Camera.h"
 #include "Terrain.h"
+#include "Player.h"
 
 #include <string>
 
@@ -52,7 +53,7 @@ private:
     bool running;
     
     /** Used to represent main game loop time. **/
-    Clock mainClock;
+    Clock *mainClock = Clock::getInstance();
     
     /** The main window/screen the user sees. **/
     SDL_Window   *window;
@@ -72,7 +73,10 @@ private:
     
     //#warning remove later
     /** The Camera **/
-    Camera *cam;
+    Player player;
+    
+    /** The landscape **/
+    Terrain terrain;
     
     /** The game Props **/
     Prop collectables;

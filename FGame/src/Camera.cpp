@@ -15,8 +15,8 @@
 
 Camera::Camera() {
 #warning default values, change later
-    pos = glm::vec3(0, 200, 0);
-    rot = glm::vec3(-glm::pi<float>()/2, 0, 0);
+    pos = glm::vec3(0, 0, 0);
+    rot = glm::vec3(glm::pi<float>()/2, 0, 0);
     fov = 100;
     aspect = 4.0/3.0;
     zNear = 0.1;

@@ -30,9 +30,10 @@ bool FGame::OnInit()
     }
 
     /** Set opengl attributes, enable double buffering. **/
-    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 5);
-    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 5);
-    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 5);
+    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
@@ -67,6 +68,9 @@ bool FGame::OnInit()
 
     /** Initialize text **/
     TTF_Init();
+    
+    /** Initilize image **/
+    IMG_Init(IMG_INIT_PNG);
 
     /** Initialize the clock for the main game loop. **/
     mainClock.init();
@@ -83,8 +87,7 @@ bool FGame::OnInit()
 #else
     bgm.loadMusic("./assets/bgm.wav");
     bgm.play();
-    // testTex.initTexture("./assets/NewPoor.png");
-    treasure1.setup("./assets/coffin.ply", "./assets/darkwood.jpg");
+    treasure1.setup("./assets/tavolo1.ply", "./assets/tavolo1.png");
     timer.setup("./assets/font.ttf",255,0,0,50,50,25);
 #endif
 

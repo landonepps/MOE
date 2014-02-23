@@ -89,7 +89,7 @@ void Counter::setValue(float val){
 void Counter::draw(){
 
     stringstream message;
-    message << fixed << setprecision(precision) << value;
+    message << fixed << setprecision(precision) << value << " " << glGetString(GL_VERSION);
     
     // Create the surface to copy to the renderer
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);

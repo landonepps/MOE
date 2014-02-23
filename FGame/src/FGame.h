@@ -38,6 +38,7 @@
 #include "Constants.h"
 #include "Object.h"
 #include "Treasure.h"
+#include "Camera.h"
 #include <string>
 
 class FGame : public Events
@@ -67,6 +68,10 @@ class FGame : public Events
         HUD theHUD;
         Counter timer;
         Gauge hBar;
+    
+#warning remove later
+        /** The Camera **/
+        Camera *cam;
 
         /** The game objects **/
         Object collectables;

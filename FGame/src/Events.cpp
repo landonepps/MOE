@@ -11,6 +11,7 @@
 *******************************************************************************/
 
 #include "Events.h"
+#include <iostream>
 
 /***********************************************************************
  * Events:    Constructor (does nothing).
@@ -291,7 +292,16 @@ void Events::OnInputBlur()
 void Events::OnKeyDown(SDL_Keycode sym, Uint16 mod,
                        SDL_Scancode scancode)
 {
-    /** Do Nothing (pure virtual). **/
+#warning need to implement
+    std::cerr << "hello";
+    switch (sym) {
+        case SDLK_LEFT:
+            std::cerr << "good";
+            break;
+            
+        default:
+            break;
+    }
 }
 
 /***********************************************************************

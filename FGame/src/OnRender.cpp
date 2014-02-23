@@ -21,7 +21,7 @@
 void FGame::OnRender()
 {
     /** Draw image etc. **/
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 1);
     SDL_RenderClear(renderer);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();

@@ -78,10 +78,10 @@ bool FGame::OnInit()
 #ifdef _WIN32
     bgm.loadMusic(".\\assets\\bgm.wav");
     bgm.play();
-    testTex.initTexture(".\\assets\\NewPoor.png");
-    testMesh = new Mesh((path + "\\assets\\Poor.ply").c_str());
-    treasure1.setup((path + "\\assets\\Poor.ply").c_str());
     timer.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
+    testTex.initTexture(".\\assets\\NewPoor.png");
+    testMesh = new Mesh(".\\assets\\Poor.ply");
+    treasure1.setup(".\\assets\\Poor.ply"); 
 #else
     bgm.loadMusic("./assets/bgm.wav");
     bgm.play();
@@ -118,7 +118,6 @@ bool FGame::OnInit()
     
     // load audio for testing and load mesh.
 
-    
     treasure1.setLocation(320, 240, 2);
     treasure1.setScale(25, 25, 25);
     treasure1.setRotate(true, true);

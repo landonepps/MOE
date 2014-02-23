@@ -35,6 +35,16 @@ using namespace std;
 //-----------------------------------------------------------------------------
 Mesh::Mesh( char const *filename, char const *texname ) {
     SDL_Surface* surface = IMG_Load(texname);
+    SDL_PixelFormat pf;
+    pf.format = SDL_PIXELFORMAT_RGBA4444;
+    pf.palette = NULL;
+    pf.BitsPerPixel = 32;
+    pf.BytesPerPixel = 4;
+    pf.Rmask = 0x00ff0000;
+    pf.Gmask = 0x0000ff00;
+    pf.Bmask = 0x000000ff;
+    pf.Amask = 0x00000000;
+    surface = SDL_ConvertSurface(surface, &pf, 0);
     
     texture = 0;
     

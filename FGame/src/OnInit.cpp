@@ -79,8 +79,8 @@ bool FGame::OnInit()
     bgm.loadMusic(".\\assets\\bgm.wav");
     bgm.play();
     testTex.initTexture(".\\assets\\NewPoor.png");
-    testMesh = new Mesh((path + "\\assets\\Poor.ply").c_str());
-    treasure1.setup((path + "\\assets\\Poor.ply").c_str());
+    testMesh = new Mesh(".\\assets\\Poor.ply");
+    treasure1.setup(".\\assets\\Poor.ply");
     timer.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
 #else
     bgm.loadMusic("./assets/bgm.wav");
@@ -123,7 +123,7 @@ bool FGame::OnInit()
     treasure1.setScale(25, 25, 25);
     treasure1.setRotate(true, true);
     treasure1.setBob(true,0.5);
-    collectables.addObjectElement(&treasure1);
+    collectables.addPropElement(&treasure1);
 
     glEnable( GL_DEPTH_TEST );
     glEnable( GL_CULL_FACE );

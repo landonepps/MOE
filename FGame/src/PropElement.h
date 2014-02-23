@@ -7,11 +7,11 @@
 * Class:      4342, Spring 2014
 * Date:       2/22/2014
 *
-* Parent class for hud elements
+* Parent class for prop elements
 *******************************************************************************/
 
-#ifndef OBJECTELEMENT_H_
-#define OBJECTELEMENT_H_
+#ifndef PROPELEMENT_H_
+#define PROPELEMENT_H_
 
 #ifdef _MSC_VER
 #include <SDL.h>
@@ -27,15 +27,15 @@
 #include <GL/GLU.h>
 #endif
 
-class objectElement{
+class PropElement{
 private:
-    // id ideally used for debugging or specific HUD manipulation.
+    // id ideally used for debugging or specific prop manipulation.
     int id;
 
 public:
-    objectElement(){ id = 0; };
-    objectElement(int id){ this->id = id; };
-    virtual ~objectElement(){};
+    PropElement(){ id = 0; };
+    PropElement(int id){ this->id = id; };
+    virtual ~PropElement(){};
 
     // Virtual function to ensure child classes have a way to draw themselves.
     // It also envokes that draw function when called

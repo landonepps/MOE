@@ -40,7 +40,9 @@ Counter::Counter(int id) : HUDelement(id)
 * setup:   Sets up the Counter HUD type using developer specified variables
 *
 * fontfile: the name of the .ttf file
-* cl: font color 
+* R: red value
+* G: green value
+* B: blue value
 * xPos: x coordinate of where to place the Counter
 * yPos: y coordinate of where to place the Counter
 * fontSize: size of the font
@@ -66,12 +68,12 @@ void Counter::setup(const string &fontFile, const GLubyte& R, const GLubyte& G, 
 }
 
 Counter::~Counter(){
-   // TTF_CloseFont(font);
+   
 }
 /***********************************************************************
-* setTime:   Sets the time remaining to be displayed
+* setValue:   Sets the value to be displayed
 *
-* timeLeft:  the time remaining in the round
+* val:  the time remaining in the round
 *
 * returns:   void.
 ***********************************************************************/
@@ -81,8 +83,6 @@ void Counter::setValue(float val){
 
 /***********************************************************************
  * draw:   Simply draws the Counter to the screen
- *
- * renderer: The SDL renderer to be rendered to.
  *
  * returns:   void.
 ***********************************************************************/
@@ -129,7 +129,7 @@ void Counter::draw(){
 
     // Clean up
     glDisable(GL_BLEND);
-    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_TEXTURE_2D); 
     glDeleteTextures(1, &Texture);
     // Cleans up the surface and texture
     SDL_FreeSurface(surf);

@@ -25,11 +25,11 @@
 #endif
 #endif
 
-#include "objectElement.h"
+#include "PropElement.h"
 #include "Mesh.h"
 #include "glm/glm.hpp"
 
-class Treasure : public objectElement{
+class Treasure : public PropElement{
 private:
     Mesh *theMesh;
     glm::vec3 position;

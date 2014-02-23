@@ -7,11 +7,11 @@
 * Class:      4342, Spring 2014
 * Date:       2/22/2014
 *
-* Parent class for object elements
+* Parent class for Prop elements
 *******************************************************************************/
 
-#ifndef OBJECT_H_
-#define OBJECT_H_
+#ifndef PROP_H_
+#define PROP_H_
 
 #ifdef _MSC_VER
 #include <SDL.h>
@@ -20,19 +20,19 @@
 #endif
 #include <string>
 #include <vector>
-#include "objectElement.h"
+#include "PropElement.h"
 
 using namespace std;
 
-class Object{
+class Prop{
 private:
-    vector<objectElement*> objectElements;
+    vector<PropElement*> PropElements;
 
 public:
-    Object();
-    ~Object();
+    Prop();
+    ~Prop();
     void drawElements();
-    void addObjectElement(objectElement*);
+    void addPropElement(PropElement*);
 };
 
 #endif

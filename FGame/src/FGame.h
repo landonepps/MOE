@@ -36,7 +36,7 @@
 #include "Music.h"
 #include "Mesh.h"
 #include "Constants.h"
-#include "Object.h"
+#include "Prop.h"
 #include "Treasure.h"
 #include "Camera.h"
 #include <string>
@@ -64,17 +64,17 @@ class FGame : public Events
         Mesh *testMesh;
         Image testTex;
 
-        /** The HUD objects**/
+        /** The HUD Props**/
         HUD theHUD;
         Counter timer;
         Gauge hBar;
     
-#warning remove later
+//#warning remove later
         /** The Camera **/
         Camera *cam;
 
-        /** The game objects **/
-        Object collectables;
+        /** The game Props **/
+        Prop collectables;
         Treasure treasure1;
 
         /** Resolution of the main window. **/

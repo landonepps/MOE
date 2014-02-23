@@ -7,21 +7,21 @@
 * Class:      4342, Spring 2014
 * Date:       9-Feb-2014
 *
-* Object implementation file
+* Prop implementation file
 *******************************************************************************/
 
-#include "Object.h"
+#include "Prop.h"
 
-Object::Object(){}
+Prop::Prop(){}
 
-Object::~Object(){}
+Prop::~Prop(){}
 
-void Object::drawElements(){
-    for (unsigned int i = 0; i < objectElements.size(); i++){
-        objectElements[i]->draw();
+void Prop::drawElements(){
+    for (unsigned int i = 0; i < PropElements.size(); i++){
+        PropElements[i]->draw();
     }
 }
 
-void Object::addObjectElement(objectElement* element){
-    objectElements.push_back(element);
+void Prop::addPropElement(PropElement* element){
+    PropElements.push_back(element);
 }

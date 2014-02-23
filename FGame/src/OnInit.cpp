@@ -119,17 +119,21 @@ bool FGame::OnInit()
     // load audio for testing and load mesh.
 
     
-    treasure1.setLocation(320, 240, 2);
+    // treasure1.setLocation(320, 240, 2);
     treasure1.setScale(25, 25, 25);
     treasure1.setRotate(true, true);
     treasure1.setBob(true,0.5);
     collectables.addObjectElement(&treasure1);
 
+    glEnable( GL_DEPTH_TEST );
     glEnable( GL_CULL_FACE );
     glCullFace( GL_BACK );
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    
+    // Create Camera
+    cam = new Camera();
 
     return true;
 }

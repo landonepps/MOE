@@ -26,6 +26,8 @@ FGame::FGame() {
     height    = WIN_HEIGHT;
 
     joystick1 = NULL;
+    
+    cam = NULL;
 
     testMesh = NULL;
     path = "";

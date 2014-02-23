@@ -16,8 +16,6 @@
 
 #define GL_CLAMP_TO_EDGE 0x812F
 
-#define GL_BGRA 0x80E1
-
 Counter::Counter() : HUDelement()
 {
     xPosition = 0;
@@ -111,7 +109,7 @@ void Counter::draw(){
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
     // Render the text to 2D by referencing its pixel data
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_BGRA,
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_BGRA_EXT,
                     GL_UNSIGNED_BYTE, surf->pixels);
 
     // Enable 2D Texture and alpha blend

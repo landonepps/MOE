@@ -18,6 +18,8 @@
 		4435F7FE18B815010052FBB1 /* Counter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F7FB18B815010052FBB1 /* Counter.cpp */; };
 		4435F7FF18B815010052FBB1 /* Gauge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F7FD18B815010052FBB1 /* Gauge.cpp */; };
 		4435F80118B815090052FBB1 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F80018B815090052FBB1 /* Mesh.cpp */; };
+		44387C2318B9A34E0088FB7E /* Prop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44387C2018B9A34E0088FB7E /* Prop.cpp */; };
+		44387C2618B9BD5C0088FB7E /* Terrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44387C2418B9BD5C0088FB7E /* Terrain.cpp */; };
 		444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C8C5518A1EDF8000101F8 /* SDL2_image.framework */; };
 		444C8C5C18A21169000101F8 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444C8C5A18A21169000101F8 /* Events.cpp */; };
 		4457056018A8721B00DCB73E /* HUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4457055F18A8721B00DCB73E /* HUD.cpp */; };
@@ -26,7 +28,6 @@
 		44A3108218A5B73C00427013 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107F18A5B73C00427013 /* Clock.cpp */; };
 		44A3108918A5BE3D00427013 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3108818A5BE3D00427013 /* SDL2_ttf.framework */; };
 		44A7BC0C18B9668A00ABDB9F /* Treasure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A7BC0A18B9668A00ABDB9F /* Treasure.cpp */; };
-		44A7BC0F18B9669700ABDB9F /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A7BC0D18B9669700ABDB9F /* Object.cpp */; };
 		44A7BC1318B96C4200ABDB9F /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A7BC1118B96C4200ABDB9F /* Camera.cpp */; };
 		44B8E3E518A70FAA00587902 /* Music.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44B8E3E318A70FAA00587902 /* Music.cpp */; };
 		44DA951A18A984980062F44D /* SFX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44DA951818A984980062F44D /* SFX.cpp */; };
@@ -59,6 +60,11 @@
 		4435F80018B815090052FBB1 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
 		4435F80218B8150F0052FBB1 /* Gauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gauge.h; sourceTree = "<group>"; };
 		4435F80618B8151A0052FBB1 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		44387C2018B9A34E0088FB7E /* Prop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Prop.cpp; sourceTree = "<group>"; };
+		44387C2118B9A34E0088FB7E /* Prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prop.h; sourceTree = "<group>"; };
+		44387C2218B9A34E0088FB7E /* PropElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropElement.h; sourceTree = "<group>"; };
+		44387C2418B9BD5C0088FB7E /* Terrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Terrain.cpp; sourceTree = "<group>"; };
+		44387C2518B9BD5C0088FB7E /* Terrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terrain.h; sourceTree = "<group>"; };
 		444C8C5518A1EDF8000101F8 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		444C8C5A18A21169000101F8 /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
 		444C8C5B18A21169000101F8 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
@@ -73,11 +79,8 @@
 		44A3108318A5BDEE00427013 /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
 		44A3108418A5BDEE00427013 /* HUDelement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDelement.h; sourceTree = "<group>"; };
 		44A3108818A5BE3D00427013 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
-		44A7BC0918B9668A00ABDB9F /* objectElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objectElement.h; sourceTree = "<group>"; };
 		44A7BC0A18B9668A00ABDB9F /* Treasure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Treasure.cpp; sourceTree = "<group>"; };
 		44A7BC0B18B9668A00ABDB9F /* Treasure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Treasure.h; sourceTree = "<group>"; };
-		44A7BC0D18B9669700ABDB9F /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
-		44A7BC0E18B9669700ABDB9F /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		44A7BC1118B96C4200ABDB9F /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		44A7BC1218B96C4200ABDB9F /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		44B8E3E318A70FAA00587902 /* Music.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Music.cpp; sourceTree = "<group>"; };
@@ -154,9 +157,9 @@
 		4423CEDE18A0813600FE3118 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				44A7BC0D18B9669700ABDB9F /* Object.cpp */,
-				44A7BC0E18B9669700ABDB9F /* Object.h */,
-				44A7BC0918B9668A00ABDB9F /* objectElement.h */,
+				44387C2018B9A34E0088FB7E /* Prop.cpp */,
+				44387C2118B9A34E0088FB7E /* Prop.h */,
+				44387C2218B9A34E0088FB7E /* PropElement.h */,
 				44A7BC0A18B9668A00ABDB9F /* Treasure.cpp */,
 				44A7BC0B18B9668A00ABDB9F /* Treasure.h */,
 				4435F80618B8151A0052FBB1 /* Mesh.h */,
@@ -177,6 +180,8 @@
 				44A7BC1218B96C4200ABDB9F /* Camera.h */,
 				F323777018B994DF001F51D8 /* Physics.cpp */,
 				F323777118B994DF001F51D8 /* Physics.h */,
+				44387C2418B9BD5C0088FB7E /* Terrain.cpp */,
+				44387C2518B9BD5C0088FB7E /* Terrain.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -306,11 +311,12 @@
 				44A3107418A59E4700427013 /* Image.cpp in Sources */,
 				F323777218B994DF001F51D8 /* Physics.cpp in Sources */,
 				44A7BC1318B96C4200ABDB9F /* Camera.cpp in Sources */,
-				44A7BC0F18B9669700ABDB9F /* Object.cpp in Sources */,
 				44B8E3E518A70FAA00587902 /* Music.cpp in Sources */,
+				44387C2618B9BD5C0088FB7E /* Terrain.cpp in Sources */,
 				44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */,
 				4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */,
 				44A3108218A5B73C00427013 /* Clock.cpp in Sources */,
+				44387C2318B9A34E0088FB7E /* Prop.cpp in Sources */,
 				4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */,
 				4435F7FF18B815010052FBB1 /* Gauge.cpp in Sources */,
 			);

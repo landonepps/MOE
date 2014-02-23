@@ -89,6 +89,9 @@ bool FGame::OnInit()
     testMesh = new Mesh("./assets/Poor.ply");
     treasure1.setup("./assets/Poor.ply");
     timer.setup("./assets/font.ttf",255,0,0,50,50,25);
+    
+    // load terrain
+    terrain.loadTerrain("./assets/heightmap.pbm");
 #endif
 
     theHUD.addHUDElement(&timer);

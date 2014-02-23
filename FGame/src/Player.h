@@ -16,6 +16,7 @@
 #include "Image.h"
 #include "Animation.h"
 #include "SFX.h"
+#include "Physics.h"
 
 class Player {
     // position and size
@@ -36,6 +37,8 @@ class Player {
     /* will remove later */
     // keep track of whether player is in walking animation
     bool walking;
+    
+    Physics playerPhysics;
     
 public:
     
@@ -88,6 +91,14 @@ public:
      * moveRight: sets x velocity for moving right
      */
     void moveRight();
+    
+    void moveForward();
+    
+    void moveBack();
+    
+    void moveUp();
+    
+    void moveDown();
     
     /*
      * halt: sets all velocity to 0

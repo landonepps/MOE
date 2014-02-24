@@ -48,4 +48,5 @@ void FGame::OnRender()
 
     /** Swap buffers. **/
     SDL_GL_SwapWindow(window);
+    frames++;
 }

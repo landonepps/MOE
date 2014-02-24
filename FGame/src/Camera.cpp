@@ -14,7 +14,6 @@
 #include "glm/gtc/type_ptr.hpp"
 
 Camera::Camera() {
-#warning default values, change later
     pos = glm::vec3(0, 0, 0);
     rot = glm::vec3(0, 0, 0);
     fov = 100;

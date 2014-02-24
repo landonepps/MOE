@@ -101,6 +101,7 @@ void Clock::update(float dtRealSeconds)
 {
     if(isPaused == false)
     {
+        previousCycles = timeCycles;
         Uint64 dtScaledCycles = secondsToCycles(dtRealSeconds * timeScale);
         timeCycles += dtScaledCycles;
     }
@@ -174,4 +175,8 @@ void Clock::singleStep()
 float Clock::getElapsedTime()
 {
     return timeCycles / cyclesPerSecond;
+}
+
+float Clock::getDeltaTime(){
+    return (timeCycles - previousCycles) / cyclesPerSecond;
 }

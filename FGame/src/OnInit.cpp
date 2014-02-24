@@ -84,6 +84,7 @@ bool FGame::OnInit()
     bgm.play();
     treasure1.setup(".\\assets\\tavolo1.ply", ".\\assets\\tavolo1.png");
     timer.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
+    env.loadEnv(".\\assets\\room.ply", ".\\assets\\roomtex.jpg");
 #else
     bgm.loadMusic("./assets/bgm.wav");
     bgm.play();
@@ -120,7 +121,7 @@ bool FGame::OnInit()
     // load audio for testing and load mesh.
 
     treasure1.setScale(25, 25, 25);
-    treasure1.setRotate(true, true);
+    treasure1.setRotate(true, true,25);
     treasure1.setBob(true,0.5);
     collectables.addPropElement(&treasure1);
 

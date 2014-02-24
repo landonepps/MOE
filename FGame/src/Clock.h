@@ -60,7 +60,9 @@ private:
      * startTimeSeconds: What the starting time is.
      ***********************************************************************/
     explicit Clock(float startTimeSeconds = 0);
-    
+
+    float previousCycles;
+
 public:
     
     static Clock* getInstance() {
@@ -152,6 +154,8 @@ public:
      * returns:   Elapsed time.
      ***********************************************************************/
     float getElapsedTime();
+
+    float getDeltaTime();
 };
 
 #endif /* CLOCK_H_ */

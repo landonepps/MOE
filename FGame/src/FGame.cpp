@@ -18,12 +18,16 @@
 FGame::FGame() {
     running   = true;
 
+    frames = 0;
+
     window    = NULL;
     renderer  = NULL;
     context   = NULL;
 
     width     = WIN_WIDTH;
     height    = WIN_HEIGHT;
+
+    mainClock = Clock::getInstance();
 
     joystick1 = NULL;
 

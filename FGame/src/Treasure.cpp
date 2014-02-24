@@ -11,6 +11,7 @@
 *******************************************************************************/
 
 #include "Treasure.h"
+#include "Clock.h"
 
 Treasure::Treasure() : PropElement()
 {
@@ -103,20 +104,20 @@ void Treasure::draw(){
         }
 
         if (!reached){
-            position.y += bobSpeed;
+            position.y += bobSpeed * Clock::getInstance()->getDeltaTime();
         }
         else if (reached){
-            position.y -= bobSpeed;
+            position.y -= bobSpeed * Clock::getInstance()->getDeltaTime();
         }
     }
     glTranslatef(position.x, position.y, position.z);
     glScalef(scale.x, scale.y, scale.z);
     if (rotate){
         if (clockwise){
-            rotateAngle += rotateSpeed;
+            rotateAngle += rotateSpeed * Clock::getInstance()->getDeltaTime();
         }
         else{
-            rotateAngle -= rotateSpeed;
+            rotateAngle -= rotateSpeed * Clock::getInstance()->getDeltaTime();
         }
         glRotatef(rotateAngle, 0, 1, 0);
     }

@@ -12,9 +12,9 @@
 
 Environment::Environment() {
     mesh = NULL;
-    pos = {0, 0, 0};
-    scl = {100, 100, 100};
-    rot = {180, 0, 0};
+    pos = glm::vec3(0, 0, 0);
+    scl = glm::vec3(100, 100, 100);
+    rot = glm::vec3(180, 0, 0);
 }
 
 Environment::~Environment() {

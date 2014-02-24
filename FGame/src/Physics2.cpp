@@ -10,8 +10,8 @@
 #include "Clock.h"
 
 Physics2::Physics2() {
-    pos = {0, -10, 0};
-    vel = {0, 0, 0};
+    pos = glm::vec3(0, -10, 0);
+    vel = glm::vec3(0, 0, 0);
 }
 
 Physics2::~Physics2() {

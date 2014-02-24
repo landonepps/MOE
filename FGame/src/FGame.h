@@ -52,8 +52,11 @@ private:
      *  will exit gracefully. **/
     bool running;
     
+    int frames;
+
+    float lastFrame;
     /** Used to represent main game loop time. **/
-    Clock *mainClock = Clock::getInstance();
+    Clock *mainClock;
     
     /** The main window/screen the user sees. **/
     SDL_Window   *window;

@@ -16,6 +16,7 @@ class Physics2 {
     glm::vec3 pos;
     glm::vec3 vel;
     glm::vec3 rot;
+    // angular velocity
     glm::vec3 aVel;
     glm::vec3 acc;
     

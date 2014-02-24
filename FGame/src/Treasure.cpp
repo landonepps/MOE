@@ -121,6 +121,7 @@ void Treasure::draw(){
         }
         glRotatef(rotateAngle, 0, 1, 0);
     }
+    glRotatef(-90, 1, 0, 0);
     theMesh->draw();
     glPopMatrix();
 }

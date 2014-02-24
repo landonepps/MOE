@@ -79,19 +79,19 @@ void FGame::OnKeyDown(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode)
 {
     switch (sym) {
         case SDLK_DOWN:
-            player.setVel(glm::vec3(0, 0, -10));
+            player.setVel(glm::vec3(0, 0, -100));
             break;
             
         case SDLK_UP:
-            player.setVel(glm::vec3(0, 0, 10));
+            player.setVel(glm::vec3(0, 0, 100));
             break;
             
         case SDLK_RIGHT:
-            player.setAVel(glm::vec3(0, 10, 0));
+            player.setAVel(glm::vec3(0, 40, 0));
             break;
         
         case SDLK_LEFT:
-            player.setAVel(glm::vec3(0, -10, 0));
+            player.setAVel(glm::vec3(0, -40, 0));
             break;
             
         default:

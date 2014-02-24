@@ -175,8 +175,6 @@
 				44A3107F18A5B73C00427013 /* Clock.cpp */,
 				44A3108018A5B73C00427013 /* Clock.h */,
 				44A3108118A5B73C00427013 /* Constants.h */,
-				444C8C5A18A21169000101F8 /* Events.cpp */,
-				444C8C5B18A21169000101F8 /* Events.h */,
 				449E7BD618A9B061005DDE7D /* Player.cpp */,
 				449E7BD718A9B061005DDE7D /* Player.h */,
 				44A7BC1118B96C4200ABDB9F /* Camera.cpp */,
@@ -234,6 +232,8 @@
 		44FF831118BA878300A9A773 /* bad physics */ = {
 			isa = PBXGroup;
 			children = (
+				444C8C5A18A21169000101F8 /* Events.cpp */,
+				444C8C5B18A21169000101F8 /* Events.h */,
 				F323777018B994DF001F51D8 /* Physics.cpp */,
 				F323777118B994DF001F51D8 /* Physics.h */,
 			);

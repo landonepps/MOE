@@ -19,7 +19,7 @@ Camera::Camera() {
     fov = 45;
     aspect = 4.0/3.0;
     zNear = 0.1;
-    zFar = 5000;
+    zFar = 100000;
 }
 
 Camera::~Camera() {

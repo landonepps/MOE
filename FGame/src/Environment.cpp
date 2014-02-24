@@ -12,9 +12,6 @@
 
 Environment::Environment() {
     mesh = NULL;
-    pos = glm::vec3(0, 0, 0);
-    scl = glm::vec3(100, 100, 100);
-    rot = glm::vec3(180, 0, 0);
 }
 
 Environment::~Environment() {
@@ -23,6 +20,10 @@ Environment::~Environment() {
 
 void Environment::loadEnv(const char *meshfile, const char *texfile) {
     mesh = new Mesh(meshfile, texfile);
+    pos = glm::vec3(0, mesh->getDimensions().y * 50 - 20, 0);
+    scl = glm::vec3(100, 100, 100);
+    rot = glm::vec3(90, 0, 0);
+
 }
 
 void Environment::draw() {

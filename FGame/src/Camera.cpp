@@ -28,12 +28,11 @@ Camera::~Camera() {
 
 void Camera::multMatrix() {
     glm::mat4 trans;
-
     trans = glm::perspective(fov, aspect, zNear, zFar);
-    trans = glm::translate(trans, pos);
     trans = glm::rotate(trans, rot.x, glm::vec3(1.0f, 0.0f, 0.0f));
     trans = glm::rotate(trans, rot.y, glm::vec3(0.0f, 1.0f, 0.0f));
     trans = glm::rotate(trans, rot.z, glm::vec3(0.0f, 0.0f, 1.0f));
+    trans = glm::translate(trans, pos);
 
     glMultMatrixf(glm::value_ptr(trans));
 }

@@ -183,4 +183,8 @@ glm::vec3 Treasure::getPosition(){
     return position;
 }
 
+glm::vec3 Treasure::getDimensions(){
+    return theMesh->getDimensions();
+}
+
 

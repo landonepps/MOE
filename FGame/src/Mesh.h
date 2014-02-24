@@ -33,6 +33,8 @@ class Mesh {
     // Draw all the polygon faces in this mesh.
     void draw();
 
+    glm::vec3 getDimensions();
+
  private:
     unsigned int vertices;
     unsigned int normals;
@@ -44,9 +46,9 @@ class Mesh {
     vector<unsigned int> *fList;
     glm::vec2 *tList;
 
-    GLuint texture;
+    glm::vec3 dimensions;
 
-    int height, width;
+    GLuint texture;
 };
 //-----------------------------------------------------------------------------
 

@@ -50,6 +50,7 @@ public:
     void toggleClockwise();
     void draw();
     glm::vec3 getPosition();
+    glm::vec3 getDimensions();
 };
 
 #endif

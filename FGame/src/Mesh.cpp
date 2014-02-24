@@ -28,7 +28,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
-
+#include <algorithm>
 
 using namespace std;
 
@@ -58,9 +58,7 @@ Mesh::Mesh( char const *filename, char const *texname ) {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     
     SDL_FreeSurface(surface);
-    
-    height = surface->h;
-    width = surface->w;
+
     vertices = 0;
     faces    = 0;
     
@@ -116,6 +114,9 @@ Mesh::Mesh( char const *filename, char const *texname ) {
         }
     }
     
+    glm::vec3 min = glm::vec3(0, 0, 0);
+    glm::vec3 max = glm::vec3(0, 0, 0);
+
     //Read in vertices and normals.
     vList = new glm::vec4[vertices];
     nList = new glm::vec3[normals];
@@ -128,6 +129,14 @@ Mesh::Mesh( char const *filename, char const *texname ) {
         input >> vList[vertex].z;
         vList[vertex].w = 1;
         
+        if (vList[vertex].x > max.x){ max.x = vList[vertex].x; }
+        if (vList[vertex].y > max.y){ max.y = vList[vertex].y; }
+        if (vList[vertex].z > max.z){ max.z = vList[vertex].z; }
+
+        if (vList[vertex].x < min.x){ min.x = vList[vertex].x; }
+        if (vList[vertex].y < min.y){ min.y = vList[vertex].y; }
+        if (vList[vertex].z < min.z){ min.z = vList[vertex].z; }
+
         /** Read in normals. **/
         input >> nList[vertex].x;
         input >> nList[vertex].y;
@@ -139,6 +148,10 @@ Mesh::Mesh( char const *filename, char const *texname ) {
         input >> tList[vertex].y;
     }
     
+    dimensions.x = abs(max.x) + abs(min.x);
+    dimensions.y = abs(max.y) + abs(min.y);
+    dimensions.z = abs(max.z) + abs(min.z);
+
     //Read in faces.
     fList = new vector<unsigned int>[faces];
     for(unsigned int face = 0; face < faces; face++) {
@@ -173,7 +186,6 @@ Mesh::~Mesh() {
 
 //-----------------------------------------------------------------------------
 void Mesh::draw() {
-    
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texture);
     for (unsigned int face = 0; face < faces; face++) {
@@ -188,6 +200,43 @@ void Mesh::draw() {
         }
         glEnd();
     }
+
+    /*glBegin(GL_LINE_STRIP);
+        glVertex3f(min.x, min.y, min.z);
+        glVertex3f(max.x, min.y, min.z);
+        glVertex3f(max.x, max.y, min.z);
+        glVertex3f(min.x, max.y, min.z);
+        glVertex3f(min.x, min.y, min.z);
+    glEnd();
+    
+    glBegin(GL_LINE_STRIP);
+        glVertex3f(min.x, min.y, max.z);
+        glVertex3f(max.x, min.y, max.z);
+        glVertex3f(max.x, max.y, max.z);
+        glVertex3f(min.x, max.y, max.z);
+        glVertex3f(min.x, min.y, max.z);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+        glVertex3f(min.x, min.y, min.z);
+        glVertex3f(max.x, min.y, min.z);
+        glVertex3f(max.x, min.y, max.z);
+        glVertex3f(min.x, min.y, max.z);
+        glVertex3f(min.x, min.y, min.z);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+        glVertex3f(min.x, max.y, max.z);
+        glVertex3f(max.x, max.y, max.z);
+        glVertex3f(max.x, max.y, min.z);
+        glVertex3f(min.x, max.y, min.z);
+        glVertex3f(min.x, max.y, max.z);
+    glEnd();*/
+
     glDisable(GL_TEXTURE_2D);
 }
 //-----------------------------------------------------------------------------
+
+glm::vec3 Mesh::getDimensions(){
+    return dimensions;
+}

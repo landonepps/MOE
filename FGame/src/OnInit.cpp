@@ -118,8 +118,6 @@ bool FGame::OnInit()
     
     // load audio for testing and load mesh.
 
-    
-    // treasure1.setLocation(320, 240, 2);
     treasure1.setScale(25, 25, 25);
     treasure1.setRotate(true, true);
     treasure1.setBob(true,0.5);

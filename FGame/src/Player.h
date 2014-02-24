@@ -13,32 +13,14 @@
 #ifndef __MOE__Player__
 #define __MOE__Player__
 
-#include "Image.h"
-#include "Animation.h"
+#include "Mesh.h"
 #include "SFX.h"
-#include "Physics.h"
+#include "Physics2.h"
+#include "Camera.h"
 
 class Player {
-    // position and size
-    int x, y, h, w;
-    // velocity
-    double xVel, yVel;
-    // player image sprite
-    Image img;
-    // animation handler
-    Animation ani;
-    // renderer pointer
-    SDL_Renderer *renderer;
-    // punch sound SFX
-    SFX punchSound;
-    // health value
-    float health;
-    
-    /* will remove later */
-    // keep track of whether player is in walking animation
-    bool walking;
-    
-    Physics playerPhysics;
+    Camera *cam;
+    Physics2 physics;
     
 public:
     
@@ -52,93 +34,9 @@ public:
      */
     ~Player();
     
-    /*
-     * loadPlayer: sets the starting values and loads media for a Player
-     *
-     * image: path to image file (.jpg/png)
-     * attack: path to attack SFX (.wav)
-     * renderer: pointer to the renderer object
-     * x: starting x coordinate
-     * y: starting y coordinate
-     *
-     * returns: void
-     */
-    void loadPlayer(const char *image, const char *attack, SDL_Renderer *renderer, int x, int y);
+    void update();
     
-    /*
-     * update: refreshes Player animation and position
-     *
-     * clock: pointer to main game clock
-     */
-    void update(Clock *clock);
-    
-    /*
-     * punch: runs punch animation and plays attack sound
-     */
-    void punch();
-    
-    /*
-     * walk: runs walk animation
-     */
-    void walk();
-    
-    /*
-     * moveLeft: sets x velocity for moving left
-     */
-    void moveLeft();
-    
-    /*
-     * moveRight: sets x velocity for moving right
-     */
-    void moveRight();
-    
-    void moveForward();
-    
-    void moveBack();
-    
-    void moveUp();
-    
-    void moveDown();
-    
-    /*
-     * halt: sets all velocity to 0
-     */
-    void halt();
-    
-    /*
-     * draw: draws player to the renderer using specified position and animation frame
-     */
-    void draw();
-    
-    /*
-     * getHealth: returns current player health
-     */
-    float getHealth();
-    
-    /*
-     * checkPlayerCollision: checks collition with another player
-     *
-     * other: player with which to check collision
-     *
-     * returns: true if collision detected
-     */
-    bool checkPlayerCollision(const Player *other);
-    
-    /*
-     * checkPunch: checks punch collition with another player
-     *
-     * other: player with which to check punch collision
-     *
-     * returns: true if punch collision detected
-     */
-    bool checkPunch(Player *other);
-    
-    /*
-     * checkWallCollision: checks collition with screen border
-     *
-     * returns: true if collision detected
-     */
-    bool checkWallCollision();
+    void updateCamera();
 };
 
 #endif /* defined(__MOE__Player__) */

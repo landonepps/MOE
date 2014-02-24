@@ -108,7 +108,7 @@ void FGame::OnKeyUp(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode)
 void FGame::OnLButtonDown(int x, int y)
 {
     /** Speed up time. **/
-    mainClock.setTimeScale(mainClock.getTimeScale() * 2);
+    mainClock->setTimeScale(mainClock->getTimeScale() * 2);
 }
 
 /***********************************************************************
@@ -123,5 +123,5 @@ void FGame::OnLButtonDown(int x, int y)
 void FGame::OnRButtonDown(int x, int y)
 {
     /** Speed up time. **/
-    mainClock.setTimeScale(mainClock.getTimeScale() / 2);
+    mainClock->setTimeScale(mainClock->getTimeScale() / 2);
 }

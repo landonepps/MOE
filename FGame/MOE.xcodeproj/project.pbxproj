@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		441528A018B9E69400FB5A47 /* Prop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4415289D18B9E69400FB5A47 /* Prop.cpp */; };
 		4423CEBC18A0781600FE3118 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBB18A0781600FE3118 /* SDL2.framework */; };
 		4423CEE618A0813600FE3118 /* FGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEDF18A0813600FE3118 /* FGame.cpp */; };
 		4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE118A0813600FE3118 /* OnCleanup.cpp */; };
@@ -19,9 +18,11 @@
 		4435F7FE18B815010052FBB1 /* Counter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F7FB18B815010052FBB1 /* Counter.cpp */; };
 		4435F7FF18B815010052FBB1 /* Gauge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F7FD18B815010052FBB1 /* Gauge.cpp */; };
 		4435F80118B815090052FBB1 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F80018B815090052FBB1 /* Mesh.cpp */; };
+		44387C2318B9A34E0088FB7E /* Prop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44387C2018B9A34E0088FB7E /* Prop.cpp */; };
 		444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C8C5518A1EDF8000101F8 /* SDL2_image.framework */; };
 		444C8C5C18A21169000101F8 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444C8C5A18A21169000101F8 /* Events.cpp */; };
 		4457056018A8721B00DCB73E /* HUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4457055F18A8721B00DCB73E /* HUD.cpp */; };
+		4457CD5F18BAC80700CB6F9E /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4457CD5D18BAC80700CB6F9E /* Environment.cpp */; };
 		449E7BD818A9B061005DDE7D /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449E7BD618A9B061005DDE7D /* Player.cpp */; };
 		44A3107418A59E4700427013 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107218A59E4700427013 /* Image.cpp */; };
 		44A3108218A5B73C00427013 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107F18A5B73C00427013 /* Clock.cpp */; };
@@ -35,13 +36,11 @@
 		44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44F45FD918A7EFC80052DDA9 /* Animation.cpp */; };
 		44F45FDD18A7F0680052DDA9 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 44F45FDC18A7F0680052DDA9 /* assets */; };
 		44F45FDF18A7F4A40052DDA9 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */; };
+		44FF830F18BA854200A9A773 /* Physics2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44FF830D18BA854200A9A773 /* Physics2.cpp */; };
 		F323777218B994DF001F51D8 /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F323777018B994DF001F51D8 /* Physics.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4415289D18B9E69400FB5A47 /* Prop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Prop.cpp; sourceTree = "<group>"; };
-		4415289E18B9E69400FB5A47 /* Prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prop.h; sourceTree = "<group>"; };
-		4415289F18B9E69400FB5A47 /* PropElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropElement.h; sourceTree = "<group>"; };
 		4423CE7718A077D600FE3118 /* MOE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4423CE8218A077D600FE3118 /* MOE-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOE-Info.plist"; sourceTree = "<group>"; };
 		4423CE8418A077D600FE3118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -62,10 +61,15 @@
 		4435F80018B815090052FBB1 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
 		4435F80218B8150F0052FBB1 /* Gauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gauge.h; sourceTree = "<group>"; };
 		4435F80618B8151A0052FBB1 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		44387C2018B9A34E0088FB7E /* Prop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Prop.cpp; sourceTree = "<group>"; };
+		44387C2118B9A34E0088FB7E /* Prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prop.h; sourceTree = "<group>"; };
+		44387C2218B9A34E0088FB7E /* PropElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropElement.h; sourceTree = "<group>"; };
 		444C8C5518A1EDF8000101F8 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		444C8C5A18A21169000101F8 /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
 		444C8C5B18A21169000101F8 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 		4457055F18A8721B00DCB73E /* HUD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HUD.cpp; sourceTree = "<group>"; };
+		4457CD5D18BAC80700CB6F9E /* Environment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Environment.cpp; sourceTree = "<group>"; };
+		4457CD5E18BAC80700CB6F9E /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
 		449E7BD618A9B061005DDE7D /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		449E7BD718A9B061005DDE7D /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		44A3107218A59E4700427013 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		44F45FDA18A7EFC80052DDA9 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		44F45FDC18A7F0680052DDA9 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../../../Library/Frameworks/SDL2_mixer.framework; sourceTree = "<group>"; };
+		44FF830D18BA854200A9A773 /* Physics2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics2.cpp; sourceTree = "<group>"; };
+		44FF830E18BA854200A9A773 /* Physics2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics2.h; sourceTree = "<group>"; };
 		F323777018B994DF001F51D8 /* Physics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics.cpp; sourceTree = "<group>"; };
 		F323777118B994DF001F51D8 /* Physics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,16 +160,16 @@
 		4423CEDE18A0813600FE3118 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4415289D18B9E69400FB5A47 /* Prop.cpp */,
-				4415289E18B9E69400FB5A47 /* Prop.h */,
-				4415289F18B9E69400FB5A47 /* PropElement.h */,
+				44DA951418A983AB0062F44D /* A/V */,
+				443B320018A9338500EDB56F /* HUD */,
+				44A7BC1018B968FB00ABDB9F /* Main Loop */,
+				44387C2018B9A34E0088FB7E /* Prop.cpp */,
+				44387C2118B9A34E0088FB7E /* Prop.h */,
+				44387C2218B9A34E0088FB7E /* PropElement.h */,
 				44A7BC0A18B9668A00ABDB9F /* Treasure.cpp */,
 				44A7BC0B18B9668A00ABDB9F /* Treasure.h */,
 				4435F80618B8151A0052FBB1 /* Mesh.h */,
 				4435F80018B815090052FBB1 /* Mesh.cpp */,
-				44DA951418A983AB0062F44D /* A/V */,
-				443B320018A9338500EDB56F /* HUD */,
-				44A7BC1018B968FB00ABDB9F /* Main Loop */,
 				44F45FD918A7EFC80052DDA9 /* Animation.cpp */,
 				44F45FDA18A7EFC80052DDA9 /* Animation.h */,
 				44A3107F18A5B73C00427013 /* Clock.cpp */,
@@ -175,8 +181,11 @@
 				449E7BD718A9B061005DDE7D /* Player.h */,
 				44A7BC1118B96C4200ABDB9F /* Camera.cpp */,
 				44A7BC1218B96C4200ABDB9F /* Camera.h */,
-				F323777018B994DF001F51D8 /* Physics.cpp */,
-				F323777118B994DF001F51D8 /* Physics.h */,
+				44FF830D18BA854200A9A773 /* Physics2.cpp */,
+				44FF830E18BA854200A9A773 /* Physics2.h */,
+				4457CD5D18BAC80700CB6F9E /* Environment.cpp */,
+				4457CD5E18BAC80700CB6F9E /* Environment.h */,
+				44FF831118BA878300A9A773 /* bad physics */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -212,14 +221,23 @@
 		44DA951418A983AB0062F44D /* A/V */ = {
 			isa = PBXGroup;
 			children = (
-				44A3107218A59E4700427013 /* Image.cpp */,
-				44A3107318A59E4700427013 /* Image.h */,
 				44B8E3E318A70FAA00587902 /* Music.cpp */,
 				44B8E3E418A70FAA00587902 /* Music.h */,
 				44DA951818A984980062F44D /* SFX.cpp */,
 				44DA951918A984980062F44D /* SFX.h */,
+				44A3107218A59E4700427013 /* Image.cpp */,
+				44A3107318A59E4700427013 /* Image.h */,
 			);
 			name = A/V;
+			sourceTree = "<group>";
+		};
+		44FF831118BA878300A9A773 /* bad physics */ = {
+			isa = PBXGroup;
+			children = (
+				F323777018B994DF001F51D8 /* Physics.cpp */,
+				F323777118B994DF001F51D8 /* Physics.h */,
+			);
+			name = "bad physics";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,8 +328,10 @@
 				44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */,
 				4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */,
 				44A3108218A5B73C00427013 /* Clock.cpp in Sources */,
-				441528A018B9E69400FB5A47 /* Prop.cpp in Sources */,
+				44387C2318B9A34E0088FB7E /* Prop.cpp in Sources */,
+				44FF830F18BA854200A9A773 /* Physics2.cpp in Sources */,
 				4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */,
+				4457CD5F18BAC80700CB6F9E /* Environment.cpp in Sources */,
 				4435F7FF18B815010052FBB1 /* Gauge.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

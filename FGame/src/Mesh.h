@@ -25,7 +25,7 @@ using namespace std;
 class Mesh {
  public:
     //Make a new mesh, with mesh data populated from the given file.
-     Mesh(char const *filename, char const *texname);
+     Mesh(const char *filename, const char *texname);
 
     // Destroy this mesh.
      virtual ~Mesh();

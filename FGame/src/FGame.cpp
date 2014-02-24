@@ -26,8 +26,6 @@ FGame::FGame() {
     height    = WIN_HEIGHT;
 
     joystick1 = NULL;
-    
-    cam = NULL;
 
     path = "";
 }
@@ -70,7 +68,7 @@ int FGame::OnExecute()
         Uint64 tEnd = SDL_GetTicks();
 
         /** Update our clock with the real frame time (in seconds). **/
-        mainClock.update((tEnd - tBegin) / 1000.0f);
+        mainClock->update((tEnd - tBegin) / 1000.0f);
 
         /** Might want to call mainClock.singleStep() here, not sure. It is only
          * supposed to update when game is paused. **/

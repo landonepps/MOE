@@ -13,6 +13,9 @@
 #include "FGame.h"      /** Contains OnRender prototype. **/
 #include <iostream>
 
+#define GLM_FORCE_RADIANS
+#include "glm/gtx/vector_angle.hpp"
+
 /***********************************************************************
  * OnRender:  Draws images to the screen.
  *
@@ -21,23 +24,24 @@
 void FGame::OnRender()
 {
     /** Draw image etc. **/
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 1);
-    SDL_RenderClear(renderer);
+    /** Clear color and depth buffer. **/
+    glClearColor(1, 1, 1, 0);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    
-    /** Load camera matrix **/
-    cam->multMatrix();
 
-    /** Clear color and depth buffer. **/
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    // Update camera to player position
+    player.updateCamera();
+    
+    // draw environment
+    env.draw();
 
     collectables.drawElements();
     
     glPushMatrix();
     glLoadIdentity();
     glDisable(GL_DEPTH_TEST);
-    glOrtho(0, 640, 480, 0,-1,1);
+    glOrtho(0, 640, 480, 0, -1, 1);
     theHUD.drawElements();
     glEnable(GL_DEPTH_TEST);
     glPopMatrix();

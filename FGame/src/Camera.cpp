@@ -17,7 +17,7 @@ Camera::Camera() {
 #warning default values, change later
     pos = glm::vec3(0, 0, 0);
     rot = glm::vec3(0, 0, 0);
-    fov = 100;
+    fov = 45;
     aspect = 4.0/3.0;
     zNear = 0.1;
     zFar = 5000;
@@ -29,7 +29,7 @@ Camera::~Camera() {
 
 void Camera::multMatrix() {
     glm::mat4 trans;
-    
+
     trans = glm::perspective(fov, aspect, zNear, zFar);
     trans = glm::translate(trans, pos);
     trans = glm::rotate(trans, rot.x, glm::vec3(1.0f, 0.0f, 0.0f));

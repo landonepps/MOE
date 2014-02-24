@@ -13,8 +13,8 @@
 Environment::Environment() {
     mesh = NULL;
     pos = {0, 0, 0};
-    scl = {100, 100, 100};
-    rot = {180, 0, 0};
+    scl = {1, 1, 1};
+    rot = {0, 0, 0};
 }
 
 Environment::~Environment() {

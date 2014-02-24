@@ -34,6 +34,9 @@ public:
      */
     ~Player();
     
+    void setVel(glm::vec3 newVel);
+    void setAVel(glm::vec3 newAVel);
+    
     void update();
     
     void updateCamera();

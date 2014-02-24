@@ -27,11 +27,20 @@ Player::~Player() {
     delete cam;
 }
 
+void Player::setVel(glm::vec3 newVel) {
+    physics.setVel(newVel);
+}
+
+void Player::setAVel(glm::vec3 newAVel) {
+    physics.setAVel(newAVel);
+}
+
 void Player::update() {
     physics.update();
 }
 
 void Player::updateCamera() {
     cam->setPosition(physics.getPos());
+    cam->setRotation(physics.getRot());
     cam->multMatrix();
 }

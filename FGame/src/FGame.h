@@ -39,8 +39,8 @@
 #include "Prop.h"
 #include "Treasure.h"
 #include "Camera.h"
-#include "Terrain.h"
 #include "Player.h"
+#include "Environment.h"
 
 #include <string>
 
@@ -76,7 +76,7 @@ private:
     Player player;
     
     /** The landscape **/
-    Terrain terrain;
+    Environment env;
     
     /** The game Props **/
     Prop collectables;

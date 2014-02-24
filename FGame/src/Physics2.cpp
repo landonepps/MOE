@@ -10,7 +10,7 @@
 #include "Clock.h"
 
 Physics2::Physics2() {
-    pos = {0, -200, 0};
+    pos = {0, -10, 0};
     vel = {0, 0, 0};
 }
 

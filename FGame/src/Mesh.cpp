@@ -33,7 +33,7 @@
 using namespace std;
 
 //-----------------------------------------------------------------------------
-Mesh::Mesh( char const *filename, char const *texname ) {
+Mesh::Mesh(const char *filename, const char *texname ) {
     SDL_Surface* surface = IMG_Load(texname);
     SDL_PixelFormat pf;
     pf.format = SDL_PIXELFORMAT_RGBA4444;

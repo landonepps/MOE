@@ -89,7 +89,7 @@ bool FGame::OnInit()
     bgm.play();
     treasure1.setup("./assets/tavolo1.ply", "./assets/tavolo1.png");
     timer.setup("./assets/font.ttf",255,0,0,50,50,25);
-    terrain.loadTerrain("./assets/field1.pgm");
+    env.loadEnv("./assets/room.ply", "./assets/roomtex.jpg");
 #endif
 
     theHUD.addHUDElement(&timer);

@@ -77,7 +77,26 @@ void FGame::OnJoyButtonUp(Uint8 which, Uint8 button)
 ***********************************************************************/
 void FGame::OnKeyDown(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode)
 {
-    /** Do Nothing **/
+    switch (sym) {
+        case SDLK_DOWN:
+            player.setVel(glm::vec3(0, 0, -1));
+            break;
+            
+        case SDLK_UP:
+            player.setVel(glm::vec3(0, 0, 1));
+            break;
+            
+        case SDLK_RIGHT:
+            player.setAVel(glm::vec3(0, 1, 0));
+            break;
+        
+        case SDLK_LEFT:
+            player.setAVel(glm::vec3(0, -1, 0));
+            break;
+            
+        default:
+            break;
+    }
 }
 
 /***********************************************************************
@@ -93,7 +112,26 @@ void FGame::OnKeyDown(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode)
 ***********************************************************************/
 void FGame::OnKeyUp(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode)
 {
-    /** Do Nothing **/
+    switch (sym) {
+        case SDLK_DOWN:
+            player.setVel(glm::vec3(0, 0, 0));
+            break;
+            
+        case SDLK_UP:
+            player.setVel(glm::vec3(0, 0, 0));
+            break;
+            
+        case SDLK_RIGHT:
+            player.setAVel(glm::vec3(0, 0, 0));
+            break;
+            
+        case SDLK_LEFT:
+            player.setAVel(glm::vec3(0, 0, 0));
+            break;
+            
+        default:
+            break;
+    }
 }
 
 /***********************************************************************

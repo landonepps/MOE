@@ -15,6 +15,8 @@
 class Physics2 {
     glm::vec3 pos;
     glm::vec3 vel;
+    glm::vec3 rot;
+    glm::vec3 aVel;
     glm::vec3 acc;
     
 public:
@@ -27,8 +29,16 @@ public:
         return pos;
     }
     
+    glm::vec3 getRot() {
+        return rot;
+    }
+    
     void setVel(glm::vec3 newVel) {
         vel = newVel;
+    }
+    
+    void setAVel(glm::vec3 newAVel) {
+        aVel = newAVel;
     }
 };
 

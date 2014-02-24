@@ -9,7 +9,12 @@
  *
  * Initializes Counter, audio, video, cdrom, and joystick. Also, creates the main
  * window centered and allows opengl.
-*******************************************************************************/
+ *
+ * Free models were obtained from:
+ * http://www.blender-models.com/model-downloads/furniture/id/low-poly-furniture/
+ * Music:
+ * http://www.newgrounds.com/audio/listen/407285
+ *******************************************************************************/
 
 #include <stdio.h>     /** Needed to print errors. **/
 #include "FGame.h"      /** Contains OnInit prototype. **/
@@ -80,13 +85,13 @@ bool FGame::OnInit()
     theHUD.addHUDElement(&hBar);
 
 #ifdef _WIN32
-    bgm.loadMusic(".\\assets\\bgm.wav");
+    bgm.loadMusic(".\\assets\\adventure.wav");
     bgm.play();
-    treasure1.setup(".\\assets\\tavolo1.ply", ".\\assets\\tavolo1.png");
+    treasure1.setup(".\\assets\\comodino.ply", ".\\assets\\comodino.png");
     timer.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
     env.loadEnv(".\\assets\\room.ply", ".\\assets\\roomtex.jpg");
 #else
-    bgm.loadMusic("./assets/bgm.wav");
+    bgm.loadMusic("./assets/adventure.wav");
     bgm.play();
     treasure1.setup("./assets/tavolo1.ply", "./assets/tavolo1.png");
     timer.setup("./assets/font.ttf",255,0,0,50,50,25);

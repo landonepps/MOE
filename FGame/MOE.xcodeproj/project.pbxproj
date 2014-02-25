@@ -37,7 +37,6 @@
 		44F45FDD18A7F0680052DDA9 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 44F45FDC18A7F0680052DDA9 /* assets */; };
 		44F45FDF18A7F4A40052DDA9 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */; };
 		44FF830F18BA854200A9A773 /* Physics2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44FF830D18BA854200A9A773 /* Physics2.cpp */; };
-		F323777218B994DF001F51D8 /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F323777018B994DF001F51D8 /* Physics.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,8 +93,6 @@
 		44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../../../Library/Frameworks/SDL2_mixer.framework; sourceTree = "<group>"; };
 		44FF830D18BA854200A9A773 /* Physics2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics2.cpp; sourceTree = "<group>"; };
 		44FF830E18BA854200A9A773 /* Physics2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics2.h; sourceTree = "<group>"; };
-		F323777018B994DF001F51D8 /* Physics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics.cpp; sourceTree = "<group>"; };
-		F323777118B994DF001F51D8 /* Physics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,8 +231,6 @@
 			children = (
 				444C8C5A18A21169000101F8 /* Events.cpp */,
 				444C8C5B18A21169000101F8 /* Events.h */,
-				F323777018B994DF001F51D8 /* Physics.cpp */,
-				F323777118B994DF001F51D8 /* Physics.h */,
 			);
 			name = "bad physics";
 			sourceTree = "<group>";
@@ -322,7 +317,6 @@
 				4435F7FE18B815010052FBB1 /* Counter.cpp in Sources */,
 				4435F80118B815090052FBB1 /* Mesh.cpp in Sources */,
 				44A3107418A59E4700427013 /* Image.cpp in Sources */,
-				F323777218B994DF001F51D8 /* Physics.cpp in Sources */,
 				44A7BC1318B96C4200ABDB9F /* Camera.cpp in Sources */,
 				44B8E3E518A70FAA00587902 /* Music.cpp in Sources */,
 				44F45FDB18A7EFC80052DDA9 /* Animation.cpp in Sources */,

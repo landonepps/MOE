@@ -135,42 +135,46 @@ bool FGame::OnInit()
     bgm.play();
     for (int i = 0; i < 5; i++){
         Treasure temp;
-        temp.setup("./assets/puff.ply", "./assets/puff.png");
-        temp.setBob(true, 0.5, 15, 15);
-        temp.setRotate(true, true, 25);
-        temp.setScale(25, 25, 25);
+        temp.setup("./assets/poltroncina.ply", "./assets/poltroncina.png");
+        temp.setScale(25,25,25);
+        temp.setLocation(0, temp.getDimensions().y, 50);
+        temp.setBob(true, 5, 6, 6);
+        temp.setRotate(true,false,25);
         treasures.push_back(temp);
     }
-
+    
     for (int i = 0; i < 5; i++){
         Treasure temp;
         temp.setup("./assets/tavolo1.ply", "./assets/tavolo1.png");
-        temp.setRotate(true, true, 25);
         temp.setScale(25, 25, 25);
+        temp.setLocation(0, temp.getDimensions().y, -50);
+        temp.setRotate(true, true, 25);
         treasures.push_back(temp);
     }
-
+    
     for (int i = 0; i < 5; i++){
         Treasure temp;
         temp.setup("./assets/letto.ply", "./assets/letto.png");
-        temp.setBob(true, 0.5, 15, 15);
         temp.setScale(25, 25, 25);
+        temp.setLocation(0, temp.getDimensions().y, 0);
+        temp.setBob(true, 10, 5, 5);
         treasures.push_back(temp);
     }
-
+    
     Treasure temp;
     temp.setup("./assets/comodino.ply", "./assets/comodino.png");
     temp.setScale(300, 300, 300);
     temp.setLocation(-430, temp.getDimensions().y + 35, -450);
     notTreasures.push_back(temp);
-
+    
     temp.setup("./assets/puff.ply", "./assets/puff.png");
     temp.setScale(300, 300, 300);
-    temp.setLocation(0, temp.getDimensions().y - 175, 450);
+    temp.setLocation(0, temp.getDimensions().y - 160, 420);
     notTreasures.push_back(temp);
-
+    
     fpsCount.setup("./assets/font.ttf",255,0,0,50,50,25);
-    furnitureCount.setup("./assets/font.ttf", 0, 255, 0, WIN_WIDTH / 2, 50, 25);
+    
+    furnitureCount.setup("./assets/font.ttf",0,255,0,WIN_WIDTH/2,50,25);
     env.loadEnv("./assets/room.ply", "./assets/roomtex.jpg");
 #endif
 

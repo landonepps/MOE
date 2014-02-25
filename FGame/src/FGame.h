@@ -159,6 +159,20 @@ public:
     void OnJoyButtonUp(Uint8 which, Uint8 button);
     
     /***********************************************************************
+     * OnJoyAxis: Called when the joystick axis is moved. Controls player
+     *            movement and rotation.
+     *
+     * which:     The index of the joystick that reported the event.
+     *
+     * axis:      The index of the axis that changed.
+     *
+     * value:     The current position of the axis (range: -32768 to 32767).
+     *
+     * returns:   void.
+     ***********************************************************************/
+    void OnJoyAxis(Uint8 which, Uint8 axis, Sint16 value);
+
+    /***********************************************************************
      * OnKeyDown: Handle keyboard key down
      *
      * sym:       The SDL virtual key representation.

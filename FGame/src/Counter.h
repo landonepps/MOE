@@ -37,6 +37,8 @@ class Counter : public HUDelement{
         int precision;
         TTF_Font* font;
         SDL_Color color;
+        string fontFile;
+        int fontSize;
     public:
         Counter();
         Counter(int);

@@ -33,6 +33,18 @@ void Physics2::update() {
     rot.z = rot.z + aVel.z * Clock::getInstance()->getDeltaTime();
 }
 
+/***********************************************************************
+* checkCollision: checks the collision between two objects based on their
+*                   center point and dimensions. Returns true if a collision
+*                   has occured.
+*
+* center1: center point of the first object
+* center2: center point of the second object
+* d1: dimensions of the first object
+* d2: dimensions of the second object
+*
+* returns:   bool
+***********************************************************************/
 bool Physics2::checkCollision(glm::vec3 center1, glm::vec3 center2, glm::vec3 d1, glm::vec3 d2){
     bool collided = false;
 

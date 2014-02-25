@@ -40,7 +40,14 @@
 
 using namespace std;
 
-//-----------------------------------------------------------------------------
+/***********************************************************************
+* Mesh: mesh constructor
+*
+* filename: mesh file name
+* texname: texture file name
+*
+* returns:   void.
+***********************************************************************/
 Mesh::Mesh(const char *filename, const char *texname ) {
     SDL_Surface* surface = IMG_Load(texname);
     SDL_PixelFormat pf;
@@ -178,11 +185,8 @@ Mesh::Mesh(const char *filename, const char *texname ) {
         }
     }
 }
-//-----------------------------------------------------------------------------
 
 
-
-//-----------------------------------------------------------------------------
 Mesh::~Mesh() {
     delete [] vList;
     delete [] nList;
@@ -190,11 +194,14 @@ Mesh::~Mesh() {
     delete [] tList;
     glDeleteTextures(1, &texture);
 }
-//-----------------------------------------------------------------------------
 
-
-
-//-----------------------------------------------------------------------------
+/***********************************************************************
+* draw: draws the mesh to the screen along with the texture also draws
+*           the hitbox if it is enabled
+*
+*
+* returns:   void.
+***********************************************************************/
 void Mesh::draw() {
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -247,12 +254,22 @@ void Mesh::draw() {
 
     glDisable(GL_TEXTURE_2D);
 }
-//-----------------------------------------------------------------------------
-
+/***********************************************************************
+* getDimensions: returns the mesh's dimensions
+*
+*
+* returns:   glm::vec3
+***********************************************************************/
 glm::vec3 Mesh::getDimensions(){
     return dimensions;
 }
-
+/***********************************************************************
+* setHitbox: toggles the show hitbox bool
+* 
+* bool: hit is true to set hitboxes, false otherwise
+*
+* returns:   void.
+***********************************************************************/
 void Mesh::setHitbox(bool hit){
     hitbox = hit;
 }

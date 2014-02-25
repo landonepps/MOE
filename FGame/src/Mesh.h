@@ -19,9 +19,7 @@
 #include "glm/glm.hpp"
 #include "Image.h"
 using namespace std;
-// using namespace glm;
 
-//-----------------------------------------------------------------------------
 class Mesh {
  public:
     //Make a new mesh, with mesh data populated from the given file.
@@ -53,10 +51,9 @@ class Mesh {
 
     bool hitbox;
 
-    glm::vec3 dimensions;
+    glm::vec3 dimensions; // x, y, z
 
     GLuint texture;
 };
-//-----------------------------------------------------------------------------
 
 #endif

@@ -80,12 +80,10 @@ bool FGame::OnInit()
     /** Initialize the clock for the main game loop. **/
     mainClock->init();
 
+    /** Add a player stat for furniture count**/
     player.addStat(1, 0);
 
-    timer.setup(120);
-
-    theHUD.addHUDElement(&timer);
-
+    /** Load music, room, pickups and decorations,**/
 #ifdef _WIN32
     bgm.loadMusic(".\\assets\\adventure.wav");
     bgm.play();
@@ -125,7 +123,7 @@ bool FGame::OnInit()
 
     temp.setup(".\\assets\\puff.ply", ".\\assets\\puff.png");
     temp.setScale(300, 300, 300);
-    temp.setLocation(0, temp.getDimensions().y - 175, 450);
+    temp.setLocation(0, temp.getDimensions().y - 160, 420);
     notTreasures.push_back(temp);
 
     fpsCount.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
@@ -159,11 +157,24 @@ bool FGame::OnInit()
         temp.setScale(25, 25, 25);
         treasures.push_back(temp);
     }
+
+    Treasure temp;
+    temp.setup("./assets/comodino.ply", "./assets/comodino.png");
+    temp.setScale(300, 300, 300);
+    temp.setLocation(-430, temp.getDimensions().y + 35, -450);
+    notTreasures.push_back(temp);
+
+    temp.setup("./assets/puff.ply", "./assets/puff.png");
+    temp.setScale(300, 300, 300);
+    temp.setLocation(0, temp.getDimensions().y - 175, 450);
+    notTreasures.push_back(temp);
+
     fpsCount.setup("./assets/font.ttf",255,0,0,50,50,25);
     furnitureCount.setup("./assets/font.ttf", 0, 255, 0, WIN_WIDTH / 2, 50, 25);
     env.loadEnv("./assets/room.ply", "./assets/roomtex.jpg");
 #endif
 
+    /**Add all the furniture to the collections**/
     for(int i = 0; i < treasures.size();i++){
         collectables.addPropElement(&treasures[i]);
     }
@@ -172,9 +183,15 @@ bool FGame::OnInit()
         decorations.addPropElement(&notTreasures[i]);
     }
 
+    /**Setup timer bar add all HUD elements to HUD**/
+    timer.setup(120);
+
+    theHUD.addHUDElement(&timer);
+
     theHUD.addHUDElement(&fpsCount);
 
     theHUD.addHUDElement(&furnitureCount);
+
     /** Initialize the joysticks. **/
     int numJoysticks = SDL_NumJoysticks();
     if(numJoysticks < 0)
@@ -197,8 +214,6 @@ bool FGame::OnInit()
     {
         /** Do nothing. **/
     }
-    
-    // load audio for testing and load mesh.
 
     glEnable( GL_DEPTH_TEST );
     glEnable( GL_CULL_FACE );

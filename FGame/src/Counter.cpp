@@ -63,23 +63,20 @@ void Counter::setup(const string &fontFile, const GLubyte& R, const GLubyte& G, 
     this->precision = precision;
     xPosition = xPos;
     yPosition = yPos;
-    font = TTF_OpenFont(fontFile.c_str(), fontSize);
-    if (font == NULL) {
-		string error = TTF_GetError();
-        cerr << "failed to load font: " << fontFile << " " << TTF_GetError() << endl;
-    }
+    this->fontFile = fontFile;
+    this->fontSize = fontSize;
     color.r = R;
     color.g = G;
     color.b = B;
 }
 
 Counter::~Counter(){
-   
+
 }
 /***********************************************************************
 * setValue:   Sets the value to be displayed
 *
-* val:  the time remaining in the round
+* val:  the value remaining
 *
 * returns:   void.
 ***********************************************************************/
@@ -97,6 +94,13 @@ void Counter::draw(){
     stringstream message;
     message << fixed << setprecision(precision) << value;
     
+    // Open the font
+    font = TTF_OpenFont(fontFile.c_str(), fontSize);
+    if (font == NULL) {
+        string error = TTF_GetError();
+        cerr << "failed to load font: " << fontFile << " " << TTF_GetError() << endl;
+    }
+
     // Create the surface to copy to the renderer
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);
     if (surf == NULL){
@@ -134,8 +138,8 @@ void Counter::draw(){
     glEnd();
 
     // Clean up
-    surf->format->refcount++;
     SDL_FreeSurface(surf);
+    TTF_CloseFont(font);
     glDisable(GL_BLEND);
     glDisable(GL_TEXTURE_2D); 
     glDeleteTextures(1, &Texture);

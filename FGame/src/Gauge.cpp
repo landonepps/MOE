@@ -59,6 +59,7 @@ Gauge::Gauge(int id) : HUDelement(id){
 /***********************************************************************
 * setup:   Sets up the Gauge HUD type using developer specified variables
 *
+* max: max value to scale the bar by
 * value: current player value
 * xPos: x coordinate of where to place the Gauge
 * yPos: y coordinate of where to place the Gauge

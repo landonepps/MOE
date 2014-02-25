@@ -22,7 +22,7 @@ class Player {
     Camera *cam;
     Physics2 physics;
     vector< pair<int,int>> stats;
-    
+    glm::vec3 playerDimensions;
 public:
     
     /*

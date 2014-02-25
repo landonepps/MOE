@@ -15,6 +15,7 @@
 		4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE418A0813600FE3118 /* OnLoop.cpp */; };
 		4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE518A0813600FE3118 /* OnRender.cpp */; };
 		44294C4918BC7EF8005ED095 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44294C4718BC7EF8005ED095 /* Events.cpp */; };
+		44294C4C18BC9CF6005ED095 /* Message.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44294C4A18BC9CF6005ED095 /* Message.cpp */; };
 		4435F7FA18B8139C0052FBB1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4435F7F918B8139C0052FBB1 /* OpenGL.framework */; };
 		4435F7FE18B815010052FBB1 /* Counter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F7FB18B815010052FBB1 /* Counter.cpp */; };
 		4435F7FF18B815010052FBB1 /* Gauge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F7FD18B815010052FBB1 /* Gauge.cpp */; };
@@ -55,6 +56,8 @@
 		4423CEE518A0813600FE3118 /* OnRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnRender.cpp; sourceTree = "<group>"; };
 		44294C4718BC7EF8005ED095 /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
 		44294C4818BC7EF8005ED095 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
+		44294C4A18BC9CF6005ED095 /* Message.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Message.cpp; sourceTree = "<group>"; };
+		44294C4B18BC9CF6005ED095 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		4435F7F918B8139C0052FBB1 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		4435F7FB18B815010052FBB1 /* Counter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Counter.cpp; sourceTree = "<group>"; };
 		4435F7FC18B815010052FBB1 /* Counter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Counter.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 		443B320018A9338500EDB56F /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				44294C4A18BC9CF6005ED095 /* Message.cpp */,
+				44294C4B18BC9CF6005ED095 /* Message.h */,
 				4435F80218B8150F0052FBB1 /* Gauge.h */,
 				4435F7FB18B815010052FBB1 /* Counter.cpp */,
 				4435F7FC18B815010052FBB1 /* Counter.h */,
@@ -301,6 +306,7 @@
 				4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */,
 				44DA951A18A984980062F44D /* SFX.cpp in Sources */,
 				4457056018A8721B00DCB73E /* HUD.cpp in Sources */,
+				44294C4C18BC9CF6005ED095 /* Message.cpp in Sources */,
 				4423CEE818A0813600FE3118 /* OnEvent.cpp in Sources */,
 				4423CEE618A0813600FE3118 /* FGame.cpp in Sources */,
 				44294C4918BC7EF8005ED095 /* Events.cpp in Sources */,

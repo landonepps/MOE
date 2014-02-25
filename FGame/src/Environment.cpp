@@ -27,7 +27,7 @@ void Environment::loadEnv(const char *meshfile, const char *texfile) {
 }
 
 glm::vec3 Environment::getDimensions(){
-    return mesh->getDimensions();
+    return mesh->getDimensions() * scl;
 }
 
 void Environment::draw() {

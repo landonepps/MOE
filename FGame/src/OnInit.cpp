@@ -18,6 +18,7 @@
 
 #include <stdio.h>     /** Needed to print errors. **/
 #include "FGame.h"      /** Contains OnInit prototype. **/
+#include <time.h>
 
 /***********************************************************************
  * OnInit:    Initializes Counter, audio, video, cdrom, and joystick.
@@ -27,6 +28,7 @@
 ***********************************************************************/
 bool FGame::OnInit()
 {
+    srand(time(0));
     /** Initializes Counter, audio, video, cdrom, and joystick. **/
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
     {
@@ -88,30 +90,46 @@ bool FGame::OnInit()
     bgm.loadMusic(".\\assets\\adventure.wav");
     pickUp.loadSFX(".\\assets\\yes.wav");
     bgm.play();
+
+    env->loadEnv(".\\assets\\room.ply", ".\\assets\\roomtex.jpg");
+
+    glm::vec3 randomRange;
+    float envx = (Environment::getInstance()->getDimensions().x / 2) - 50;
+    float envy = Environment::getInstance()->getDimensions().y - 50;
+    float envz = (Environment::getInstance()->getDimensions().z / 2) - 50;
     for (int i = 0; i < 5; i++){
+        randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
+        randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
+        randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
         Treasure temp;
         temp.setup(".\\assets\\poltroncina.ply", ".\\assets\\poltroncina.png");
         temp.setScale(25,25,25);
-        temp.setLocation(0, temp.getDimensions().y, 50);
+        temp.setLocation(randomRange.x, randomRange.y, randomRange.z);
         temp.setBob(true, 5, 6, 6);
         temp.setRotate(true,false,25);
         treasures.push_back(temp);
     }
 
     for (int i = 0; i < 5; i++){
+        randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
+        randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
+        randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
         Treasure temp;
         temp.setup(".\\assets\\tavolo1.ply", ".\\assets\\tavolo1.png");
         temp.setScale(25, 25, 25);
-        temp.setLocation(0, temp.getDimensions().y, -50);
+        temp.setLocation(randomRange.x, randomRange.y, randomRange.z);
         temp.setRotate(true, true, 25);
         treasures.push_back(temp);
     }
 
     for (int i = 0; i < 5; i++){
+        randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
+        randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
+        randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
         Treasure temp;
         temp.setup(".\\assets\\letto.ply", ".\\assets\\letto.png");
         temp.setScale(25, 25, 25);
-        temp.setLocation(0, temp.getDimensions().y, 0);
+        temp.setLocation(randomRange.x, randomRange.y, randomRange.z);
         temp.setBob(true, 10, 5, 5);
         treasures.push_back(temp);
     }
@@ -130,54 +148,68 @@ bool FGame::OnInit()
     fpsCount.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
 
     furnitureCount.setup(".\\assets\\font.ttf",0,255,0,WIN_WIDTH/2,50,25);
-    env->loadEnv(".\\assets\\room.ply", ".\\assets\\roomtex.jpg");
 #else
     bgm.loadMusic("./assets/adventure.wav");
     pickUp.loadSFX("./assets/yes.wav");
     bgm.play();
+
+    env->loadEnv("./assets/room.ply", "./assets/roomtex.jpg");
+
+    glm::vec3 randomRange;
+    float envx = (Environment::getInstance()->getDimensions().x / 2) - 50;
+    float envy = Environment::getInstance()->getDimensions().y - 50;
+    float envz = (Environment::getInstance()->getDimensions().z / 2) - 50;
     for (int i = 0; i < 5; i++){
+        randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
+        randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
+        randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
         Treasure temp;
         temp.setup("./assets/poltroncina.ply", "./assets/poltroncina.png");
         temp.setScale(25,25,25);
-        temp.setLocation(0, temp.getDimensions().y, 50);
+        temp.setLocation(randomRange.x, randomRange.y, randomRange.z);
         temp.setBob(true, 5, 6, 6);
         temp.setRotate(true,false,25);
         treasures.push_back(temp);
     }
-    
+
     for (int i = 0; i < 5; i++){
+        randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
+        randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
+        randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
         Treasure temp;
         temp.setup("./assets/tavolo1.ply", "./assets/tavolo1.png");
         temp.setScale(25, 25, 25);
-        temp.setLocation(0, temp.getDimensions().y, -50);
+        temp.setLocation(randomRange.x, randomRange.y, randomRange.z);
         temp.setRotate(true, true, 25);
         treasures.push_back(temp);
     }
-    
+
     for (int i = 0; i < 5; i++){
+        randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
+        randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
+        randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
         Treasure temp;
         temp.setup("./assets/letto.ply", "./assets/letto.png");
         temp.setScale(25, 25, 25);
-        temp.setLocation(0, temp.getDimensions().y, 0);
+        temp.setLocation(randomRange.x, randomRange.y, randomRange.z);
         temp.setBob(true, 10, 5, 5);
         treasures.push_back(temp);
     }
-    
+
     Treasure temp;
     temp.setup("./assets/comodino.ply", "./assets/comodino.png");
     temp.setScale(300, 300, 300);
     temp.setLocation(-430, temp.getDimensions().y + 35, -450);
     notTreasures.push_back(temp);
-    
+
     temp.setup("./assets/puff.ply", "./assets/puff.png");
     temp.setScale(300, 300, 300);
     temp.setLocation(0, temp.getDimensions().y - 160, 420);
     notTreasures.push_back(temp);
-    
-    fpsCount.setup("./assets/font.ttf",255,0,0,50,50,25);
-    
-    furnitureCount.setup("./assets/font.ttf",0,255,0,WIN_WIDTH/2,50,25);
-    env->loadEnv("./assets/room.ply", "./assets/roomtex.jpg");
+
+    fpsCount.setup("./assets/font.ttf", 255, 0, 0, 50, 50, 25);
+
+    furnitureCount.setup("./assets/font.ttf", 0, 255, 0, WIN_WIDTH / 2, 50, 25);
 #endif
 
     /**Add all the furniture to the collections**/

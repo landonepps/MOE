@@ -36,18 +36,46 @@ public:
      */
     ~Player();
     
+    // set velocity for x and z
     void setVel(glm::vec3 newVel);
+    // set velocity for y
     void setAVel(glm::vec3 newAVel);
+    // set angular velocity
     void setVelY(GLfloat yVel);
-        
+    // update player physics
     void update();
-    
+    // change camera settings to player physics
     void updateCamera();
 
+    /***********************************************************************
+     * addStat: adds a a stat with an id and initial value.
+     *
+     * id: the id of the stat
+     * val: the value of the stat
+     *
+     * returns:   void.
+     ***********************************************************************/
     void addStat(int id, int amount);
 
+    /***********************************************************************
+     * getStatData: returns a stat with its id and value
+     *
+     * i: element to be dereferenced
+     *
+     * returns:   pair<int,int>*
+     ***********************************************************************/
     pair<int, int>* getStatData(int i);
 
+    /***********************************************************************
+     * checkCollision: checks if the player has collided with an object based
+     *                   on that object's center and dimensions. Returns true
+     *                   if a collision occured.
+     *
+     * center: center point of the object to be checked against
+     * dimensions: dimensions of the object to be checked against
+     *
+     * returns:   void.
+     ***********************************************************************/
     bool checkCollision(glm::vec3 center, glm::vec3 dimensions);
 };
 

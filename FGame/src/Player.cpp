@@ -28,22 +28,27 @@ Player::~Player() {
     delete cam;
 }
 
+// set velocity for x and z
 void Player::setVel(glm::vec3 newVel) {
     physics.setVel(newVel);
 }
 
+// set velocity for y
 void Player::setVelY(GLfloat yVel) {
     physics.setVelY(yVel);
 }
 
+// set angular velocity
 void Player::setAVel(glm::vec3 newAVel) {
     physics.setAVel(newAVel);
 }
 
+// update player physics
 void Player::update() {
     physics.update();
 }
 
+// change camera settings to player physics
 void Player::updateCamera() {
     cam->setPosition(physics.getPos());
     cam->setRotation(physics.getRot());

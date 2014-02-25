@@ -1,11 +1,14 @@
-//
-//  Camera.h
-//  MOE
-//
-//  Created by Landon Epps on 2/22/14.
-//  Copyright (c) 2014 Landon Epps. All rights reserved.
-//
-
+/*******************************************************************************
+ *
+ * Author:      Landon Epps
+ *
+ * Assignment:  MOE (Most Optimistic Engine)
+ * Class:       4342, Sprnt 2014
+ * Date:        2/8/2014
+ *
+ * Handles the camera
+ *
+ ******************************************************************************/
 #ifndef __MOE__Camera__
 #define __MOE__Camera__
 
@@ -25,20 +28,30 @@
 #include "glm/glm.hpp"
 
 class Camera {
+    // position
     glm::vec3 pos;
+    // rotation
     glm::vec3 rot;
+    // field of view, aspect ration, min draw, max draw
     GLfloat fov, aspect, zNear, zFar;
     
 public:
     Camera();
     ~Camera();
     
+    // multiply camera matrix using glMulMatrix
     void multMatrix();
+    // set camera position
     void setPosition(glm::vec3 newPos);
+    // set camera rotation
     void setRotation(glm::vec3 newRot);
+    // set camera fov
     void setFov(GLfloat newFov);
+    // set camera apsect ratio
     void setAspect(GLfloat newAspect);
+    // set minimum z draw
     void setZNear(GLfloat newZNear);
+    // set max z draw
     void setZFar(GLfloat newZFar);
 };
 

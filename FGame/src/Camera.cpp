@@ -1,10 +1,14 @@
-//
-//  Camera.cpp
-//  MOE
-//
-//  Created by Landon Epps on 2/22/14.
-//  Copyright (c) 2014 Landon Epps. All rights reserved.
-//
+/*******************************************************************************
+ *
+ * Author:      Landon Epps
+ *
+ * Assignment:  MOE (Most Optimistic Engine)
+ * Class:       4342, Sprnt 2014
+ * Date:        2/8/2014
+ *
+ * Handles the camera
+ *
+ ******************************************************************************/
 
 #include "Camera.h"
 
@@ -26,6 +30,7 @@ Camera::~Camera() {
     
 }
 
+// multiply camera matrix using glMulMatrix
 void Camera::multMatrix() {
     glm::mat4 trans;
     trans = glm::perspective(fov, aspect, zNear, zFar);
@@ -37,26 +42,32 @@ void Camera::multMatrix() {
     glMultMatrixf(glm::value_ptr(trans));
 }
 
+// set camera position
 void Camera::setPosition(glm::vec3 newPos) {
     this->pos = newPos;
 }
 
+// set camera rotation
 void Camera::setRotation(glm::vec3 newRot) {
     this->rot = newRot;
 }
 
+// set camera fov
 void Camera::setFov(GLfloat newFov) {
     this->fov = newFov;
 }
 
+// set camera apsect ratio
 void Camera::setAspect(GLfloat newAspect) {
     this->aspect = newAspect;
 }
 
+// set minimum z draw
 void Camera::setZNear(GLfloat newZNear) {
     this->zNear = newZNear;
 }
 
+// set max z draw
 void Camera::setZFar(GLfloat newZFar) {
     this->zFar = newZFar;
 }

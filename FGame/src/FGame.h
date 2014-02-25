@@ -86,6 +86,10 @@ private:
     Prop decorations;
     vector<Treasure> notTreasures;
 
+    /** Pick-up sound **/
+    SFX pickUp;
+
+    /** Bool for turning on hitboxes **/
     bool hitbox;
     
     /** Resolution of the main window. **/

@@ -86,6 +86,7 @@ bool FGame::OnInit()
     /** Load music, room, pickups and decorations,**/
 #ifdef _WIN32
     bgm.loadMusic(".\\assets\\adventure.wav");
+    pickUp.loadSFX(".\\assets\\yes.wav");
     bgm.play();
     for (int i = 0; i < 5; i++){
         Treasure temp;
@@ -132,6 +133,7 @@ bool FGame::OnInit()
     env.loadEnv(".\\assets\\room.ply", ".\\assets\\roomtex.jpg");
 #else
     bgm.loadMusic("./assets/adventure.wav");
+    pickUp.loadSFX("./assets/yes.wav");
     bgm.play();
     for (int i = 0; i < 5; i++){
         Treasure temp;

@@ -43,6 +43,7 @@ void FGame::OnRender()
     for (int i = 0; i < treasures.size() && !collision; i++){
         treasures[i].setHitbox(hitbox);
         if (player.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
+            pickUp.play();
             player.getStatData(0)->second += 1;
             furnitureCount.setValue(player.getStatData(0)->second);
             treasures.erase(treasures.begin() + i);

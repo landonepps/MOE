@@ -17,6 +17,7 @@
  *******************************************************************************/
 
 #include <stdio.h>     /** Needed to print errors. **/
+#include <cstdlib>
 #include "FGame.h"      /** Contains OnInit prototype. **/
 #include <time.h>
 

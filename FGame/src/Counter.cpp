@@ -63,8 +63,12 @@ void Counter::setup(const string &fontFile, const GLubyte& R, const GLubyte& G, 
     this->precision = precision;
     xPosition = xPos;
     yPosition = yPos;
-    this->fontFile = fontFile;
-    this->fontSize = fontSize;
+    // Open the font
+    font = TTF_OpenFont(fontFile.c_str(), fontSize);
+    if (font == NULL) {
+        string error = TTF_GetError();
+        cerr << "failed to load font: " << fontFile << " " << TTF_GetError() << endl;
+    }
     color.r = R;
     color.g = G;
     color.b = B;
@@ -93,13 +97,6 @@ void Counter::draw(){
 
     stringstream message;
     message << fixed << setprecision(precision) << value;
-    
-    // Open the font
-    font = TTF_OpenFont(fontFile.c_str(), fontSize);
-    if (font == NULL) {
-        string error = TTF_GetError();
-        cerr << "failed to load font: " << fontFile << " " << TTF_GetError() << endl;
-    }
 
     // Create the surface to copy to the renderer
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);
@@ -139,7 +136,6 @@ void Counter::draw(){
 
     // Clean up
     SDL_FreeSurface(surf);
-    TTF_CloseFont(font);
     glDisable(GL_BLEND);
     glDisable(GL_TEXTURE_2D); 
     glDeleteTextures(1, &Texture);

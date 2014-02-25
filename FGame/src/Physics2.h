@@ -20,7 +20,7 @@ class Physics2 {
     // angular velocity
     glm::vec3 aVel;
     glm::vec3 acc;
-    
+
 public:
     Physics2();
     ~Physics2();

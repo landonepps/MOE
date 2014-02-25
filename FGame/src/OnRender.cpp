@@ -52,6 +52,11 @@ void FGame::OnRender()
         }
     }
 
+    for (int i = 0; i < notTreasures.size(); i++){
+        notTreasures[i].setHitbox(hitbox);
+        player.checkCollision(notTreasures[i].getPosition(), notTreasures[i].getDimensions());
+    }
+
     glPushMatrix();
     glLoadIdentity();
     glDisable(GL_DEPTH_TEST);

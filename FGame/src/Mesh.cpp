@@ -84,7 +84,7 @@ Mesh::Mesh(const char *filename, const char *texname ) {
     string str = "";
     input >> str;
     if(str != "ply") {
-        cout << "ERROR: Wrong mesh format." << endl;
+        cout << "ERROR: Missing File/Wrong mesh format." << endl;
         exit(1);
     }
     

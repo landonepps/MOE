@@ -27,6 +27,7 @@ Treasure::Treasure() : PropElement()
     bobMax = 20;
     bobMin = 20;
     reached = false;
+    hitbox = false;
 }
 
 Treasure::Treasure(int id) : PropElement(id)
@@ -43,6 +44,7 @@ Treasure::Treasure(int id) : PropElement(id)
     bobMax = 20;
     bobMin = 20;
     reached = false;
+    hitbox = false;
 }
 
 /***********************************************************************
@@ -114,14 +116,15 @@ void Treasure::draw(){
     glScalef(scale.x, scale.y, scale.z);
     if (rotate){
         if (clockwise){
-            rotateAngle += rotateSpeed * Clock::getInstance()->getDeltaTime();
+            rotateAngle -= rotateSpeed * Clock::getInstance()->getDeltaTime();
         }
         else{
-            rotateAngle -= rotateSpeed * Clock::getInstance()->getDeltaTime();
+            rotateAngle += rotateSpeed * Clock::getInstance()->getDeltaTime();
         }
         glRotatef(rotateAngle, 0, 1, 0);
     }
     glRotatef(-90, 1, 0, 0);
+    theMesh->setHitbox(hitbox);
     theMesh->draw();
     glPopMatrix();
 }
@@ -186,7 +189,10 @@ glm::vec3 Treasure::getPosition(){
 }
 
 glm::vec3 Treasure::getDimensions(){
-    return theMesh->getDimensions();
+    return theMesh->getDimensions() * scale;
 }
 
+void Treasure::setHitbox(bool hit){
+    hitbox = hit;
+}
 

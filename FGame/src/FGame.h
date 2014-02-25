@@ -51,7 +51,7 @@ private:
     /** While true, the game should be running. When set to false the game
      *  will exit gracefully. **/
     bool running;
-    
+
     int frames;
 
     float lastFrame;
@@ -66,13 +66,11 @@ private:
     /** Background music. **/
     Music bgm;
     
-    /** Test mesh. **/
-    Image testTex;
-    
     /** The HUD Props**/
     HUD theHUD;
-    Counter timer;
-    Gauge hBar;
+    Counter fpsCount;
+    Counter furnitureCount;
+    Gauge timer;
     
     //#warning remove later
     /** The Camera **/
@@ -83,7 +81,12 @@ private:
     
     /** The game Props **/
     Prop collectables;
-    Treasure treasure1;
+    vector<Treasure> treasures;
+
+    Prop decorations;
+    vector<Treasure> notTreasures;
+
+    bool hitbox;
     
     /** Resolution of the main window. **/
     int width;

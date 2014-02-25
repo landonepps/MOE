@@ -26,6 +26,10 @@ void Environment::loadEnv(const char *meshfile, const char *texfile) {
 
 }
 
+glm::vec3 Environment::getDimensions(){
+    return mesh->getDimensions();
+}
+
 void Environment::draw() {
     glPushMatrix();
     glm::mat4 trans;

@@ -114,8 +114,10 @@ Mesh::Mesh(const char *filename, const char *texname ) {
         }
     }
     
-    glm::vec3 min = glm::vec3(0, 0, 0);
-    glm::vec3 max = glm::vec3(0, 0, 0);
+    min = glm::vec3(0, 0, 0);
+    max = glm::vec3(0, 0, 0);
+
+    hitbox = false;
 
     //Read in vertices and normals.
     vList = new glm::vec4[vertices];
@@ -201,37 +203,39 @@ void Mesh::draw() {
         glEnd();
     }
 
-    /*glBegin(GL_LINE_STRIP);
+    if (hitbox){
+        glBegin(GL_LINE_STRIP);
         glVertex3f(min.x, min.y, min.z);
         glVertex3f(max.x, min.y, min.z);
         glVertex3f(max.x, max.y, min.z);
         glVertex3f(min.x, max.y, min.z);
         glVertex3f(min.x, min.y, min.z);
-    glEnd();
-    
-    glBegin(GL_LINE_STRIP);
+        glEnd();
+
+        glBegin(GL_LINE_STRIP);
         glVertex3f(min.x, min.y, max.z);
         glVertex3f(max.x, min.y, max.z);
         glVertex3f(max.x, max.y, max.z);
         glVertex3f(min.x, max.y, max.z);
         glVertex3f(min.x, min.y, max.z);
-    glEnd();
+        glEnd();
 
-    glBegin(GL_LINE_STRIP);
+        glBegin(GL_LINE_STRIP);
         glVertex3f(min.x, min.y, min.z);
         glVertex3f(max.x, min.y, min.z);
         glVertex3f(max.x, min.y, max.z);
         glVertex3f(min.x, min.y, max.z);
         glVertex3f(min.x, min.y, min.z);
-    glEnd();
+        glEnd();
 
-    glBegin(GL_LINE_STRIP);
+        glBegin(GL_LINE_STRIP);
         glVertex3f(min.x, max.y, max.z);
         glVertex3f(max.x, max.y, max.z);
         glVertex3f(max.x, max.y, min.z);
         glVertex3f(min.x, max.y, min.z);
         glVertex3f(min.x, max.y, max.z);
-    glEnd();*/
+        glEnd();
+    }
 
     glDisable(GL_TEXTURE_2D);
 }
@@ -239,4 +243,8 @@ void Mesh::draw() {
 
 glm::vec3 Mesh::getDimensions(){
     return dimensions;
+}
+
+void Mesh::setHitbox(bool hit){
+    hitbox = hit;
 }

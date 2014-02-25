@@ -34,7 +34,7 @@ private:
     Mesh *theMesh;
     glm::vec3 position;
     glm::vec3 scale;
-    bool rotate, clockwise, bob, reached;
+    bool rotate, clockwise, bob, reached, hitbox;
     GLfloat bobSpeed, bobMax, bobMin;
     GLfloat rotateAngle, rotateSpeed;
 public:
@@ -51,6 +51,7 @@ public:
     void draw();
     glm::vec3 getPosition();
     glm::vec3 getDimensions();
+    void setHitbox(bool hit);
 };
 
 #endif

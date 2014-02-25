@@ -44,3 +44,16 @@ void Player::updateCamera() {
     cam->setRotation(physics.getRot());
     cam->multMatrix();
 }
+
+void Player::addStat(int id, int val){
+    stats.push_back(make_pair(id, val));
+}
+
+pair<int, int>* Player::getStatData(int i){
+    return &stats[i];
+}
+
+bool Player::checkCollision(glm::vec3 center, glm::vec3 dimensions){
+    glm::vec3 yes = glm::vec3(0, 0, 0);
+    return physics.checkCollision(physics.getPos(), center, yes, dimensions);
+}

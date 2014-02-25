@@ -32,12 +32,25 @@ void FGame::OnRender()
 
     // Update camera to player position
     player.updateCamera();
-    
+
     // draw environment
     env.draw();
 
     collectables.drawElements();
-    
+    decorations.drawElements();
+
+    bool collision = false;
+    for (int i = 0; i < treasures.size() && !collision; i++){
+        treasures[i].setHitbox(hitbox);
+        if (player.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
+            player.getStatData(0)->second += 1;
+            furnitureCount.setValue(player.getStatData(0)->second);
+            treasures.erase(treasures.begin() + i);
+            collectables.removePropElement();
+            collision = true;
+        }
+    }
+
     glPushMatrix();
     glLoadIdentity();
     glDisable(GL_DEPTH_TEST);

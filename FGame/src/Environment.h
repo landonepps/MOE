@@ -27,7 +27,7 @@ public:
     ~Environment();
     
     void loadEnv(const char *mesh, const char *tex);
-    
+    glm::vec3 getDimensions();
     void draw();
 };
 

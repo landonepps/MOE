@@ -25,3 +25,11 @@ void Prop::drawElements(){
 void Prop::addPropElement(PropElement* element){
     PropElements.push_back(element);
 }
+
+void Prop::removePropElement(){
+    PropElements.pop_back();
+}
+
+PropElement* Prop::getPropElement(int i){
+    return PropElements[i];
+}

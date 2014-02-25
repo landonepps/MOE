@@ -18,6 +18,8 @@
 FGame::FGame() {
     running   = true;
 
+    hitbox = false;
+
     frames = 0;
 
     window    = NULL;

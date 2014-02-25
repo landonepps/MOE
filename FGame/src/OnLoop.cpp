@@ -20,10 +20,10 @@
 ***********************************************************************/
 void FGame::OnLoop()
 {
-    hBar.setValue(50);
+    timer.setValue(120 - mainClock->getElapsedTime());
     if (frames >= 100){
         int FPS = frames / (mainClock->getElapsedTime() - lastFrame) * mainClock->getTimeScale();
-        timer.setValue((float)FPS);
+        fpsCount.setValue((float)FPS);
         frames = 0;
         lastFrame = mainClock->getElapsedTime();
     }

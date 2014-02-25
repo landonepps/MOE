@@ -67,7 +67,7 @@ Gauge::Gauge(int id) : HUDelement(id){
 *
 * returns:   void.
 ***********************************************************************/
-void Gauge::setup(glm::vec3 tcolor, glm::vec3 bcolor, glm::vec3 ocolor, float val, GLfloat xPos, GLfloat yPos, GLfloat h, GLfloat w)
+void Gauge::setup(GLfloat max, glm::vec3 tcolor, glm::vec3 bcolor, glm::vec3 ocolor, GLfloat val, GLfloat xPos, GLfloat yPos, GLfloat h, GLfloat w)
 {
     value = val;
     xPosition = xPos;
@@ -77,6 +77,7 @@ void Gauge::setup(glm::vec3 tcolor, glm::vec3 bcolor, glm::vec3 ocolor, float va
     colorTop = tcolor;
     colorBot = bcolor;
     colorOut = ocolor;
+    this->max = max;
 }
 
 Gauge::~Gauge(){
@@ -101,7 +102,7 @@ void Gauge::setValue(float val){
 ***********************************************************************/
 void Gauge::draw()
 {
-    GLfloat currentValue = (width * value) / 100;
+    GLfloat currentValue = (width * value) / max;
 
     // draws a colorBot background behind the colorTop bar
     glBegin(GL_POLYGON);

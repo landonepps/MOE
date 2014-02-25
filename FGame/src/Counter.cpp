@@ -87,7 +87,7 @@ void Counter::setValue(float val){
 void Counter::draw(){
 
     stringstream message;
-    message << fixed << setprecision(precision) << value << " " << glGetString(GL_VERSION);
+    message << fixed << setprecision(precision) << value;
     
     // Create the surface to copy to the renderer
     SDL_Surface *surf = TTF_RenderText_Blended(font, message.str().c_str(), color);
@@ -126,9 +126,9 @@ void Counter::draw(){
     glEnd();
 
     // Clean up
+    surf->format->refcount++;
+    SDL_FreeSurface(surf);
     glDisable(GL_BLEND);
     glDisable(GL_TEXTURE_2D); 
     glDeleteTextures(1, &Texture);
-    // Cleans up the surface and texture
-    SDL_FreeSurface(surf);
 }

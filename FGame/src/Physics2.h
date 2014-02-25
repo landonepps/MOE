@@ -41,6 +41,8 @@ public:
     void setAVel(glm::vec3 newAVel) {
         aVel = newAVel;
     }
+
+    bool checkCollision(glm::vec3 center1, glm::vec3 center2, glm::vec3 d1, glm::vec3 d2);
 };
 
 #endif /* defined(__MOE__Physics2__) */

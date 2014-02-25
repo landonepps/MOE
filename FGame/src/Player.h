@@ -21,6 +21,7 @@
 class Player {
     Camera *cam;
     Physics2 physics;
+    vector< pair<int,int>> stats;
     
 public:
     
@@ -40,6 +41,12 @@ public:
     void update();
     
     void updateCamera();
+
+    void addStat(int id, int amount);
+
+    pair<int, int>* getStatData(int i);
+
+    bool checkCollision(glm::vec3 center, glm::vec3 dimensions);
 };
 
 #endif /* defined(__MOE__Player__) */

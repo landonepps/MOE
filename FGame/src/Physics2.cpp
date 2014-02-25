@@ -32,3 +32,18 @@ void Physics2::update() {
     rot.y = rot.y + aVel.y * Clock::getInstance()->getDeltaTime();
     rot.z = rot.z + aVel.z * Clock::getInstance()->getDeltaTime();
 }
+
+bool Physics2::checkCollision(glm::vec3 center1, glm::vec3 center2, glm::vec3 d1, glm::vec3 d2){
+    bool collided = false;
+
+    if (
+        -(center1.z - d1.z / 2) <= center2.z + d2.z / 2 && center1.x + d1.x / 2 >= center2.x - d2.x / 2 &&
+        (center1.x - d1.x / 2) <= center2.x + d2.x / 2 && -(center1.z + d1.z / 2) >= center2.z - d2.z / 2 &&
+        -(center1.y - d1.y / 2) <= center2.y + d2.y / 2 && -(center1.y + d1.y / 2) >= center2.y - d2.y / 2
+       )
+    {
+        collided = true;
+    }
+
+    return collided;
+}

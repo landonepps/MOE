@@ -25,13 +25,14 @@ private:
     glm::vec3 colorTop;
     glm::vec3 colorBot;
     glm::vec3 colorOut;
-    float value;
+    GLfloat value;
+    GLfloat max;
 public:
     Gauge();
     Gauge(int);
     ~Gauge();
-    void setup(glm::vec3 tcolor = glm::vec3( 0, 255, 0 ), glm::vec3 bcolor = glm::vec3( 255, 0, 0 ), glm::vec3 ocolor = glm::vec3( 255, 255, 255 ),
-                    float val = 100, GLfloat xPos = 0, GLfloat yPos = 0, GLfloat h = 15, GLfloat w = 100);
+    void setup(GLfloat max = 100, glm::vec3 tcolor = glm::vec3(0, 255, 0), glm::vec3 bcolor = glm::vec3(255, 0, 0), glm::vec3 ocolor = glm::vec3(255, 255, 255),
+                    GLfloat val = 100, GLfloat xPos = 0, GLfloat yPos = 0, GLfloat h = 15, GLfloat w = 100);
     void setValue(float);
     void draw();
 };

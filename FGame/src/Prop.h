@@ -33,6 +33,8 @@ public:
     ~Prop();
     void drawElements();
     void addPropElement(PropElement*);
+    void removePropElement();
+    PropElement* getPropElement(int i);
 };
 
 #endif

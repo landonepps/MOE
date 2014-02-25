@@ -35,6 +35,8 @@ class Mesh {
 
     glm::vec3 getDimensions();
 
+    void setHitbox(bool);
+
  private:
     unsigned int vertices;
     unsigned int normals;
@@ -45,6 +47,11 @@ class Mesh {
     glm::vec3 *nList;
     vector<unsigned int> *fList;
     glm::vec2 *tList;
+
+    glm::vec3 max;
+    glm::vec3 min;
+
+    bool hitbox;
 
     glm::vec3 dimensions;
 

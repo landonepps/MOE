@@ -148,6 +148,8 @@ bool FGame::OnInit()
     fpsCount.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
 
     furnitureCount.setup(".\\assets\\font.ttf",0,255,0,WIN_WIDTH/2,50,25);
+
+    win.setup(".\\assets\\font.ttf",0,255,0,WIN_WIDTH/2,WIN_HEIGHT/2,25);
 #else
     bgm.loadMusic("./assets/adventure.wav");
     pickUp.loadSFX("./assets/yes.wav");
@@ -210,6 +212,8 @@ bool FGame::OnInit()
     fpsCount.setup("./assets/font.ttf", 255, 0, 0, 50, 50, 25);
 
     furnitureCount.setup("./assets/font.ttf", 0, 255, 0, WIN_WIDTH / 2, 50, 25);
+
+    win.setup("./assets/font.ttf", 0, 255, 0, WIN_WIDTH / 2, WIN_HEIGHT / 2, 25);
 #endif
 
     /**Add all the furniture to the collections**/
@@ -221,6 +225,8 @@ bool FGame::OnInit()
         decorations.addPropElement(&notTreasures[i]);
     }
 
+    totalTreasures = treasures.size();
+
     /**Setup timer bar add all HUD elements to HUD**/
     timer.setup(120);
 
@@ -229,6 +235,8 @@ bool FGame::OnInit()
     theHUD.addHUDElement(&fpsCount);
 
     theHUD.addHUDElement(&furnitureCount);
+
+    theHUD.addHUDElement(&win);
 
     /** Initialize the joysticks. **/
     int numJoysticks = SDL_NumJoysticks();

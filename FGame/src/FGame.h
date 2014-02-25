@@ -41,6 +41,7 @@
 #include "Camera.h"
 #include "Player.h"
 #include "Environment.h"
+#include "Message.h"
 
 #include <string>
 
@@ -53,6 +54,8 @@ private:
     bool running;
 
     int frames;
+
+    int totalTreasures;
 
     float lastFrame;
     /** Used to represent main game loop time. **/
@@ -70,6 +73,7 @@ private:
     HUD theHUD;
     Counter fpsCount;
     Counter furnitureCount;
+    Message win;
     Gauge timer;
     
     //#warning remove later

@@ -11,6 +11,7 @@
 *******************************************************************************/
 
 #include "FGame.h"      /** Contains event prototypes.  **/
+#include "Constants.h"
 #include <iostream>
 using namespace std;
 
@@ -62,6 +63,99 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
 void FGame::OnJoyButtonUp(Uint8 which, Uint8 button)
 {
     /** Do Nothing **/
+}
+
+/***********************************************************************
+ * OnJoyAxis: Called when the joystick axis is moved. Controls player
+ *            movement and rotation.
+ *
+ * which:     The index of the joystick that reported the event.
+ *
+ * axis:      The index of the axis that changed.
+ *
+ * value:     The current position of the axis (range: -32768 to 32767).
+ *
+ * returns:   void.
+ ***********************************************************************/
+void FGame::OnJoyAxis(Uint8 which, Uint8 axis, Sint16 value)
+{
+    /** We want to retain values between OnJoyAxis calls. **/
+    static double movX = 0;
+    static double movZ = 0;
+    static double rotY = 0;
+    static double rotX = 0;
+
+    /** If left joystick left/right. **/
+    if(axis == LEFT_AXIS_HOR)
+    {
+        /** Make sure joystick has exceeded threshold in either
+         *  direction. **/
+        if(value < -AXIS_THRESHOLD || value > AXIS_THRESHOLD)
+        {
+            /** Scale transformation based on how far joystick is pushed.
+             *  -1 < moxX < 1 **/
+            movX = value / -AXIS_MAX;
+        }
+        else
+        {
+            movX = 0;
+        }
+    }
+
+    /** If left joystick up/down. **/
+    if(axis == LEFT_AXIS_VER)
+    {
+        /** Make sure joystick has exceeded threshold in either
+         *  direction. **/
+        if(value < -AXIS_THRESHOLD || value > AXIS_THRESHOLD)
+        {
+            /** Scale transformation based on how far joystick is pushed.
+             *  -1 < moxZ < 1 **/
+            movZ = value / -AXIS_MAX;
+        }
+        else
+        {
+            movZ = 0;
+        }
+    }
+
+    /** If right joystick left/right. **/
+    if(axis == RIGHT_AXIS_HOR)
+    {
+        /** Make sure joystick has exceeded threshold in either
+         *  direction. **/
+        if(value < -AXIS_THRESHOLD || value > AXIS_THRESHOLD)
+        {
+            /** Scale transformation based on how far joystick is pushed.
+             *  -1 < rotY < 1. **/
+            rotY = value / AXIS_MAX;
+        }
+        else
+        {
+            rotY = 0;
+        }
+    }
+
+    /** If right joystick up/down. **/
+    if(axis == RIGHT_AXIS_VER)
+    {
+        /** Make sure joystick has exceeded threshold in either
+         *  direction. **/
+        if(value < -AXIS_THRESHOLD || value > AXIS_THRESHOLD)
+        {
+            /** Scale transformation based on how far joystick is pushed.
+             *  -1 < rotX < 1 **/
+            rotX = value / AXIS_MAX;
+        }
+        else
+        {
+            rotX = 0;
+        }
+    }
+
+    /** Apply transformations to player. **/
+    player.setVel(glm::vec3(movX * MOVE_SPEED, 0, movZ * MOVE_SPEED));
+    player.setAVel(glm::vec3(rotX * ROT_SPEED, rotY * ROT_SPEED, 0));
 }
 
 /***********************************************************************

@@ -19,7 +19,7 @@
 #include <SDL2/SDL.h>
 #endif
 
-/** Global constants will go here. **/
+/** Values for XBox 360 Controller buttons. **/
 const Uint8 UP_DPAD          = 0;
 const Uint8 DOWN_DPAD        = 1;
 const Uint8 LEFT_DPAD        = 2;
@@ -35,6 +35,18 @@ const Uint8 B_BUTTON         = 11;
 const Uint8 X_BUTTON         = 12;
 const Uint8 Y_BUTTON         = 13;
 const Uint8 HOME_BUTTON      = 14;
+
+/** Values for XBox 360 Controller joysticks. **/
+const Uint8 LEFT_AXIS_HOR    = 0;
+const Uint8 LEFT_AXIS_VER    = 1;
+const Uint8 RIGHT_AXIS_HOR   = 2;
+const Uint8 RIGHT_AXIS_VER   = 3;
+const Sint16 AXIS_THRESHOLD  = 4000;
+const double AXIS_MAX        = 32767;
+
+/** Player max movement and rotation speeds. **/
+const int MOVE_SPEED         = 100;
+const int ROT_SPEED          = 75;
 
 const int NUM_AUDIO_CHANNELS = 16;
 const int PUNCH_DMG          = 5;

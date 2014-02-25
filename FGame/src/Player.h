@@ -21,7 +21,7 @@
 class Player {
     Camera *cam;
     Physics2 physics;
-    vector< pair<int,int>> stats;
+    vector< pair<int,int> > stats;
     
 public:
     

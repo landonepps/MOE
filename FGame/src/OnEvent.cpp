@@ -48,7 +48,10 @@ void FGame::OnExit()
 ***********************************************************************/
 void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
 {
-    /** Do Nothing **/
+    if(button == A_BUTTON)
+    {
+        /** Start flying here.**/
+    }
 }
 
 /***********************************************************************
@@ -62,7 +65,10 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
 ***********************************************************************/
 void FGame::OnJoyButtonUp(Uint8 which, Uint8 button)
 {
-    /** Do Nothing **/
+    if(button == A_BUTTON)
+    {
+        /** Stop flying here.**/
+    }
 }
 
 /***********************************************************************

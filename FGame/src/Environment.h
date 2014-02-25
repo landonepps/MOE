@@ -22,8 +22,14 @@ class Environment {
     glm::vec3 scl;
     glm::vec3 rot;
     
-public:
     Environment();
+    
+public:
+    static Environment *getInstance() {
+        static Environment instance;
+        return &instance;
+    }
+
     ~Environment();
     
     void loadEnv(const char *mesh, const char *tex);

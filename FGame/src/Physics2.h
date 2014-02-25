@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "glm/glm.hpp"
+#include "Environment.h"
 
 class Physics2 {
     glm::vec3 pos;
@@ -43,6 +44,8 @@ public:
     }
 
     bool checkCollision(glm::vec3 center1, glm::vec3 center2, glm::vec3 d1, glm::vec3 d2);
+    
+    bool checkEnvCollision();
 };
 
 #endif /* defined(__MOE__Physics2__) */

@@ -59,3 +59,9 @@ bool Physics2::checkCollision(glm::vec3 center1, glm::vec3 center2, glm::vec3 d1
 
     return collided;
 }
+
+bool Physics2::checkEnvCollision() {
+    bool collision = true;
+    
+    return collision;
+}

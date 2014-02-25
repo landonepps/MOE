@@ -34,7 +34,7 @@ void FGame::OnRender()
     player.updateCamera();
 
     // draw environment
-    env.draw();
+    env->draw();
 
     collectables.drawElements();
     decorations.drawElements();

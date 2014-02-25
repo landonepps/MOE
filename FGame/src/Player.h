@@ -17,6 +17,7 @@
 #include "SFX.h"
 #include "Physics2.h"
 #include "Camera.h"
+#include "Environment.h"
 
 class Player {
     Camera *cam;

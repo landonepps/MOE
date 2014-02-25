@@ -50,7 +50,7 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
 {
     if(button == A_BUTTON)
     {
-        /** Start flying here.**/
+        player.setVelY(-30);
     }
 }
 
@@ -67,7 +67,7 @@ void FGame::OnJoyButtonUp(Uint8 which, Uint8 button)
 {
     if(button == A_BUTTON)
     {
-        /** Stop flying here.**/
+        player.setVelY(30);
     }
 }
 
@@ -160,7 +160,7 @@ void FGame::OnJoyAxis(Uint8 which, Uint8 axis, Sint16 value)
     }
 
     /** Apply transformations to player. **/
-    player.setVel(glm::vec3(movX * MOVE_SPEED, 0, movZ * MOVE_SPEED));
+    player.setVel(glm::vec3(movX * MOVE_SPEED, 10, movZ * MOVE_SPEED));
     player.setAVel(glm::vec3(rotX * ROT_SPEED, rotY * ROT_SPEED, 0));
 }
 

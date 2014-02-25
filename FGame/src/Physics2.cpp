@@ -12,7 +12,7 @@
 
 Physics2::Physics2() {
     pos = glm::vec3(0, -25, 0);
-    vel = glm::vec3(0, 0, 0);
+    vel = glm::vec3(0, 25, 0);
 }
 
 Physics2::~Physics2() {
@@ -20,6 +20,8 @@ Physics2::~Physics2() {
 }
 
 void Physics2::update() {
+    glm::vec3 newPos;
+    
     // adjust velocity for player rotation
     glm::mat4 rotMat = glm::rotate(glm::mat4(), -rot.y, glm::vec3(0.0f, 1.0f, 0.0f));
     glm::vec4 adjVel = rotMat * glm::vec4(vel.x, vel.y, vel.z, 0);
@@ -28,6 +30,9 @@ void Physics2::update() {
     pos.x = pos.x + adjVel.x * Clock::getInstance()->getDeltaTime();
     pos.y = pos.y + adjVel.y * Clock::getInstance()->getDeltaTime();
     pos.z = pos.z + adjVel.z * Clock::getInstance()->getDeltaTime();
+
+    checkEnvCollision(adjVel);
+    
     rot.x = rot.x + aVel.x * Clock::getInstance()->getDeltaTime();
     rot.y = rot.y + aVel.y * Clock::getInstance()->getDeltaTime();
     rot.z = rot.z + aVel.z * Clock::getInstance()->getDeltaTime();
@@ -60,8 +65,20 @@ bool Physics2::checkCollision(glm::vec3 center1, glm::vec3 center2, glm::vec3 d1
     return collided;
 }
 
-bool Physics2::checkEnvCollision() {
-    bool collision = true;
+void Physics2::checkEnvCollision(glm::vec4 adjVel) {
+    glm::vec3 envPos = Environment::getInstance()->getPosition();
+    glm::vec3 envDim = Environment::getInstance()->getDimensions();
     
-    return collision;
+    if (-pos.y > envPos.y + envDim.y / 2 - 25 ||
+        -pos.y < envPos.y - envDim.y / 2 + 25) {
+        pos.y = pos.y - adjVel.y * Clock::getInstance()->getDeltaTime();
+    }
+    if (pos.x > envPos.x + envDim.x / 2 - 25||
+        pos.x < envPos.x - envDim.x / 2 + 25) {
+        pos.x = pos.x - adjVel.x * Clock::getInstance()->getDeltaTime();
+    }
+    if (pos.z > envPos.z + envDim.z / 2 - 25||
+        pos.z < envPos.z - envDim.z / 2 + 25) {
+        pos.z = pos.z - adjVel.z * Clock::getInstance()->getDeltaTime();
+    }
 }

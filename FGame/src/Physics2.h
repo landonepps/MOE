@@ -36,7 +36,13 @@ public:
     }
     
     void setVel(glm::vec3 newVel) {
+        GLfloat oldYVel = vel.y;
         vel = newVel;
+        vel.y = oldYVel;
+    }
+    
+    void setVelY(GLfloat yVel) {
+        vel.y = yVel;
     }
     
     void setAVel(glm::vec3 newAVel) {
@@ -45,7 +51,7 @@ public:
 
     bool checkCollision(glm::vec3 center1, glm::vec3 center2, glm::vec3 d1, glm::vec3 d2);
     
-    bool checkEnvCollision();
+    void checkEnvCollision(glm::vec4 adjVel);
 };
 
 #endif /* defined(__MOE__Physics2__) */

@@ -32,6 +32,10 @@ void Player::setVel(glm::vec3 newVel) {
     physics.setVel(newVel);
 }
 
+void Player::setVelY(GLfloat yVel) {
+    physics.setVelY(yVel);
+}
+
 void Player::setAVel(glm::vec3 newAVel) {
     physics.setAVel(newAVel);
 }

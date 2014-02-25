@@ -34,6 +34,12 @@ public:
     
     void loadEnv(const char *mesh, const char *tex);
     glm::vec3 getDimensions();
+    glm::vec3 getPosition() {
+        return pos;
+    }
+    glm::vec3 getScale() {
+        return scl;
+    }
     void draw();
 };
 

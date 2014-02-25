@@ -18,6 +18,9 @@ Environment::~Environment() {
     delete mesh;
 }
 
+// load environment
+// meshfile is the ply file
+// texfile is the texture
 void Environment::loadEnv(const char *meshfile, const char *texfile) {
     mesh = new Mesh(meshfile, texfile);
     scl = glm::vec3(10, 10, 10);
@@ -26,10 +29,12 @@ void Environment::loadEnv(const char *meshfile, const char *texfile) {
 
 }
 
+// get environment dimensions
 glm::vec3 Environment::getDimensions(){
     return mesh->getDimensions() * scl;
 }
 
+// draw environment
 void Environment::draw() {
     glPushMatrix();
     glm::mat4 trans;

@@ -19,6 +19,7 @@ Physics2::~Physics2() {
     
 }
 
+// update physics
 void Physics2::update() {
     glm::vec3 newPos;
     
@@ -31,7 +32,7 @@ void Physics2::update() {
     pos.y = pos.y + adjVel.y * Clock::getInstance()->getDeltaTime();
     pos.z = pos.z + adjVel.z * Clock::getInstance()->getDeltaTime();
 
-    checkEnvCollision(adjVel);
+    handleEnvCollision(adjVel);
     
     rot.x = rot.x + aVel.x * Clock::getInstance()->getDeltaTime();
     rot.y = rot.y + aVel.y * Clock::getInstance()->getDeltaTime();
@@ -65,7 +66,8 @@ bool Physics2::checkCollision(glm::vec3 center1, glm::vec3 center2, glm::vec3 d1
     return collided;
 }
 
-void Physics2::checkEnvCollision(glm::vec4 adjVel) {
+// handle collision with environment
+void Physics2::handleEnvCollision(glm::vec4 adjVel) {
     glm::vec3 envPos = Environment::getInstance()->getPosition();
     glm::vec3 envDim = Environment::getInstance()->getDimensions();
     

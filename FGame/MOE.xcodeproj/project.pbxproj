@@ -180,7 +180,8 @@
 				44FF830E18BA854200A9A773 /* Physics2.h */,
 				4457CD5D18BAC80700CB6F9E /* Environment.cpp */,
 				4457CD5E18BAC80700CB6F9E /* Environment.h */,
-				44FF831118BA878300A9A773 /* bad physics */,
+				44294C4718BC7EF8005ED095 /* Events.cpp */,
+				44294C4818BC7EF8005ED095 /* Events.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -224,15 +225,6 @@
 				44A3107318A59E4700427013 /* Image.h */,
 			);
 			name = A/V;
-			sourceTree = "<group>";
-		};
-		44FF831118BA878300A9A773 /* bad physics */ = {
-			isa = PBXGroup;
-			children = (
-				44294C4718BC7EF8005ED095 /* Events.cpp */,
-				44294C4818BC7EF8005ED095 /* Events.h */,
-			);
-			name = "bad physics";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -77,7 +77,7 @@ private:
     Player player;
     
     /** The landscape **/
-    Environment env;
+    Environment *env;
     
     /** The game Props **/
     Prop collectables;
@@ -103,6 +103,11 @@ public:
      * FGame:     Sets the game as running and defines the window size.
      ***********************************************************************/
     FGame();
+    
+    ~FGame() {
+        /** Free any used resources and exit. **/
+        OnCleanup();
+    }
     
     /***********************************************************************
      * OnExecute: Starts the game and contains main game loop.

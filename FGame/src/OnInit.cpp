@@ -129,7 +129,7 @@ bool FGame::OnInit()
     fpsCount.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
 
     furnitureCount.setup(".\\assets\\font.ttf",0,255,0,WIN_WIDTH/2,50,25);
-    env.loadEnv(".\\assets\\room.ply", ".\\assets\\roomtex.jpg");
+    env->loadEnv(".\\assets\\room.ply", ".\\assets\\roomtex.jpg");
 #else
     bgm.loadMusic("./assets/adventure.wav");
     bgm.play();
@@ -175,7 +175,7 @@ bool FGame::OnInit()
     fpsCount.setup("./assets/font.ttf",255,0,0,50,50,25);
     
     furnitureCount.setup("./assets/font.ttf",0,255,0,WIN_WIDTH/2,50,25);
-    env.loadEnv("./assets/room.ply", "./assets/roomtex.jpg");
+    env->loadEnv("./assets/room.ply", "./assets/roomtex.jpg");
 #endif
 
     /**Add all the furniture to the collections**/

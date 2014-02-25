@@ -14,13 +14,13 @@
 		4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE318A0813600FE3118 /* OnInit.cpp */; };
 		4423CEEA18A0813600FE3118 /* OnLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE418A0813600FE3118 /* OnLoop.cpp */; };
 		4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE518A0813600FE3118 /* OnRender.cpp */; };
+		44294C4918BC7EF8005ED095 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44294C4718BC7EF8005ED095 /* Events.cpp */; };
 		4435F7FA18B8139C0052FBB1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4435F7F918B8139C0052FBB1 /* OpenGL.framework */; };
 		4435F7FE18B815010052FBB1 /* Counter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F7FB18B815010052FBB1 /* Counter.cpp */; };
 		4435F7FF18B815010052FBB1 /* Gauge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F7FD18B815010052FBB1 /* Gauge.cpp */; };
 		4435F80118B815090052FBB1 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4435F80018B815090052FBB1 /* Mesh.cpp */; };
 		44387C2318B9A34E0088FB7E /* Prop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44387C2018B9A34E0088FB7E /* Prop.cpp */; };
 		444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C8C5518A1EDF8000101F8 /* SDL2_image.framework */; };
-		444C8C5C18A21169000101F8 /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444C8C5A18A21169000101F8 /* Events.cpp */; };
 		4457056018A8721B00DCB73E /* HUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4457055F18A8721B00DCB73E /* HUD.cpp */; };
 		4457CD5F18BAC80700CB6F9E /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4457CD5D18BAC80700CB6F9E /* Environment.cpp */; };
 		449E7BD818A9B061005DDE7D /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449E7BD618A9B061005DDE7D /* Player.cpp */; };
@@ -53,6 +53,8 @@
 		4423CEE318A0813600FE3118 /* OnInit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnInit.cpp; sourceTree = "<group>"; };
 		4423CEE418A0813600FE3118 /* OnLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnLoop.cpp; sourceTree = "<group>"; };
 		4423CEE518A0813600FE3118 /* OnRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnRender.cpp; sourceTree = "<group>"; };
+		44294C4718BC7EF8005ED095 /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
+		44294C4818BC7EF8005ED095 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 		4435F7F918B8139C0052FBB1 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		4435F7FB18B815010052FBB1 /* Counter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Counter.cpp; sourceTree = "<group>"; };
 		4435F7FC18B815010052FBB1 /* Counter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Counter.h; sourceTree = "<group>"; };
@@ -64,8 +66,6 @@
 		44387C2118B9A34E0088FB7E /* Prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prop.h; sourceTree = "<group>"; };
 		44387C2218B9A34E0088FB7E /* PropElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropElement.h; sourceTree = "<group>"; };
 		444C8C5518A1EDF8000101F8 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
-		444C8C5A18A21169000101F8 /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Events.cpp; sourceTree = "<group>"; };
-		444C8C5B18A21169000101F8 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 		4457055F18A8721B00DCB73E /* HUD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HUD.cpp; sourceTree = "<group>"; };
 		4457CD5D18BAC80700CB6F9E /* Environment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Environment.cpp; sourceTree = "<group>"; };
 		4457CD5E18BAC80700CB6F9E /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
@@ -229,8 +229,8 @@
 		44FF831118BA878300A9A773 /* bad physics */ = {
 			isa = PBXGroup;
 			children = (
-				444C8C5A18A21169000101F8 /* Events.cpp */,
-				444C8C5B18A21169000101F8 /* Events.h */,
+				44294C4718BC7EF8005ED095 /* Events.cpp */,
+				44294C4818BC7EF8005ED095 /* Events.h */,
 			);
 			name = "bad physics";
 			sourceTree = "<group>";
@@ -307,11 +307,11 @@
 			files = (
 				4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */,
 				4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */,
-				444C8C5C18A21169000101F8 /* Events.cpp in Sources */,
 				44DA951A18A984980062F44D /* SFX.cpp in Sources */,
 				4457056018A8721B00DCB73E /* HUD.cpp in Sources */,
 				4423CEE818A0813600FE3118 /* OnEvent.cpp in Sources */,
 				4423CEE618A0813600FE3118 /* FGame.cpp in Sources */,
+				44294C4918BC7EF8005ED095 /* Events.cpp in Sources */,
 				449E7BD818A9B061005DDE7D /* Player.cpp in Sources */,
 				44A7BC0C18B9668A00ABDB9F /* Treasure.cpp in Sources */,
 				4435F7FE18B815010052FBB1 /* Counter.cpp in Sources */,

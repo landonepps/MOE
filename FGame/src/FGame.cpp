@@ -30,6 +30,7 @@ FGame::FGame() {
     height    = WIN_HEIGHT;
 
     mainClock = Clock::getInstance();
+    env = Environment::getInstance();
 
     joystick1 = NULL;
 
@@ -80,9 +81,7 @@ int FGame::OnExecute()
         /** Might want to call mainClock.singleStep() here, not sure. It is only
          * supposed to update when game is paused. **/
     }
-
-    /** Free any used resources and exit. **/
-    OnCleanup();
+    
     return 0;
 }
 

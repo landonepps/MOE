@@ -94,7 +94,7 @@ bool FGame::OnInit()
     pickUp.loadSFX(".\\assets\\yes.wav");
     bgm.play();
     
-    terrain.load(".\\assets\\terrain1.bmp");
+    terrain.load(".\\assets\\terrain2.bmp");
     sky->loadSky(".\\assets\\skybox.ply", ".\\assets\\skybox_texture.jpg");
 
     glm::vec3 randomRange;
@@ -160,7 +160,7 @@ bool FGame::OnInit()
 
     sky->loadSky("./assets/skybox.ply", "./assets/skybox_texture.jpg");
     
-    terrain.load("./assets/terrain1.bmp");
+    terrain.load("./assets/terrain2.bmp");
     
     glm::vec3 randomRange;
     float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;
@@ -214,6 +214,8 @@ bool FGame::OnInit()
     fpsCount.setup("./assets/font.ttf", 255, 0, 0, 50, 50, 25);
 
     furnitureCount.setup("./assets/font.ttf", 0, 255, 0, WIN_WIDTH / 2, 50, 25);
+    
+    enemyFurnitureCount.setup("./assets/font.ttf", 0, 0, 255, WIN_WIDTH - 50, 50, 25);
 
     win.setup("./assets/font.ttf", 0, 255, 0, WIN_WIDTH / 2, WIN_HEIGHT / 2, 25);
 #endif

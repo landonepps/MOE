@@ -33,6 +33,26 @@
 
 #include "Terrain.h"
 
+//Make a default terrain
+Terrain::Terrain() {
+    pos = glm::vec3(0,0,0);
+    horScale = vertScale = 100;
+}
+
+//Make a terrain at 0,0,0 with scales hs and vs
+Terrain::Terrain(float hs, float vs) {
+    pos = glm::vec3(0,0,0);
+    horScale = hs;
+    vertScale = vs;
+}
+
+//Make a terrain at position p of scales hs and vs
+Terrain::Terrain(glm::vec3 p, float hs, float vs) {
+    pos = p;
+    horScale = hs;
+    vertScale = vs;
+}
+
 //Loads the terrain
 void Terrain::load(const char* file) {
     
@@ -65,16 +85,50 @@ void Terrain::load(const char* file) {
 }
 
 //Renders the terrain
-void Terrain::render(float widthScale,float heightScale) {
-	for(int i=0;i<heights.size()-1;i++)
-		for(int j=0;j<heights[0].size()-1;j++)
-		{
-            //Draw the triangle strip
-			glBegin(GL_TRIANGLE_STRIP);
-                glVertex3f(i*widthScale,heights[i][j]*heightScale,j*widthScale);
-                glVertex3f((i+1)*widthScale,heights[i+1][j]*heightScale,j*widthScale);
-                glVertex3f(i*widthScale,heights[i][j+1]*heightScale,(j+1)*widthScale);
-                glVertex3f((i+1)*widthScale,heights[i+1][j+1]*heightScale,(j+1)*widthScale);
-			glEnd();
+void Terrain::render() {
+    glBegin(GL_QUADS);
+	for(int i = 0; i < heights.size()-1; i++) {
+		for(int j = 0; j < heights[0].size()-1; j++) {
+            //Draw the terrain
+            glVertex3f(pos.x+(i+1)*horScale, pos.y+heights[i+1][j]*vertScale, pos.z+j*horScale);
+            glVertex3f(pos.x+i*horScale, pos.y+heights[i][j]*vertScale, pos.z+j*horScale);
+            glVertex3f(pos.x+i*horScale, pos.y+heights[i][j+1]*vertScale, pos.z+(j+1)*horScale);
+            glVertex3f(pos.x+(i+1)*horScale, pos.y+heights[i+1][j+1]*vertScale, pos.z+(j+1)*horScale);
 		}
+    }
+    glEnd();
+}
+
+//Get the height at a certain point
+float Terrain::getHeight(int x, int z) {
+    if(x >= heights.size() || z >= heights[0].size()) {
+        cout << "ERROR: Tried to access point outside terrain" << endl;
+        return 0.0;
+    }
+    return pos.y + vertScale * heights[x][z];
+}
+
+//Get the length
+int Terrain::getLength() {
+    return (int) heights.size();
+}
+
+//Get the width
+int Terrain::getWidth() {
+    return (int) heights[0].size();
+}
+
+//Set the scale
+void Terrain::setHorScale(float newScale) {
+    horScale = newScale;
+}
+
+//Set the scale
+void Terrain::setVertScale(float newScale) {
+    vertScale = newScale;
+}
+
+//Set the position
+void Terrain::setPos(glm::vec3 newPos) {
+    pos = newPos;
 }

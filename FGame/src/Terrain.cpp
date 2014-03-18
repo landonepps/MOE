@@ -79,9 +79,9 @@ glm::vec3 Terrain::computeNormal(double h1, double h2, double h3, double h4) {
     ( p3.x - p4.x ) * ( p3.y + p4.y ) +
     ( p4.x - p1.x ) * ( p4.y + p1.y );
     
-    n.x /= sqrt(x*x+y*y+z*z);
-    n.y /= sqrt(x*x+y*y+z*z);
-    n.z /= sqrt(x*x+y*y+z*z);
+    n.x /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
+    n.y /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
+    n.z /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
     
     return n;
 }

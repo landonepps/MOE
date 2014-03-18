@@ -47,12 +47,11 @@ void FGame::OnRender()
 
     collectables.drawElements();
 
-    static bool furnitureSelected = false;
     static glm::vec3 randomPos;
     static unsigned int index;
 
     if (!furnitureSelected && treasures.size() > 0){
-        index = (int)((float(rand()) / float(RAND_MAX)) * treasures.size()) - 1;
+        index = (int)((float(rand()) / float(RAND_MAX)) * treasures.size() - 1);
 
         randomPos = treasures[index].getPosition();
         furnitureSelected = true;

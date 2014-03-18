@@ -62,6 +62,8 @@ private:
     int totalTreasures;
 
     float lastFrame;
+
+    bool furnitureSelected;
     /** Used to represent main game loop time. **/
     Clock *mainClock;
     

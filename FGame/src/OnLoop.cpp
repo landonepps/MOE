@@ -28,7 +28,6 @@ void FGame::OnLoop()
         lastFrame = mainClock->getElapsedTime();
     }
     player.update();
-    sky->setPos(player.getPos());
 
     if ((int)mainClock->getElapsedTime() == 2 && currentLevel < 4){
         win.setValue(" ");
@@ -51,6 +50,8 @@ void FGame::OnLoop()
         else{
             enemy.setDifficulty(currentLevel);
 
+            furnitureSelected = false;
+
             treasures.clear();
 
             player.setPos(glm::vec3(0,-25,0));
@@ -70,7 +71,8 @@ void FGame::OnLoop()
                     randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
                     randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
                     randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
-                    enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
+                    //enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
+                    enemy.setLocation(0, -25, 0);
 
                     for (int i = 0; i < 5; i++){
                         randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));

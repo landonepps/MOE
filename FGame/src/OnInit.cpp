@@ -97,30 +97,18 @@ bool FGame::OnInit()
     bgm.play();
     
     sky->loadSky(".\\assets\\skybox.ply", ".\\assets\\skybox_texture.jpg");
-
-    terrain.load(".\\assets\\terrain2.bmp");
-
+    
+    terrain->load(".\\assets\\terrain2.bmp");
     int horScale = 100;
-    terrain.setHorScale(horScale);
-    terrain.setPos(glm::vec3(0, 0, 0));
+    terrain->setHorScale(horScale);
+    terrain->setPos(glm::vec3(0, 0, 0));
     // terrain.setPos(glm::vec3(terrain.getWidth() * horScale / -2.0, 0, terrain.getLength() * horScale / -2.0));
-    terrain.setVertScale(1000);
-    int playerStartX = terrain.getWidth() * horScale / -2.0;
-    int playerStartZ = terrain.getLength() * horScale / -2.0;
-    player.setPos(glm::vec3(playerStartX, -terrain.getHeight(-playerStartX, -playerStartZ) - PLAYER_HEIGHT, playerStartZ));
+    int vertScale = 1000;
+    terrain->setVertScale(vertScale);
+    int playerStartX = terrain->getWidth() * horScale / -2.0;
+    int playerStartZ = terrain->getLength() * horScale / -2.0;
+    player.setPos(glm::vec3(playerStartX, -terrain->getHeight(-playerStartX, -playerStartZ) - PLAYER_HEIGHT, playerStartZ));
     sky->setPos(player.getPos());
-
-    glm::vec3 randomRange;
-    float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;
-    float envy = Skybox::getInstance()->getDimensions().y - 50;
-    float envz = (Skybox::getInstance()->getDimensions().z / 2) - 50;
-
-    randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
-    randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
-    randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
-    enemy.setup(".\\assets\\puff.ply", ".\\assets\\poorpuff.png");
-    enemy.setScale(25, 25, 25);
-    enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
 
     for (int i = 0; i < 5; i++){
         randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));

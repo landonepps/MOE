@@ -31,6 +31,7 @@ FGame::FGame() {
 
     mainClock = Clock::getInstance();
     sky = Skybox::getInstance();
+    terrain = Terrain::getInstance();
 
     joystick1 = NULL;
 

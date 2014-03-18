@@ -8,7 +8,7 @@
  * Date:       1/30/2014
  *
  * Handles basic calculations (such as animation). Currently does nothing.
-*******************************************************************************/
+ *******************************************************************************/
 
 #include "FGame.h"      /** Contains prototype for OnLoop. **/
 #include <cstdlib>
@@ -18,7 +18,7 @@
  *            does nothing.
  *
  * returns:   void.
-***********************************************************************/
+ ***********************************************************************/
 void FGame::OnLoop()
 {
     timer.setValue(90 - mainClock->getElapsedTime());
@@ -37,32 +37,32 @@ void FGame::OnLoop()
 
     if ((treasures.size() == 0 || mainClock->getElapsedTime() >= 25) && currentLevel < 4){
         mainClock->reset();
-
+        
         if ((float)enemy.getStatData(0)->second > (float)player.getStatData(0)->second)
             win.setValue("Poor Wins");
         else if ((float)enemy.getStatData(0)->second < (float)player.getStatData(0)->second)
             win.setValue("You Wins");
-        else 
+        else
             win.setValue("Nobody Wins");
-
+        
         currentLevel++;
         if (currentLevel == 4){
             win.setValue("Game Over Wins");
         }
         else{
             enemy.setDifficulty(currentLevel);
-
+            
             furnitureSelected = false;
-
+            
             treasures.clear();
-
+            
             player.setPos(glm::vec3(0,-25,0));
-
+            
             /** Add a player stat for furniture count**/
             player.getStatData(0)->second = 0;
-
+            
             enemy.getStatData(0)->second = 0;
-
+            
             /** Load music, room, pickups and decorations,**/
         #ifdef _WIN32
                     glm::vec3 randomRange;
@@ -166,13 +166,13 @@ void FGame::OnLoop()
             furnitureCount.setValue(0);
             enemyFurnitureCount.setValue(0);
             timer.setValue(90);
-
+            
             /**Add all the furniture to the collections**/
             for (int i = 0; i < treasures.size(); i++){
                 collectables.addPropElement(&treasures[i]);
             }
-
+            
             totalTreasures = treasures.size();
-        }  
+        }
     }
 }

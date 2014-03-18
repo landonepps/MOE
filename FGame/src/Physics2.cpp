@@ -7,12 +7,14 @@
 //
 
 #include "Physics2.h"
+#include "Constants.h"
 #include "Clock.h"
 #include "glm/gtc/matrix_transform.hpp"
 
 Physics2::Physics2() {
     pos = glm::vec3(0, -25, 0);
     vel = glm::vec3(0, 30, 0);
+    checkTerCol = false;
 }
 
 Physics2::~Physics2() {
@@ -32,7 +34,9 @@ void Physics2::update() {
     pos.y = pos.y + adjVel.y * Clock::getInstance()->getDeltaTime();
     pos.z = pos.z + adjVel.z * Clock::getInstance()->getDeltaTime();
 
-    // handleEnvCollision(adjVel);
+    if (checkTerCol) {
+        handleTerCollision(adjVel);
+    }
     
     rot.x = rot.x + aVel.x * Clock::getInstance()->getDeltaTime();
     rot.y = rot.y + aVel.y * Clock::getInstance()->getDeltaTime();
@@ -66,23 +70,14 @@ bool Physics2::checkCollision(glm::vec3 center1, glm::vec3 center2, glm::vec3 d1
     return collided;
 }
 
-/*
+
 // handle collision with environment
-void Physics2::handleEnvCollision(glm::vec4 adjVel) {
-    glm::vec3 envPos = Environment::getInstance()->getPosition();
-    glm::vec3 envDim = Environment::getInstance()->getDimensions();
-    
-    if (-pos.y > envPos.y + envDim.y / 2 - 25 ||
-        -pos.y < envPos.y - envDim.y / 2 + 25) {
+void Physics2::handleTerCollision(glm::vec4 adjVel) {
+
+    if (-pos.y < Terrain::getInstance()->getHeight(-pos.x, -pos.z) + PLAYER_HEIGHT) {
         pos.y = pos.y - adjVel.y * Clock::getInstance()->getDeltaTime();
     }
-    if (pos.x > envPos.x + envDim.x / 2 - 25||
-        pos.x < envPos.x - envDim.x / 2 + 25) {
-        pos.x = pos.x - adjVel.x * Clock::getInstance()->getDeltaTime();
-    }
-    if (pos.z > envPos.z + envDim.z / 2 - 25||
-        pos.z < envPos.z - envDim.z / 2 + 25) {
-        pos.z = pos.z - adjVel.z * Clock::getInstance()->getDeltaTime();
+    if (-pos.y < Terrain::getInstance()->getHeight(-pos.x, -pos.z) + PLAYER_HEIGHT) {
+        pos.y = -(Terrain::getInstance()->getHeight(-pos.x, -pos.z) + PLAYER_HEIGHT);
     }
 }
-*/

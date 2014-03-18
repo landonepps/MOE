@@ -85,26 +85,6 @@ bool FGame::OnInit()
     /** Initialize the clock for the main game loop. **/
     mainClock->init();
 
-    // Create the light.
-    GLfloat ambient[]   = {0.2, 0.2, 0.2, 1.0};
-    GLfloat diffuse[]   = {0.8, 0.8, 0.8, 1.0};
-    GLfloat specular[]  = {0.0, 0.0, 0.0, 1.0};
-    GLfloat shininess[] = {50.0};
-    GLfloat position[]  = {1.0, 1.0, 1.0, 1.0};
-    glClearColor(0.0, 0.0, 0.0, 0.0);
-    glShadeModel(GL_SMOOTH);
-
-    glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
-    glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
-    glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
-    glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
-
-    glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
-    glLightfv(GL_LIGHT0, GL_SHININESS, shininess);
-    glLightfv(GL_LIGHT0, GL_POSITION, position);
-
     /** Add a player stat for furniture count**/
     player.addStat(1, 0);
 
@@ -193,16 +173,37 @@ bool FGame::OnInit()
 
     sky->loadSky("./assets/skybox.ply", "./assets/skybox_texture.jpg");
     
-    terrain.load("./assets/terrain2.bmp");
+    terrain->load("./assets/terrain2.bmp");
     int horScale = 100;
-    terrain.setHorScale(horScale);
-    terrain.setPos(glm::vec3(0, 0, 0));
+    terrain->setHorScale(horScale);
+    terrain->setPos(glm::vec3(0, 0, 0));
     // terrain.setPos(glm::vec3(terrain.getWidth() * horScale / -2.0, 0, terrain.getLength() * horScale / -2.0));
-    terrain.setVertScale(1000);
-    int playerStartX = terrain.getWidth() * horScale / -2.0;
-    int playerStartZ = terrain.getLength() * horScale / -2.0;
-    player.setPos(glm::vec3(playerStartX, -terrain.getHeight(-playerStartX, -playerStartZ) - PLAYER_HEIGHT, playerStartZ));
+    int vertScale = 1000;
+    terrain->setVertScale(vertScale);
+    int playerStartX = terrain->getWidth() * horScale / -2.0;
+    int playerStartZ = terrain->getLength() * horScale / -2.0;
+    player.setPos(glm::vec3(playerStartX, -terrain->getHeight(-playerStartX, -playerStartZ) - PLAYER_HEIGHT, playerStartZ));
     sky->setPos(player.getPos());
+    
+    // Create the light.
+    GLfloat ambient[]   = {0.2, 0.2, 0.2, 1.0};
+    GLfloat diffuse[]   = {0.8, 0.8, 0.8, 1.0};
+    GLfloat specular[]  = {0.0, 0.0, 0.0, 1.0};
+    GLfloat shininess[] = {50.0};
+    GLfloat position[]  = {(float)playerStartX, (float)vertScale, (float)playerStartZ, 1.0};
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glShadeModel(GL_SMOOTH);
+    
+    glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+    glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
+    
+    glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
+    glLightfv(GL_LIGHT0, GL_SHININESS, shininess);
+    glLightfv(GL_LIGHT0, GL_POSITION, position);
 
     glm::vec3 randomRange;
     float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;

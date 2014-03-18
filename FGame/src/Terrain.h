@@ -46,6 +46,9 @@ public:
     //Make a terrain at position p of scales hs and vs
     Terrain(glm::vec3 p, float hs, float vs);
     
+    //Computes a normal vector
+    glm::vec3 Terrain::computeNormal(double h1, double h2, double h3, double h4);
+    
     // Loads the terrain at file
     void load (const char* file);
     
@@ -54,6 +57,9 @@ public:
     
     //Get the height at a certain point
     float getHeight(int x, int z);
+    
+    //Get the normal at a certain point
+    glm::vec3 getNormal(int x, int z);
     
     //Get the length
     int getLength();

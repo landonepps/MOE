@@ -23,6 +23,9 @@ class Terrain {
     // The height vector
     vector<vector<float> > heights;
     
+    // The normals
+    vector<vector<glm::vec3> > normals;
+    
     //The starting draw position
     glm::vec3 pos;
     

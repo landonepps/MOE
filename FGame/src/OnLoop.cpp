@@ -11,6 +11,7 @@
 *******************************************************************************/
 
 #include "FGame.h"      /** Contains prototype for OnLoop. **/
+#include <cstdlib>
 
 /***********************************************************************
  * OnLoop:    Handles basic calculations (such as animation). Currently

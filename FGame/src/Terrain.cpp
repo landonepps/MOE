@@ -36,8 +36,8 @@
 
 //Make a default terrain
 Terrain::Terrain() {
+    horScale = vertScale = 1;
     pos = glm::vec3(0,0,0);
-    horScale = vertScale = 100;
 }
 
 //Make a terrain at 0,0,0 with scales hs and vs
@@ -159,6 +159,8 @@ void Terrain::render() {
 
 //Get the height at a certain point
 float Terrain::getHeight(int x, int z) {
+    x /= horScale;
+    z /= horScale;
     if(x >= heights.size() || z >= heights[0].size()) {
         cout << "ERROR: Tried to access point outside terrain" << endl;
         return 0.0;

@@ -55,6 +55,8 @@ const int PUNCH_REACH        = 25;
 const int WIN_WIDTH          = 640;
 const int WIN_HEIGHT         = 480;
 
+const int PLAYER_HEIGHT      = 20;
+
 /** Values for entity typing **/
 enum {
     ENTITY_TYPE_GENERIC = 0,

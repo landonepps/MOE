@@ -39,7 +39,7 @@ glm::vec3 Skybox::getDimensions(){
 void Skybox::draw() {
     glPushMatrix();
     glm::mat4 trans;
-    trans = glm::translate(trans, pos);
+    trans = glm::translate(trans, -pos);
     trans = glm::scale(trans, scl);
     trans = glm::rotate(trans, rot.x, glm::vec3(1.0f, 0.0f, 0.0f));
     trans = glm::rotate(trans, rot.y, glm::vec3(0.0f, 1.0f, 0.0f));

@@ -30,7 +30,7 @@ FGame::FGame() {
     height    = WIN_HEIGHT;
 
     mainClock = Clock::getInstance();
-    env = Environment::getInstance();
+    sky = Skybox::getInstance();
 
     joystick1 = NULL;
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440C0EB018D7AFB900675834 /* Skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 440C0EAE18D7AFB900675834 /* Skybox.cpp */; };
 		4423CEBC18A0781600FE3118 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBB18A0781600FE3118 /* SDL2.framework */; };
 		4423CEE618A0813600FE3118 /* FGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEDF18A0813600FE3118 /* FGame.cpp */; };
 		4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE118A0813600FE3118 /* OnCleanup.cpp */; };
@@ -23,7 +24,6 @@
 		44387C2318B9A34E0088FB7E /* Prop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44387C2018B9A34E0088FB7E /* Prop.cpp */; };
 		444C8C5618A1EDF8000101F8 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C8C5518A1EDF8000101F8 /* SDL2_image.framework */; };
 		4457056018A8721B00DCB73E /* HUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4457055F18A8721B00DCB73E /* HUD.cpp */; };
-		4457CD5F18BAC80700CB6F9E /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4457CD5D18BAC80700CB6F9E /* Environment.cpp */; };
 		449E7BD818A9B061005DDE7D /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449E7BD618A9B061005DDE7D /* Player.cpp */; };
 		44A3107418A59E4700427013 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107218A59E4700427013 /* Image.cpp */; };
 		44A3108218A5B73C00427013 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A3107F18A5B73C00427013 /* Clock.cpp */; };
@@ -41,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440C0EAE18D7AFB900675834 /* Skybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skybox.cpp; sourceTree = "<group>"; };
+		440C0EAF18D7AFB900675834 /* Skybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skybox.h; sourceTree = "<group>"; };
 		4423CE7718A077D600FE3118 /* MOE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4423CE8218A077D600FE3118 /* MOE-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOE-Info.plist"; sourceTree = "<group>"; };
 		4423CE8418A077D600FE3118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -70,8 +72,6 @@
 		44387C2218B9A34E0088FB7E /* PropElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropElement.h; sourceTree = "<group>"; };
 		444C8C5518A1EDF8000101F8 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		4457055F18A8721B00DCB73E /* HUD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HUD.cpp; sourceTree = "<group>"; };
-		4457CD5D18BAC80700CB6F9E /* Environment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Environment.cpp; sourceTree = "<group>"; };
-		4457CD5E18BAC80700CB6F9E /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
 		449E7BD618A9B061005DDE7D /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		449E7BD718A9B061005DDE7D /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		44A3107218A59E4700427013 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
@@ -168,6 +168,8 @@
 				44387C2218B9A34E0088FB7E /* PropElement.h */,
 				44A7BC0A18B9668A00ABDB9F /* Treasure.cpp */,
 				44A7BC0B18B9668A00ABDB9F /* Treasure.h */,
+				440C0EAE18D7AFB900675834 /* Skybox.cpp */,
+				440C0EAF18D7AFB900675834 /* Skybox.h */,
 				4435F80618B8151A0052FBB1 /* Mesh.h */,
 				4435F80018B815090052FBB1 /* Mesh.cpp */,
 				44F45FD918A7EFC80052DDA9 /* Animation.cpp */,
@@ -181,8 +183,6 @@
 				44A7BC1218B96C4200ABDB9F /* Camera.h */,
 				44FF830D18BA854200A9A773 /* Physics2.cpp */,
 				44FF830E18BA854200A9A773 /* Physics2.h */,
-				4457CD5D18BAC80700CB6F9E /* Environment.cpp */,
-				4457CD5E18BAC80700CB6F9E /* Environment.h */,
 				44294C4718BC7EF8005ED095 /* Events.cpp */,
 				44294C4818BC7EF8005ED095 /* Events.h */,
 			);
@@ -258,7 +258,7 @@
 		4423CE6F18A077D600FE3118 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Landon Epps";
 				TargetAttributes = {
 					4423CE7618A077D600FE3118 = {
@@ -313,6 +313,7 @@
 				449E7BD818A9B061005DDE7D /* Player.cpp in Sources */,
 				44A7BC0C18B9668A00ABDB9F /* Treasure.cpp in Sources */,
 				4435F7FE18B815010052FBB1 /* Counter.cpp in Sources */,
+				440C0EB018D7AFB900675834 /* Skybox.cpp in Sources */,
 				4435F80118B815090052FBB1 /* Mesh.cpp in Sources */,
 				44A3107418A59E4700427013 /* Image.cpp in Sources */,
 				44A7BC1318B96C4200ABDB9F /* Camera.cpp in Sources */,
@@ -323,7 +324,6 @@
 				44387C2318B9A34E0088FB7E /* Prop.cpp in Sources */,
 				44FF830F18BA854200A9A773 /* Physics2.cpp in Sources */,
 				4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */,
-				4457CD5F18BAC80700CB6F9E /* Environment.cpp in Sources */,
 				4435F7FF18B815010052FBB1 /* Gauge.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +383,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -414,7 +414,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};

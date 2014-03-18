@@ -156,8 +156,9 @@ bool FGame::OnInit()
     pickUp.loadSFX("./assets/yes.wav");
     bgm.play();
 
-    env->loadEnv("./assets/room.ply", "./assets/roomtex.jpg");
+    sky->loadSky("./assets/skybox.ply", "./assets/skybox_texture.jpg");
 
+    /*
     glm::vec3 randomRange;
     float envx = (Environment::getInstance()->getDimensions().x / 2) - 50;
     float envy = Environment::getInstance()->getDimensions().y - 50;
@@ -198,7 +199,7 @@ bool FGame::OnInit()
         temp.setBob(true, 10, 5, 5);
         treasures.push_back(temp);
     }
-
+*/
     Treasure temp;
     temp.setup("./assets/comodino.ply", "./assets/comodino.png");
     temp.setScale(300, 300, 300);

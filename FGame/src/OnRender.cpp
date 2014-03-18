@@ -33,8 +33,8 @@ void FGame::OnRender()
     // Update camera to player position
     player.updateCamera();
 
-    // draw environment
-    env->draw();
+    // draw skybox
+    sky->draw();
 
     collectables.drawElements();
     decorations.drawElements();

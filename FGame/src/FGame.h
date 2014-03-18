@@ -40,7 +40,7 @@
 #include "Treasure.h"
 #include "Camera.h"
 #include "Player.h"
-#include "Environment.h"
+#include "Skybox.h"
 #include "Message.h"
 
 #include <string>
@@ -81,7 +81,7 @@ private:
     Player player;
     
     /** The landscape **/
-    Environment *env;
+    Skybox *sky;
     
     /** The game Props **/
     Prop collectables;

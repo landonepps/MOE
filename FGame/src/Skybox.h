@@ -1,13 +1,13 @@
 //
-//  Environment.h
+//  Skybox.h
 //  MOE
 //
 //  Created by Landon Epps on 2/23/14.
 //  Copyright (c) 2014 Landon Epps. All rights reserved.
 //
 
-#ifndef __MOE__Environment__
-#define __MOE__Environment__
+#ifndef __MOE__Skybox__
+#define __MOE__Skybox__
 
 // #define GLM_FORCE_RADIANS
 
@@ -16,7 +16,7 @@
 #include "Mesh.h"
 #include "glm/glm.hpp"
 
-class Environment {
+class Skybox {
     // mesh file
     Mesh *mesh;
     // position
@@ -27,31 +27,31 @@ class Environment {
     glm::vec3 rot;
     
     // private constructor
-    Environment();
+    Skybox();
     
 public:
-    // returns a pointer to the Environment singleton
-    static Environment *getInstance() {
-        static Environment instance;
+    // returns a pointer to the Skybox singleton
+    static Skybox *getInstance() {
+        static Skybox instance;
         return &instance;
     }
-
-    ~Environment();
     
-    // load environment
-    void loadEnv(const char *mesh, const char *tex);
-    // return environment dimensions
+    ~Skybox();
+    
+    // load skybox
+    void loadSky(const char *mesh, const char *tex);
+    // return skybox dimensions
     glm::vec3 getDimensions();
-    // get environment position
+    // get skybox position
     glm::vec3 getPosition() {
         return pos;
     }
-    // get environment scale
+    // get skybox scale
     glm::vec3 getScale() {
         return scl;
     }
-    // draw environment
+    // draw skybox
     void draw();
 };
 
-#endif /* defined(__MOE__Environment__) */
+#endif /* defined(__MOE__Skybox__) */

@@ -160,7 +160,8 @@ void FGame::OnJoyAxis(Uint8 which, Uint8 axis, Sint16 value)
     }
 
     /** Apply transformations to player. **/
-    player.setVel(glm::vec3(movX * MOVE_SPEED, 10, movZ * MOVE_SPEED));
+    GLfloat oldYVel = player.getPos().y;
+    player.setVel(glm::vec3(movX * MOVE_SPEED, oldYVel, movZ * MOVE_SPEED));
     player.setAVel(glm::vec3(rotX * ROT_SPEED, rotY * ROT_SPEED, 0));
 }
 

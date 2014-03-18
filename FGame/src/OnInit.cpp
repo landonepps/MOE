@@ -86,6 +86,8 @@ bool FGame::OnInit()
     /** Add a player stat for furniture count**/
     player.addStat(1, 0);
 
+    enemy.addStat(1, 0); 
+
     /** Load music, room, pickups and decorations,**/
 #ifdef _WIN32
     bgm.loadMusic(".\\assets\\adventure.wav");
@@ -98,6 +100,14 @@ bool FGame::OnInit()
     float envx = (Environment::getInstance()->getDimensions().x / 2) - 50;
     float envy = Environment::getInstance()->getDimensions().y - 50;
     float envz = (Environment::getInstance()->getDimensions().z / 2) - 50;
+
+    randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
+    randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
+    randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
+    enemy.setup(".\\assets\\puff.ply", ".\\assets\\puff.png");
+    enemy.setScale(25, 25, 25);
+    enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
+
     for (int i = 0; i < 5; i++){
         randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
         randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
@@ -163,6 +173,14 @@ bool FGame::OnInit()
     float envx = (Environment::getInstance()->getDimensions().x / 2) - 50;
     float envy = Environment::getInstance()->getDimensions().y - 50;
     float envz = (Environment::getInstance()->getDimensions().z / 2) - 50;
+
+    randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
+    randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
+    randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
+    enemy.setup("./assets/puff.ply", "./assets/puff.png");
+    enemy.setScale(25, 25, 25);
+    enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
+
     for (int i = 0; i < 5; i++){
         randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
         randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));

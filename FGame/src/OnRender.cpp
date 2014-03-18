@@ -39,6 +39,18 @@ void FGame::OnRender()
     collectables.drawElements();
     decorations.drawElements();
 
+    static bool furnitureSelected = false;
+    static glm::vec3 randomPos;
+    if (!furnitureSelected){
+        int index = ((float(rand()) / float(RAND_MAX)) * treasures.size());
+
+        randomPos = treasures[index].getPosition();
+        furnitureSelected = true;
+    }
+
+    enemy.runAI(randomPos);
+    enemy.draw();
+
     bool collision = false;
     for (int i = 0; i < treasures.size() && !collision; i++){
         treasures[i].setHitbox(hitbox);
@@ -49,6 +61,21 @@ void FGame::OnRender()
             treasures.erase(treasures.begin() + i);
             collectables.removePropElement();
             collision = true;
+            furnitureSelected = false;
+        }
+    }
+
+    collision = false;
+    for (int i = 0; i < treasures.size() && !collision; i++){
+        treasures[i].setHitbox(hitbox);
+        if (enemy.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
+            pickUp.play();
+            enemy.getStatData(0)->second += 1;
+            furnitureCount.setValue(enemy.getStatData(0)->second);
+            treasures.erase(treasures.begin() + i);
+            collectables.removePropElement();
+            collision = true;
+            furnitureSelected = false;
         }
     }
 

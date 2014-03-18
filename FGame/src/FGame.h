@@ -80,6 +80,8 @@ private:
     /** The Camera **/
     Player player;
     
+    Enemy enemy;
+
     /** The landscape **/
     Skybox *sky;
     

@@ -136,6 +136,20 @@ void Terrain::load(const char* file) {
     	}
     	normals.push_back(normTemp);
     }
+    
+    //Get the normals for the last x value
+    normTemp.clear();
+    int lastX = (int) heights.size()-1;
+    for(int z = 0; z < heights[0].size()-1; z++) {
+        double h1 = heights[lastX][z];
+        double h2 = heights[lastX][z];
+        double h3 = heights[lastX][z+1];
+        double h4 = heights[lastX][z+1];
+        
+        normTemp.push_back(computeNormal(h1, h2, h3, h4));
+    }
+    normals.push_back(normTemp);
+    
 }
 
 //Renders the terrain

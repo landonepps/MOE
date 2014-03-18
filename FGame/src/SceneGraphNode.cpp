@@ -17,10 +17,25 @@
  *
  * mesh:      The mesh to be drawn.
 ***********************************************************************/
-SceneGraphNode::SceneGraphNode(Mesh *mash)
+SceneGraphNode::SceneGraphNode()
 {
-    this->mesh   = mesh;
-    this->parent = NULL;
+    mesh   = NULL;
+    parent = NULL;
+    worldTransformation = glm::mat4();
+    transformation = glm::mat4();
+}
+
+/***********************************************************************
+ * SceneGraphNode: Constructor.
+ *
+ * mesh:      The mesh to be drawn.
+***********************************************************************/
+SceneGraphNode::SceneGraphNode(Mesh *theMesh)
+{
+    mesh   = theMesh;
+    parent = NULL;
+    worldTransformation = glm::mat4();
+    transformation = glm::mat4();
 }
 
 /***********************************************************************
@@ -138,5 +153,10 @@ void SceneGraphNode::draw()
     if(mesh != NULL)
     {
         mesh->draw();
+    }
+
+    for(unsigned int index = 0; index < children.size(); index++)
+    {
+        children[index]->draw();
     }
 }

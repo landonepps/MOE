@@ -156,6 +156,10 @@ public:
     float getElapsedTime();
 
     float getDeltaTime();
+
+    void reset(){
+        timeCycles = 0;
+    }
 };
 
 #endif /* CLOCK_H_ */

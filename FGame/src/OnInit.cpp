@@ -80,6 +80,8 @@ bool FGame::OnInit()
     /** Initilize image **/
     IMG_Init(IMG_INIT_PNG);
 
+    currentLevel = 1;
+
     /** Initialize the clock for the main game loop. **/
     mainClock->init();
 
@@ -105,7 +107,7 @@ bool FGame::OnInit()
     randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
     randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
     randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
-    enemy.setup(".\\assets\\puff.ply", ".\\assets\\puff.png");
+    enemy.setup(".\\assets\\puff.ply", ".\\assets\\poorpuff.png");
     enemy.setScale(25, 25, 25);
     enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
 
@@ -170,7 +172,7 @@ bool FGame::OnInit()
     randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
     randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
     randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
-    enemy.setup("./assets/puff.ply", "./assets/puff.png");
+    enemy.setup("./assets/puff.ply", "./assets/poorpuff.png");
     enemy.setScale(25, 25, 25);
     enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
 
@@ -228,7 +230,7 @@ bool FGame::OnInit()
     totalTreasures = treasures.size();
 
     /**Setup timer bar add all HUD elements to HUD**/
-    timer.setup(120);
+    timer.setup(90);
 
     theHUD.addHUDElement(&timer);
 

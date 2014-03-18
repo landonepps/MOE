@@ -83,10 +83,6 @@ void FGame::OnRender()
         }
     }
 
-    if (player.getStatData(0)->second >= totalTreasures || mainClock->getElapsedTime() >= 120){
-        win.setValue("Poor Wins");
-    }
-
     glPushMatrix();
     glLoadIdentity();
     glDisable(GL_DEPTH_TEST);

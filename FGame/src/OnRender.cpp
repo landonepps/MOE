@@ -12,6 +12,7 @@
 
 #include "FGame.h"      /** Contains OnRender prototype. **/
 #include <iostream>
+#include <cstdlib>
 
 #define GLM_FORCE_RADIANS
 #include "glm/gtx/vector_angle.hpp"
@@ -36,17 +37,22 @@ void FGame::OnRender()
     // draw skybox
     sky->draw();
     
+    // Only affect the terrain with lighting.
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
     // draw terrain
     terrain.render();
+    glDisable(GL_LIGHTING);
+    glDisable(GL_LIGHT0);
 
     collectables.drawElements();
 
     static bool furnitureSelected = false;
     static glm::vec3 randomPos;
-    static int index;
+    static unsigned int index;
 
     if (!furnitureSelected && treasures.size() > 0){
-        index = ((float(rand()) / float(RAND_MAX)) * treasures.size()) - 1;
+        index = (int)((float(rand()) / float(RAND_MAX)) * treasures.size()) - 1;
 
         randomPos = treasures[index].getPosition();
         furnitureSelected = true;
@@ -56,12 +62,12 @@ void FGame::OnRender()
     enemy.draw();
 
     bool collision = false;
-    for (int i = 0; i < treasures.size() && !collision; i++){
+    for (unsigned int i = 0; i < treasures.size() && !collision; i++){
         treasures[i].setHitbox(hitbox);
         if (player.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
             pickUp.play();
             player.getStatData(0)->second += 1;
-            furnitureCount.setValue(player.getStatData(0)->second);
+            furnitureCount.setValue((float)player.getStatData(0)->second);
             treasures.erase(treasures.begin() + i);
             collectables.removePropElement();
             collision = true;
@@ -70,12 +76,12 @@ void FGame::OnRender()
         }
     }
 
-    for (int i = 0; i < treasures.size() && !collision; i++){
+    for (unsigned int i = 0; i < treasures.size() && !collision; i++){
         treasures[i].setHitbox(hitbox);
         if (enemy.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
             pickUp.play();
             enemy.getStatData(0)->second += 1;
-            enemyFurnitureCount.setValue(enemy.getStatData(0)->second);
+            enemyFurnitureCount.setValue((float)enemy.getStatData(0)->second);
             treasures.erase(treasures.begin() + i);
             collectables.removePropElement();
             collision = true;

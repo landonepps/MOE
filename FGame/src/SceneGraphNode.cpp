@@ -12,12 +12,20 @@
 
 #include "SceneGraphNode.h"
 
+/***********************************************************************
+ * SceneGraphNode: Constructor.
+ *
+ * mesh:      The mesh to be drawn.
+***********************************************************************/
 SceneGraphNode::SceneGraphNode(Mesh *mash)
 {
     this->mesh   = mesh;
     this->parent = NULL;
 }
 
+/***********************************************************************
+ * SceneGraphNode: Destructor.
+***********************************************************************/
 SceneGraphNode::~SceneGraphNode()
 {
     for(unsigned int index = 0; index < children.size(); index++)
@@ -26,37 +34,81 @@ SceneGraphNode::~SceneGraphNode()
     }
 }
 
+/***********************************************************************
+ * setTransformation: Sets this node's transformation matrix.
+ *
+ * matrix:    The transformation matrix to be applied.
+ *
+ * return:    void
+***********************************************************************/
 void SceneGraphNode::setTransformation(glm::mat4 matrix)
 {
     transformation = matrix;
 }
 
+/***********************************************************************
+ * getTransformation: Returns this node's transformation matrix.
+ *
+ * return:    mat4
+***********************************************************************/
 glm::mat4 SceneGraphNode::getTransformation()
 {
     return transformation;
 }
 
+/***********************************************************************
+ * getWorldTransformation: Returns this node's world transformation
+ *            matrix.
+ *
+ * return:    mat4
+***********************************************************************/
 glm::mat4 SceneGraphNode::getWorldTransformation()
 {
     return worldTransformation;
 }
 
+/***********************************************************************
+ * getMesh:   Returns a pointer to this node's mesh.
+ *
+ * return:    Mesh pointer
+***********************************************************************/
 Mesh *SceneGraphNode::getMesh()
 {
     return mesh;
 }
 
+/***********************************************************************
+ * setMesh:   Sets this node's mesh.
+ *
+ * mesh:      The mesh to be drawn.
+ *
+ * return:    void
+***********************************************************************/
 void SceneGraphNode::setMesh(Mesh *mesh)
 {
     this->mesh = mesh;
 }
 
-void SceneGraphNode::insertChild(SceneGraphNode *node)
+/***********************************************************************
+ * addChild:  Adds a child node to this parent (if no parent, then
+ *            parent will be NULL).
+ *
+ * node:      The child node.
+ *
+ * return:    void
+***********************************************************************/
+void SceneGraphNode::addChild(SceneGraphNode *node)
 {
     children.push_back(node);
     node->parent = this;
 }
 
+/***********************************************************************
+ * update:    Updates all nodes applying parent transformations to child
+ *            nodes.
+ *
+ * return:    void
+***********************************************************************/
 void SceneGraphNode::update()
 {
     if(parent != NULL)
@@ -76,6 +128,11 @@ void SceneGraphNode::update()
     /** Want to apply transformation when inherited. **/
 }
 
+/***********************************************************************
+ * draw:      Draws all meshs in the scene graph.
+ *
+ * return:    void
+***********************************************************************/
 void SceneGraphNode::draw()
 {
     if(mesh != NULL)

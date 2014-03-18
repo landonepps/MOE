@@ -75,6 +75,7 @@ private:
     HUD theHUD;
     Counter fpsCount;
     Counter furnitureCount;
+    Counter enemyFurnitureCount;
     Message win;
     Gauge timer;
     

@@ -150,6 +150,8 @@ bool FGame::OnInit()
 
     furnitureCount.setup(".\\assets\\font.ttf",0,255,0,WIN_WIDTH/2,50,25);
 
+    enemyFurnitureCount.setup(".\\assets\\font.ttf", 0, 0, 255, WIN_WIDTH - 50, 50, 25);
+
     win.setup(".\\assets\\font.ttf",0,255,0,WIN_WIDTH/2,WIN_HEIGHT/2,25);
 #else
     bgm.loadMusic("./assets/adventure.wav");
@@ -231,6 +233,8 @@ bool FGame::OnInit()
     theHUD.addHUDElement(&fpsCount);
 
     theHUD.addHUDElement(&furnitureCount);
+
+    theHUD.addHUDElement(&enemyFurnitureCount);
 
     theHUD.addHUDElement(&win);
 

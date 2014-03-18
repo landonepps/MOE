@@ -36,7 +36,7 @@
 //Make a default terrain
 Terrain::Terrain() {
     pos = glm::vec3(0,0,0);
-    horScale = vertScale = 1;
+    horScale = vertScale = 100;
 }
 
 //Make a terrain at 0,0,0 with scales hs and vs
@@ -86,17 +86,17 @@ void Terrain::load(const char* file) {
 
 //Renders the terrain
 void Terrain::render() {
+    glBegin(GL_QUADS);
 	for(int i = 0; i < heights.size()-1; i++) {
 		for(int j = 0; j < heights[0].size()-1; j++) {
-            //Draw the triangle strip
-			glBegin(GL_TRIANGLE_STRIP);
-                glVertex3f(pos.x+(i+1)*horScale, pos.y+heights[i+1][j+1]*vertScale, pos.z+(j+1)*horScale);
-                glVertex3f(pos.x+i*horScale, pos.y+heights[i][j+1]*vertScale, pos.z+(j+1)*horScale);
-                glVertex3f(pos.x+(i+1)*horScale, pos.y+heights[i+1][j]*vertScale, pos.z+j*horScale);
-                glVertex3f(pos.x+i*horScale, pos.y+heights[i][j]*vertScale, pos.z+j*horScale);
-			glEnd();
+            //Draw the terrain
+            glVertex3f(pos.x+(i+1)*horScale, pos.y+heights[i+1][j]*vertScale, pos.z+j*horScale);
+            glVertex3f(pos.x+i*horScale, pos.y+heights[i][j]*vertScale, pos.z+j*horScale);
+            glVertex3f(pos.x+i*horScale, pos.y+heights[i][j+1]*vertScale, pos.z+(j+1)*horScale);
+            glVertex3f(pos.x+(i+1)*horScale, pos.y+heights[i+1][j+1]*vertScale, pos.z+(j+1)*horScale);
 		}
     }
+    glEnd();
 }
 
 //Get the height at a certain point

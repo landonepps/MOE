@@ -46,7 +46,7 @@ void FGame::OnRender()
     static int index;
 
     if (!furnitureSelected && treasures.size() > 0){
-        index = ((float(rand()) / float(RAND_MAX)) * treasures.size()) - 1;
+        index = (int)((float(rand()) / float(RAND_MAX)) * treasures.size()) - 1;
 
         randomPos = treasures[index].getPosition();
         furnitureSelected = true;
@@ -61,7 +61,7 @@ void FGame::OnRender()
         if (player.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
             pickUp.play();
             player.getStatData(0)->second += 1;
-            furnitureCount.setValue(player.getStatData(0)->second);
+            furnitureCount.setValue((float)player.getStatData(0)->second);
             treasures.erase(treasures.begin() + i);
             collectables.removePropElement();
             collision = true;
@@ -75,7 +75,7 @@ void FGame::OnRender()
         if (enemy.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
             pickUp.play();
             enemy.getStatData(0)->second += 1;
-            enemyFurnitureCount.setValue(enemy.getStatData(0)->second);
+            enemyFurnitureCount.setValue((float)enemy.getStatData(0)->second);
             treasures.erase(treasures.begin() + i);
             collectables.removePropElement();
             collision = true;

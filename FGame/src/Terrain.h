@@ -26,11 +26,11 @@ class Terrain {
     // The normals
     vector<vector<glm::vec3> > normals;
     
+    // The colors
+    vector<vector<glm::vec3> > colors;
+    
     //The starting draw position
     glm::vec3 pos;
-    
-    //The color of the terrain
-    glm::vec3 color;
     
     //The horizontal scale of the terrain
     float horScale;
@@ -83,9 +83,6 @@ public:
     
     //Set the position
     void setPos(glm::vec3 newPos);
-    
-    //Set the color
-    void setColor(glm::vec3 newColor);
     
 };
 

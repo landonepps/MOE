@@ -38,12 +38,12 @@ void FGame::OnRender()
     sky->draw();
     
     // Only affect the terrain with lighting.
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
+    // glEnable(GL_LIGHTING);
+    // glEnable(GL_LIGHT0);
     // draw terrain
     terrain->render();
-    glDisable(GL_LIGHTING);
-    glDisable(GL_LIGHT0);
+    // glDisable(GL_LIGHTING);
+    // glDisable(GL_LIGHT0);
 
     collectables.drawElements();
 

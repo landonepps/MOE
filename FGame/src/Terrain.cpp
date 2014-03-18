@@ -38,7 +38,6 @@
 Terrain::Terrain() {
     horScale = vertScale = 1;
     pos = glm::vec3(0,0,0);
-    color = glm::vec3(0,1,0);
 }
 
 //Make a terrain at 0,0,0 with scales hs and vs
@@ -46,7 +45,6 @@ Terrain::Terrain(float hs, float vs) {
     pos = glm::vec3(0,0,0);
     horScale = hs;
     vertScale = vs;
-    color = glm::vec3(0,1,0);
 }
 
 //Make a terrain at position p of scales hs and vs
@@ -54,7 +52,6 @@ Terrain::Terrain(glm::vec3 p, float hs, float vs) {
     pos = p;
     horScale = hs;
     vertScale = vs;
-    color = glm::vec3(0,1,0);
 }
 
 //Computes a normal vector
@@ -104,6 +101,7 @@ void Terrain::load(const char* file) {
 	}
     
     vector<float> temp;
+    vector<glm::vec3> tempColors;
     
     //Load the heights
 	for(int i = 0; i < map->h; i++) {
@@ -117,8 +115,10 @@ void Terrain::load(const char* file) {
 			SDL_GetRGB(loc, map->format, &r, &g, &b);
             
 			temp.push_back((float)r/255.0);
+            tempColors.push_back(glm::vec3((float)r/255.0, (float)g/255.0, (float)b/255.0));
 		}
 		heights.push_back(temp);
+        colors.push_back(tempColors);
 	}
 	
     vector<glm::vec3> normTemp;
@@ -154,20 +154,24 @@ void Terrain::load(const char* file) {
 
 //Renders the terrain
 void Terrain::render() {
-    glColor3f(color.x, color.y, color.z);
     glBegin(GL_QUADS);
 	for(int i = 0; i < heights.size()-1; i++) {
 		for(int j = 0; j < heights[0].size()-1; j++) {
+
             //Draw the terrain
+            glColor3f(colors[i+1][j].x, colors[i+1][j].y, colors[i+1][j].z);
             glNormal3f(normals[i+1][j].x, normals[i+1][j].y, normals[i+1][j].z);
             glVertex3f(pos.x+(i+1)*horScale, pos.y+heights[i+1][j]*vertScale, pos.z+j*horScale);
             
+            glColor3f(colors[i][j].x, colors[i][j].y, colors[i][j].z);
             glNormal3f(normals[i][j].x, normals[i][j].y, normals[i][j].z);
             glVertex3f(pos.x+i*horScale, pos.y+heights[i][j]*vertScale, pos.z+j*horScale);
             
+            glColor3f(colors[i][j+1].x, colors[i][j+1].y, colors[i][j+1].z);
             glNormal3f(normals[i][j+1].x, normals[i][j+1].y, normals[i][j+1].z);
             glVertex3f(pos.x+i*horScale, pos.y+heights[i][j+1]*vertScale, pos.z+(j+1)*horScale);
             
+            glColor3f(colors[i+1][j+1].x, colors[i+1][j+1].y, colors[i+1][j+1].z);
             glNormal3f(normals[i+1][j+1].x, normals[i+1][j+1].y, normals[i+1][j+1].z);
             glVertex3f(pos.x+(i+1)*horScale, pos.y+heights[i+1][j+1]*vertScale, pos.z+(j+1)*horScale);
 		}
@@ -218,8 +222,4 @@ void Terrain::setVertScale(float newScale) {
 //Set the position
 void Terrain::setPos(glm::vec3 newPos) {
     pos = newPos;
-}
-
-void Terrain::setColor(glm::vec3 newColor) {
-    color = newColor;
 }

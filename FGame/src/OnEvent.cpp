@@ -50,7 +50,7 @@ void FGame::OnJoyButtonDown(Uint8 which, Uint8 button)
 {
     if (button == RIGHT_SHOULDER)
     {
-        player.setVelY(-30);
+        player.setVelY(-50);
     }
 }
 
@@ -67,7 +67,7 @@ void FGame::OnJoyButtonUp(Uint8 which, Uint8 button)
 {
     if (button == RIGHT_SHOULDER)
     {
-        player.setVelY(30);
+        player.setVelY(50);
     }
 }
 

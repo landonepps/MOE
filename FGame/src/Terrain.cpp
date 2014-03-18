@@ -79,9 +79,9 @@ glm::vec3 Terrain::computeNormal(double h1, double h2, double h3, double h4) {
     ( p3.x - p4.x ) * ( p3.y + p4.y ) +
     ( p4.x - p1.x ) * ( p4.y + p1.y );
     
-    n.x /= sqrt(x*x+y*y+z*z);
-    n.y /= sqrt(x*x+y*y+z*z);
-    n.z /= sqrt(x*x+y*y+z*z);
+    //n.x /= sqrt(x*x+y*y+z*z);
+    //n.y /= sqrt(x*x+y*y+z*z);
+    //n.z /= sqrt(x*x+y*y+z*z);
     
     return n;
 }
@@ -124,7 +124,7 @@ void Terrain::load(const char* file) {
     	    double h3 = heights[x+1][z+1];
     	    double h4 = heights[x][z+1];
     	    
-    	    normal[x*heights[0].size()+z] = computeNormal(h1, h2, h3, h4);
+    	    //normals[x*heights[0].size()+z] = computeNormal(h1, h2, h3, h4);
     	}
     }
 }
@@ -154,7 +154,7 @@ float Terrain::getHeight(int x, int z) {
 }
 
 //Get the normal at a certain point
-glm::vec3 Terrain getNormal(int x, int z) {
+glm::vec3 Terrain::getNormal(int x, int z) {
     if(x >= heights.size() || z >= heights[0].size()) {
         cout << "ERROR: Tried to access point outside terrain" << endl;
         return glm::vec3(0,0,0);

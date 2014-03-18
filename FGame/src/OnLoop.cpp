@@ -33,8 +33,7 @@ void FGame::OnLoop()
         win.setValue(" ");
     }
 
-    if ((treasures.size() == 0 || mainClock->getElapsedTime() >= 10) && currentLevel < 4){
-        mainClock->reset();
+    if ((treasures.size() == 0 || mainClock->getElapsedTime() >= 90) && currentLevel < 4){
 
         if ((float)enemy.getStatData(0)->second > (float)player.getStatData(0)->second)
             win.setValue("Poor Wins");
@@ -49,6 +48,8 @@ void FGame::OnLoop()
         }
         else{
             enemy.setDifficulty(currentLevel);
+
+            furnitureSelected = false;
 
             treasures.clear();
 
@@ -170,5 +171,7 @@ void FGame::OnLoop()
 
             totalTreasures = treasures.size();
         }  
+
+        mainClock->reset();
     }
 }

@@ -40,6 +40,9 @@ public:
     void setPos(glm::vec3 newPos){
         physics.setPos(newPos);
     }
+    glm::vec3 getPos() {
+        return physics.getPos();
+    }
     // set velocity for x and z
     void setVel(glm::vec3 newVel);
     // set velocity for y

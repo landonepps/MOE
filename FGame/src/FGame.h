@@ -57,6 +57,8 @@ private:
 
     int frames;
 
+    int currentLevel;
+
     int totalTreasures;
 
     float lastFrame;
@@ -79,7 +81,6 @@ private:
     Message win;
     Gauge timer;
     
-    //#warning remove later
     /** The Camera **/
     Player player;
     

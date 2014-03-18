@@ -36,6 +36,10 @@ public:
      */
     ~Player();
     
+
+    void setPos(glm::vec3 newPos){
+        physics.setPos(newPos);
+    }
     // set velocity for x and z
     void setVel(glm::vec3 newVel);
     // set velocity for y

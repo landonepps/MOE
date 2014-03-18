@@ -83,6 +83,26 @@ bool FGame::OnInit()
     /** Initialize the clock for the main game loop. **/
     mainClock->init();
 
+    // Create the light.
+    GLfloat ambient[]   = {0.2, 0.2, 0.2, 1.0};
+    GLfloat diffuse[]   = {0.8, 0.8, 0.8, 1.0};
+    GLfloat specular[]  = {0.0, 0.0, 0.0, 1.0};
+    GLfloat shininess[] = {50.0};
+    GLfloat position[]  = {1.0, 1.0, 1.0, 1.0};
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glShadeModel(GL_SMOOTH);
+
+    glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+    glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
+
+    glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
+    glLightfv(GL_LIGHT0, GL_SHININESS, shininess);
+    glLightfv(GL_LIGHT0, GL_POSITION, position);
+
     /** Add a player stat for furniture count**/
     player.addStat(1, 0);
 
@@ -267,8 +287,13 @@ bool FGame::OnInit()
     glEnable( GL_CULL_FACE );
     glCullFace( GL_BACK );
 
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // What to do when we run out of texture at the edge.
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP );
+
+    // How to map the discrete texels to the frame buffer.
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
 
     return true;
 }

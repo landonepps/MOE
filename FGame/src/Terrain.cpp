@@ -110,12 +110,12 @@ float Terrain::getHeight(int x, int z) {
 
 //Get the length
 int Terrain::getLength() {
-    return heights.size();
+    return (int) heights.size();
 }
 
 //Get the width
 int Terrain::getWidth() {
-    return heights[0].size();
+    return (int) heights[0].size();
 }
 
 //Set the scale

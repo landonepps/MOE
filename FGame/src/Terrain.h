@@ -7,7 +7,7 @@
  * Class:      4342, Spring 2014
  * Date:       3/17/2014
  *
- * Handles terrain
+ * Handles terrain. Basic implementation created with help from thecplusplusguy.
  *******************************************************************************/
 
 

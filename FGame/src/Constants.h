@@ -45,7 +45,7 @@ const Sint16 AXIS_THRESHOLD  = 4000;
 const double AXIS_MAX        = 32767;
 
 /** Player max movement and rotation speeds. **/
-const int MOVE_SPEED         = 100;
+const int MOVE_SPEED         = 150;
 const int ROT_SPEED          = 75;
 
 const int NUM_AUDIO_CHANNELS = 16;

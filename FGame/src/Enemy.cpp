@@ -162,7 +162,7 @@ void Enemy::runAI(glm::vec3 furniturePosition){
 
     temp = glm::normalize(temp);
 
-    temp *= glm::vec3(500 * difficulty, 500 * difficulty, 500 * difficulty);
+    temp *= glm::vec3(150 * difficulty, 150 * difficulty, 150 * difficulty);
 
     setVel(temp);
 

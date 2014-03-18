@@ -63,6 +63,10 @@ private:
 
     float lastFrame;
 
+    int poorScore;
+
+    int playerScore;
+
     bool furnitureSelected;
     /** Used to represent main game loop time. **/
     Clock *mainClock;
@@ -86,7 +90,7 @@ private:
     /** The Camera **/
     Player player;
     
-    Enemy enemy;
+    Enemy *enemy;
 
     /** The landscape **/
     Skybox *sky;

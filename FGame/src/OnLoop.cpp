@@ -31,18 +31,17 @@ void FGame::OnLoop()
     player.update();
     sky->setPos(player.getPos());
     
-    static glm::vec3 randomPos = glm::vec3();
     static unsigned int index = -1;
     
     if (!furnitureSelected && treasures.size() > 0){
         index = (int)((float(rand()) / float(RAND_MAX)) * treasures.size() - 1);
-        
-        randomPos = treasures[index].getPosition();
         furnitureSelected = true;
     }
     
-    enemy.runAI(randomPos);
-    
+    if (treasures.size() > 0){
+        enemy->runAI(treasures[index].getPosition());
+    }
+
     bool collision = false;
     for (unsigned int i = 0; i < treasures.size() && !collision; i++){
         treasures[i].setHitbox(hitbox);
@@ -57,10 +56,10 @@ void FGame::OnLoop()
                 furnitureSelected = false;
             break;
         }
-        if (enemy.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
+        if (enemy->checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
             pickUp.play();
-            enemy.getStatData(0)->second += 1;
-            enemyFurnitureCount.setValue((float)enemy.getStatData(0)->second);
+            enemy->getStatData(0)->second += 1;
+            enemyFurnitureCount.setValue((float)enemy->getStatData(0)->second);
             treasures.erase(treasures.begin() + i);
             collectables.removePropElement();
             collision = true;
@@ -73,39 +72,51 @@ void FGame::OnLoop()
         win.setValue(" ");
     }
     
-    if ((treasures.size() == 0 || mainClock->getElapsedTime() >= 90) && currentLevel < 4){
+    if ((treasures.size() == 0 || mainClock->getElapsedTime() >= 20) && currentLevel < 4){
         mainClock->reset();
-        
-        if ((float)enemy.getStatData(0)->second > (float)player.getStatData(0)->second)
+
+        if ((float)enemy->getStatData(0)->second >(float)player.getStatData(0)->second){
             win.setValue("Poor Wins");
-        else if ((float)enemy.getStatData(0)->second < (float)player.getStatData(0)->second)
+            poorScore++;
+        }
+        else if ((float)enemy->getStatData(0)->second < (float)player.getStatData(0)->second){
             win.setValue("You Wins");
+            playerScore++;
+        }
         else
             win.setValue("Nobody Wins");
         
         currentLevel++;
         if (currentLevel == 4){
             win.setValue("Game Over Wins");
+            furnitureCount.setValue(playerScore);
+            enemyFurnitureCount.setValue(poorScore);
+            mainClock->setPaused(true);
         }
         else{
-            enemy.setDifficulty(currentLevel);
+            delete enemy;
+
+            enemy = new Enemy();
+
+            enemy->setDifficulty(currentLevel);
             
             furnitureSelected = false;
             index = -1;
-            randomPos = glm::vec3();
             
             treasures.clear();
-            
+            collectables.clear();
+
             player.setPos(glm::vec3(0,-25,0));
             
             /** Add a player stat for furniture count**/
             player.getStatData(0)->second = 0;
             
-            enemy.getStatData(0)->second = 0;
-            enemy.setVel(glm::vec3());
+            enemy->addStat(1,0);
+            enemy->setVel(glm::vec3());
             
             /** Load music, room, pickups and decorations,**/
 #ifdef _WIN32
+
             int horScale = 100;
             terrain->setHorScale(horScale);
             terrain->setPos(glm::vec3(0, 0, 0));
@@ -124,7 +135,9 @@ void FGame::OnLoop()
             randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;
             randomRange.y = ((float(rand()) / float(RAND_MAX)) *
                              (250) + 500);
-            enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
+            enemy->setup(".\\assets\\puff.ply", ".\\assets\\poorpuff.png");
+            enemy->setScale(25, 25, 25);
+            enemy->setLocation(randomRange.x, randomRange.y, randomRange.z);
             
             for (int i = 0; i < 5; i++){
                 randomRange.x = ((float(rand()) / float(RAND_MAX)) * envx * 0.60) + envx * 0.30;
@@ -185,8 +198,10 @@ void FGame::OnLoop()
             randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;
             randomRange.y = ((float(rand()) / float(RAND_MAX)) *
                              (250) + 500);
-            enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
-            
+            enemy->setup("./assets/puff.ply", "./assets/poorpuff.png");
+            enemy->setScale(25, 25, 25);
+            enemy->setLocation(randomRange.x, randomRange.y, randomRange.z);
+
             for (int i = 0; i < 5; i++){
                 randomRange.x = ((float(rand()) / float(RAND_MAX)) * envx * 0.60) + envx * 0.30;
                 randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;

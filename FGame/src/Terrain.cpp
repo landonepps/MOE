@@ -160,19 +160,19 @@ void Terrain::render() {
 
             //Draw the terrain
             glColor3f(colors[i+1][j].x, colors[i+1][j].y, colors[i+1][j].z);
-            glNormal3f(normals[i+1][j].x, normals[i+1][j].y, normals[i+1][j].z);
+           // glNormal3f(normals[i+1][j].x, normals[i+1][j].y, normals[i+1][j].z);
             glVertex3f(pos.x+(i+1)*horScale, pos.y+heights[i+1][j]*vertScale, pos.z+j*horScale);
             
             glColor3f(colors[i][j].x, colors[i][j].y, colors[i][j].z);
-            glNormal3f(normals[i][j].x, normals[i][j].y, normals[i][j].z);
+           // glNormal3f(normals[i][j].x, normals[i][j].y, normals[i][j].z);
             glVertex3f(pos.x+i*horScale, pos.y+heights[i][j]*vertScale, pos.z+j*horScale);
             
             glColor3f(colors[i][j+1].x, colors[i][j+1].y, colors[i][j+1].z);
-            glNormal3f(normals[i][j+1].x, normals[i][j+1].y, normals[i][j+1].z);
+//            glNormal3f(normals[i][j+1].x, normals[i][j+1].y, normals[i][j+1].z);
             glVertex3f(pos.x+i*horScale, pos.y+heights[i][j+1]*vertScale, pos.z+(j+1)*horScale);
             
             glColor3f(colors[i+1][j+1].x, colors[i+1][j+1].y, colors[i+1][j+1].z);
-            glNormal3f(normals[i+1][j+1].x, normals[i+1][j+1].y, normals[i+1][j+1].z);
+           // glNormal3f(normals[i+1][j+1].x, normals[i+1][j+1].y, normals[i+1][j+1].z);
             glVertex3f(pos.x+(i+1)*horScale, pos.y+heights[i+1][j+1]*vertScale, pos.z+(j+1)*horScale);
 		}
     }

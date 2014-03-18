@@ -39,6 +39,11 @@ FGame::FGame() {
     lastFrame = 0;
 
     furnitureSelected = false;
+
+    enemy = new Enemy();
+
+    poorScore = 0;
+    playerScore = 0;
 }
 
 /***********************************************************************

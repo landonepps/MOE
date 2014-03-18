@@ -48,7 +48,7 @@ void FGame::OnRender()
     collectables.drawElements();
 
 
-    enemy.draw();
+    enemy->draw();
 
     glPushMatrix();
     glLoadIdentity();

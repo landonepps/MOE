@@ -35,6 +35,9 @@ public:
     void addPropElement(PropElement*);
     void removePropElement();
     PropElement* getPropElement(int i);
+    void clear(){
+        PropElements.clear();
+    }
 };
 
 #endif

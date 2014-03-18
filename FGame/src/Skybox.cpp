@@ -24,8 +24,8 @@ Skybox::~Skybox() {
 void Skybox::loadSky(const char *meshfile, const char *texfile) {
     mesh = new Mesh(meshfile, texfile);
     scl = glm::vec3(10, 10, 10);
+    pos = glm::vec3(0, 0, 0);
     // pos = glm::vec3(0, mesh->getDimensions().y * scl.y / 2.0, 0);
-    pos = glm::vec3(0, mesh->getDimensions().y * scl.y / 2.0, 0);
     rot = glm::vec3(-90, 0, 0);
     
 }

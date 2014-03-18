@@ -141,7 +141,18 @@ pair<int, int>* Enemy::getStatData(int i){
 * returns:   void.
 ***********************************************************************/
 bool Enemy::checkCollision(glm::vec3 center, glm::vec3 dimensions){
-    return physics.checkCollision(physics.getPos(), center, enemyDimensions, dimensions);
+    bool collided = false;
+
+    if (
+        (physics.getPos().z) <= center.z + dimensions.z / 2 && (physics.getPos().x) >= center.x - dimensions.x / 2 &&
+        (physics.getPos().x) <= center.x + dimensions.x / 2 && (physics.getPos().z) >= center.z - dimensions.z / 2 &&
+        (physics.getPos().y) <= center.y + dimensions.y / 2 && (physics.getPos().y) >= center.y - dimensions.y / 2
+        )
+    {
+        collided = true;
+    }
+
+    return collided;
 }
 
 void Enemy::runAI(glm::vec3 furniturePosition){

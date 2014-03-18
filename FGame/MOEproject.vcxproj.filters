@@ -78,13 +78,16 @@
     <ClCompile Include="src\Physics2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Environment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Message.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneGraphNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Skybox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -143,9 +146,6 @@
     <ClInclude Include="src\SFX.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Environment.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Physics2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -153,6 +153,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneGraphNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Skybox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

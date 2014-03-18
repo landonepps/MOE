@@ -94,9 +94,6 @@ private:
     Prop collectables;
     vector<Treasure> treasures;
 
-    Prop decorations;
-    vector<Treasure> notTreasures;
-
     /** Pick-up sound **/
     SFX pickUp;
 

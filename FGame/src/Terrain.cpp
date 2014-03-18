@@ -38,6 +38,7 @@
 Terrain::Terrain() {
     horScale = vertScale = 1;
     pos = glm::vec3(0,0,0);
+    color = glm::vec3(0,1,0);
 }
 
 //Make a terrain at 0,0,0 with scales hs and vs
@@ -45,6 +46,7 @@ Terrain::Terrain(float hs, float vs) {
     pos = glm::vec3(0,0,0);
     horScale = hs;
     vertScale = vs;
+    color = glm::vec3(0,1,0);
 }
 
 //Make a terrain at position p of scales hs and vs
@@ -52,6 +54,7 @@ Terrain::Terrain(glm::vec3 p, float hs, float vs) {
     pos = p;
     horScale = hs;
     vertScale = vs;
+    color = glm::vec3(0,1,0);
 }
 
 //Computes a normal vector
@@ -122,7 +125,7 @@ void Terrain::load(const char* file) {
     
     //Compute the normals
     for(int x = 0; x < heights.size()-1; x++) {
-    	temp.clear();
+    	normTemp.clear();
     	for(int z = 0; z < heights[0].size()-1; z++) {
     	    double h1 = heights[x][z];
     	    double h2 = heights[x+1][z];
@@ -137,6 +140,7 @@ void Terrain::load(const char* file) {
 
 //Renders the terrain
 void Terrain::render() {
+    glColor3f(color.x, color.y, color.z);
     glBegin(GL_QUADS);
 	for(int i = 0; i < heights.size()-1; i++) {
 		for(int j = 0; j < heights[0].size()-1; j++) {
@@ -200,4 +204,8 @@ void Terrain::setVertScale(float newScale) {
 //Set the position
 void Terrain::setPos(glm::vec3 newPos) {
     pos = newPos;
+}
+
+void Terrain::setColor(glm::vec3 newColor) {
+    color = newColor;
 }

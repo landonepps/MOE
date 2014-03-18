@@ -40,6 +40,7 @@
 		44F45FDD18A7F0680052DDA9 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 44F45FDC18A7F0680052DDA9 /* assets */; };
 		44F45FDF18A7F4A40052DDA9 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */; };
 		44FF830F18BA854200A9A773 /* Physics2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44FF830D18BA854200A9A773 /* Physics2.cpp */; };
+		F3ECDEA318D7E0AD009A9705 /* Terrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3ECDEA118D7E0AD009A9705 /* Terrain.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,8 @@
 		44F45FDE18A7F4A40052DDA9 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../../../Library/Frameworks/SDL2_mixer.framework; sourceTree = "<group>"; };
 		44FF830D18BA854200A9A773 /* Physics2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics2.cpp; sourceTree = "<group>"; };
 		44FF830E18BA854200A9A773 /* Physics2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics2.h; sourceTree = "<group>"; };
+		F3ECDEA118D7E0AD009A9705 /* Terrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Terrain.cpp; sourceTree = "<group>"; };
+		F3ECDEA218D7E0AD009A9705 /* Terrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terrain.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +198,8 @@
 				44FF830E18BA854200A9A773 /* Physics2.h */,
 				44294C4718BC7EF8005ED095 /* Events.cpp */,
 				44294C4818BC7EF8005ED095 /* Events.h */,
+				F3ECDEA118D7E0AD009A9705 /* Terrain.cpp */,
+				F3ECDEA218D7E0AD009A9705 /* Terrain.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				440C0EB518D7D58700675834 /* Enemy.cpp in Sources */,
+				F3ECDEA318D7E0AD009A9705 /* Terrain.cpp in Sources */,
 				4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */,
 				4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */,
 				44DA951A18A984980062F44D /* SFX.cpp in Sources */,

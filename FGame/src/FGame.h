@@ -43,6 +43,7 @@
 #include "Enemy.h"
 #include "Skybox.h"
 #include "Message.h"
+#include "Terrain.h"
 
 #include <string>
 
@@ -86,12 +87,12 @@ private:
     /** The landscape **/
     Skybox *sky;
     
+    /** The terrain **/
+    Terrain terrain;
+    
     /** The game Props **/
     Prop collectables;
     vector<Treasure> treasures;
-
-    Prop decorations;
-    vector<Treasure> notTreasures;
 
     /** Pick-up sound **/
     SFX pickUp;

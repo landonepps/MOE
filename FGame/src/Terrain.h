@@ -23,8 +23,6 @@ class Terrain {
     vector<vector<float> > heights;
     
 public:
-    Terrain();
-    ~Terrain();
     
     // Loads the terrain at file
     void load (const char* file);

@@ -28,6 +28,7 @@
 #include <SDL2/SDL.h>
 #include <GL/GL.h>
 #include <GL/GLU.h>
+#include <SDL2/SDL_image.h>
 #endif
 
 #include "Terrain.h"

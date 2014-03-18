@@ -93,10 +93,9 @@ bool FGame::OnInit()
     bgm.loadMusic(".\\assets\\adventure.wav");
     pickUp.loadSFX(".\\assets\\yes.wav");
     bgm.play();
-
-    env->loadEnv(".\\assets\\room.ply", ".\\assets\\roomtex.jpg");
     
     terrain.load(".\\assets\\terrain1.bmp");
+    sky->loadSky(".\\assets\\skybox.ply", ".\\assets\\skybox_texture.jpg");
 
     glm::vec3 randomRange;
     float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;

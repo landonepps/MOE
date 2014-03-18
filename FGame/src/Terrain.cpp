@@ -22,6 +22,7 @@
 #elif __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
+#include <SDL2_image/SDL_image.h>
 
 #else
 #include <SDL2/SDL.h>

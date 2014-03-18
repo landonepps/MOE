@@ -203,6 +203,7 @@ Mesh::~Mesh() {
 * returns:   void.
 ***********************************************************************/
 void Mesh::draw() {
+    glColor3f(1.0, 1.0, 1.0);
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texture);
     for (unsigned int face = 0; face < faces; face++) {

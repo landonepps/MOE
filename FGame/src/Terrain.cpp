@@ -197,12 +197,12 @@ glm::vec3 Terrain::getNormal(int x, int z) {
 
 //Get the length
 int Terrain::getLength() {
-    return (int) heights.size();
+    return (int) heights.size() * horScale;
 }
 
 //Get the width
 int Terrain::getWidth() {
-    return (int) heights[0].size();
+    return (int) heights[0].size() * horScale;
 }
 
 //Set the scale

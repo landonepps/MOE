@@ -30,8 +30,46 @@ void FGame::OnLoop()
     }
     player.update();
     sky->setPos(player.getPos());
+    
+    static glm::vec3 randomPos = glm::vec3();
+    static unsigned int index = -1;
+    
+    if (!furnitureSelected && treasures.size() > 0){
+        index = (int)((float(rand()) / float(RAND_MAX)) * treasures.size() - 1);
+        
+        randomPos = treasures[index].getPosition();
+        furnitureSelected = true;
+    }
+    
+    enemy.runAI(randomPos);
+    
+    bool collision = false;
+    for (unsigned int i = 0; i < treasures.size() && !collision; i++){
+        treasures[i].setHitbox(hitbox);
+        if (player.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
+            pickUp.play();
+            player.getStatData(0)->second += 1;
+            furnitureCount.setValue((float)player.getStatData(0)->second);
+            treasures.erase(treasures.begin() + i);
+            collectables.removePropElement();
+            collision = true;
+            if (i == index)
+                furnitureSelected = false;
+            break;
+        }
+        if (enemy.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
+            pickUp.play();
+            enemy.getStatData(0)->second += 1;
+            enemyFurnitureCount.setValue((float)enemy.getStatData(0)->second);
+            treasures.erase(treasures.begin() + i);
+            collectables.removePropElement();
+            collision = true;
+            furnitureSelected = false;
+            break;
+        }
+    }
 
-    if ((int)mainClock->getElapsedTime() == 3 && currentLevel < 4){
+    if ((int)mainClock->getElapsedTime() > 3 && currentLevel < 4){
         win.setValue(" ");
     }
     
@@ -53,6 +91,8 @@ void FGame::OnLoop()
             enemy.setDifficulty(currentLevel);
             
             furnitureSelected = false;
+            index = -1;
+            randomPos = glm::vec3();
             
             treasures.clear();
             
@@ -62,34 +102,35 @@ void FGame::OnLoop()
             player.getStatData(0)->second = 0;
             
             enemy.getStatData(0)->second = 0;
+            enemy.setVel(glm::vec3());
             
             /** Load music, room, pickups and decorations,**/
 #ifdef _WIN32
             int horScale = 100;
             terrain->setHorScale(horScale);
             terrain->setPos(glm::vec3(0, 0, 0));
-            int vertScale = 1000;
+            int vertScale = 500;
             terrain->setVertScale(vertScale);
-            int playerStartX = terrain->getWidth() * horScale / -2.0;
-            int playerStartZ = terrain->getLength() * horScale / -2.0;
+            int playerStartX = terrain->getWidth() / -2.0;
+            int playerStartZ = terrain->getLength() / -2.0;
             player.setPos(glm::vec3(playerStartX, -terrain->getHeight(-playerStartX, -playerStartZ) - PLAYER_HEIGHT, playerStartZ));
             sky->setPos(player.getPos());
             
             glm::vec3 randomRange;
-            float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;
-            float envy = Skybox::getInstance()->getDimensions().y - 50;
-            float envz = (Skybox::getInstance()->getDimensions().z / 2) - 50;
+            float envx = terrain->getLength();
+            float envz = terrain->getWidth();
             
-            randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
-            randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
-            randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
-            //enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
-            enemy.setLocation(0, -25, 0);
+            randomRange.x = ((float(rand()) / float(RAND_MAX)) * envx * 0.60) + envx * 0.30;
+            randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;
+            randomRange.y = ((float(rand()) / float(RAND_MAX)) *
+                             (250) + 500);
+            enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
             
             for (int i = 0; i < 5; i++){
-                randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
-                randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
-                randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
+                randomRange.x = ((float(rand()) / float(RAND_MAX)) * envx * 0.60) + envx * 0.30;
+                randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;
+                randomRange.y = ((float(rand()) / float(RAND_MAX)) *
+                                 (250) + 500);
                 Treasure temp;
                 temp.setup(".\\assets\\poltroncina.ply", ".\\assets\\poltroncina.png");
                 temp.setScale(25, 25, 25);
@@ -100,9 +141,10 @@ void FGame::OnLoop()
             }
             
             for (int i = 0; i < 5; i++){
-                randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
-                randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
-                randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
+                randomRange.x = ((float(rand()) / float(RAND_MAX)) * envx * 0.60) + envx * 0.30;
+                randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;
+                randomRange.y = ((float(rand()) / float(RAND_MAX)) *
+                                 (250) + 500);
                 Treasure temp;
                 temp.setup(".\\assets\\tavolo1.ply", ".\\assets\\tavolo1.png");
                 temp.setScale(25, 25, 25);
@@ -112,9 +154,10 @@ void FGame::OnLoop()
             }
             
             for (int i = 0; i < 5; i++){
-                randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
-                randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
-                randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
+                randomRange.x = ((float(rand()) / float(RAND_MAX)) * envx * 0.60) + envx * 0.30;
+                randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;
+                randomRange.y = ((float(rand()) / float(RAND_MAX)) *
+                                 (250) + 500);
                 Treasure temp;
                 temp.setup(".\\assets\\letto.ply", ".\\assets\\letto.png");
                 temp.setScale(25, 25, 25);
@@ -127,27 +170,28 @@ void FGame::OnLoop()
             int horScale = 100;
             terrain->setHorScale(horScale);
             terrain->setPos(glm::vec3(0, 0, 0));
-            int vertScale = 1000;
+            int vertScale = 500;
             terrain->setVertScale(vertScale);
-            int playerStartX = terrain->getWidth() * horScale / -2.0;
-            int playerStartZ = terrain->getLength() * horScale / -2.0;
+            int playerStartX = terrain->getWidth() / -2.0;
+            int playerStartZ = terrain->getLength() / -2.0;
             player.setPos(glm::vec3(playerStartX, -terrain->getHeight(-playerStartX, -playerStartZ) - PLAYER_HEIGHT, playerStartZ));
             sky->setPos(player.getPos());
             
             glm::vec3 randomRange;
-            float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;
-            float envy = Skybox::getInstance()->getDimensions().y - 50;
-            float envz = (Skybox::getInstance()->getDimensions().z / 2) - 50;
+            float envx = terrain->getLength();
+            float envz = terrain->getWidth();
             
-            randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
-            randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
-            randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
+            randomRange.x = ((float(rand()) / float(RAND_MAX)) * envx * 0.60) + envx * 0.30;
+            randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;
+            randomRange.y = ((float(rand()) / float(RAND_MAX)) *
+                             (250) + 500);
             enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
             
             for (int i = 0; i < 5; i++){
-                randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
-                randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
-                randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
+                randomRange.x = ((float(rand()) / float(RAND_MAX)) * envx * 0.60) + envx * 0.30;
+                randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;
+                randomRange.y = ((float(rand()) / float(RAND_MAX)) *
+                                 (250) + 500);
                 Treasure temp;
                 temp.setup("./assets/poltroncina.ply", "./assets/poltroncina.png");
                 temp.setScale(25, 25, 25);
@@ -158,9 +202,10 @@ void FGame::OnLoop()
             }
             
             for (int i = 0; i < 5; i++){
-                randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
-                randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
-                randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
+                randomRange.x = ((float(rand()) / float(RAND_MAX)) * envx * 0.60) + envx * 0.30;
+                randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;
+                randomRange.y = ((float(rand()) / float(RAND_MAX)) *
+                                 (250) + 500);
                 Treasure temp;
                 temp.setup("./assets/tavolo1.ply", "./assets/tavolo1.png");
                 temp.setScale(25, 25, 25);
@@ -170,9 +215,10 @@ void FGame::OnLoop()
             }
             
             for (int i = 0; i < 5; i++){
-                randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
-                randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
-                randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
+                randomRange.x = ((float(rand()) / float(RAND_MAX)) * envx * 0.60) + envx * 0.30;
+                randomRange.z = ((float(rand()) / float(RAND_MAX)) * envz * 0.60) + envz * 0.30;
+                randomRange.y = ((float(rand()) / float(RAND_MAX)) *
+                                 (250) + 500);
                 Treasure temp;
                 temp.setup("./assets/letto.ply", "./assets/letto.png");
                 temp.setScale(25, 25, 25);

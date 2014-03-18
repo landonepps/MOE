@@ -95,6 +95,7 @@ bool FGame::OnInit()
     bgm.play();
     
     terrain.load(".\\assets\\terrain2.bmp");
+
     sky->loadSky(".\\assets\\skybox.ply", ".\\assets\\skybox_texture.jpg");
 
     glm::vec3 randomRange;
@@ -161,7 +162,7 @@ bool FGame::OnInit()
     sky->loadSky("./assets/skybox.ply", "./assets/skybox_texture.jpg");
     
     terrain.load("./assets/terrain2.bmp");
-    
+    terrain.setPos(glm::vec3(terrain.getWidth(), 0, terrain.getLength()));
     glm::vec3 randomRange;
     float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;
     float envy = Skybox::getInstance()->getDimensions().y - 50;

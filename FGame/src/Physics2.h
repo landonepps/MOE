@@ -43,6 +43,11 @@ public:
     glm::vec3 getRot() {
         return rot;
     }
+    
+    // get velocity
+    glm::vec3 getVel() {
+        return vel;
+    }
 
     void setPos(glm::vec3 position) {
         pos = position;

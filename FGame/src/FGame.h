@@ -40,6 +40,7 @@
 #include "Treasure.h"
 #include "Camera.h"
 #include "Player.h"
+#include "Enemy.h"
 #include "Skybox.h"
 #include "Message.h"
 

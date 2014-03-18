@@ -42,8 +42,8 @@ public:
     void setAVel(glm::vec3 newAVel);
     // set angular velocity
     void setVelY(GLfloat yVel);
-    // get position
-    glm::vec3 getPos() { return physics.getPos(); }
+    // get velocity
+    glm::vec3 getVel() { return physics.getVel(); }
     // update player physics
     void update();
     // change camera settings to player physics

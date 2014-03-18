@@ -12,7 +12,7 @@
 
 #include "Enemy.h"
 #include "Constants.h"
-#include "glm\gtc\matrix_transform.hpp"
+#include "glm/gtc/matrix_transform.hpp"
 /*
 * Enemy: Constructor for Enemy
 */

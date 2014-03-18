@@ -12,7 +12,7 @@
 
 Physics2::Physics2() {
     pos = glm::vec3(0, -25, 0);
-    vel = glm::vec3(0, 25, 0);
+    vel = glm::vec3(0, 30, 0);
 }
 
 Physics2::~Physics2() {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		440C0EB018D7AFB900675834 /* Skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 440C0EAE18D7AFB900675834 /* Skybox.cpp */; };
+		440C0EB518D7D58700675834 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 440C0EB118D7D58700675834 /* Enemy.cpp */; };
+		440C0EB618D7D58700675834 /* SceneGraphNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 440C0EB318D7D58700675834 /* SceneGraphNode.cpp */; };
 		4423CEBC18A0781600FE3118 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423CEBB18A0781600FE3118 /* SDL2.framework */; };
 		4423CEE618A0813600FE3118 /* FGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEDF18A0813600FE3118 /* FGame.cpp */; };
 		4423CEE718A0813600FE3118 /* OnCleanup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4423CEE118A0813600FE3118 /* OnCleanup.cpp */; };
@@ -43,6 +45,10 @@
 /* Begin PBXFileReference section */
 		440C0EAE18D7AFB900675834 /* Skybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skybox.cpp; sourceTree = "<group>"; };
 		440C0EAF18D7AFB900675834 /* Skybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skybox.h; sourceTree = "<group>"; };
+		440C0EB118D7D58700675834 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		440C0EB218D7D58700675834 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		440C0EB318D7D58700675834 /* SceneGraphNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneGraphNode.cpp; sourceTree = "<group>"; };
+		440C0EB418D7D58700675834 /* SceneGraphNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneGraphNode.h; sourceTree = "<group>"; };
 		4423CE7718A077D600FE3118 /* MOE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4423CE8218A077D600FE3118 /* MOE-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOE-Info.plist"; sourceTree = "<group>"; };
 		4423CE8418A077D600FE3118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -160,6 +166,10 @@
 		4423CEDE18A0813600FE3118 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				440C0EB118D7D58700675834 /* Enemy.cpp */,
+				440C0EB218D7D58700675834 /* Enemy.h */,
+				440C0EB318D7D58700675834 /* SceneGraphNode.cpp */,
+				440C0EB418D7D58700675834 /* SceneGraphNode.h */,
 				44DA951418A983AB0062F44D /* A/V */,
 				443B320018A9338500EDB56F /* HUD */,
 				44A7BC1018B968FB00ABDB9F /* Main Loop */,
@@ -302,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440C0EB518D7D58700675834 /* Enemy.cpp in Sources */,
 				4423CEEB18A0813600FE3118 /* OnRender.cpp in Sources */,
 				4423CEE918A0813600FE3118 /* OnInit.cpp in Sources */,
 				44DA951A18A984980062F44D /* SFX.cpp in Sources */,
@@ -309,6 +320,7 @@
 				44294C4C18BC9CF6005ED095 /* Message.cpp in Sources */,
 				4423CEE818A0813600FE3118 /* OnEvent.cpp in Sources */,
 				4423CEE618A0813600FE3118 /* FGame.cpp in Sources */,
+				440C0EB618D7D58700675834 /* SceneGraphNode.cpp in Sources */,
 				44294C4918BC7EF8005ED095 /* Events.cpp in Sources */,
 				449E7BD818A9B061005DDE7D /* Player.cpp in Sources */,
 				44A7BC0C18B9668A00ABDB9F /* Treasure.cpp in Sources */,

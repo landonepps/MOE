@@ -221,7 +221,7 @@ bool FGame::OnInit()
 #endif
 
     /**Add all the furniture to the collections**/
-    for(int i = 0; i < treasures.size();i++){
+    for(unsigned int i = 0; i < treasures.size();i++){
         collectables.addPropElement(&treasures[i]);
     }
 

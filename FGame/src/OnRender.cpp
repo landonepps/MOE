@@ -12,6 +12,7 @@
 
 #include "FGame.h"      /** Contains OnRender prototype. **/
 #include <iostream>
+#include <cstdlib>
 
 #define GLM_FORCE_RADIANS
 #include "glm/gtx/vector_angle.hpp"
@@ -43,7 +44,7 @@ void FGame::OnRender()
 
     static bool furnitureSelected = false;
     static glm::vec3 randomPos;
-    static int index;
+    static unsigned int index;
 
     if (!furnitureSelected && treasures.size() > 0){
         index = (int)((float(rand()) / float(RAND_MAX)) * treasures.size()) - 1;
@@ -56,7 +57,7 @@ void FGame::OnRender()
     enemy.draw();
 
     bool collision = false;
-    for (int i = 0; i < treasures.size() && !collision; i++){
+    for (unsigned int i = 0; i < treasures.size() && !collision; i++){
         treasures[i].setHitbox(hitbox);
         if (player.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
             pickUp.play();
@@ -70,7 +71,7 @@ void FGame::OnRender()
         }
     }
 
-    for (int i = 0; i < treasures.size() && !collision; i++){
+    for (unsigned int i = 0; i < treasures.size() && !collision; i++){
         treasures[i].setHitbox(hitbox);
         if (enemy.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
             pickUp.play();

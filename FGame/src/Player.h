@@ -17,7 +17,7 @@
 #include "SFX.h"
 #include "Physics2.h"
 #include "Camera.h"
-#include "Environment.h"
+#include "Skybox.h"
 
 class Player {
     Camera *cam;
@@ -42,6 +42,8 @@ public:
     void setAVel(glm::vec3 newAVel);
     // set angular velocity
     void setVelY(GLfloat yVel);
+    // get velocity
+    glm::vec3 getVel() { return physics.getVel(); }
     // update player physics
     void update();
     // change camera settings to player physics

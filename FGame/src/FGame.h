@@ -41,7 +41,7 @@
 #include "Camera.h"
 #include "Player.h"
 #include "Enemy.h"
-#include "Environment.h"
+#include "Skybox.h"
 #include "Message.h"
 
 #include <string>
@@ -84,7 +84,7 @@ private:
     Enemy enemy;
 
     /** The landscape **/
-    Environment *env;
+    Skybox *sky;
     
     /** The game Props **/
     Prop collectables;

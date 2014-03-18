@@ -166,8 +166,19 @@ bool FGame::OnInit()
     pickUp.loadSFX("./assets/yes.wav");
     bgm.play();
 
-    env->loadEnv("./assets/room.ply", "./assets/roomtex.jpg");
+    sky->loadSky("./assets/skybox.ply", "./assets/skybox_texture.jpg");
 
+    enemy.setup("./assets/puff.ply", "./assets/puff.png");
+    enemy.setScale(25, 25, 25);
+    enemy.setLocation(10, 10, 10);
+    Treasure temp;
+    temp.setup("./assets/tavolo1.ply", "./assets/tavolo1.png");
+    temp.setScale(25, 25, 25);
+    temp.setLocation(20, 20, 20);
+    temp.setRotate(true, true, 25);
+    treasures.push_back(temp);
+
+    /*
     glm::vec3 randomRange;
     float envx = (Environment::getInstance()->getDimensions().x / 2) - 50;
     float envy = Environment::getInstance()->getDimensions().y - 50;
@@ -218,6 +229,7 @@ bool FGame::OnInit()
     }
 
     Treasure temp;
+     */
     temp.setup("./assets/comodino.ply", "./assets/comodino.png");
     temp.setScale(300, 300, 300);
     temp.setLocation(-430, temp.getDimensions().y + 35, -450);

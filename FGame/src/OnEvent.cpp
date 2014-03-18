@@ -160,7 +160,8 @@ void FGame::OnJoyAxis(Uint8 which, Uint8 axis, Sint16 value)
     }
 
     /** Apply transformations to player. **/
-    player.setVel(glm::vec3(movX * MOVE_SPEED, 10, movZ * MOVE_SPEED));
+    GLfloat oldYVel = player.getVel().y;
+    player.setVel(glm::vec3(movX * MOVE_SPEED, oldYVel, movZ * MOVE_SPEED));
     player.setAVel(glm::vec3(rotX * ROT_SPEED, rotY * ROT_SPEED, 0));
 }
 
@@ -212,21 +213,23 @@ void FGame::OnKeyDown(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode)
 ***********************************************************************/
 void FGame::OnKeyUp(SDL_Keycode sym, Uint16 mod, SDL_Scancode scancode)
 {
+    GLfloat oldYVel = player.getVel().y;
+    
     switch (sym) {
         case SDLK_DOWN:
-            player.setVel(glm::vec3(0, 0, 0));
+            player.setVel(glm::vec3(0, oldYVel, 0));
             break;
             
         case SDLK_UP:
-            player.setVel(glm::vec3(0, 0, 0));
+            player.setVel(glm::vec3(0, oldYVel, 0));
             break;
             
         case SDLK_RIGHT:
-            player.setAVel(glm::vec3(0, 0, 0));
+            player.setAVel(glm::vec3(0, oldYVel, 0));
             break;
             
         case SDLK_LEFT:
-            player.setAVel(glm::vec3(0, 0, 0));
+            player.setAVel(glm::vec3(0, oldYVel, 0));
             break;
             
         default:

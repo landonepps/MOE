@@ -11,7 +11,7 @@
 
 #include <iostream>
 #include "glm/glm.hpp"
-#include "Environment.h"
+#include "Skybox.h"
 
 class Physics2 {
     // position
@@ -26,7 +26,7 @@ class Physics2 {
     glm::vec3 acc;
     
     // handle collision with environment
-    void handleEnvCollision(glm::vec4 adjVel);
+    // void handleEnvCollision(glm::vec4 adjVel);
     
 public:
     Physics2();
@@ -43,6 +43,11 @@ public:
     glm::vec3 getRot() {
         return rot;
     }
+    
+    // get velocity
+    glm::vec3 getVel() {
+        return vel;
+    }
 
     void setPos(glm::vec3 position) {
         pos = position;
@@ -50,9 +55,7 @@ public:
     
     // set x and z velocity
     void setVel(glm::vec3 newVel) {
-        GLfloat oldYVel = vel.y;
         vel = newVel;
-        vel.y = oldYVel;
     }
     
     // set y velocity

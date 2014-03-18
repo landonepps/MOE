@@ -33,16 +33,16 @@ void FGame::OnRender()
     // Update camera to player position
     player.updateCamera();
 
-    // draw environment
-    env->draw();
+    // draw skybox
+    sky->draw();
 
     collectables.drawElements();
     decorations.drawElements();
 
     static bool furnitureSelected = false;
     static glm::vec3 randomPos;
-    if (!furnitureSelected){
-        int index = ((float(rand()) / float(RAND_MAX)) * treasures.size());
+    if (!furnitureSelected && treasures.size() > 0){
+        int index = ((float(rand()) / float(RAND_MAX)) * treasures.size()) - 1;
 
         randomPos = treasures[index].getPosition();
         furnitureSelected = true;

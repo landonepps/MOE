@@ -63,6 +63,8 @@ glm::vec3 Terrain::computeNormal(double h1, double h2, double h3, double h4) {
     
     glm::vec3 n;
     
+    glm::vec3 norm;
+    
     n.x =
     ( p1.y - p2.y ) * ( p1.z + p2.z ) +
     ( p2.y - p3.y ) * ( p2.z + p3.z ) +
@@ -79,11 +81,11 @@ glm::vec3 Terrain::computeNormal(double h1, double h2, double h3, double h4) {
     ( p3.x - p4.x ) * ( p3.y + p4.y ) +
     ( p4.x - p1.x ) * ( p4.y + p1.y );
     
-    n.x /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
-    n.y /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
-    n.z /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
+    norm.x /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
+    norm.y /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
+    norm.z /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
     
-    return n;
+    return norm;
 }
 
 //Loads the terrain
@@ -118,14 +120,16 @@ void Terrain::load(const char* file) {
 	
     //Compute the normals
     for(int x = 0; x < heights.size()-1; x++) {
+    	temp.clear();
     	for(int z = 0; z < heights[0].size()-1; z++) {
     	    double h1 = heights[x][z];
     	    double h2 = heights[x+1][z];
     	    double h3 = heights[x+1][z+1];
     	    double h4 = heights[x][z+1];
     	    
-    	    normals[x*heights[0].size()+z] = computeNormal(h1, h2, h3, h4);
+    	    temp.push_back(computeNormal(h1, h2, h3, h4));
     	}
+    	normals.push_back(temp);
     }
 }
 

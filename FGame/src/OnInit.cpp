@@ -116,9 +116,19 @@ bool FGame::OnInit()
     pickUp.loadSFX(".\\assets\\yes.wav");
     bgm.play();
     
+    sky->loadSky(".\\assets\\skybox.ply", ".\\assets\\skybox_texture.jpg");
+
     terrain.load(".\\assets\\terrain2.bmp");
 
-    sky->loadSky(".\\assets\\skybox.ply", ".\\assets\\skybox_texture.jpg");
+    int horScale = 100;
+    terrain.setHorScale(horScale);
+    terrain.setPos(glm::vec3(0, 0, 0));
+    // terrain.setPos(glm::vec3(terrain.getWidth() * horScale / -2.0, 0, terrain.getLength() * horScale / -2.0));
+    terrain.setVertScale(1000);
+    int playerStartX = terrain.getWidth() * horScale / -2.0;
+    int playerStartZ = terrain.getLength() * horScale / -2.0;
+    player.setPos(glm::vec3(playerStartX, -terrain.getHeight(-playerStartX, -playerStartZ) - PLAYER_HEIGHT, playerStartZ));
+    sky->setPos(player.getPos());
 
     glm::vec3 randomRange;
     float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;

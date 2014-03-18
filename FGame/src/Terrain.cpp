@@ -118,6 +118,8 @@ void Terrain::load(const char* file) {
 		heights.push_back(temp);
 	}
 	
+    vector<glm::vec3> normTemp;
+    
     //Compute the normals
     for(int x = 0; x < heights.size()-1; x++) {
     	temp.clear();
@@ -127,9 +129,9 @@ void Terrain::load(const char* file) {
     	    double h3 = heights[x+1][z+1];
     	    double h4 = heights[x][z+1];
     	    
-    	    temp.push_back(computeNormal(h1, h2, h3, h4));
+    	    normTemp.push_back(computeNormal(h1, h2, h3, h4));
     	}
-    	normals.push_back(temp);
+    	normals.push_back(normTemp);
     }
 }
 
@@ -158,7 +160,7 @@ float Terrain::getHeight(int x, int z) {
 }
 
 //Get the normal at a certain point
-glm::vec3 Terrain getNormal(int x, int z) {
+glm::vec3 Terrain::getNormal(int x, int z) {
     if(x >= heights.size() || z >= heights[0].size()) {
         cout << "ERROR: Tried to access point outside terrain" << endl;
         return glm::vec3(0,0,0);

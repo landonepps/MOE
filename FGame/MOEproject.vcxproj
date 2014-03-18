@@ -156,6 +156,7 @@
     <ClCompile Include="src\OnLoop.cpp" />
     <ClCompile Include="src\OnRender.cpp" />
     <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\SceneGraphNode.cpp" />
     <ClCompile Include="src\SFX.cpp" />
     <ClCompile Include="src\Counter.cpp" />
     <ClCompile Include="src\Treasure.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="src\Prop.h" />
     <ClInclude Include="src\PropElement.h" />
     <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\SceneGraphNode.h" />
     <ClInclude Include="src\SFX.h" />
     <ClInclude Include="src\Treasure.h" />
   </ItemGroup>

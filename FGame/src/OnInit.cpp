@@ -95,7 +95,7 @@ bool FGame::OnInit()
     bgm.loadMusic(".\\assets\\adventure.wav");
     pickUp.loadSFX(".\\assets\\yes.wav");
     bgm.play();
-    
+
     sky->loadSky(".\\assets\\skybox.ply", ".\\assets\\skybox_texture.jpg");
     
     terrain->load(".\\assets\\terrain2.bmp");
@@ -108,6 +108,38 @@ bool FGame::OnInit()
     int playerStartZ = terrain->getLength() * horScale / -2.0;
     player.setPos(glm::vec3(playerStartX, -terrain->getHeight(-playerStartX, -playerStartZ) - PLAYER_HEIGHT, playerStartZ));
     sky->setPos(player.getPos());
+
+    // Create the light.
+    GLfloat ambient[]   = {0.2, 0.2, 0.2, 1.0};
+    GLfloat diffuse[]   = {0.8, 0.8, 0.8, 1.0};
+    GLfloat specular[]  = {0.0, 0.0, 0.0, 1.0};
+    GLfloat shininess[] = {50.0};
+    GLfloat position[]  = {(float)playerStartX, (float)vertScale, (float)playerStartZ, 1.0};
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glShadeModel(GL_SMOOTH);
+
+    glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+    glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
+
+    glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
+    glLightfv(GL_LIGHT0, GL_SHININESS, shininess);
+    glLightfv(GL_LIGHT0, GL_POSITION, position);
+
+    glm::vec3 randomRange;
+    float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;
+    float envy = Skybox::getInstance()->getDimensions().y - 50;
+    float envz = (Skybox::getInstance()->getDimensions().z / 2) - 50;
+
+    randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
+    randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
+    randomRange.z = ((float(rand()) / float(RAND_MAX)) * (envx - (-envz)) + (-envz));
+    enemy.setup(".\\assets\\puff.ply", ".\\assets\\poorpuff.png");
+    enemy.setScale(25, 25, 25);
+    enemy.setLocation(randomRange.x, randomRange.y, randomRange.z);
 
     for (int i = 0; i < 5; i++){
         randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
@@ -146,13 +178,13 @@ bool FGame::OnInit()
         treasures.push_back(temp);
     }
 
-    fpsCount.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
+    fpsCount.setup(".\\assets\\font.ttf", 255, 0, 0, 50, 50, 25);
 
-    furnitureCount.setup(".\\assets\\font.ttf",0,255,0,WIN_WIDTH/2,50,25);
+    furnitureCount.setup(".\\assets\\font.ttf", 0, 255, 0, WIN_WIDTH / 2, 50, 25);
 
     enemyFurnitureCount.setup(".\\assets\\font.ttf", 0, 0, 255, WIN_WIDTH - 50, 50, 25);
 
-    win.setup(".\\assets\\font.ttf",0,255,0,WIN_WIDTH/2,WIN_HEIGHT/2,25);
+    win.setup(".\\assets\\font.ttf", 0, 255, 0, WIN_WIDTH / 2, WIN_HEIGHT / 2, 25);
 #else
     bgm.loadMusic("./assets/adventure.wav");
     pickUp.loadSFX("./assets/yes.wav");

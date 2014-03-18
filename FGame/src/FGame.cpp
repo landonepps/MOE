@@ -36,6 +36,8 @@ FGame::FGame() {
 
     path = "";
     lastFrame = 0;
+
+    furnitureSelected = false;
 }
 
 /***********************************************************************

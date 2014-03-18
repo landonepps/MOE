@@ -37,7 +37,6 @@ void FGame::OnRender()
     sky->draw();
 
     collectables.drawElements();
-    decorations.drawElements();
 
     static bool furnitureSelected = false;
     static glm::vec3 randomPos;
@@ -65,7 +64,6 @@ void FGame::OnRender()
         }
     }
 
-    collision = false;
     for (int i = 0; i < treasures.size() && !collision; i++){
         treasures[i].setHitbox(hitbox);
         if (enemy.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
@@ -77,11 +75,6 @@ void FGame::OnRender()
             collision = true;
             furnitureSelected = false;
         }
-    }
-
-    for (int i = 0; i < notTreasures.size(); i++){
-        notTreasures[i].setHitbox(hitbox);
-        player.checkCollision(notTreasures[i].getPosition(), notTreasures[i].getDimensions());
     }
 
     if (player.getStatData(0)->second >= totalTreasures || mainClock->getElapsedTime() >= 120){

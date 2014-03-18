@@ -94,12 +94,12 @@ bool FGame::OnInit()
     pickUp.loadSFX(".\\assets\\yes.wav");
     bgm.play();
 
-    env->loadEnv(".\\assets\\room.ply", ".\\assets\\roomtex.jpg");
+    sky->loadSky(".\\assets\\skybox.ply", ".\\assets\\skybox_texture.jpg");
 
     glm::vec3 randomRange;
-    float envx = (Environment::getInstance()->getDimensions().x / 2) - 50;
-    float envy = Environment::getInstance()->getDimensions().y - 50;
-    float envz = (Environment::getInstance()->getDimensions().z / 2) - 50;
+    float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;
+    float envy = Skybox::getInstance()->getDimensions().y - 50;
+    float envz = (Skybox::getInstance()->getDimensions().z / 2) - 50;
 
     randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
     randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
@@ -144,17 +144,6 @@ bool FGame::OnInit()
         temp.setBob(true, 10, 5, 5);
         treasures.push_back(temp);
     }
-
-    Treasure temp;
-    temp.setup(".\\assets\\comodino.ply", ".\\assets\\comodino.png");
-    temp.setScale(300, 300, 300);
-    temp.setLocation(-430, temp.getDimensions().y + 35, -450);
-    notTreasures.push_back(temp);
-
-    temp.setup(".\\assets\\puff.ply", ".\\assets\\puff.png");
-    temp.setScale(300, 300, 300);
-    temp.setLocation(0, temp.getDimensions().y - 160, 420);
-    notTreasures.push_back(temp);
 
     fpsCount.setup(".\\assets\\font.ttf",255,0,0,50,50,25);
 
@@ -228,17 +217,7 @@ bool FGame::OnInit()
         treasures.push_back(temp);
     }
 
-    Treasure temp;
      */
-    temp.setup("./assets/comodino.ply", "./assets/comodino.png");
-    temp.setScale(300, 300, 300);
-    temp.setLocation(-430, temp.getDimensions().y + 35, -450);
-    notTreasures.push_back(temp);
-
-    temp.setup("./assets/puff.ply", "./assets/puff.png");
-    temp.setScale(300, 300, 300);
-    temp.setLocation(0, temp.getDimensions().y - 160, 420);
-    notTreasures.push_back(temp);
 
     fpsCount.setup("./assets/font.ttf", 255, 0, 0, 50, 50, 25);
 
@@ -250,10 +229,6 @@ bool FGame::OnInit()
     /**Add all the furniture to the collections**/
     for(int i = 0; i < treasures.size();i++){
         collectables.addPropElement(&treasures[i]);
-    }
-
-    for (int i = 0; i < notTreasures.size(); i++){
-        decorations.addPropElement(&notTreasures[i]);
     }
 
     totalTreasures = treasures.size();

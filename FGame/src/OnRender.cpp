@@ -72,11 +72,8 @@ void FGame::OnRender()
             collision = true;
             if (i == index)
                 furnitureSelected = false;
+            break;
         }
-    }
-
-    for (unsigned int i = 0; i < treasures.size() && !collision; i++){
-        treasures[i].setHitbox(hitbox);
         if (enemy.checkCollision(treasures[i].getPosition(), treasures[i].getDimensions())){
             pickUp.play();
             enemy.getStatData(0)->second += 1;
@@ -85,6 +82,7 @@ void FGame::OnRender()
             collectables.removePropElement();
             collision = true;
             furnitureSelected = false;
+            break;
         }
     }
 

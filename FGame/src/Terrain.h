@@ -47,7 +47,7 @@ public:
     Terrain(glm::vec3 p, float hs, float vs);
     
     //Computes a normal vector
-    glm::vec3 Terrain::computeNormal(double h1, double h2, double h3, double h4);
+    glm::vec3 computeNormal(double h1, double h2, double h3, double h4);
     
     // Loads the terrain at file
     void load (const char* file);

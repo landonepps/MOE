@@ -36,8 +36,6 @@ public:
      */
     ~Player();
     
-    // set position
-    
     // set velocity for x and z
     void setVel(glm::vec3 newVel);
     // set velocity for y

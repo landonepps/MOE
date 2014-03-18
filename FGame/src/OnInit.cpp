@@ -191,7 +191,7 @@ bool FGame::OnInit()
     terrain.setVertScale(1000);
     int playerStartX = terrain.getWidth() * horScale / -2.0;
     int playerStartZ = terrain.getLength() * horScale / -2.0;
-    player.setPos(glm::vec3(playerStartX, terrain.getHeight(-playerStartX, -playerStartZ), playerStartZ));
+    player.setPos(glm::vec3(playerStartX, -terrain.getHeight(-playerStartX, -playerStartZ) - PLAYER_HEIGHT, playerStartZ));
     sky->setPos(player.getPos());
 
     glm::vec3 randomRange;

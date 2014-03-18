@@ -152,6 +152,8 @@ void Terrain::render() {
 
 //Get the height at a certain point
 float Terrain::getHeight(int x, int z) {
+    x /= horScale;
+    z /= horScale;
     if(x >= heights.size() || z >= heights[0].size()) {
         cout << "ERROR: Tried to access point outside terrain" << endl;
         return 0.0;

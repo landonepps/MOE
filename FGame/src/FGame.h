@@ -40,6 +40,7 @@
 #include "Treasure.h"
 #include "Camera.h"
 #include "Player.h"
+#include "Enemy.h"
 #include "Environment.h"
 #include "Message.h"
 
@@ -80,6 +81,8 @@ private:
     /** The Camera **/
     Player player;
     
+    Enemy enemy;
+
     /** The landscape **/
     Environment *env;
     

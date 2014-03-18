@@ -35,6 +35,9 @@ void FGame::OnRender()
 
     // draw skybox
     sky->draw();
+    
+    // draw terrain
+    terrain.render(1, 1);
 
     collectables.drawElements();
     decorations.drawElements();

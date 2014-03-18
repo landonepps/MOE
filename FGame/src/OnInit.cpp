@@ -95,6 +95,8 @@ bool FGame::OnInit()
     bgm.play();
 
     env->loadEnv(".\\assets\\room.ply", ".\\assets\\roomtex.jpg");
+    
+    terrain.load(".\\assets\\terrain1.bmp");
 
     glm::vec3 randomRange;
     float envx = (Environment::getInstance()->getDimensions().x / 2) - 50;
@@ -167,6 +169,8 @@ bool FGame::OnInit()
     bgm.play();
 
     sky->loadSky("./assets/skybox.ply", "./assets/skybox_texture.jpg");
+    
+    terrain.load("./assets/terrain1.bmp");
 
     enemy.setup("./assets/puff.ply", "./assets/puff.png");
     enemy.setScale(25, 25, 25);

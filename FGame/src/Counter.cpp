@@ -94,7 +94,7 @@ void Counter::setValue(float val){
  * returns:   void.
 ***********************************************************************/
 void Counter::draw(){
-
+    return;
     stringstream message;
     message << fixed << setprecision(precision) << value;
 

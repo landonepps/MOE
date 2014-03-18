@@ -50,6 +50,10 @@ public:
     glm::vec3 getScale() {
         return scl;
     }
+    // update skybox
+    void setPos(glm::vec3 newPos) {
+        pos = newPos;
+    }
     // draw skybox
     void draw();
 };

@@ -28,12 +28,13 @@ void FGame::OnLoop()
         lastFrame = mainClock->getElapsedTime();
     }
     player.update();
+    sky->setPos(player.getPos());
 
     if ((int)mainClock->getElapsedTime() == 2 && currentLevel < 4){
         win.setValue(" ");
     }
 
-    if ((treasures.size() == 0 || mainClock->getElapsedTime() >= 10) && currentLevel < 4){
+    if ((treasures.size() == 0 || mainClock->getElapsedTime() >= 90) && currentLevel < 4){
         mainClock->reset();
 
         if ((float)enemy.getStatData(0)->second > (float)player.getStatData(0)->second)

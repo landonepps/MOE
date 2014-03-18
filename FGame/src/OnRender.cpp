@@ -41,7 +41,7 @@ void FGame::OnRender()
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
     // draw terrain
-    terrain.render();
+    terrain->render();
     glDisable(GL_LIGHTING);
     glDisable(GL_LIGHT0);
 

@@ -19,6 +19,7 @@
 Player::Player() {
     cam = new Camera();
     playerDimensions = glm::vec3(0, 0, 0);
+    physics.setCheckTerCol(true);
 }
 
 /*

@@ -90,7 +90,7 @@ private:
     Skybox *sky;
     
     /** The terrain **/
-    Terrain terrain;
+    Terrain *terrain;
     
     /** The game Props **/
     Prop collectables;

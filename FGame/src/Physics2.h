@@ -11,7 +11,7 @@
 
 #include <iostream>
 #include "glm/glm.hpp"
-#include "Skybox.h"
+#include "Terrain.h"
 
 class Physics2 {
     // position
@@ -24,9 +24,11 @@ class Physics2 {
     glm::vec3 aVel;
     // acceleration
     glm::vec3 acc;
+    // check terrain collision
+    bool checkTerCol;
     
-    // handle collision with environment
-    // void handleEnvCollision(glm::vec4 adjVel);
+    // handle collision with terrain
+    void handleTerCollision(glm::vec4 adjVel);
     
 public:
     Physics2();
@@ -53,13 +55,17 @@ public:
         pos = position;
     }
     
+    void setCheckTerCol(bool doCheck) {
+        checkTerCol = doCheck;
+    }
+    
     // set x and z velocity
     void setVel(glm::vec3 newVel) {
         vel = newVel;
     }
     
     // set y velocity
-    void setVelY(GLfloat yVel) {
+    void setVelY(float yVel) {
         vel.y = yVel;
     }
     

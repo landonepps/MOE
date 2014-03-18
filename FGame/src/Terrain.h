@@ -35,9 +35,7 @@ class Terrain {
     //The vertical scale of the terrain
     float vertScale;
     
-public:
-    
-    //Make a default terrain
+    // private constructor
     Terrain();
     
     //Make a terrain at 0,0,0 with scales hs and vs
@@ -45,6 +43,13 @@ public:
     
     //Make a terrain at position p of scales hs and vs
     Terrain(glm::vec3 p, float hs, float vs);
+    
+public:
+    // returns a pointer to the Skybox singleton
+    static Terrain *getInstance() {
+        static Terrain instance;
+        return &instance;
+    }
     
     //Computes a normal vector
     glm::vec3 computeNormal(double h1, double h2, double h3, double h4);

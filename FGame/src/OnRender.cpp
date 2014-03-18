@@ -37,7 +37,7 @@ void FGame::OnRender()
     sky->draw();
     
     // draw terrain
-    terrain.render(1, 1);
+    terrain.render(20, 1000);
 
     collectables.drawElements();
 

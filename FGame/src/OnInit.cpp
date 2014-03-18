@@ -159,22 +159,11 @@ bool FGame::OnInit()
     sky->loadSky("./assets/skybox.ply", "./assets/skybox_texture.jpg");
     
     terrain.load("./assets/terrain1.bmp");
-
-    enemy.setup("./assets/puff.ply", "./assets/puff.png");
-    enemy.setScale(25, 25, 25);
-    enemy.setLocation(10, 10, 10);
-    Treasure temp;
-    temp.setup("./assets/tavolo1.ply", "./assets/tavolo1.png");
-    temp.setScale(25, 25, 25);
-    temp.setLocation(20, 20, 20);
-    temp.setRotate(true, true, 25);
-    treasures.push_back(temp);
-
-    /*
+    
     glm::vec3 randomRange;
-    float envx = (Environment::getInstance()->getDimensions().x / 2) - 50;
-    float envy = Environment::getInstance()->getDimensions().y - 50;
-    float envz = (Environment::getInstance()->getDimensions().z / 2) - 50;
+    float envx = (Skybox::getInstance()->getDimensions().x / 2) - 50;
+    float envy = Skybox::getInstance()->getDimensions().y - 50;
+    float envz = (Skybox::getInstance()->getDimensions().z / 2) - 50;
 
     randomRange.x = ((float(rand()) / float(RAND_MAX)) * (envx - (-envx)) + (-envx));
     randomRange.y = ((float(rand()) / float(RAND_MAX)) * (envx - (50)) + (50));
@@ -219,8 +208,6 @@ bool FGame::OnInit()
         temp.setBob(true, 10, 5, 5);
         treasures.push_back(temp);
     }
-
-     */
 
     fpsCount.setup("./assets/font.ttf", 255, 0, 0, 50, 50, 25);
 

@@ -124,7 +124,7 @@ void Terrain::load(const char* file) {
     	    double h3 = heights[x+1][z+1];
     	    double h4 = heights[x][z+1];
     	    
-    	    normal[x*heights[0].size()+z] = computeNormal(h1, h2, h3, h4);
+    	    normals[x*heights[0].size()+z] = computeNormal(h1, h2, h3, h4);
     	}
     }
 }

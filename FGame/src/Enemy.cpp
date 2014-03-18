@@ -19,10 +19,6 @@
 Enemy::Enemy() {
     enemyDimensions = glm::vec3(0, 0, 0);
     difficulty = 1;
-
-    center = NULL;
-    left = NULL;
-    right = NULL;
 }
 
 /*
@@ -37,21 +33,6 @@ void Enemy::setup(char const* filename, char const* texname)
     theMesh = new Mesh(filename, texname);
     glm::vec3 temp = theMesh->getDimensions();
     enemyDimensions = temp;
-
-    center = new SceneGraphNode(theMesh);
-    addChild(center);
-
-    left = new SceneGraphNode(theMesh);
-    left->setTransformation(glm::translate(
-            glm::mat4(1.0f),
-            glm::vec3(0.0f, 0.0f, -30)));
-    center->addChild(left);
-
-    right = new SceneGraphNode(theMesh);
-    right->setTransformation(glm::translate(
-            glm::mat4(1.0f),
-            glm::vec3(0.0f, 0.0f, 30)));
-    center->addChild(right);
 }
 
 /***********************************************************************
@@ -95,7 +76,7 @@ void Enemy::draw(){
     glTranslatef(getPosition().x, getPosition().y, getPosition().z);
     glScalef(scale.x, scale.y, scale.z);
     glRotatef(-90, 1, 0, 0);
-    center->draw();
+    theMesh->draw();
     glPopMatrix();
 }
 

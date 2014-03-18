@@ -72,7 +72,7 @@ void FGame::OnLoop()
         win.setValue(" ");
     }
     
-    if ((treasures.size() == 0 || mainClock->getElapsedTime() >= 20) && currentLevel < 4){
+    if ((treasures.size() == 0 || mainClock->getElapsedTime() >= 90) && currentLevel < 4){
         mainClock->reset();
 
         if ((float)enemy->getStatData(0)->second >(float)player.getStatData(0)->second){

@@ -47,7 +47,6 @@ void FGame::OnRender()
 
     collectables.drawElements();
 
-    static bool furnitureSelected = false;
     static glm::vec3 randomPos;
     static unsigned int index;
 

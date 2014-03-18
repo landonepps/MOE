@@ -17,9 +17,14 @@
 #include "SFX.h"
 #include "Physics2.h"
 #include "Camera.h"
+#include "SceneGraphNode.h"
 
-class Enemy {
+class Enemy : public SceneGraphNode {
     Mesh *theMesh;
+    SceneGraphNode *center;
+    SceneGraphNode *left;
+    SceneGraphNode *right;
+
     Physics2 physics;
     vector< pair<int, int> > stats;
     glm::vec3 enemyDimensions;

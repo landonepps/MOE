@@ -36,8 +36,8 @@
 
 //Make a default terrain
 Terrain::Terrain() {
+    horScale = vertScale = 1;
     pos = glm::vec3(0,0,0);
-    horScale = vertScale = 100;
 }
 
 //Make a terrain at 0,0,0 with scales hs and vs
@@ -63,6 +63,8 @@ glm::vec3 Terrain::computeNormal(double h1, double h2, double h3, double h4) {
     
     glm::vec3 n;
     
+    glm::vec3 norm;
+    
     n.x =
     ( p1.y - p2.y ) * ( p1.z + p2.z ) +
     ( p2.y - p3.y ) * ( p2.z + p3.z ) +
@@ -79,11 +81,11 @@ glm::vec3 Terrain::computeNormal(double h1, double h2, double h3, double h4) {
     ( p3.x - p4.x ) * ( p3.y + p4.y ) +
     ( p4.x - p1.x ) * ( p4.y + p1.y );
     
-    //n.x /= sqrt(x*x+y*y+z*z);
-    //n.y /= sqrt(x*x+y*y+z*z);
-    //n.z /= sqrt(x*x+y*y+z*z);
+    norm.x /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
+    norm.y /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
+    norm.z /= sqrt(n.x*n.x+n.y*n.y+n.z*n.z);
     
-    return n;
+    return norm;
 }
 
 //Loads the terrain
@@ -116,16 +118,20 @@ void Terrain::load(const char* file) {
 		heights.push_back(temp);
 	}
 	
+    vector<glm::vec3> normTemp;
+    
     //Compute the normals
     for(int x = 0; x < heights.size()-1; x++) {
+    	temp.clear();
     	for(int z = 0; z < heights[0].size()-1; z++) {
     	    double h1 = heights[x][z];
     	    double h2 = heights[x+1][z];
     	    double h3 = heights[x+1][z+1];
     	    double h4 = heights[x][z+1];
     	    
-    	    //normals[x*heights[0].size()+z] = computeNormal(h1, h2, h3, h4);
+    	    normTemp.push_back(computeNormal(h1, h2, h3, h4));
     	}
+    	normals.push_back(normTemp);
     }
 }
 
@@ -146,6 +152,8 @@ void Terrain::render() {
 
 //Get the height at a certain point
 float Terrain::getHeight(int x, int z) {
+    x /= horScale;
+    z /= horScale;
     if(x >= heights.size() || z >= heights[0].size()) {
         cout << "ERROR: Tried to access point outside terrain" << endl;
         return 0.0;

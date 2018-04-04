@@ -1,1 +1,4 @@
-SDL2*/** linguist-vendored
+SDL2_image.framework/* linguist-vendored
+SDL2_mixer.framework/* linguist-vendored
+SDL2_ttf.framework/* linguist-vendored
+SDL2.framework/* linguist-vendored
